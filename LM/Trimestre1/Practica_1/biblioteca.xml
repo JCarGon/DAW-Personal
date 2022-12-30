@@ -1,0 +1,40 @@
+<bibliotecas>
+    <biblioteca ciudad="Sevilla">
+        <libro>
+            <titulo>1</titulo>
+            <autor>a</autor>
+            <isbn>123</isbn>
+        </libro>
+        <libro>
+            <titulo>1a</titulo>
+            <autor>aa</autor>
+            <isbn>1231</isbn>
+        </libro>
+    </biblioteca>
+
+    <biblioteca ciudad="Malaga">
+        <libro>
+            <titulo>2</titulo>
+            <autor>b</autor>
+            <isbn>456</isbn>
+        </libro>
+        <libro>
+            <titulo>2a</titulo>
+            <autor>bb</autor>
+            <isbn>4561</isbn>
+        </libro>
+    </biblioteca>
+
+    <biblioteca ciudad="Granada">
+        <libro>
+            <titulo>3</titulo>
+            <autor>c</autor>
+            <isbn>789</isbn>
+        </libro>
+        <libro>
+            <titulo>3a</titulo>
+            <autor>cc</autor>
+            <isbn>7891</isbn>
+        </libro>
+    </biblioteca>
+</bibliotecas>

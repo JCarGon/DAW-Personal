@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Formulario completo</title>
+        <meta charset=”UTF-8”>
+    </head>
+    <body>
+        <form action="proceso.php" method="post">
+            <label>Nombre:</label>
+            <input type="text" size="25">
+            </br>
+            </br>
+            
+            <label>Correo electrónico:</label>
+            <input type="email" size="30" required><!--campo para emails; required para que sea obligatorio-->
+            </br>
+            </br>
+            
+            <label>URL:</label>
+            <input type="url" placeholder="Escribe la URL de tu página" size="25"><!--campo para URLs-->
+            </br>
+            </br>
+
+            <label>Fecha:</label>
+            <input type="date"><!--campo para fechas-->
+            </br>
+            </br>
+
+            <label>Tiempo:</label>
+            <input type="time"><!--campo para la hora-->
+            </br>
+            </br>
+
+            <label>Fecha y hora:</label>
+            <input type="date">
+            <input type="time">
+            <!--al buscar información sobre el elemento datetime, encontré que no se garantiza que funcione como debería y que en nuevas webs
+            no se recomienda usarlo, por lo que uso los elementos date y time por separado, que sí que funcionan correctamente-->
+            </br>
+            </br>
+
+            <label>Mes:</label>
+            <input type="month"><!--campo para el mes-->
+            </br>
+            </br>
+
+            <label>Semana:</label>
+            <input type="week"><!--campo para la semana-->
+            </br>
+            </br>
+
+            <label>Número (min -10, max 10):</label>
+            <input type="number" min="-10" max="10" value="0" size="10"><!--campo para valores numéricos estableciendo el número mínimo, máximo y el valor inicial-->
+            </br>
+            </br>
+
+            <label>Teléfono:</label>
+            <input type="tel" maxlength="9"><!--campo para teléfonos; máxima longitud de 9, que son los dígitos de un num tlf-->
+            </br>
+            </br>
+
+            <label>Término de búsqueda:</label>
+            <input type="search"><!--campo para términos de búsquedas-->
+            </br>
+            </br>
+
+            <label>Color favorito:</label>
+            <input type="color"><!--campo para seleccionar color-->
+            </br>
+            </br>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Formulario 9</title>
+        <meta charset=”UTF-8”>
+    </head>
+    <body>
+<!--Sin CSS no puedo dar color al background, ni redondear las esquinas del fieldset-->
+        <form action="proceso.php" method="post">
+            <fieldset>
+                <p><b>Nombre:</b></p>
+                <input type="text" value="Escribe tu nombre" size="60">
+                </br>
+
+                <p><b>Email:</b></p>
+                <input type="email" value="correo@empresa.com" size="60">
+                </br>
+
+                <p><b>Asunto</b></p>
+                <textarea rows="3" cols="52"></textarea>
+                </br>
+
+                <p><b>¿Cómo nos ha conocido?</b></p>
+                <input type="checkbox" name="opcion1">Un amigo
+                <input type="checkbox" name="opcion2">Googleando
+                <input type="checkbox" name="opcion3">Buzoneo
+                <input type="checkbox" name="opcion4">Otros
+                </br>
+
+                <p><b>Escribe tu mensaje</b></p>
+                <textarea rows="6" cols="52"></textarea>
+                </br>
+
+                <input type="checkbox" name="opcionobligatoria" required>He leído y acepto el <a href="https://www.amazon.es/gp/help/customer/display.html?nodeId=GX7NJQ4ZB8MHFRNJ" target="_blank">aviso legal y la política de privacidad</a>
+            </fieldset>
+        </form>
+    </body>
+</html>

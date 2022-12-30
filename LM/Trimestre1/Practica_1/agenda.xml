@@ -1,0 +1,36 @@
+<agenda>
+    <contacto>
+        <nombre>Juan</nombre>
+        <apellidos>Fernández Cáceres</apellidos>
+        <direccion>Calle Tortuga</direccion>
+        <telefono>123456789</telefono>
+    </contacto>
+
+    <contacto>
+        <nombre>María</nombre>
+        <apellidos>Guerrero Parra</apellidos>
+        <direccion>Calle Cisne</direccion>
+        <telefono>123654879</telefono>
+    </contacto>
+
+    <contacto>
+        <nombre>Raúl</nombre>
+        <apellidos>García Ferrera</apellidos>
+        <direccion>Calle Pez</direccion>
+        <telefono>123546987</telefono>
+    </contacto>
+
+    <contacto>
+        <nombre>Carlos</nombre>
+        <apellidos>González Herrera</apellidos>
+        <direccion>Calle Cata</direccion>
+        <telefono>312546798</telefono>
+    </contacto>
+
+    <contacto>
+        <nombre>Isabel</nombre>
+        <apellidos>Flores Guerra</apellidos>
+        <direccion>Calle Torre</direccion>
+        <telefono>231465978</telefono>
+    </contacto>
+</agenda>

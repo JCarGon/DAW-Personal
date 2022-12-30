@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Ejercicio 6</title>
+    </head>
+    <body>
+        <h3>Casa de compraventa de coches</h3>
+        <form action="proceso.php" method="post">
+            <fieldset>
+                <legend>Datos personales</legend>
+                <label for="name">Nombre y apellidos:</label>
+                <p>
+                    <input type="text" placeholder="Nombre" size="20">
+                    <input type="text" placeholder="Apellidos" size="30">
+                </p>
+                <p>
+                    <label for="email">Email:</label>
+                    <input type="email" size="40" placeholder="correo@correo.com" required>
+                    <small>*Campo obligatorio</small>
+                </p>
+                <p>
+                    <label for="password">Contraseña:</label>
+                    <input type="password" pattern="[0-9][A-Za-z0-9][A-Z]{8,}" title="Mínimo 9 caracteres de longitud. Debe comenzar por un número y terminar en una letra mayúscula." required>
+                    <small>*Campo obligatorio</small>
+                </p>
+                <p>
+                    <label for="fechaNacimiento">Fecha de nacimiento</label>
+                    <input type="date">
+                    <small>*Campo obligatorio</small>
+                </p>
+                <p>
+                    <label for="edad">Edad:</label>
+                    <input type="number" min="18" max="99" minlength="2" maxlength="2" size="5">
+                </p>
+                <p>
+                    <label for="telefono">Número de teléfono: </label>
+                    <input type="tel" maxlength="9" size="15">
+                </p>
+            </fieldset>
+
+            <fieldset>
+                <legend>Otros datos</legend>
+                <p>
+                    <label for="color">Color favorito:</label>
+                    <input type="color">
+                </p>
+                    <label for="tieneCoche"></label>
+                <p>¿Tiene coche actualmente?
+                    <input type="radio" name="opcion"> Si
+                    <input type="radio" name="opcion"> No
+                </p>
+                <p>
+                    <label for="cantidadCoches">¿Cuántos coches ha tenido hasta este momento?</label>
+                    <select>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4 o más</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="cantidadViajes">Indique la cantidad de viajes que suele hacer con el coche al año: </label>
+                    <input type="number" min="0" max="10" size="5" value="0">
+                </p>
+                <p>
+                    <label for="provincia">Elija la provincia en la que quiere buscar coches:
+                        <input list="provincias" name="provinciasBusqueda"></option></label>
+                        <datalist id="provincias">
+                            <option value="Almería"></option>
+                            <option value="Cádiz"></option>
+                            <option value="Córdoba"></option>
+                            <option value="Granada"></option>
+                            <option value="Huelva"></option>
+                            <option value="Jaén"></option>
+                            <option value="Málaga"></option>
+                            <option value="Sevilla"></option>
+                        </datalist>
+                </p>
+                    <label for="rangoGasto">Indique una aproximación en el rango de precio para el que está buscando un coche:</label>
+                <p>5.000€
+                    <input type="range" min="5000" max="30000">
+                    30.000€
+                </p>
+                    <label for="textoInformacion">Escriba si está buscando marcas y modelos en concreto: </label>
+                </p>
+                    <input type="text" autofocus="autofocus" placeholder="Escriba aquí las marcas y/o modelos de coche en las que está interesado" 
+                    autocomplete="on" size="80" required>
+                <p>
+                <p>
+                    <label for="dni">Inserte una fotocopia/imagen escaneada de su DNI:</label>
+                    <input type="file" name="fotosDNI" accept="image/png, image/jpg" multiple>
+                </p>
+            </fieldset>
+            <p>
+                <input type="checkbox" name="opcionObligatoria">Acepto las <a href="https://www.amazon.es/gp/help/customer/display.html?nodeId=GLSBYFE9MGKKQXXM" target="_blank">Condiciones de uso</a> necesarias para registrame
+            </p>
+            <p>
+                <label for="progreso">Porcentaje del progreso de registro</label>
+                <progress value="50" max="100">50 %</progress>
+            </p>
+            <input type="reset" value="Reiniciar cuestionario">
+            <input type="submit" value="Registrarse">
+        </form>
+    </body>
+</html>

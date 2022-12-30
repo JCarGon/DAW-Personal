@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mapa de imagen</title>
+        <meta charset=”UTF-8”>
+    </head>
+    <body>
+        <!--etiqueta map para definir un mapa y dentro se colocan las diferentes áreas-->
+        <map name="mapa1">
+            <!--etiqueta area para definir el espacio que ocupa cada sección; alt: texto que se muestra cuando colocas el ratón
+            encima de esa área; shape: define la forma del área concreta; coords: define las coordenadas donde empieza y acaba;
+            href: para indicar dónde lleva esa área-->
+            <area alt="Diario de Sevilla" shape="rect" coords="105,95,125,207" href="https://www.diariodesevilla.es/" target="_blank">
+            <area alt="Junta de Andalucía" shape="rect" coords="126,95,215,117" href="https://www.juntadeandalucia.es/" target="_blank">
+            <area alt="ITEP" shape="rect" coords="128,140,215,160" href="https://www.itep.es/" target="_blank">
+        </map>
+        <img src="/Lenguaje de marcas/Practica_4/1.jpg" alt="mapa imagen" title="mapa imagen" usemap="#mapa1" width="300">
+    </body>
+</html>

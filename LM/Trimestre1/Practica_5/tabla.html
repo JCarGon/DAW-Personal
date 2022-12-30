@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tabla</title>
+        <meta charset=”UTF-8”>
+        <style>
+            table,th,td{
+                border: 1px solid black;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <caption><b>ACTIVIDADES FORMATIVAS</b></caption>
+            <thead>
+                <tr>
+                    <td><b>Curso</b></td>
+                    <td><b>Horario</b></td>
+                    <td><b>Aula</b></td>
+                    <td><b>Horas</b></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>HTML</td>
+                    <td>16:00 a 20:00</td>
+                    <td>Aula 1</td>
+                    <td>20 horas</td>
+                </tr>
+                <tr>
+                    <td>CSS</td>
+                    <td>9:00 a 12:00</td>
+                    <td>Aula 3</td>
+                    <td>15 horas</td>
+                </tr>
+                <tr>
+                    <td>Javascript</td>
+                    <td rowspan="2">16:00 a 20:00</td>
+                    <td>Aula 4</td>
+                    <td>20 horas</td>
+                </tr>
+                <tr>
+                    <td>Jquery</td>
+                    <td>Aula 5</td>
+                    <td>20 horas</td>
+                </tr>
+                <tfoot>
+                    <tr>
+                        <td colspan="3"><b>Total de horas</b></td>
+                        <td><b>55 horas</b></td>
+                    </tr>
+                </tfoot>
+            </tbody>
+        </table>
+    </body>
+</html>
