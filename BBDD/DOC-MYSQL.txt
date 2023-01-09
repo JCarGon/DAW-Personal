@@ -1,0 +1,101 @@
+C:\xampp\mysql\bin\mysql.exe -u root -p
+
+CREATE DATABASE if not EXISTS nombre_database; -> crear una database nueva
+
+USE nombre_database; -> usar la database seleccionada
+
+SHOW DATABASE nombre_database; -> Muestra las databases que hay creadas
+SHOW TABLES; -> Mostrar las tablas que tiene la database en uso
+DESC nombre_tabla; -> Muestra la tabla con los atributos que tiene
+
+DROP TABLE IF EXISTS nombre_tabla; -> elimina la tabla si existe
+
+CREATE TABLE nombre_tabla(
+	atributo tipo_Atributo(cantidad) PRIMARY KEY (en caso de serlo), -> 1 manera de hacerlo cuando la PK es solo es un atributo
+	CODIGO CHAR(5) PRIMARY KEY,
+      NOMBRE VARCHAR(15),
+      DIRECTOR VARCHAR(25)
+	PRIMARY KEY (nombre_atributo de esta tabla), -> Otra manera de declarar una PK (orientado a cuando está formada por +1 atributo)
+	CONSTRAINT fk_nombreTablaActual_nombreTablaOrigen FOREIGN KEY (nombreAtributo en la TablaActual) REFERENCES nombre_tabla(nombreAtributo en la TablaOrigen)
+	-> la clave foránea tiene que ser del mismo tipo y extensión que la clave primaria
+);
+
+NOT NULL -> el valor de ese atributo no puede ser nulo
+DEFAULT -> si no se introduce el valor de ese atributo al meter una entrada, se le pone automáticamente
+	el valor de default.
+AUTO_INCREMENT -> incrementa en 1 el valor del atributo cada vez que se introduce un valor nuevo (en caso de no especificarlo)
+UNSIGNED -> el tipo de atributo numérico no tiene signo, por lo que solo puede ser de valor positivo
+
+TIPO DE DATOS:
+tinyint (entero pequeño - hasta 256 números - 3 cifras)
+char (cuando sé la longitud máxima del atributo)
+varchar (cuando no sé la longitud máxima de un atributo)
+timestap (fecha, hora (hora-minuto-segundo-milisegundo))
+decimal (número de dígitos en total del número, dígitos de la parte decimal) -> decimal (4,2): 32,34.
+
+PARA BORRAR:
+Se pone al declarar la clave foránea; si no se especifica, establece el valor por defecto
+ON DELETE CASCADE (borra el valor del atributo seleccionado en la tabla actual y en todas las tablas en las que esté como clave foránea ese atributo).
+ON DELETE SET NULL (pone "null" a los valores de los atributos relacionados con el valor de atributo eliminado).
+
+PARA ACTUALIZAR:
+ON UPDATE CASCADE
+ON UPDATE SET NULL
+
+PARA ACTUALIZAR TABLAS:
+ALTER TABLE
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+SENTENCIA SELECT:
+SELECT * FROM empleado; -> Muestra todas las columnas que tenga la tabla empleado.
+
+SELECT emp_no, nombre, cargo FROM empleado;
+-> Esto selecciona las 3 columnas y los datos que contienen de la tabla "empleado".
+
+SELECT emp_no AS "Código", nombre, cargo FROM empleado;
+-> AS sirve para cambiar el nombre de una columna y asignarle un alias temporal a la hora de mostrarla.
+
+SELECT emp_no AS "Código", nombre AS "Empleado", salario/30 AS "Salario/día" FROM empleado;
+
+SELECT * FROM empleado ORDER BY nombre (o número de la tabla); 
+-> Muestra todas las columnas de la tabla empleado ordenadas de manera ascendente en función del nombre.
+
+SELECT * FROM empleado ORDER BY cargo ASC, salario DESC, nombre; 
+-> Muestra todas las columnas de la tabla empleado ordenadas por cargo de manera ascendente, salario de manera descendente y nombre.
+
+SELECT * FROM empleado WHERE emp_no = 7902;
+-> Seleccionar todos los datos de la tabla empleado cuyo número de empleado (emp_no) sea 7902.
+
+SELECT * FROM empleado WHERE cargo = "EMPLEADO" AND salario > 120000;
+-> Seleccionar todos los datos de la tabla empleado cuyo cargo sea empleado y su salario sea mayor de 120000.
+
+SELECT * FROM empleado WHERE salario/12 > 10000;
+-> Selecciona todos los datos de la tabla empleado donde el salario mensual supere los 10000.
+
+SELECT * FROM empleado WHERE nombre LIKE "A%";
+-> Selecciona todos los datos de la tabla empleado cuyo nombre empiece por A.
+
+SELECT * FROM empleado WHERE nombre LIKE "A%" AND nombre LIKE "%O";
+-> Selecciona todos los datos de la tabla empleado cuyo nombre empiece por A y temrine por O.
+
+SELECT * FROM empleado WHERE nombre LIKE "%T%";
+-> Selecciona todos los datos de la tabla empleado cuyo nombre contenga un T.
+
+SELECT * FROM empleado WHERE nombre LIKE "_____O";
+-> Selecciona todos los datos de la tabla empleado cuyo nombre tenga 6 letras y termine en O.
+
+SELECT * FROM empleado WHERE fecha_alta LIKE "1980%"; ("1981-09%")
+-> Selecciona todos los datos de la tabla empleado cuya fecha de alta sea 1980 (año 1981 y mes septiembre)
+
+Todos registros de ese dieron de alta en el primer semestre del 1981 (1 ENERO HASTA 30 DEL junio).
+SELECT * FROM EMPLEADO WHERE fecha_alta>="1981-01-01" AND fecha_alta<="1981-06-30";
+SELECT * FROM EMPLEADO WHERE fecha_alta BETWEEN "1981-01-01" AND "1981-06-30";
+
+SELECT * FROM EMPLEADO WHERE JEFE_DE=7902 OR JEFE_DE=7839; //// SELECT * FROM EMPLEADO WHERE JEFE_DE IN (7902,7839);
+-> Las dos sirven para seleccionar todos los datos de la tabla empleado cuyo jefe_de sea 7908 o 7839; con IN se escribe menos.
+
+SELECT EMPLEADO.NOMBRE, EMPLEADO.CARGO, EMPLEADO.DEPT_NO, DEPARTAMENTO.DNOM FROM EMPLEADO, DEPARTAMENTO WHERE EMPLEADO.DEPT_NO = DEPARTAMENTO.DEPT_NO;
+-> Selecciona los datos nombre, cargo, dept_no y dnom de las tablas empleado y departamento; para que no haya problema de ambigüedad es necesario identificar de qué
+tabla es cada atributo; la cláusula where es para que asocie el número de departamento de una tabla con el de la otra para que no se repitan valores que no deberían.
