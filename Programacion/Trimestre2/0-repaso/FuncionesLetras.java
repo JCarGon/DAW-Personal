@@ -18,7 +18,6 @@ public class FuncionesLetras {
                 numeroVeces++;
             }
         }
-        System.out.print("Número de veces que está el caracter "+letra+" en la palabra "+palabra+": ");
         return numeroVeces;
     }
 
@@ -32,7 +31,6 @@ public class FuncionesLetras {
                 }
             }
         }
-        System.out.print("Número de veces que los caracteres "+Arrays.toString(letras)+" están en la palabra "+palabra+": ");
         return numeroVeces;
     }
     /* Función que le pase un array de char y cuente cuántas veces está cada letra en un String -> hola, {h, j, a} -- devuelve 1 h, 1 a */
@@ -43,10 +41,13 @@ public class FuncionesLetras {
         System.out.println(Arrays.toString(letras)+"\n");
         
         String palabra1 = "patata";
-        System.out.println(VecesCharEnString(palabra1, 'a')+"\n");
+        char letra1 = 'a';
+        System.out.print("Número de veces que está el caracter "+letra1+" en la palabra "+palabra1+": ");
+        System.out.println(VecesCharEnString(palabra1, letra1)+"\n");
         
         char[] letras2 = {'n', 'i'};
         String palabra2 = "bendicion";
+        System.out.print("Número de veces que los caracteres "+Arrays.toString(letras2)+" están en la palabra "+palabra2+": ");
         System.out.println(VecesCharEnString(palabra2, letras2)+"\n");
     }
 }
