@@ -99,3 +99,19 @@ SELECT * FROM EMPLEADO WHERE JEFE_DE=7902 OR JEFE_DE=7839; //// SELECT * FROM EM
 SELECT EMPLEADO.NOMBRE, EMPLEADO.CARGO, EMPLEADO.DEPT_NO, DEPARTAMENTO.DNOM FROM EMPLEADO, DEPARTAMENTO WHERE EMPLEADO.DEPT_NO = DEPARTAMENTO.DEPT_NO;
 -> Selecciona los datos nombre, cargo, dept_no y dnom de las tablas empleado y departamento; para que no haya problema de ambigüedad es necesario identificar de qué
 tabla es cada atributo; la cláusula where es para que asocie el número de departamento de una tabla con el de la otra para que no se repitan valores que no deberían.
+
+SELECT CLIENTE.CLIENTE_CODIGO, CLIENTE.NOMBRE, PEDIDO.FECHA_ENVIO FROM CLIENTE, PEDIDO WHERE CLIENTE.CLIENTE_CODIGO = PEDIDO.CLIENTE_CODIGO ORDER BY CLIENTE_CODIGO ASC;
+-> Selecciona código, nombre y fecha de envío de los clientes que han hecho algún pedido.
+
+										
+											COMPOSICIONES INTERNAS:
+*WHERE: ideal para filtrar datos de la consulta; por ejemplo:
+	SELECT CLIENTE.CLIENTE_CODIGO, CLIENTE.NOMBRE, PEDIDO.FECHA_ENVIO FROM CLIENTE INNER JOIN PEDIDO ON CLIENTE.CLIENTE_CODIGO = PEDIDO.CLIENTE_CODIGO, WHERE 
+	CLIENTE.NOMBRE = "JUAN";
+
+*[INNER] JOIN: SELECT CLIENTE.CLIENTE_CODIGO, CLIENTE.NOMBRE, PEDIDO.FECHA_ENVIO FROM CLIENTE INNER JOIN PEDIDO ON CLIENTE.CLIENTE_CODIGO = PEDIDO.CLIENTE_CODIGO;
+	-> Usar JOIN hace más eficiente la consulta que con el uso de la cláusula WHERE
+
+*[NATURAL] JOIN: SELECT C.CLIENTE_CODIGO, C.NOMBRE, P.FECHA_ENVIO FROM CLIENTE C NATURAL JOIN PEDIDO P ORDER BY CLIENTE_CODIGO; -> El uso de NATURAL JOIN
+	es adecuado cuando la clave principal y foránea se llaman de la misma manera, pero puede darse el caso de que haga la unión de otro atributo
+	que no sean las claves.
