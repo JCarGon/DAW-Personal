@@ -10,7 +10,7 @@ public class Quiniela {
         char letra;
         boolean victoriaLocal = numeroAleatorio >= 0 && numeroAleatorio <= 0.5;
         boolean empate = numeroAleatorio > 0.5 && numeroAleatorio <= 0.7;
-        boolean victoriaVisitante = numeroAleatorio > 0.7 && numeroAleatorio <= 1;
+        //boolean victoriaVisitante = numeroAleatorio > 0.7 && numeroAleatorio <= 1;
         if(victoriaLocal){
             letra = '1';
         }else if(empate){
