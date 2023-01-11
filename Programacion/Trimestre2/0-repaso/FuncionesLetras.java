@@ -34,7 +34,18 @@ public class FuncionesLetras {
         return numeroVeces;
     }
     /* Función que le pase un array de char y cuente cuántas veces está cada letra en un String -> hola, {h, j, a} -- devuelve 1 h, 1 a */
-
+    public static void VecesDiferentesCharEnString(String palabra, char[] letras){
+        int numeroVeces = 0;
+        for(int j=0; j<letras.length; j++){
+            for(int i=0; i<palabra.length(); i++){
+                if(palabra.charAt(i) == letras[j]){
+                    numeroVeces++;
+                }
+            }
+            System.out.println("La letra "+letras[j]+" está "+numeroVeces+" vez/veces en la palabra.");
+            numeroVeces = 0;
+        }
+    }
     public static void main(String[] args) {
         String palabra = "agua";
         char[] letras = PalabraToChar(palabra);
@@ -49,5 +60,9 @@ public class FuncionesLetras {
         String palabra2 = "bendicion";
         System.out.print("Número de veces que los caracteres "+Arrays.toString(letras2)+" están en la palabra "+palabra2+": ");
         System.out.println(VecesCharEnString(palabra2, letras2)+"\n");
+
+        char[] letras3 = {'a','m'};
+        String palabra3 = "guatemala";
+        VecesDiferentesCharEnString(palabra3, letras3);
     }
 }
