@@ -16,16 +16,16 @@ public class ConvertirEnPalotes {
         return numero;
     }
     
-    public static String convertirEnPalotes(int numero){ /* 465 - |||| |||||| ||||| (en caso de ser 0 poner un '-') ; restricción número > 0 */
-        String palotes = "";
-        String numeroAux = "";
-        String numeroAuxiliar;
+    public static String convertirEnPalotes(int numero){ /* 465 - |||| |||||| ||||| (en caso de ser 0 poner un '-') ; restricción: número > 0 */
+        String palotes = ""; //String donde voy a guardar los palos que devuelvo al final
+        String numeroAux = ""; //String donde guardo el número completo
+        String numeroAuxiliar; //String donde guardo un dígito del número
         int num = 0;
 
-        numeroAux += numero;
+        numeroAux += numero; //guardo el número(int) en un String
         for(int i=0; i<numeroAux.length(); i++){
-            numeroAuxiliar = String.valueOf(numeroAux.charAt(i));
-            num = Integer.parseInt(numeroAuxiliar);
+            numeroAuxiliar = String.valueOf(numeroAux.charAt(i)); //guardo en el String numeroAuxiliar el carácter(i) sacado como String (no como char)
+            num = Integer.parseInt(numeroAuxiliar); //guardo en la variable entera num el dígito (numeroAuxiliar) parseado como entero
             if(num == 0){
                 palotes += "-";
             }else{
