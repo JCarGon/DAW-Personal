@@ -1,3 +1,5 @@
+package clases;
+
 public class Persona {
     public String nombre;
     public String dni;
