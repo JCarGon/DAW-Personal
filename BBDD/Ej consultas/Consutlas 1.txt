@@ -1,59 +1,59 @@
-CONSULTA 1:
+CONSULTA 1: Lista el primer apellido de todos los empleados.
  SELECT APELLIDO1 FROM EMPLEADO;
 
-CONSULTA 2:
+CONSULTA 2: Lista el primer apellido de los empleados eliminando los apellidos que estén repetidos.
 SELECT DISTINCT APELLIDO1 FROM EMPLEADO;
 
-CONSULTA 3:
+CONSULTA 3: Lista todas las columnas de la tabla empleado.
 SELECT * FROM EMPLEADO;
 
-CONSULTA 4:
+CONSULTA 4: Lista el nombre y los apellidos de todos los empleados. A cada uno de los atributos ponle un "Alias"
 SELECT NOMBRE AS "NOMBRE EMPLEADO", APELLIDO1 AS "PRIMER APELLIDO", APELLIDO2 AS "SEGUNDO APELLIDO" FROM EMPLEADO;
 
-CONSULTA 5:
+CONSULTA 5: Lista el código de los departamentos de los empleados que aparecen en la tabla empleado, eliminando los códigos que aparecen repetidos.
 SELECT DISTINCT CODIGO_DEPARTAMENTO FROM EMPLEADO;
 
-CONSULTA 6:
+CONSULTA 6: Lista el nombre de cada departamento y el valor del presupuesto actual del que dispone. Para calcular este dato tendrá que restar al valor del presupuesto inicial (columna presupuesto) los gastos que se han generado (columna gastos). Tenga en cuenta que en algunos casos pueden existir valores negativos. Utilice un “alias” apropiado para la nueva columna que está calculando.
 SELECT NOMBRE, PRESUPUESTO-GASTOS AS "PRESUPUESTO ACTUAL" FROM DEPARTAMENTO;
 
-CONSULTA 7:
+CONSULTA 7: Lista el nombre de los departamentos y el  presupuesto actual ordenado de forma ascendente.
 SELECT NOMBRE, PRESUPUESTO FROM DEPARTAMENTO ORDER BY PRESUPUESTO ASC; (¿¿¿ORDENADO DE FORMA ASCENDENTE LOS NOMBRES O EL PRESUPUESTO???)
 
-CONSULTA 8:
+CONSULTA 8: Lista el nombre de todos los departamentos ordenados de forma descendente.
 SELECT NOMBRE FROM DEPARTAMENTO ORDER BY NOMBRE DESC;
 
-CONSULTA 9:
+CONSULTA 9: Lista los apellidos y el nombre de todos los empleados, ordenados de forma alfabética teniendo en cuenta en primer lugar sus apellidos y luego su nombre.
 SELECT APELLIDO1, APELLIDO2, NOMBRE FROM EMPLEADO ORDER BY APELLIDO1, APELLIDO2, NOMBRE ASC;
 
-CONSULTA 10:
+CONSULTA 10: Devuelve una lista con el nombre y el presupuesto, de los 3 departamentos que tienen menor presupuesto.
 SELECT NOMBRE, PRESUPUESTO FROM DEPARTAMENTO ORDER BY PRESUPUESTO ASC LIMIT 3;
 
-CONSULTA 11:
+CONSULTA 11: Devuelve una lista con el nombre y el gasto, de los 2 departamentos que tienen mayor gasto.
  SELECT NOMBRE, GASTOS FROM DEPARTAMENTO ORDER BY GASTOS DESC LIMIT 2;
 
-CONSULTA 12:
+CONSULTA 12: Devuelve una lista con el nombre de los departamentos y el presupuesto, de aquellos que tienen un presupuesto mayor o igual a 150000 euros.
 SELECT NOMBRE, PRESUPUESTO FROM DEPARTAMENTO WHERE PRESUPUESTO>= 150000;
 
-CONSULTA 13:
+CONSULTA 13: Devuelve una lista con el nombre de los departamentos y el gasto, de aquellos que tienen menos de 5000 euros de gastos.
 SELECT NOMBRE, GASTOS FROM DEPARTAMENTO WHERE GASTOS< 5000;
 
-CONSULTA 14:
+CONSULTA 14: Devuelve una lista con el nombre de los departamentos que no tienen un presupuesto entre 100000 y 200000 euros.
 SELECT NOMBRE FROM DEPARTAMENTO WHERE PRESUPUESTO NOT BETWEEN 100000 AND 200000;
 
-CONSULTA 15:
+CONSULTA 15: Devuelve una lista con el nombre de los departamentos, gastos y presupuesto, de aquellos departamentos donde los gastos sea mayor que el presupuesto.
 SELECT NOMBRE, GASTOS, PRESUPUESTO FROM DEPARTAMENTO WHERE GASTOS>PRESUPUESTO;
 
-CONSULTA 16:
+CONSULTA 16: Devuelve una lista con el nombre de los departamentos, gastos y presupuesto, de aquellos departamentos donde los gastos sean iguales al presupuesto del que disponen.
 SELECT NOMBRE, GASTOS, PRESUPUESTO FROM DEPARTAMENTO WHERE GASTOS = PRESUPUESTO;
 
-CONSULTA 17:
+CONSULTA 17: Lista todos los datos de los empleados cuyo segundo apellido sea NULL.
 SELECT * FROM EMPLEADO WHERE APELLIDO2 IS NULL;
 
-CONSULTA 18:
+CONSULTA 18: Lista todos los datos de los empleados cuyo segundo apellido sea Díaz o Moreno. 
 SELECT * FROM EMPLEADO WHERE APELLIDO2 LIKE "DÍAZ%" OR APELLIDO2 LIKE "MORENO%";
 
-CONSULTA 19:
+CONSULTA 19: Lista los nombres,  apellidos (los dos)  y nif de los empleados que trabajan en el departamento 3.
 SELECT NOMBRE, APELLIDO1, APELLIDO2, NIF FROM EMPLEADO WHERE CODIGO_DEPARTAMENTO = 3;
 
-CONSUTLA 20:
+CONSUTLA 20: Lista los nombres, apellidos (los dos) y nif de los empleados que trabajan en los departamentos 2, 4 o 5.
 SELECT NOMBRE, APELLIDO1, APELLIDO2, NIF FROM EMPLEADO WHERE CODIGO_DEPARTAMENTO IN (2, 4, 5);
