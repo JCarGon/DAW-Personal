@@ -7,12 +7,9 @@ public class Monitor {
     public int tiempoRespuesta;
     public String formaPantalla;
 
-    public Monitor(String marca, double pulgadas, String resolucionPantalla, int tiempoRespuesta, String formaPantalla){
+    public Monitor(String marca, String resolucionPantalla){
         this.marca = marca;
-        this.pulgadas = pulgadas;
         this.resolucionPantalla = resolucionPantalla;
-        this.tiempoRespuesta = tiempoRespuesta;
-        this.formaPantalla = formaPantalla;
     }
 
     public void setMarca(String marca){
@@ -57,6 +54,7 @@ public class Monitor {
 
     @Override
     public String toString(){
-        return "El monitor es la marca "+marca+", tiene "+pulgadas+" pulgadas, la resolución de pantalla es "+resolucionPantalla+", el tiempo de respuesta es "+tiempoRespuesta+" y la forma de la pantalla es "+formaPantalla+".";
+        return "El monitor es la marca "+marca+", tiene "+pulgadas+" pulgadas, la resolución de pantalla es "+resolucionPantalla+
+        ", el tiempo de respuesta es "+tiempoRespuesta+" y la forma de la pantalla es "+formaPantalla+".";
     }
 }
