@@ -50,7 +50,7 @@ CONSULTA 17: Lista todos los datos de los empleados cuyo segundo apellido sea NU
 SELECT * FROM EMPLEADO WHERE APELLIDO2 IS NULL;
 
 CONSULTA 18: Lista todos los datos de los empleados cuyo segundo apellido sea Díaz o Moreno. 
-SELECT * FROM EMPLEADO WHERE APELLIDO2 LIKE "DÍAZ%" OR APELLIDO2 LIKE "MORENO%";
+SELECT * FROM EMPLEADO WHERE APELLIDO2 = "DÍAZ" OR APELLIDO2 = "MORENO"; --> 	WHERE APELLIDO2 IN ("DÍAZ", "MORENO");
 
 CONSULTA 19: Lista los nombres,  apellidos (los dos)  y nif de los empleados que trabajan en el departamento 3.
 SELECT NOMBRE, APELLIDO1, APELLIDO2, NIF FROM EMPLEADO WHERE CODIGO_DEPARTAMENTO = 3;
