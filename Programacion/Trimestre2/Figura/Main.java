@@ -37,12 +37,16 @@ public class Main {
         coleccion1.addFigura(figura2); //insertar figura 2 en la colección
         System.out.println(coleccion1.toString()); //mostrar la colección por pantalla
         coleccion1.subirPrecio(10, "ABB01"); //subir el precio a la figura con ese código (figura2)
+        coleccion1.subirPrecio(10, "ABB021"); //intentar subir el precio a una figura inexistente
         System.out.println(coleccion1.toString()); //volver a mostrar por pantalla para comprobar la subida
 
-        Coleccion coleccionConCapa = new Coleccion("Colección de héroes con capa");
-        coleccionConCapa = coleccion1.conCapa();
-        Figura figuraMasValiosa = coleccion1.masValioso(coleccion1);
-        Double valorColeccion = coleccion1.getValorColeccion(coleccion1);
-        Dimension dimensionColeccion = coleccion1.getVolumenColeccion(coleccion1);
+        String coleccionConCapa = coleccion1.conCapa(); //Lista para guardar las figuras con capa
+        System.out.println("\nDATOS DE LA COLECCIÓN DE FIGURAS CON CAPA: "+coleccionConCapa); // mostrar la lista de figuras con capa por pantalla
+        Figura figuraMasValiosa = coleccion1.masValioso(); //objeto figura para la figura de mayor valor
+        System.out.println("La figura más valiosa es: "+figuraMasValiosa.toString()); // mostrarla por pantalla
+        Double valorColeccion = coleccion1.getValorColeccion(); // variable para el valor total de las figuras de esa colección
+        System.out.println("El valor total de la colección es: "+valorColeccion+" euros."); // mostrar por pantalla el valor total
+        double volumenColeccion = coleccion1.getVolumenColeccion(); // variable para el volumen total de la colección de figuras
+        System.out.println("El volumen total de la colección es: "+volumenColeccion); // mostrar por pantalla
     }
 }

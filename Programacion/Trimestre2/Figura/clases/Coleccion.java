@@ -23,28 +23,33 @@ public class Coleccion {
     }
 
     public void subirPrecio(double cantidad, String id){
+        boolean bandera = true;
         for(int i=0; i<listaFiguras.size(); i++){
             Figura figura = listaFiguras.get(i);
             if(id.equals(figura.getCodigoFigura())){
                 figura.subirPrecio(cantidad);
             }else{
-                System.out.println("Ese código no se corresponde con ninguna figura. No puedo subir el precio.");
+                bandera = false;
             }
+        }
+        if(!bandera){
+            System.out.println("Ese código no se corresponde con ninguna figura. No puedo subir el precio.");
         }
     }
 
-    public ArrayList<Figura> conCapa(ArrayList<Figura> listaFiguras){
-        ArrayList<Figura> listaDevolver = new ArrayList<>();
+    public String conCapa(){
+        String listaDevolver = "";
         for(int i=0; i<listaFiguras.size(); i++){
             Figura figura = listaFiguras.get(i);
             if(figura.getHeroe().getCapa()){
-                listaDevolver.add(figura);
+                listaDevolver += listaFiguras.get(i);
+                listaDevolver += "\n";
             }
         }
         return listaDevolver;
     }
 
-    public Figura masValioso(ArrayList<Figura> listaFiguras){
+    public Figura masValioso(){
         Figura figura = new Figura(nombreColeccion, 0, null, null);
         double precioMayor = 0;
         for(int i=0; i<listaFiguras.size(); i++){
@@ -57,7 +62,7 @@ public class Coleccion {
         return figura;
     }
 
-    public double getValorColeccion(ArrayList<Figura> listaFiguras){
+    public double getValorColeccion(){
         Figura figura = new Figura(nombreColeccion, 0, null, null);
         double precioColeccion = 0;
         for(int i=0; i<listaFiguras.size(); i++){
@@ -67,7 +72,7 @@ public class Coleccion {
         return precioColeccion;
     }
         
-    public double getVolumenColeccion(ArrayList<Figura> listaFiguras){
+    public double getVolumenColeccion(){
         Dimension dimensiones;
         double volumenColeccion = 0;
         for(int i=0; i<listaFiguras.size(); i++){
