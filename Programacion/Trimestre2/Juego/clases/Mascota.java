@@ -34,24 +34,15 @@ public class Mascota {
     public int getAtaque(){
         return ataque;
     }
-
+    
+    public void atacar(Mascota mascota){ //mascota1.atacar(mascota2);
+        mascota.setVida(mascota.getVida()-this.ataque); //la mascota 1 ataca a la 2
+        this.vida -= mascota.getAtaque(); //la mascota 2 ataca a la 1
+    }
+    
     @Override
     public String toString(){
         return "La mascota "+nombre+" tiene "+ataque+" puntos de ataque y "+vida+" puntos de vida.";
     }
 
-    public void atacar(Mascota mascota){
-        mascota.setVida(mascota.getVida()-this.ataque);
-        if(mascota.getVida() > 0){
-            System.out.println("La mascota "+mascota.getNombre()+" sigue con vida.");
-        }else{
-            System.out.println("La mascota "+mascota.getNombre()+" ha muerto.");
-        }
-        this.vida -= mascota.getAtaque();
-        if(this.vida > 0){
-            System.out.println("La mascota"+this.nombre+" sigue con vida.");
-        }else{
-            System.out.println("La mascota "+this.nombre+" ha muerto.");
-        }
-    }
 }
