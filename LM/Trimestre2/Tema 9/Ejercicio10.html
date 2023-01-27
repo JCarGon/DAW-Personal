@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 10</title>
+        <meta charset="UTF-8">
+        <style>
+            div{
+                width: 100px;
+                height: 100px;
+                background-color: red;
+                color: black;
+                margin-bottom: 20px;
+                font-size: 20px;
+            }
+            body:hover div{
+                width: 50px;
+                height: 50px;
+                background-color: blue;
+                color: yellow;
+                font-size: 18px;
+            }
+            .caja1{
+                transition: width 2s;
+                transition: height 2s;
+            }
+            .caja2{
+                transition: width 4s;
+                transition: height 4s;
+            }
+            .caja3{
+                transition: width 6s;
+                transition: height 6s;
+            }
+            .caja4{
+                transition: width 8s;
+                transition: height 8s;
+            }
+            body:hover .caja1{
+                transform: translateY(80px) rotate(270deg);
+            }
+            body:hover .caja2{
+                transform: translateY(-60px) rotate(270deg);
+            }
+            body:hover .caja3{
+                transform: translateY(80px) rotate(270deg);
+            }
+            body:hover .caja4{
+                transform: translateY(-60px) rotate(0.75turn);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="caja1">Caja 1</div>
+        <div class="caja2">Caja 2</div>
+        <div class="caja3">Caja 3</div>
+        <div class="caja4">Caja 4</div>
+    </body>
+</html>
