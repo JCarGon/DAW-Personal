@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 2</title>
+    	<meta charset="UTF-8">
+        <style>
+            #contenedor{
+                width: 80%;
+                max-width: 950px;
+            }
+            #cabecera{
+                font-size: 2em;
+                margin-bottom: 0.5em;
+            }
+            #menu{
+                margin-bottom: 5em;
+            }
+            ul{list-style: none;}
+            li{float: left;}
+            li:nth-child(2){padding-left: 20px;}
+            li:nth-child(3){padding-left: 20px;}
+            a{
+                text-decoration: none;
+            }
+            a:hover{color: black;}
+            #contenido{
+                clear: both;
+                background-color: gray;
+                border: 2px solid red;
+                color: white;
+            }
+            .articulo h2{
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                color: red;
+            }
+            p a{text-decoration: underline;}
+        </style>
+    </head>
+    <body>
+    <!--Contenedor-->
+    <div id="contenedor">
+    	<!--Cabecera-->
+    	<div id="cabecera">
+    		<div id="logo">
+    			<h2>LOGOTIPO</h2>
+    		</div>
+    	</div>
+    	<!--/Cabecera-->
+    	<!--Menú Principal-->
+    	<div id="menu">
+    		<ul>
+    			<li><a href="#">Inicio</a></li>
+    			<li><a href="#">Sobre Nosostros</a></li>
+    			<li><a href="#">Contacto</a></li>
+    		</ul>
+    	</div>
+    	<!--/Menú Principal-->
+    	<!--Contenido-->
+    	<div id="contenido">
+    		<div class="articulo">
+    			<h2>Provincias Castilla-La Mancha</h2>
+    			<p>Albacete</p>
+    			<p>Ciudad Real</p>
+    			<p>Cuenca</p>
+    			<p>Guadalajara</p>
+    			<p>Toledo</p>
+    			<p><a href="#">Seguir Leyendo ...</a></p>
+    		</div>
+    	</div>
+    	<!--/Contenido-->
+    </div>
+    <!--/Contenedor-->
+    </body>
+</html>
