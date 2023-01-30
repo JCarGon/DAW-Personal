@@ -133,3 +133,28 @@ JOIN PRODUCTO PR ON D.PRODUCTO_NUMERO=PR.PRODUCTO_NUMERO
 WHERE P.PEDIDO_NUMERO=612;
 
 -> para fechas: WHERE YEAR/MONTH/DAY(P.PEDIDO_FECHA) = 1 ; WHERE YEAR(P.PEDIDO_FECHA) = 1987 AND MONTH(P.PEDIDO_FECHA) = 3; -> Para concatenar año y mes
+
+SELECT CODIGOPROVINCIA, SUM(HABITANTES), COUNT(HABITANTES) FROM POBLACIONES GROUP BY CODIGOPROVINCIA;
+-> Selecciona codigo de provincia, suma de habitantes [SUM(HABITANTES)] y cuántas poblaciones tiene cada provincia [COUNT(HABITANTES)],
+ya que la consulta está agrupada por códigos de provincia (GROUP BY)
+
+SELECT CLIENTE, SUM(KW) FROM MEDICIONES GROUP BY CLIENTE;
+-> Nombre y suma de KW de cada cliente (está agrupado por cliente)
+
+SELECT CLIENTE, SUM(KW), MAX(KW) FROM MEDICIONES GROUP BY CLIENTE;
+-> Idem consulta arriba + máximo KW de cada cliente
+
+SELECT CLIENTE, SUM(KW), MAX(KW), MIN(KW), AVG(KW), COUNT(*) FROM MEDICIONES WHERE CLIENTE <= 50 GROUP BY CLIENTE HAVING AVG(KW)<=100;
+-> Selecciona nombre, suma, máximo, mínimo, media de la tabla mediciones donde cliente (código) es <= 50, agrupados por cliente;
+having se usa sobre una de las funciones utilizadas en la consulta como filtro
+
+SELECT CLIENTE, YEAR(FECHAHORA), SUM(KW) FROM MEDICIONES GROUP BY CLIENTE, YEAR(FECHAHORA);
+-> Selecciona cliente, año y suma de KW al año de la tabla mediciones agrupado por cliente y año
+
+SELECT CLIENTES.NOMBRE, CLIENTES.APELLIDO, YEAR(MEDICIONES.FECHAHORA), SUM(KW) FROM CLIENTES INNER JOIN MEDICIONES
+ON CLIENTES.CODIGO = MEDICIONES.CLIENTE GROUP BY CLIENTES.NOMBRE, CLIENTES.APELLIDO, YEAR(MEDICIONES.FECHAHORA);
+-> Selecciona nombre, apellido, año de la medición y consumo total del año de las tablas cliente y mediciones, agrupados por nombre, apellido y medición del año.
+
+SELECT CONCAT(DAY(FECHAHORA),"/", MONTH(FECHAHORA),"/", YEAR(FECHAHORA)) FROM MEDICIONES LIMIT 10;
+SELECT CONCAT(MID(FECHAHORA,9,2),"/", MID(FECHAHORA,6,2),"/", LEFT(FECHAHORA,4)) FROM MEDICIONES LIMIT 10;
+-> Concatena y cambia el formato de la fecha de año/mes/día a día/mes/año.
