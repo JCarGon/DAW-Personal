@@ -159,3 +159,7 @@ SELECT CONCAT(DAY(FECHAHORA),"/", MONTH(FECHAHORA),"/", YEAR(FECHAHORA)) FROM ME
 SELECT CONCAT(MID(FECHAHORA,9,2),"/", MID(FECHAHORA,6,2),"/", LEFT(FECHAHORA,4)) FROM MEDICIONES LIMIT 10;
 -> Concatena y cambia el formato de la fecha de año/mes/día a día/mes/año; la segunda línea es para hacerlo de manera diferente, seleccionando la posición en la que empieza
 y hasta dónde llega.
+
+AGRUPACIÓN: usa GROUP BY || select edad, count(*) from persona; -> devuelve la edad y la cantidad de personas que tienen esa edad
+AGREGACIÓN: sumo registros sobre el total de los registros sin agrupar || select sum(edad) from persona; -> devuelve un registro con la suma de las edades de la tabla persona
+Ambas tienen count, max, min, avg y sum.
