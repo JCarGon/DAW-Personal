@@ -157,4 +157,5 @@ ON CLIENTES.CODIGO = MEDICIONES.CLIENTE GROUP BY CLIENTES.NOMBRE, CLIENTES.APELL
 
 SELECT CONCAT(DAY(FECHAHORA),"/", MONTH(FECHAHORA),"/", YEAR(FECHAHORA)) FROM MEDICIONES LIMIT 10;
 SELECT CONCAT(MID(FECHAHORA,9,2),"/", MID(FECHAHORA,6,2),"/", LEFT(FECHAHORA,4)) FROM MEDICIONES LIMIT 10;
--> Concatena y cambia el formato de la fecha de año/mes/día a día/mes/año.
+-> Concatena y cambia el formato de la fecha de año/mes/día a día/mes/año; la segunda línea es para hacerlo de manera diferente, seleccionando la posición en la que empieza
+y hasta dónde llega.
