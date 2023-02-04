@@ -4,12 +4,21 @@
         <title>Ejercicio 2</title>
         <meta charset="UTF-8">
         <style>
+            div{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 900px;
+            }
             img:hover{
+                transition: transform 3s;
                 transform: rotate(180deg);
             }
         </style>
     </head>
     <body>
-        <img src="img/logo.jpg" width="300"></img>
+        <div>
+            <img src="img/logo.jpg" width="300"></img>
+        </div>
     </body>
 </html>
