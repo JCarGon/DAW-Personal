@@ -53,5 +53,8 @@ z = "3" #str
     x será un string solo en la salida por pantalla para poder concatenar con más variables, pero seguirá siendo un entero
 '''
 
-#ENTRADA POR PANTALLA CON INPUT
+                        #ENTRADA POR PANTALLA CON INPUT
 name = input("Dime tu nombre: ") #captura lo que entra por consola del usuario y lo asigna a una variable
+#El input transforma en string lo que recoge por pantalla, por lo que para recoger un int, hay que hacerle cast
+numero = int(input("Escribe un número: "))
+print(type(numero))
