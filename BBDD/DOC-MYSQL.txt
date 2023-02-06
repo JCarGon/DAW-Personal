@@ -163,3 +163,25 @@ y hasta dónde llega.
 AGRUPACIÓN: usa GROUP BY || select edad, count(*) from persona; -> devuelve la edad y la cantidad de personas que tienen esa edad
 AGREGACIÓN: sumo registros sobre el total de los registros sin agrupar || select sum(edad) from persona; -> devuelve un registro con la suma de las edades de la tabla persona
 Ambas tienen count, max, min, avg y sum.
+
+								FUNCIONES CON FECHAS
+DATEDIFF("AAAA/MM/DD","AAAA/MM/DD") -> Devuelve la diferencia entre dos fechas || Hay que poner la fecha mayor la primera || NOW() -> Da la fecha de hoy
+SELECT DATEDIFF("2023/12/05", NOW()); -> Devuelve los días que faltan para mi cumpleaños
+
+DATEADD("AAAA/MM/DD", INTERVAL CANTIDAD EXPRESIÓN)
+SELECT DATE_ADD("2023/04/09", INTERVAL 60 DAY); -> Suma 60 días a la fecha introducida
+SELECT ADDDATE("2023/04/09" INTERVAL 60 DAY);
+SELECT ADDDATE("2023/02/06", INTERVAL -30 DAY); -> Resta X días a la fecha introducida
+
+SELECT DATE_FORMAT(NOW(), "%d/%m/%Y"); -> Cambia el formato de la fecha
+SELECT DATE_FORMAT(NOW(), "%W, %d/%M/%Y a las %r") AS FECHA; -> Monday, 06/February/2023
+	%d = día (2 dígitos) 
+	%m = mes (2 dígitos)
+	%y = año (2 dígitos)
+	%W = día (nombre)
+	%M = mes (nombre)
+	%Y = año con 4 cifras
+	%r = fecha en formato 12 horas (AM, PM)
+
+SET LC_TIME_NAMES = es_ES;
+Traduce los nombres de días y meses al castellano; dura lo que dura la sesión
