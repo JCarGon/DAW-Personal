@@ -14,7 +14,7 @@ public class Adulto extends Persona{
 
     public void saludar2(){
         //super.saludar(); -> elige el método saludar de la clase padre
-        this.saludar(); //elige el método saludar() con el overrida (esta clase)
+        this.saludar(); //elige el método saludar() con el overrid (esta clase)
     }
 
     @Override
