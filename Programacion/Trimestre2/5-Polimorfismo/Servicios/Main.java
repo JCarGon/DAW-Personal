@@ -26,8 +26,3 @@ public class Main{
         System.out.println(revision1.detalleServicio());
     }
 }
-
-/*
-costeMaterial, costeManoObra, costeTotal, detalleServicio son métodos abstractos de la clase abstracta servicios
--clase TrabajoPintura y RevisionAlarma heredan de servicio
-*/
