@@ -185,3 +185,19 @@ SELECT DATE_FORMAT(NOW(), "%W, %d/%M/%Y a las %r") AS FECHA; -> Monday, 06/Febru
 
 SET LC_TIME_NAMES = es_ES;
 Traduce los nombres de días y meses al castellano; dura lo que dura la sesión
+
+CHAR_LENGTH(atributo) -> cuenta cuántas letras tiene la palabra y devuelve un número
+REPEAT("cadena", numero de veces) -> repite la cadena tantas veces
+Saca el nombre, apellido y apellido2 de la tabla clientes poniendo "*" desde que termina el nombre hasta 20 (final del campo)
+SELECT CONCAT(NOMBRE, REPEAT("*",20-CHAR_LENGTH(NOMBRE))) AS "Nombre", CONCAT(APELLIDO, REPEAT("*", 20-CHAR_LENGTH(APELLIDO))) AS "Apellido 1", 
+CONCAT(APELLIDO2, REPEAT("*", 20-CHAR_LENGTH(APELLIDO2))) AS "Apellido 2" FROM CLIENTES LIMIT 10;
+
+IF(valor1>valor2, resultado si es true, resultado si es false)
+
+IFNULL(nombre del atributo, reemplazo)
+SELECT NOMBRE, SALARIO, IFNULL(COMISION, "-") FROM EMPLEADO; -> Las comisiones que sean NULL aparecerán con un "-"
+SELECT NOMBRE, IF() FROM EMPLEADO; -> Las comisiones que sean NULL aparecerán con un "-"
+
+-Saca el nombre y compara salario y comisión para mostrar el mayor; en caso de las comisiones con valor NULL usamos IFNULL para sacar el salario directamente
+SELECT NOMBRE, SALARIO, COMISION, IF(SALARIO>COMISION, SALARIO, IFNULL(COMISION, SALARIO)) AS "Mayor" FROM EMPLEADO;
+SELECT NOMBRE, SALARIO, COMISION, IFNULL(IF(SALARIO>COMISION, SALARIO, COMISION), SALARIO) FROM EMPLEADO;
