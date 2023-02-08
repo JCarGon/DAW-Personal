@@ -17,7 +17,7 @@ public class Main{
         pasajeros.add(t1);
         pasajeros.add(t2);
         pasajeros.add(t3);
-        Barco barco1 = new Barco("María II", "Crucero", 200, pasajeros);
+        Barco barco1 = new Barco("María II", "Crucero", 200, pasajeros, gps1);
 
         for(Tripulante t : pasajeros){
             System.out.println(t.mostrarDatos()+"\n");

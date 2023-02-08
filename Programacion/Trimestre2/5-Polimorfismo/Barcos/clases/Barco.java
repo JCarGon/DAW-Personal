@@ -6,12 +6,14 @@ public class Barco {
     private String tipo;
     private int capacidadPasajeros;
     private List<Tripulante> tripulantes;
+    private Gps gps;
 
-    public Barco(String nombre, String tipo, int capacidadPasajeros, List<Tripulante> tripulantes){
+    public Barco(String nombre, String tipo, int capacidadPasajeros, List<Tripulante> tripulantes, Gps gps){
         this.nombre = nombre;
         this.tipo = tipo;
         this.capacidadPasajeros = capacidadPasajeros;
         this.tripulantes = tripulantes;
+        this.gps = gps;
     }
 
     public String getNombre() {
@@ -29,6 +31,10 @@ public class Barco {
     public List<Tripulante> getTripulantes() {
         return tripulantes;
     }
+    
+    public Gps getGps() {
+        return gps;
+    }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
@@ -45,9 +51,12 @@ public class Barco {
     public void setTripulantes(List<Tripulante> tripulantes) {
         this.tripulantes = tripulantes;
     }
+    public void setGps(Gps gps) {
+        this.gps = gps;
+    }
     
     @Override
     public String toString(){
-        return this.nombre+" "+this.tipo+" "+this.capacidadPasajeros;
+        return this.nombre+" "+this.tipo+" "+this.capacidadPasajeros+" "+gps.toString();
     }
 }
