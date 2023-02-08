@@ -38,6 +38,6 @@ public class Gps {
 
     @Override
     public String toString() {
-        return "Gps [coorX=" + coorX + ", coorY=" + coorY + "]";
+        return "Coordenadas: [X=" + coorX + ", Y=" + coorY + "]";
     }
 }

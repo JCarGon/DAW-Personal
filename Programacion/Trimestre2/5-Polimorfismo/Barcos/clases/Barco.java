@@ -57,6 +57,10 @@ public class Barco {
     
     @Override
     public String toString(){
-        return this.nombre+" "+this.tipo+" "+this.capacidadPasajeros+" "+gps.toString();
+        return "Datos del barco: "+
+        "\nNombre: "+this.nombre+
+        "\nTipo de barco: "+this.tipo+
+        "\nCapacidad de pasajeros: "+this.capacidadPasajeros+
+        "\n"+gps.toString();
     }
 }
