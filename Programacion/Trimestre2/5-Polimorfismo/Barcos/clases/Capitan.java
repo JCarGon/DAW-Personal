@@ -20,4 +20,9 @@ public class Capitan extends Tripulante{
         "\nNombre: "+super.getNombre()+
         "\nSueldo: "+sueldo()+" euros.";
     }
+
+    @Override
+    public String toString(){
+        return mostrarDatos();
+    }
 }

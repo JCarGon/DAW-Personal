@@ -31,6 +31,13 @@ public class Main{
             System.out.println(t.mostrarDatos()+"\n");
         }
         //Datos del barco
-        System.out.println(barco1.toString());
+        System.out.println(barco1.toString()+"\n");
+
+
+        List<Tripulante> aforoComedor = new ArrayList<>();
+        String[] rangosPermitidosComedor = {"Capitan", "Marinero"};
+        Sala sala1 = new Sala("comedor", 50, aforoComedor, rangosPermitidosComedor);
+        sala1.entrarSala(t3); //JefeFlota
+        sala1.entrarSala(t1); //Capitan
     }
 }
