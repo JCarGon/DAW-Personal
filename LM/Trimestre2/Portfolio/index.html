@@ -1,25 +1,48 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Portfolio</title>
+        <title>Portfolio - Jesús Carrillo González</title>
         <meta charset="UTF-8">
         <style>
             body{
                 display: grid;
-                grid-template-columns: 10% 90%;
-                background-color: aquamarine;
+                grid-template-columns: 15% 85%;
+                background-color: teal;
             }
-            div{
-                justify-content: center;
+            p{
+                color: white;
+                text-align: justify;
+                margin-bottom: 15%;
+                margin-right: 20%;
+                margin-left: 10%;
+                font-weight: bold;
+                font-size: 18px;
             }
-            img{
-                margin-left: 5px;
+            .logoNombre{
+                margin-top: 10%;
+                margin-left: 10%;
+            }
+            .nav{position: fixed;}
+            .contenedorDatos{
+                margin-top: 20%;
+                margin-left: 160%;
+                display: flex;
+                width: max-content;
+                border: 2px white solid;
+                border-radius: 10%;
+            }
+            .contenedorDatos p{
+                margin-top: 10%;
+                margin-left: 5%;
+                width: 50%;
+                text-align: center;
             }
         </style>
     </head>
     <body>
-        <div width="100%">
-            <img src="img/logo.png" width="200">
+        <div class="nav" width="100%">
+            <img class="logoNombre" src="img/logo.png" width="150" alt="logoNombre" title="logoNombre">
+            <p>Presentación</p>
             <p>Perfil profesional</p>
             <p>Experiencia laboral</p>
             <p>Formación académica</p>
@@ -27,6 +50,9 @@
             <p>Competencias/Habilidades</p>
             <p>Idiomas</p>
         </div>
-        <img src="img/banner.jpg">
+        <div class="contenedorDatos">
+            <p>Mi nombre es Jesús Carrillo González. Estudio para ser programador web.</p>
+            <img src="img/fotoJCG.png" alt="fotoJCG" title="fotoJCG" width="300px">
+        </div>
     </body>
 </html>
