@@ -9,50 +9,153 @@
                 grid-template-columns: 15% 85%;
                 background-color: teal;
             }
-            p{
+            p, li{
                 color: white;
                 text-align: justify;
-                margin-bottom: 15%;
-                margin-right: 20%;
-                margin-left: 10%;
                 font-weight: bold;
                 font-size: 18px;
-            }
-            .logoNombre{
                 margin-top: 10%;
-                margin-left: 10%;
+                margin-left: 5%;
+                margin-right: 5%;
+                text-align: justify;
             }
-            .nav{position: fixed;}
-            .contenedorDatos{
-                margin-top: 20%;
-                margin-left: 160%;
+            li{width: 100%;}
+            .logoNombre{
+                width: 150px;
+                margin-left: -25%;
+                margin-top: 5%;
+            }
+            .nav{
+                position: fixed;
+                display: grid;
+                grid-row: 1;
+                margin-left: 3%;
+            }
+            .presentacion, .experienciaLaboral, .formacionComplementaria, .idiomas{
+                margin-left: 80%;
                 display: flex;
                 width: max-content;
+                height: max-content;
                 border: 2px white solid;
                 border-radius: 10%;
             }
-            .contenedorDatos p{
+            .perfilProfesional, .competencias{
+                margin-left: 30%;
+                display: flex;
+                width: max-content;
+                height: max-content;
+                border: 2px white solid;
+                border-radius: 10%;
+            }
+            .formacionAcademica{
+                margin-left: 30%;
+                display: flex;
+                border: 2px white solid;
+                border-radius: 10%;
+                padding-bottom: 50px;
+            }
+            .fotoJCG{margin-right: 2%;}
+            a img{
+                width: 64px;
+                margin-bottom: 15%;
+            }
+            a img:hover{
+                transition: transform 2s;
+                transform: scale(1.3);
+            }
+            .lado1{
+                color: white;
+                display: flex;
+                justify-content: end;
                 margin-top: 10%;
-                margin-left: 5%;
-                width: 50%;
-                text-align: center;
+                margin-bottom: 10%;
+                margin-right: -70%;
+            }
+            .lado2{
+                color: white;
+                display: flex;
+                justify-content: flex-start;
+                margin-top: 10%;
+                margin-bottom: 10%;
+                margin-left: 40%;
+            }
+            .button{
+                display: flex;
+                justify-content: center;
+                margin-left: 20%;
+            }
+            input{
+                width: 140px;
+                height: 30px;
+                transform: translate(-200%, 825%);
             }
         </style>
     </head>
     <body>
-        <div class="nav" width="100%">
-            <img class="logoNombre" src="img/logo.png" width="150" alt="logoNombre" title="logoNombre">
-            <p>Presentación</p>
-            <p>Perfil profesional</p>
-            <p>Experiencia laboral</p>
-            <p>Formación académica</p>
-            <p>Formación complementaria</p>
-            <p>Competencias/Habilidades</p>
-            <p>Idiomas</p>
-        </div>
-        <div class="contenedorDatos">
-            <p>Mi nombre es Jesús Carrillo González. Estudio para ser programador web.</p>
-            <img src="img/fotoJCG.png" alt="fotoJCG" title="fotoJCG" width="300px">
+        <div style="position: absolute;">
+            <div class="nav">
+                <a href="#"><img class="logoNombre" src="img/logo.png" width="150" alt="logoNombre" title="logoNombre"></a>
+                <a href="#">
+                    <img src="img/presentacion.png" alt="presentacion" title="presentacion">
+                </a>
+                <a href="#">
+                    <img src="img/perfil-profesional.png" alt="perfil-profesional" title="perfil-profesional">
+                </a>
+                <a href="#">
+                    <img src="img/experiencia-laboral.png" alt="experiencia-laboral" title="experiencia-laboral">
+                </a>
+                <a href="#">
+                    <img src="img/formacion-academica.png" alt="formacion-academica" title="formacion-academica">
+                </a>
+                <a href="#">
+                    <img src="img/formacionComplementaria.png" alt="formacion-complementaria" title="formacion-complementaria">
+                </a>
+                <a href="#">
+                    <img src="img/competencias.png" alt="competencias" title="competencias">
+                </a>
+                <a href="#">
+                    <img src="img/idiomas.png" alt="idiomas" title="idiomas">
+                </a>
+            </div>
+            <h2 class="lado1" class="uno">Presentación</h2>
+            <div class="presentacion">
+                <p>Mi nombre es Jesús Carrillo González. Actualmente estudio para ser programador web.</p>
+                <img class="fotoJCG" src="img/fotoJCG.png" alt="fotoJCG" title="fotoJCG" width="300px">
+            </div>
+            <h2 class="lado2" class="dos">Perfil Profesional</h2>
+            <div class="perfilProfesional">
+                <p>Mi nombre es Jesús Carrillo González. Estudio para ser programador web.</p>
+                <img src="img/fotoJCG.png" alt="fotoJCG" title="fotoJCG" width="300px">
+            </div>
+            <h2 class="lado1">Experiencia laboral</h2>
+            <div class="experienciaLaboral">
+                <p>Mi nombre es Jesús Carrillo González. Estudio para ser programador web.</p>
+                <img src="img/fotoJCG.png" alt="fotoJCG" title="fotoJCG" width="300px">
+            </div>
+            <h2 class="lado2">Formación académica</h2>
+            <div class="formacionAcademica">
+                <ul>
+                    <li>FPGS Desarrollo de Aplicaciones Web (cursando 1er curso)</li>
+                    <li>Grado de Educación Primaria con Mención en Educación Física</li>
+                    <li>FPGS Animación de las Actividades Físicas y Deportivas</li>
+                </ul>
+                <input type="button" value="Download CV">
+            </div>
+            <h2 class="lado1">Formación complementaria</h2>
+            <div class="formacionComplementaria">
+                <p>Mi nombre es Jesús Carrillo González. Estudio para ser programador web.</p>
+                <img src="img/fotoJCG.png" alt="fotoJCG" title="fotoJCG" width="300px">
+            </div>
+            <h2 class="lado2">Competencias</h2>
+            <div class="competencias">
+                <p>Mi nombre es Jesús Carrillo González. Estudio para ser programador web.</p>
+                <img src="img/fotoJCG.png" alt="fotoJCG" title="fotoJCG" width="300px">
+            </div>
+            <h2 class="lado1">Idiomas</h2>
+            <div class="idiomas">
+                <p>Mi nombre es Jesús Carrillo González. Estudio para ser programador web.</p>
+                <img src="img/fotoJCG.png" alt="fotoJCG" title="fotoJCG" width="300px">
+            </div>
         </div>
     </body>
 </html>
