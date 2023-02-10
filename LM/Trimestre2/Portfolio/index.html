@@ -16,14 +16,7 @@
                 font-size: 18px;
                 margin-top: 10%;
                 margin-left: 5%;
-                margin-right: 5%;
-                text-align: justify;
-            }
-            li{width: 100%;}
-            .logoNombre{
-                width: 150px;
-                margin-left: -25%;
-                margin-top: 5%;
+                text-align: center;
             }
             .nav{
                 position: fixed;
@@ -31,30 +24,11 @@
                 grid-row: 1;
                 margin-left: 3%;
             }
-            .presentacion, .experienciaLaboral, .formacionComplementaria, .idiomas{
-                margin-left: 80%;
-                display: flex;
-                width: max-content;
-                height: max-content;
-                border: 2px white solid;
-                border-radius: 10%;
+            .logoNombre{
+                width: 150px;
+                margin-left: -25%;
+                margin-top: 5%;
             }
-            .perfilProfesional, .competencias{
-                margin-left: 30%;
-                display: flex;
-                width: max-content;
-                height: max-content;
-                border: 2px white solid;
-                border-radius: 10%;
-            }
-            .formacionAcademica{
-                margin-left: 30%;
-                display: flex;
-                border: 2px white solid;
-                border-radius: 10%;
-                padding-bottom: 50px;
-            }
-            .fotoJCG{margin-right: 2%;}
             a img{
                 width: 64px;
                 margin-bottom: 15%;
@@ -63,6 +37,7 @@
                 transition: transform 2s;
                 transform: scale(1.3);
             }
+            li{width: 100%;}
             .lado1{
                 color: white;
                 display: flex;
@@ -79,6 +54,40 @@
                 margin-bottom: 10%;
                 margin-left: 40%;
             }
+            .presentacion{
+                margin-left: 80%;
+                display: flex;
+                width: max-content;
+                height: max-content;
+                border: 2px white solid;
+                border-radius: 10%;
+            }
+            .fotoJCG{margin-right: 2%;}
+            .experienciaLaboral{
+                display: flex;
+                width: max-content;
+                height: max-content;
+                border: 2px white solid;
+                margin-left: 90%;
+                border-radius: 10%;
+            }
+            .formacionAcademica{
+                margin-left: 30%;
+                display: flex;
+                align-items: center;
+                border: 2px white solid;
+                border-radius: 10%;
+                padding-bottom: 55px;
+            }
+            .listaFA{
+                margin-left: 5%;
+            }
+            li > img{
+                margin-left: -100%;
+            }
+            .iconoJava, .iconoUniversidad, .iconoDeporte{
+                transform: translateX(250px);
+            }
             .button{
                 display: flex;
                 justify-content: center;
@@ -87,7 +96,45 @@
             input{
                 width: 140px;
                 height: 30px;
-                transform: translate(-200%, 825%);
+                transform: translate(-200%, 1100%);
+            }
+            .formacionComplementaria{
+                display: flex;
+                width: max-content;
+                height: max-content;
+                border: 2px white solid;
+                margin-left: 93.5%;
+                border-radius: 10%;
+            }
+            .listaFC{
+                padding-right: 10%;
+                margin-top: -5%;
+                margin-bottom: 5%;
+                margin-left: -5%;
+            }
+            .idiomas{
+                display: flex;
+                width: max-content;
+                height: max-content;
+                border: 2px white solid;
+                border-radius: 10%;
+                padding-left: 10%;
+                padding-right: 10%;
+                margin-left: 142.5%;
+            }
+            .listaIdioma{
+                margin-left: -20%;
+            }
+            .listaIdioma li > img{
+                margin-left: 5%;
+            }
+            .perfilProfesional, .competencias{
+                margin-left: 30%;
+                display: flex;
+                width: max-content;
+                height: max-content;
+                border: 2px white solid;
+                border-radius: 10%;
             }
         </style>
     </head>
@@ -134,17 +181,26 @@
             </div>
             <h2 class="lado2">Formación académica</h2>
             <div class="formacionAcademica">
-                <ul>
+                <ul class="listaFA" style="list-style: none;">
                     <li>FPGS Desarrollo de Aplicaciones Web (cursando 1er curso)</li>
-                    <li>Grado de Educación Primaria con Mención en Educación Física</li>
+                    <li><img class="iconoJava" src="img/iconoJava.png" alt="iconoJava" title="iconoJava" width="64px"></img></li>
+                    <li>Grado de Educación Primaria con mención en Educación Física</li>
+                    <li><img class="iconoUniversidad" src="img/iconoUniversidad.png" alt="iconoUniversidad" title="iconoUniversidad" width="64px"></img></li>
                     <li>FPGS Animación de las Actividades Físicas y Deportivas</li>
+                    <li><img class="iconoDeporte" src="img/iconoDeporte.png" alt="iconoDeporte" title="iconoDeporte" width="64px"></img></li>
                 </ul>
                 <input type="button" value="Download CV">
             </div>
             <h2 class="lado1">Formación complementaria</h2>
             <div class="formacionComplementaria">
-                <p>Mi nombre es Jesús Carrillo González. Estudio para ser programador web.</p>
-                <img src="img/fotoJCG.png" alt="fotoJCG" title="fotoJCG" width="300px">
+                <ul class="listaFC" style="list-style: none;">
+                    <li>Aprende Programación en Java(básico a avanzado)</li>
+                    <li>Título de socorrismo y salvamento acuático en aguas tranquilas</li>
+                    <li>Curso de reanimación cardiopulmonar básica, soporte vital báscio y desfibrilación externa automatizada</li>
+                    <li>Curso de Ski nivel B</li>
+                    <li>Juegos y actividades recreativas para la animación en un evento deportivo</li>
+                    <li>Curso de actividades físicas de turismo activo en la naturaleza</li>
+                </ul>
             </div>
             <h2 class="lado2">Competencias</h2>
             <div class="competencias">
@@ -153,9 +209,14 @@
             </div>
             <h2 class="lado1">Idiomas</h2>
             <div class="idiomas">
-                <p>Mi nombre es Jesús Carrillo González. Estudio para ser programador web.</p>
-                <img src="img/fotoJCG.png" alt="fotoJCG" title="fotoJCG" width="300px">
+                <ul class="listaIdioma" style="list-style: none;">
+                    <li>Español (nativo)</li>
+                    <li><img class="iconoES" src="img/iconoES.png" alt="iconoES" title="iconoES" width="90px"></img></li>
+                    <li>Inglés B2 Aptis</li>
+                    <li><img class="iconoUK" src="img/iconoUK.png" alt="iconoUK" title="iconoUK" width="64px"></img></li>
+                </ul>
             </div>
+            <br><br>
         </div>
     </body>
 </html>
