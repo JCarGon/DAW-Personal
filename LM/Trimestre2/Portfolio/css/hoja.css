@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+body{
+    display: grid;
+    grid-template-columns: 15% 85%;
+    background-color: rgba(0, 128, 128, 1);
+    font-family: 'Roboto Mono', monospace;
+}
+p, li{
+    color: white;
+    text-align: justify;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 10%;
+    margin-left: 5%;
+    text-align: center;
+}
+.nav{
+    position: fixed;
+    display: grid;
+    grid-row: 1;
+    margin-left: 3%;
+}
+.logoNombre{
+    width: 150px;
+    margin-left: -25%;
+    margin-top: 5%;
+}
+a img{
+    width: 64px;
+    margin-bottom: 15%;
+    transition: transform 2s;
+}
+a img:hover{
+    transition: transform 2s;
+    transform: scale(1.3);
+}
+li{width: 100%;}
+.lado1{
+    color: white;
+    display: flex;
+    justify-content: end;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-right: -40%;
+}
+.lado2{
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: 40%;
+}
+.presentacion{
+    margin-left: 50%;
+    display: flex;
+    width: max-content;
+    height: max-content;
+    border: 2px white solid;
+    border-radius: 10%;
+}
+.fotoJCG{margin-right: 2%;}
+.experienciaLaboral{
+    display: flex;
+    width: max-content;
+    height: max-content;
+    border: 2px white solid;
+    margin-left: 60.5%;
+    border-radius: 10%;
+}
+.formacionAcademica{
+    margin-left: 30%;
+    display: flex;
+    align-items: center;
+    border: 2px white solid;
+    border-radius: 10%;
+    padding-bottom: 65px;
+}
+.listaFA{
+    margin-left: 5%;
+}
+li > img{
+    margin-left: -80%;
+}
+.iconoJava, .iconoUniversidad, .iconoDeporte{
+    transform: translateX(250px);
+}
+.button{
+    display: flex;
+    justify-content: center;
+    margin-left: 20%;
+}
+input{
+    width: 140px;
+    height: 30px;
+    transform: translate(-250%, 1280%);
+    border-radius: 20px;
+}
+.formacionComplementaria{
+    display: flex;
+    width: max-content;
+    height: max-content;
+    border: 2px white solid;
+    margin-left: 54.5%;
+    border-radius: 10%;
+}
+.listaFC{
+    padding-right: 10%;
+    margin-top: -5%;
+    margin-bottom: 5%;
+    margin-left: -5%;
+}
+.idiomas{
+    display: flex;
+    width: max-content;
+    height: max-content;
+    border: 2px white solid;
+    border-radius: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-left: 112%;
+}
+.listaIdioma{
+    margin-left: -20%;
+}
+.listaIdioma li > img{
+    margin-left: 5%;
+}
+.perfilProfesional, .competencias{
+    margin-left: 30%;
+    display: flex;
+    width: max-content;
+    height: max-content;
+    border: 2px white solid;
+    border-radius: 10%;
+}
+@keyframes movimiento1 {
+    from {transform: translateX(0);}
+    to {transform: translateX(55%);}
+}
+@keyframes movimiento2 {
+    from {transform: translateX(0);}
+    to {transform: translateX(-100%);}
+}
+.efecto{
+    border: 2px white solid;
+    background-color: white;
+    width: 500px;
+    height: 5px;
+    margin-top: -8%;
+    margin-left: 80%;
+    position: absolute;
+    animation: movimiento1 3s;
+    animation-fill-mode: forwards;
+}
+.efecto2{
+    border: 2px white solid;
+    background-color: white;
+    width: 500px;
+    height: 5px;
+    margin-top: -8%;
+    margin-left: 80%;
+    position: absolute;
+    animation: movimiento2 3s;
+    animation-fill-mode: forwards;
+}

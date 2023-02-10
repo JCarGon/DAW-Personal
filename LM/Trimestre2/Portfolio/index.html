@@ -1,143 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Portfolio - Jesús Carrillo González</title>
         <meta charset="UTF-8">
-        <style>
-            body{
-                display: grid;
-                grid-template-columns: 15% 85%;
-                background-color: teal;
-            }
-            p, li{
-                color: white;
-                text-align: justify;
-                font-weight: bold;
-                font-size: 18px;
-                margin-top: 10%;
-                margin-left: 5%;
-                text-align: center;
-            }
-            .nav{
-                position: fixed;
-                display: grid;
-                grid-row: 1;
-                margin-left: 3%;
-            }
-            .logoNombre{
-                width: 150px;
-                margin-left: -25%;
-                margin-top: 5%;
-            }
-            a img{
-                width: 64px;
-                margin-bottom: 15%;
-                transition: transform 2s;
-            }
-            a img:hover{
-                transition: transform 2s;
-                transform: scale(1.3);
-            }
-            li{width: 100%;}
-            .lado1{
-                color: white;
-                display: flex;
-                justify-content: end;
-                margin-top: 10%;
-                margin-bottom: 10%;
-                margin-right: -70%;
-            }
-            .lado2{
-                color: white;
-                display: flex;
-                justify-content: flex-start;
-                margin-top: 10%;
-                margin-bottom: 10%;
-                margin-left: 40%;
-            }
-            .presentacion{
-                margin-left: 80%;
-                display: flex;
-                width: max-content;
-                height: max-content;
-                border: 2px white solid;
-                border-radius: 10%;
-            }
-            .fotoJCG{margin-right: 2%;}
-            .experienciaLaboral{
-                display: flex;
-                width: max-content;
-                height: max-content;
-                border: 2px white solid;
-                margin-left: 90%;
-                border-radius: 10%;
-            }
-            .formacionAcademica{
-                margin-left: 30%;
-                display: flex;
-                align-items: center;
-                border: 2px white solid;
-                border-radius: 10%;
-                padding-bottom: 55px;
-            }
-            .listaFA{
-                margin-left: 5%;
-            }
-            li > img{
-                margin-left: -100%;
-            }
-            .iconoJava, .iconoUniversidad, .iconoDeporte{
-                transform: translateX(250px);
-            }
-            .button{
-                display: flex;
-                justify-content: center;
-                margin-left: 20%;
-            }
-            input{
-                width: 140px;
-                height: 30px;
-                transform: translate(-200%, 1100%);
-            }
-            .formacionComplementaria{
-                display: flex;
-                width: max-content;
-                height: max-content;
-                border: 2px white solid;
-                margin-left: 93.5%;
-                border-radius: 10%;
-            }
-            .listaFC{
-                padding-right: 10%;
-                margin-top: -5%;
-                margin-bottom: 5%;
-                margin-left: -5%;
-            }
-            .idiomas{
-                display: flex;
-                width: max-content;
-                height: max-content;
-                border: 2px white solid;
-                border-radius: 10%;
-                padding-left: 10%;
-                padding-right: 10%;
-                margin-left: 142.5%;
-            }
-            .listaIdioma{
-                margin-left: -20%;
-            }
-            .listaIdioma li > img{
-                margin-left: 5%;
-            }
-            .perfilProfesional, .competencias{
-                margin-left: 30%;
-                display: flex;
-                width: max-content;
-                height: max-content;
-                border: 2px white solid;
-                border-radius: 10%;
-            }
-        </style>
+        <title>Portfolio - Jesús Carrillo González</title>
+        <link rel="stylesheet" href="css/hoja.css">
     </head>
     <body>
         <div style="position: absolute;">
@@ -166,21 +32,25 @@
                 </a>
             </div>
             <h2 class="lado1" id="uno">Presentación</h2>
+            <div class="efecto"></div>
             <div class="presentacion">
                 <p>Mi nombre es Jesús Carrillo González. Actualmente estudio para ser programador web.</p>
                 <img class="fotoJCG" src="img/fotoJCG.png" alt="fotoJCG" title="fotoJCG" width="300px">
             </div>
             <h2 class="lado2" id="dos">Perfil Profesional</h2>
+            <div class="efecto2"></div>
             <div class="perfilProfesional">
                 <p>Mi nombre es Jesús Carrillo González. Estudio para ser programador web.</p>
                 <img src="img/fotoJCG.png" alt="fotoJCG" title="fotoJCG" width="300px">
             </div>
             <h2 class="lado1" id="tres">Experiencia laboral</h2>
+            <div class="efecto"></div>
             <div class="experienciaLaboral">
                 <p>Mi nombre es Jesús Carrillo González. Estudio para ser programador web.</p>
                 <img src="img/fotoJCG.png" alt="fotoJCG" title="fotoJCG" width="300px">
             </div>
             <h2 class="lado2" id="cuatro">Formación académica</h2>
+            <div class="efecto2"></div>
             <div class="formacionAcademica">
                 <ul class="listaFA" style="list-style: none;">
                     <li>FPGS Desarrollo de Aplicaciones Web (cursando 1er curso)</li>
@@ -193,6 +63,7 @@
                 <a href="img/Práctica 10b.docx" target="_blank"><input type="button" value="Download CV"></a>
             </div>
             <h2 class="lado1" id="cinco">Formación complementaria</h2>
+            <div class="efecto"></div>
             <div class="formacionComplementaria">
                 <ul class="listaFC" style="list-style: none;">
                     <li>Aprende Programación en Java(básico a avanzado)</li>
@@ -204,11 +75,13 @@
                 </ul>
             </div>
             <h2 class="lado2" id="seis">Competencias</h2>
+            <div class="efecto2"></div>
             <div class="competencias">
                 <p>Mi nombre es Jesús Carrillo González. Estudio para ser programador web.</p>
                 <img src="img/fotoJCG.png" alt="fotoJCG" title="fotoJCG" width="300px">
             </div>
             <h2 class="lado1" id="siete">Idiomas</h2>
+            <div class="efecto"></div>
             <div class="idiomas">
                 <ul class="listaIdioma" style="list-style: none;">
                     <li>Español (nativo)</li>
