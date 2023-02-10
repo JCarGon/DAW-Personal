@@ -32,6 +32,7 @@
             a img{
                 width: 64px;
                 margin-bottom: 15%;
+                transition: transform 2s;
             }
             a img:hover{
                 transition: transform 2s;
@@ -141,57 +142,57 @@
     <body>
         <div style="position: absolute;">
             <div class="nav">
-                <a href="#"><img class="logoNombre" src="img/logo.png" width="150" alt="logoNombre" title="logoNombre"></a>
-                <a href="#">
+                <a href="#uno"><img class="logoNombre" src="img/logo.png" width="150" alt="logoNombre" title="logoNombre"></a>
+                <a href="#uno">
                     <img src="img/presentacion.png" alt="presentacion" title="presentacion">
                 </a>
-                <a href="#">
+                <a href="#dos">
                     <img src="img/perfil-profesional.png" alt="perfil-profesional" title="perfil-profesional">
                 </a>
-                <a href="#">
+                <a href="#tres">
                     <img src="img/experiencia-laboral.png" alt="experiencia-laboral" title="experiencia-laboral">
                 </a>
-                <a href="#">
+                <a href="#cuatro">
                     <img src="img/formacion-academica.png" alt="formacion-academica" title="formacion-academica">
                 </a>
-                <a href="#">
+                <a href="#cinco">
                     <img src="img/formacionComplementaria.png" alt="formacion-complementaria" title="formacion-complementaria">
                 </a>
-                <a href="#">
+                <a href="#seis">
                     <img src="img/competencias.png" alt="competencias" title="competencias">
                 </a>
-                <a href="#">
+                <a href="#siete">
                     <img src="img/idiomas.png" alt="idiomas" title="idiomas">
                 </a>
             </div>
-            <h2 class="lado1" class="uno">Presentación</h2>
+            <h2 class="lado1" id="uno">Presentación</h2>
             <div class="presentacion">
                 <p>Mi nombre es Jesús Carrillo González. Actualmente estudio para ser programador web.</p>
                 <img class="fotoJCG" src="img/fotoJCG.png" alt="fotoJCG" title="fotoJCG" width="300px">
             </div>
-            <h2 class="lado2" class="dos">Perfil Profesional</h2>
+            <h2 class="lado2" id="dos">Perfil Profesional</h2>
             <div class="perfilProfesional">
                 <p>Mi nombre es Jesús Carrillo González. Estudio para ser programador web.</p>
                 <img src="img/fotoJCG.png" alt="fotoJCG" title="fotoJCG" width="300px">
             </div>
-            <h2 class="lado1">Experiencia laboral</h2>
+            <h2 class="lado1" id="tres">Experiencia laboral</h2>
             <div class="experienciaLaboral">
                 <p>Mi nombre es Jesús Carrillo González. Estudio para ser programador web.</p>
                 <img src="img/fotoJCG.png" alt="fotoJCG" title="fotoJCG" width="300px">
             </div>
-            <h2 class="lado2">Formación académica</h2>
+            <h2 class="lado2" id="cuatro">Formación académica</h2>
             <div class="formacionAcademica">
                 <ul class="listaFA" style="list-style: none;">
                     <li>FPGS Desarrollo de Aplicaciones Web (cursando 1er curso)</li>
-                    <li><img class="iconoJava" src="img/iconoJava.png" alt="iconoJava" title="iconoJava" width="64px"></img></li>
+                    <li><img class="iconoJava" src="img/iconoJava.png" alt="iconoJava" title="iconoJava" width="64px"></li>
                     <li>Grado de Educación Primaria con mención en Educación Física</li>
-                    <li><img class="iconoUniversidad" src="img/iconoUniversidad.png" alt="iconoUniversidad" title="iconoUniversidad" width="64px"></img></li>
+                    <li><img class="iconoUniversidad" src="img/iconoUniversidad.png" alt="iconoUniversidad" title="iconoUniversidad" width="64px"></li>
                     <li>FPGS Animación de las Actividades Físicas y Deportivas</li>
-                    <li><img class="iconoDeporte" src="img/iconoDeporte.png" alt="iconoDeporte" title="iconoDeporte" width="64px"></img></li>
+                    <li><img class="iconoDeporte" src="img/iconoDeporte.png" alt="iconoDeporte" title="iconoDeporte" width="64px"></li>
                 </ul>
-                <input type="button" value="Download CV">
+                <a href="img/Práctica 10b.docx" target="_blank"><input type="button" value="Download CV"></a>
             </div>
-            <h2 class="lado1">Formación complementaria</h2>
+            <h2 class="lado1" id="cinco">Formación complementaria</h2>
             <div class="formacionComplementaria">
                 <ul class="listaFC" style="list-style: none;">
                     <li>Aprende Programación en Java(básico a avanzado)</li>
@@ -202,18 +203,18 @@
                     <li>Curso de actividades físicas de turismo activo en la naturaleza</li>
                 </ul>
             </div>
-            <h2 class="lado2">Competencias</h2>
+            <h2 class="lado2" id="seis">Competencias</h2>
             <div class="competencias">
                 <p>Mi nombre es Jesús Carrillo González. Estudio para ser programador web.</p>
                 <img src="img/fotoJCG.png" alt="fotoJCG" title="fotoJCG" width="300px">
             </div>
-            <h2 class="lado1">Idiomas</h2>
+            <h2 class="lado1" id="siete">Idiomas</h2>
             <div class="idiomas">
                 <ul class="listaIdioma" style="list-style: none;">
                     <li>Español (nativo)</li>
-                    <li><img class="iconoES" src="img/iconoES.png" alt="iconoES" title="iconoES" width="90px"></img></li>
+                    <li><img class="iconoES" src="img/iconoES.png" alt="iconoES" title="iconoES" width="90px"></li>
                     <li>Inglés B2 Aptis</li>
-                    <li><img class="iconoUK" src="img/iconoUK.png" alt="iconoUK" title="iconoUK" width="64px"></img></li>
+                    <li><img class="iconoUK" src="img/iconoUK.png" alt="iconoUK" title="iconoUK" width="64px"></li>
                 </ul>
             </div>
             <br><br>
