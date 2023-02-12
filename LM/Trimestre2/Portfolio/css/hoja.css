@@ -9,7 +9,7 @@ p, li{
     color: white;
     text-align: justify;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 16px;
     margin-top: 10%;
     margin-left: 5%;
     text-align: center;
@@ -41,7 +41,7 @@ li{width: 100%;}
     justify-content: end;
     margin-top: 10%;
     margin-bottom: 10%;
-    margin-right: -40%;
+    margin-right: -60%;
 }
 .lado2{
     color: white;
@@ -52,39 +52,57 @@ li{width: 100%;}
     margin-left: 40%;
 }
 .presentacion{
-    margin-left: 50%;
     display: flex;
     width: max-content;
     height: max-content;
     border: 2px white solid;
     border-radius: 10%;
+    margin-left: 70%;
 }
-.fotoJCG{margin-right: 2%;}
+.perfilProfesional{
+    display: flex;
+    width: max-content;
+    height: max-content;
+    border: 2px white solid;
+    border-radius: 10%;
+    margin-left: 30%;
+    padding-right: 7%;
+}
+.listaPP{
+    margin-top: -2%;
+    margin-bottom: 8%;
+    margin-left: -2%;
+}
+.listaPP li{
+    display: flex;
+    justify-content: left;
+    margin-bottom: -2%;
+}
+.fotoJCG{margin-right: 3%;}
 .experienciaLaboral{
     display: flex;
     width: max-content;
     height: max-content;
     border: 2px white solid;
-    margin-left: 60.5%;
+    margin-left: 100%;
+    padding-right: 3%;
+    padding-bottom: 5%;
     border-radius: 10%;
 }
+.listaEL{margin-right: 10%;}
 .formacionAcademica{
     margin-left: 30%;
     display: flex;
     align-items: center;
     border: 2px white solid;
     border-radius: 10%;
-    padding-bottom: 65px;
+    padding-bottom: 5%;
 }
 .listaFA{
+    margin-top: -2%;
     margin-left: 5%;
 }
-li > img{
-    margin-left: -80%;
-}
-.iconoJava, .iconoUniversidad, .iconoDeporte{
-    transform: translateX(250px);
-}
+.listaFA li img{margin-top: -8%;}
 .button{
     display: flex;
     justify-content: center;
@@ -93,7 +111,7 @@ li > img{
 input{
     width: 140px;
     height: 30px;
-    transform: translate(-250%, 1280%);
+    transform: translate(-210%, 950%);
     border-radius: 20px;
 }
 .formacionComplementaria{
@@ -101,14 +119,26 @@ input{
     width: max-content;
     height: max-content;
     border: 2px white solid;
-    margin-left: 54.5%;
+    margin-left: 73%;
     border-radius: 10%;
 }
 .listaFC{
-    padding-right: 10%;
     margin-top: -5%;
     margin-bottom: 5%;
-    margin-left: -5%;
+    margin-left: -6%;
+    padding-right: 8%;
+    padding-bottom: 4%;
+}
+.listaFC li{
+    margin-bottom: -4%;
+}
+.competencias{
+    margin-left: 30%;
+    display: flex;
+    width: max-content;
+    height: max-content;
+    border: 2px white solid;
+    border-radius: 10%;
 }
 .idiomas{
     display: flex;
@@ -118,7 +148,7 @@ input{
     border-radius: 10%;
     padding-left: 10%;
     padding-right: 10%;
-    margin-left: 112%;
+    margin-left: 132%;
 }
 .listaIdioma{
     margin-left: -20%;
@@ -126,26 +156,18 @@ input{
 .listaIdioma li > img{
     margin-left: 5%;
 }
-.perfilProfesional, .competencias{
-    margin-left: 30%;
-    display: flex;
-    width: max-content;
-    height: max-content;
-    border: 2px white solid;
-    border-radius: 10%;
-}
 @keyframes movimiento1 {
     from {transform: translateX(0);}
-    to {transform: translateX(55%);}
+    to {transform: translateX(115%);}
 }
 @keyframes movimiento2 {
     from {transform: translateX(0);}
-    to {transform: translateX(-100%);}
+    to {transform: translateX(-110%);}
 }
 .efecto{
     border: 2px white solid;
     background-color: white;
-    width: 500px;
+    width: 400px;
     height: 5px;
     margin-top: -8%;
     margin-left: 80%;
@@ -156,7 +178,7 @@ input{
 .efecto2{
     border: 2px white solid;
     background-color: white;
-    width: 500px;
+    width: 400px;
     height: 5px;
     margin-top: -8%;
     margin-left: 80%;
