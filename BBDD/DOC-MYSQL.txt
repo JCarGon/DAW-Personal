@@ -201,3 +201,44 @@ SELECT NOMBRE, IF() FROM EMPLEADO; -> Las comisiones que sean NULL aparecerán c
 -Saca el nombre y compara salario y comisión para mostrar el mayor; en caso de las comisiones con valor NULL usamos IFNULL para sacar el salario directamente
 SELECT NOMBRE, SALARIO, COMISION, IF(SALARIO>COMISION, SALARIO, IFNULL(COMISION, SALARIO)) AS "Mayor" FROM EMPLEADO;
 SELECT NOMBRE, SALARIO, COMISION, IFNULL(IF(SALARIO>COMISION, SALARIO, COMISION), SALARIO) FROM EMPLEADO;
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+BASE VUELTA:
+1. Ciclistas que hayan ganado alguna etapa
+SELECT DISTINCT CICLISTA.NOMBRE FROM CICLISTA NATURAL JOIN ETAPA;
+SELECT DISTINCT CICLISTA.NOMBRE FROM CICLISTA NATURAL JOIN ETAPA WHERE CICLISTA.DORSAL = ETAPA.DORSAL;
+
+2. Ciclistas que no han ganado una etapa. Hay que sacar con un left join todos los participantes, 
+hayan ganado o no; en caso de no haber ganado saldrá "NULL". Esos son los que hay que sacar con IS NULL.
+SELECT DISTINCT CICLISTA.NOMBRE, ETAPA.NETAPA FROM CICLISTA LEFT JOIN ETAPA 
+ON CICLISTA.DORSAL = ETAPA.DORSAL WHERE ETAPA.DORSAL IS NULL;
+
+3. Ciclistas que han ganado un puerto de montaña
+SELECT DISTINCT CICLISTA.NOMBRE FROM CICLISTA JOIN PUERTO ON CICLISTA.DORSAL = PUERTO.DORSAL;
+
+4. Ciclistas que no han ganado un puerto de montaña
+SELECT DISTINCT CICLISTA.NOMBRE FROM CICLISTA LEFT JOIN PUERTO 
+ON CICLISTA.DORSAL = PUERTO.DORSAL WHERE PUERTO.DORSAL IS NULL;
+
+5. Etapas que pasan por más de un puerto
+SELECT NETAPA, NOMPUERTO, COUNT(NETAPA) AS "PUERTOS EN ETAPA" FROM PUERTO GROUP BY NETAPA HAVING COUNT(NETAPA)>1;
+ - Puertos que tiene cada etapa -
+SELECT NETAPA, NOMPUERTO FROM PUERTO ORDER BY NETAPA ASC;
+	- Count(*) cuenta incluyendo campos NULL; Count(importe) cuenta solo las veces que tenga contenido válido
+
+6. Ciclistas que han ganado más de una etapa
+SELECT CICLISTA.NOMBRE, COUNT(ETAPA.NETAPA) AS "Etapas ganadas" FROM CICLISTA JOIN ETAPA ON 
+CICLISTA.DORSAL = ETAPA.DORSAL GROUP BY CICLISTA.NOMBRE HAVING COUNT(ETAPA.NETAPA)>1;
+
+7. Nombre de los puertos con altura > AVG
+SELECT NOMPUERTO, ALTURA FROM PUERTO WHERE ALTURA>(SELECT AVG(ALTURA) FROM PUERTO);
+
+8. Nombre del ciclista más joven que ha ganado al menos una etapa
+SELECT NOMBRE, EDAD FROM CICLISTA NATURAL JOIN ETAPA ORDER BY EDAD ASC LIMIT 1;
+
+9. Nombre y edad de los ciclistas que han llevado >= 2 maillots
+SELECT DISTINCT NOMBRE, EDAD, COUNT(MAILLOT.CODIGO) FROM CICLISTA NATURAL JOIN LLEVA NATURAL JOIN MAILLOT GROUP BY NOMBRE;
+	-La de arriba selecciona las veces que aparece un nombre asociado a un código de maillot
+	
+SELECT NOMBRE, EDAD, MAILLOT.CODIGO FROM CICLISTA NATURAL JOIN LLEVA NATURAL JOIN MAILLOT;
