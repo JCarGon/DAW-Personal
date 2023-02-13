@@ -238,7 +238,5 @@ SELECT NOMPUERTO, ALTURA FROM PUERTO WHERE ALTURA>(SELECT AVG(ALTURA) FROM PUERT
 SELECT NOMBRE, EDAD FROM CICLISTA NATURAL JOIN ETAPA ORDER BY EDAD ASC LIMIT 1;
 
 9. Nombre y edad de los ciclistas que han llevado >= 2 maillots
-SELECT DISTINCT NOMBRE, EDAD, COUNT(MAILLOT.CODIGO) FROM CICLISTA NATURAL JOIN LLEVA NATURAL JOIN MAILLOT GROUP BY NOMBRE;
-	-La de arriba selecciona las veces que aparece un nombre asociado a un código de maillot
-	
-SELECT NOMBRE, EDAD, MAILLOT.CODIGO FROM CICLISTA NATURAL JOIN LLEVA NATURAL JOIN MAILLOT;
+SELECT NOMBRE, EDAD, COUNT(*) AS "Maillots diferentes vestidos" FROM CICLISTA NATURAL JOIN LLEVA NATURAL JOIN MAILLOT GROUP BY NOMBRE HAVING(COUNT(*)>=2);
+select nombre, edad, count(maillot.codigo) from ciclista natural join lleva natural join maillot group by nombre having count(maillot.codigo)>=2;
