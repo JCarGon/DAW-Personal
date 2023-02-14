@@ -7,9 +7,9 @@ import clases.*;
 public class Main{
     public static void main(String[] args) {
         //Creamos 3 tripulantes, cada uno de un tipo
-        Tripulante t1 = new Capitan(89765432, 55, 765, "Manolete");
-        Tripulante t2 = new Marinero(76586432, 43, 230, "Lolito", 249);
-        Tripulante t3 = new JefeFlota(12342156, 30, 598, "Federico");
+        Capitan t1 = new Capitan(89765432, 55, 765, "Manolete");
+        Marinero t2 = new Marinero(76586432, 43, 230, "Lolito", 249);
+        JefeFlota t3 = new JefeFlota(12342156, 30, 598, "Federico");
         //Creamos la lista para guardar los tripulantes
         List<Tripulante> pasajeros = new ArrayList<Tripulante>();
         //Añadimos los tripulantes a la lista

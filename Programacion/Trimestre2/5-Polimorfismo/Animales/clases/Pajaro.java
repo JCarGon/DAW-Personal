@@ -1,6 +1,6 @@
 package clases;
 
-public class Pajaro extends Animal{
+public class Pajaro extends Animal implements Volador{
     public Pajaro(String nombre){
         super(nombre);
     }
@@ -13,6 +13,10 @@ public class Pajaro extends Animal{
     @Override
     public void gritar(){
         System.out.println(this.getClass().getName()+": AAAAAAAAAAAH");
+    }
+
+    public void volar(){
+        System.out.println("Estoy volando.");
     }
 
     @Override
