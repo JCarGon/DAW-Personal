@@ -221,6 +221,8 @@ SELECT DISTINCT CICLISTA.NOMBRE FROM CICLISTA JOIN PUERTO ON CICLISTA.DORSAL = P
 SELECT DISTINCT CICLISTA.NOMBRE FROM CICLISTA LEFT JOIN PUERTO 
 ON CICLISTA.DORSAL = PUERTO.DORSAL WHERE PUERTO.DORSAL IS NULL;
 
+SELECT CICLISTA.NOMBRE FROM CICLISTA WHERE CICLISTA.DORSAL NOT IN[lo mismo que utilizar <>](SELECT PUERTO.DORSAL FROM PUERTO);
+
 5. Etapas que pasan por más de un puerto
 SELECT NETAPA, NOMPUERTO, COUNT(NETAPA) AS "PUERTOS EN ETAPA" FROM PUERTO GROUP BY NETAPA HAVING COUNT(NETAPA)>1;
  - Puertos que tiene cada etapa -
@@ -240,3 +242,26 @@ SELECT NOMBRE, EDAD FROM CICLISTA NATURAL JOIN ETAPA ORDER BY EDAD ASC LIMIT 1;
 9. Nombre y edad de los ciclistas que han llevado >= 2 maillots
 SELECT NOMBRE, EDAD, COUNT(*) AS "Maillots diferentes vestidos" FROM CICLISTA NATURAL JOIN LLEVA NATURAL JOIN MAILLOT GROUP BY NOMBRE HAVING(COUNT(*)>=2);
 select nombre, edad, count(maillot.codigo) from ciclista natural join lleva natural join maillot group by nombre having count(maillot.codigo)>=2;
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+1. Nombre de los ciclistas que no pertenezcan al equipo Kelme
+SELECT NOMBRE, NOMEQ FROM CICLISTA WHERE NOMEQ = "Kelme";
+
+2. Edad media de los ciclistas del equipo TVM
+SELECT AVG(EDAD) FROM CICLISTA WHERE NOMEQ="TVM";
+
+3. Nombre de los ciclistas que pertenezcan al mismo equipo que Miguel Indurain
+SELECT NOMBRE FROM CICLISTA WHERE NOMEQ = (SELECT NOMEQ FROM CICLISTA WHERE NOMBRE="Miguel Indurain");
+
+4. Obtener nombre y el director de los equipos a los que pertenezca algún ciclista mayor de 33 años.
+SELECT DISTINCT NOMEQ AS "Nombre Equipo", DIRECTOR FROM EQUIPO NATURAL JOIN CICLISTA WHERE EDAD > 33;
+
+5. Nombre y edad media de cada equipo
+select distinct nomeq as "Nombre Equipo", avg(edad) as "Edad Media" from ciclista group by nomeq;
+	-lo mismo de arriba pero saca los equipos con edad media menor de 30 años
+	select distinct nomeq as "Nombre Equipo", avg(edad) as "Edad Media" from ciclista group by nomeq having avg(edad)<30;
+	-nombre de equipo y edad del miembro más viejo del equipo
+	select distinct nomeq as "Nombre Equipo", max(edad) as "Mayor Edad de Ciclista" from ciclista group by nomeq;
+	-nombre y edad del ciclista más joven
+	select nombre, edad from ciclista where edad = [lo mismo que poner "IN"] (select min(edad) from ciclista);
