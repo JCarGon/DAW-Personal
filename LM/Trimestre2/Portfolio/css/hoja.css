@@ -2,7 +2,7 @@
 body{
     display: grid;
     grid-template-columns: 15% 85%;
-    background-color: rgb(50, 127, 141);
+    background-color: rgba(50, 127, 141, 0.9);
     font-family: 'Roboto Mono', monospace;
 }
 p, li{
@@ -15,21 +15,31 @@ p, li{
     text-align: center;
 }
 .nav{
+    background-color: rgba(50, 127, 141, 1);
     position: fixed;
     display: grid;
     grid-row: 1;
-    margin-left: 3%;
+    margin-top: -1%;
+    margin-left: -1%;
+    padding-left: 3%;
+    padding-bottom: 1%;
 }
 .logoNombre{
     width: 100px;
     margin-left: -25%;
-    margin-top: 5%;
+    margin-top: 25%;
     margin-bottom: 100%;
 }
 a img{
     width: 35px;
+    margin-left: 10%;
     margin-bottom: 15%;
     transition: transform 2s;
+}
+.git{
+    width: 50px;
+    margin-top: -3%;
+    margin-left: 3%;
 }
 a img:hover{
     transition: transform 2s;
@@ -64,43 +74,43 @@ li{width: 100%;}
     border-radius: 10% 50%;
     margin-left: 70%;
 }
+.fotoJCG{margin-right: 5%;}
 .perfilProfesional{
     display: flex;
     width: max-content;
     height: max-content;
     border: 2px white solid;
-    border-radius: 10%;
+    border-radius: 30%;
     margin-left: 30%;
+    padding-top: 2%;
     padding-right: 7%;
+    padding-bottom: 2%;
 }
 .listaPP{
-    margin-top: -2%;
+    margin-top: -4%;
     margin-bottom: 8%;
     margin-left: -2%;
 }
-.listaPP li{
-    display: flex;
-    justify-content: left;
-    margin-bottom: -2%;
-}
-.fotoJCG{margin-right: 3%;}
 .experienciaLaboral{
     display: flex;
     width: max-content;
     height: max-content;
     border: 2px white solid;
+    border-radius: 40%;
     margin-left: 100%;
     padding-right: 3%;
     padding-bottom: 5%;
-    border-radius: 10%;
 }
-.listaEL{margin-right: 10%;}
+.listaEL{
+    margin-right: 10%;
+    margin-bottom: 3%;
+}
 .formacionAcademica{
     margin-left: 30%;
     display: flex;
     align-items: center;
     border: 2px white solid;
-    border-radius: 10%;
+    border-radius: 30%;
     padding-bottom: 5%;
 }
 .listaFA{
@@ -124,15 +134,15 @@ input{
     width: max-content;
     height: max-content;
     border: 2px white solid;
+    border-radius: 40%;
     margin-left: 73%;
-    border-radius: 10%;
 }
 .listaFC{
     margin-top: -5%;
     margin-bottom: 5%;
     margin-left: -6%;
     padding-right: 8%;
-    padding-bottom: 4%;
+    padding-bottom: 6%;
 }
 .listaFC li{
     margin-bottom: -4%;
@@ -150,7 +160,7 @@ input{
     width: max-content;
     height: max-content;
     border: 2px white solid;
-    border-radius: 10%;
+    border-radius: 40%;
     padding-left: 10%;
     padding-right: 10%;
     margin-left: 132%;
