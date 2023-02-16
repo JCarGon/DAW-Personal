@@ -47,9 +47,7 @@ a img:hover{
 }
 .siete{margin-bottom: 120%;}
 li{width: 100%;}
-.separacion{
-    position: fixed;
-}
+.separacion{position: fixed;}
 .lado1{
     color: aqua;
     display: flex;
@@ -61,10 +59,17 @@ li{width: 100%;}
 .lado2{
     color: aqua;
     display: flex;
-    justify-content: flex-start;
+    text-align: center;
     margin-top: 10%;
     margin-bottom: 10%;
-    margin-left: 40%;
+    margin-left: 90%;
+}
+#sombra{
+    transition: 2s;
+}
+#sombra:hover{
+    background-color: rgb(20, 21, 38);
+    box-shadow: -20px 20px 5px -10px aqua;
 }
 .presentacion{
     display: flex;
@@ -75,22 +80,53 @@ li{width: 100%;}
     margin-left: 70%;
 }
 .fotoJCG{margin-right: 5%;}
-.perfilProfesional{
+.programmer1{
+    position: absolute;
+    margin-top: 20%;
+    margin-left: 10%;
+}
+.programmer2{
+    position: absolute;
+    margin-top: 27%;
+    margin-left: 30%;
+}
+.programmer3{
+    position: absolute;
+    margin-top: 35%;
+    margin-left: 50%;
+}
+.efectoPP{
+    background-color: aqua;
+    width: 400px;
+    height: 5px;
+    margin-top: -8%;
+    margin-left: 80%;
+    position: absolute;
+    animation: movimientoPP 3s;
+    animation-fill-mode: forwards;
+}
+.perfilProfesional1, .perfilProfesional2{
     display: flex;
     width: max-content;
     height: max-content;
     border: 2px aqua solid;
     border-radius: 30%;
     margin-left: 30%;
-    padding-top: 2%;
     padding-right: 7%;
-    padding-bottom: 2%;
+    padding-bottom: 5%;
+}
+.perfilProfesional1{
+    margin-left: 15%;
+}
+.perfilProfesional2{
+    margin-top: -21%;
+    margin-left: 97%;
 }
 .listaPP{
-    margin-bottom: 8%;
+    margin-top: -5%;
     margin-left: -2%;
 }
-.experienciaLaboral{
+.experienciaLaboral1, .experienciaLaboral2{
     display: flex;
     width: max-content;
     height: max-content;
@@ -100,33 +136,47 @@ li{width: 100%;}
     padding-right: 3%;
     padding-bottom: 5%;
 }
+.experienciaLaboral1{
+    margin-left: 25%;
+}
+.experienciaLaboral2{
+    margin-top: -18%;
+    margin-left: 105%;
+}
 .listaEL{
     margin-right: 10%;
     margin-bottom: 3%;
 }
-.formacionAcademica{
-    margin-left: 30%;
+.formacionAcademica1, .formacionAcademica2, .formacionAcademica3{
     display: flex;
-    align-items: center;
+    width: max-content;
+    height: max-content;
     border: 2px aqua solid;
     border-radius: 30%;
-    padding-bottom: 5%;
+    margin-left: 30%;
+    padding-right: 7%;
+    padding-bottom: 2%;
 }
-.listaFA{
-    margin-top: -2%;
-    margin-left: 5%;
-}
-.listaFA li img{margin-top: -8%;}
-.button{
+.formacionAcademica4{
     display: flex;
-    justify-content: center;
-    margin-left: 20%;
+    margin-left: 30%;
+}
+.formacionAcademica1{margin-left: 15%;}
+.formacionAcademica2{
+    margin-left: 65%;
+}
+.formacionAcademica3{
+    margin-top: -55%;
+    margin-left: 118%;
+}
+.listaFA li img{
+    width: 100px;
 }
 input{
-    width: 140px;
-    height: 30px;
+    width: 200px;
+    height: 50px;
     cursor: pointer;
-    transform: translate(-210%, 950%);
+    transform: translate(310%, 650%);
     border-radius: 20px;
     border: aqua;
     background-color: aqua;
@@ -138,6 +188,10 @@ input{
     border: 2px aqua solid;
     border-radius: 40%;
     margin-left: 73%;
+}
+#cinco{
+    margin-top: 40%;
+    margin-left: 87.5%;
 }
 .listaFC{
     margin-top: -5%;
@@ -155,6 +209,9 @@ input{
     border: 2px aqua solid;
     border-radius: 10%;
 }
+#seis{
+    margin-left: 87.5%;
+}
 .idiomas{
     display: flex;
     width: max-content;
@@ -164,6 +221,9 @@ input{
     padding-left: 10%;
     padding-right: 10%;
     margin-left: 132%;
+}
+#siete{
+    margin-left: 93%;
 }
 .listaIdioma{
     margin-left: -20%;
@@ -177,7 +237,11 @@ input{
 }
 @keyframes movimiento2 {
     from {transform: translateX(0);}
-    to {transform: translateX(-110%);}
+    to {transform: translateX(150%);}
+}
+@keyframes movimiento3 {
+    from {transform: translateX(0);}
+    to {transform: translateX(-150%);}
 }
 .efecto{
     background-color: aqua;
@@ -194,12 +258,25 @@ input{
     width: 400px;
     height: 5px;
     margin-top: -8%;
-    margin-left: 80%;
+    margin-left: 20%;
     position: absolute;
     animation: movimiento2 3s;
     animation-fill-mode: forwards;
 }
-
+.efecto3{
+    background-color: aqua;
+    width: 400px;
+    height: 5px;
+    margin-top: -8%;
+    margin-left: 135%;
+    position: absolute;
+    animation: movimiento3 3s;
+    animation-fill-mode: forwards;
+}
+h3{
+    position: absolute;
+    margin-left: 50%;
+}
 .progress {
     height: 35px;
     width: 400px;
@@ -208,21 +285,18 @@ input{
     background-color: #e6f3fa;
     margin-bottom: 15px;
 }
- 
-.progress-bar {
+.barra-back, .barra-front {
     height: 100%;
     background: #428bca;
     display: flex;
     align-items: center;
-    transition: width 0.25s;
+    transition: width 0.5s;
     border-radius: 5px;
 }
-
-.progress-bar:hover{
-    animation: prog 2s linear;
+.barra-back:hover, .barra-front:hover{
+    animation: prog 1s linear;
     animation-fill-mode: forwards;
 }
- 
 .progress-bar-text {
     margin-left: 10px;
     font-weight: bold;
