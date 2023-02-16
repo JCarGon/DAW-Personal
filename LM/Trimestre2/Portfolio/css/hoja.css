@@ -2,7 +2,7 @@
 body{
     display: grid;
     grid-template-columns: 15% 85%;
-    background-color: rgba(50, 127, 141, 0.9);
+    background-color: rgba(20, 21, 38, 0.9);
     font-family: 'Roboto Mono', monospace;
 }
 p, li{
@@ -15,7 +15,7 @@ p, li{
     text-align: center;
 }
 .nav{
-    background-color: rgba(50, 127, 141, 1);
+    background-color: rgb(20, 21, 38);
     position: fixed;
     display: grid;
     grid-row: 1;
@@ -51,7 +51,7 @@ li{width: 100%;}
     position: fixed;
 }
 .lado1{
-    color: white;
+    color: aqua;
     display: flex;
     justify-content: end;
     margin-top: 10%;
@@ -59,7 +59,7 @@ li{width: 100%;}
     margin-right: -60%;
 }
 .lado2{
-    color: white;
+    color: aqua;
     display: flex;
     justify-content: flex-start;
     margin-top: 10%;
@@ -70,7 +70,7 @@ li{width: 100%;}
     display: flex;
     width: max-content;
     height: max-content;
-    border: 2px white solid;
+    border: 2px aqua solid;
     border-radius: 10% 50%;
     margin-left: 70%;
 }
@@ -79,7 +79,7 @@ li{width: 100%;}
     display: flex;
     width: max-content;
     height: max-content;
-    border: 2px white solid;
+    border: 2px aqua solid;
     border-radius: 30%;
     margin-left: 30%;
     padding-top: 2%;
@@ -87,7 +87,6 @@ li{width: 100%;}
     padding-bottom: 2%;
 }
 .listaPP{
-    margin-top: -4%;
     margin-bottom: 8%;
     margin-left: -2%;
 }
@@ -95,7 +94,7 @@ li{width: 100%;}
     display: flex;
     width: max-content;
     height: max-content;
-    border: 2px white solid;
+    border: 2px aqua solid;
     border-radius: 40%;
     margin-left: 100%;
     padding-right: 3%;
@@ -109,7 +108,7 @@ li{width: 100%;}
     margin-left: 30%;
     display: flex;
     align-items: center;
-    border: 2px white solid;
+    border: 2px aqua solid;
     border-radius: 30%;
     padding-bottom: 5%;
 }
@@ -126,14 +125,17 @@ li{width: 100%;}
 input{
     width: 140px;
     height: 30px;
+    cursor: pointer;
     transform: translate(-210%, 950%);
     border-radius: 20px;
+    border: aqua;
+    background-color: aqua;
 }
 .formacionComplementaria{
     display: flex;
     width: max-content;
     height: max-content;
-    border: 2px white solid;
+    border: 2px aqua solid;
     border-radius: 40%;
     margin-left: 73%;
 }
@@ -150,16 +152,14 @@ input{
 .competencias{
     margin-left: 30%;
     display: flex;
-    width: max-content;
-    height: max-content;
-    border: 2px white solid;
+    border: 2px aqua solid;
     border-radius: 10%;
 }
 .idiomas{
     display: flex;
     width: max-content;
     height: max-content;
-    border: 2px white solid;
+    border: 2px aqua solid;
     border-radius: 40%;
     padding-left: 10%;
     padding-right: 10%;
@@ -180,8 +180,7 @@ input{
     to {transform: translateX(-110%);}
 }
 .efecto{
-    border: 2px white solid;
-    background-color: white;
+    background-color: aqua;
     width: 400px;
     height: 5px;
     margin-top: -8%;
@@ -191,8 +190,7 @@ input{
     animation-fill-mode: forwards;
 }
 .efecto2{
-    border: 2px white solid;
-    background-color: white;
+    background-color: aqua;
     width: 400px;
     height: 5px;
     margin-top: -8%;
@@ -201,3 +199,44 @@ input{
     animation: movimiento2 3s;
     animation-fill-mode: forwards;
 }
+
+.progress {
+    height: 35px;
+    width: 400px;
+    border: 1px solid #428bca;
+    border-radius: 5px;
+    background-color: #e6f3fa;
+    margin-bottom: 15px;
+}
+ 
+.progress-bar {
+    height: 100%;
+    background: #428bca;
+    display: flex;
+    align-items: center;
+    transition: width 0.25s;
+    border-radius: 5px;
+}
+
+.progress-bar:hover{
+    animation: prog 2s linear;
+    animation-fill-mode: forwards;
+}
+ 
+.progress-bar-text {
+    margin-left: 10px;
+    font-weight: bold;
+    color: #cce7f5;
+}
+@keyframes prog {
+    0% {width: 0%}
+    100% {width: 75%}
+}
+
+/* para conseguir los grados a los que hay que poner en la barra de progreso circular ->
+(porcentaje deseado/100) * 180 que son los grados que tiene en total el semicírculo 
+html 50%
+css 30%
+java 80%
+python 65%
+*/
