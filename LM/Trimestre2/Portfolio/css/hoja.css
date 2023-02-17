@@ -65,7 +65,7 @@ li{width: 100%;}
     margin-left: 90%;
 }
 #sombra{
-    transition: 2s;
+    transition: .8s;
 }
 #sombra:hover{
     background-color: rgb(20, 21, 38);
@@ -157,21 +157,14 @@ li{width: 100%;}
     padding-right: 7%;
     padding-bottom: 2%;
 }
-.formacionAcademica4{
-    display: flex;
-    margin-left: 30%;
-}
 .formacionAcademica1{margin-left: 15%;}
-.formacionAcademica2{
-    margin-left: 65%;
-}
+.formacionAcademica2{margin-left: 65%;}
 .formacionAcademica3{
     margin-top: -55%;
-    margin-left: 118%;
+    margin-left: 115%;
 }
-.listaFA li img{
-    width: 100px;
-}
+.formacionAcademica4{margin-left: 30%;}
+.listaFA li img{width: 100px;}
 input{
     width: 200px;
     height: 50px;
@@ -180,37 +173,159 @@ input{
     border-radius: 20px;
     border: aqua;
     background-color: aqua;
-}
-.formacionComplementaria{
-    display: flex;
-    width: max-content;
-    height: max-content;
-    border: 2px aqua solid;
-    border-radius: 40%;
-    margin-left: 73%;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(20, 21, 38);
 }
 #cinco{
     margin-top: 40%;
     margin-left: 87.5%;
 }
-.listaFC{
-    margin-top: -5%;
-    margin-bottom: 5%;
-    margin-left: -6%;
-    padding-right: 8%;
-    padding-bottom: 6%;
-}
-.listaFC li{
-    margin-bottom: -4%;
-}
-.competencias{
-    margin-left: 30%;
+.formacionComplementaria1, .formacionComplementaria2{
     display: flex;
+    width: max-content;
+    height: max-content;
     border: 2px aqua solid;
-    border-radius: 10%;
+    border-radius: 30%;
 }
-#seis{
-    margin-left: 87.5%;
+.formacionComplementaria1{
+    margin-left: 14%;
+    padding-right: 14%;
+    padding-bottom: 5%;
+}
+.elemento1{
+    margin-left: -20%;
+}
+.java, .socorrismo, .snow, .rcp, .escalada{
+    position: absolute;
+    width: 80px;
+}
+.java{
+    transform: translate(100%, -160%);
+}
+.elemento2{
+    margin-left: -7%;
+}
+.socorrismo{
+    transform: translate(320%, -160%);
+}
+.formacionComplementaria2{
+    margin-top: -33%;
+    margin-left: 101%;
+    padding-left: 13.5%;
+}
+.elemento4{
+    margin-left: -60%;
+    margin-bottom: 11%;
+}
+.snow{
+    transform: translate(-330%, -150%);
+}
+.elemento5{
+    margin-left: -27%;
+    margin-bottom: 11%;
+}
+.rcp{
+    transform: translate(140%, -160%);
+}
+.elemento6{
+    margin-top: 10%;
+    margin-left: -17%;
+}
+.escalada{
+    transform: translate(220%, -140%);
+}
+#seis{margin-left: 87.5%;}
+h3{
+    position: absolute;
+    color: aqua;
+    font-size: 24px;
+    transform: translate(570%, -250%);
+}
+.competenciasBack, .competenciasFront{
+    display: flex;
+    margin-left: 15%;
+    border: 2px aqua solid;
+    border-radius: 20%;
+    padding-bottom: 20%;
+}
+.competenciasBack{
+    margin-left: 30%;
+    margin-right: 10%;
+    
+}
+.lenguaje-java, .python, .html, .css{
+    position: absolute;
+    width: 80px;
+}
+.python{
+    position: absolute;
+    transform: translate(-50%, 150%);
+}
+.progress-java, .progress-py {
+    display: flex;
+    height: 35px;
+    width: 400px;
+    border-radius: 5px;
+    background-color: #e6f3fa;
+}
+.progress-java{transform: translate(120%, -600%);}
+.progress-py{transform: translate(120%, -350%);}
+.front{
+    position: absolute;
+    transform: translate(1150%, -1200%);
+}
+.competenciasFront{
+    margin-left: 30%;
+    margin-right: 10%;
+    transform: translate(120%, -128%);
+}
+.html{margin-top: 1%;}
+.css{
+    position: absolute;
+    transform: translate(-50%, 150%);
+}
+.progress-html, .progress-css {
+    display: flex;
+    height: 35px;
+    width: 400px;
+    border-radius: 5px;
+    background-color: #e6f3fa;
+}
+.progress-html{transform: translate(310%, -1510%);}
+.progress-css{transform: translate(310%, -1258%);}
+.back-java, .back-py, .front-html, .front-css {
+    height: 100%;
+    background: aqua;
+    display: flex;
+    transition: width 0.7s;
+    border-radius: 5px;
+}
+.back-java:hover{
+    animation: prog-java 1s linear;
+    animation-fill-mode: forwards;
+}
+.back-py:hover{
+    animation: prog-py 1s linear;
+    animation-fill-mode: forwards;
+}
+.front-html:hover{
+    animation: prog-html 1s linear;
+    animation-fill-mode: forwards;
+}
+.front-css:hover{
+    animation: prog-css 1s linear;
+    animation-fill-mode: forwards;
+}
+.progress-bar-text {
+    margin-left: 10px;
+    font-weight: bold;
+    margin-top: 2%;
+    color: rgb(20, 21, 38);
+}
+#siete{
+    margin-top: -25%;
+    margin-left: 91%;
 }
 .idiomas{
     display: flex;
@@ -220,29 +335,10 @@ input{
     border-radius: 40%;
     padding-left: 10%;
     padding-right: 10%;
-    margin-left: 132%;
+    margin-left: 77.5%;
 }
-#siete{
-    margin-left: 93%;
-}
-.listaIdioma{
-    margin-left: -20%;
-}
-.listaIdioma li > img{
-    margin-left: 5%;
-}
-@keyframes movimiento1 {
-    from {transform: translateX(0);}
-    to {transform: translateX(115%);}
-}
-@keyframes movimiento2 {
-    from {transform: translateX(0);}
-    to {transform: translateX(150%);}
-}
-@keyframes movimiento3 {
-    from {transform: translateX(0);}
-    to {transform: translateX(-150%);}
-}
+.listaIdioma{margin-left: -20%;}
+.listaIdioma li > img{margin-left: 5%;}
 .efecto{
     background-color: aqua;
     width: 400px;
@@ -273,44 +369,31 @@ input{
     animation: movimiento3 3s;
     animation-fill-mode: forwards;
 }
-h3{
-    position: absolute;
-    margin-left: 50%;
+@keyframes movimiento1 {
+    from {transform: translateX(0);}
+    to {transform: translateX(115%);}
 }
-.progress {
-    height: 35px;
-    width: 400px;
-    border: 1px solid #428bca;
-    border-radius: 5px;
-    background-color: #e6f3fa;
-    margin-bottom: 15px;
+@keyframes movimiento2 {
+    from {transform: translateX(0);}
+    to {transform: translateX(150%);}
 }
-.barra-back, .barra-front {
-    height: 100%;
-    background: #428bca;
-    display: flex;
-    align-items: center;
-    transition: width 0.5s;
-    border-radius: 5px;
+@keyframes movimiento3 {
+    from {transform: translateX(0);}
+    to {transform: translateX(-150%);}
 }
-.barra-back:hover, .barra-front:hover{
-    animation: prog 1s linear;
-    animation-fill-mode: forwards;
-}
-.progress-bar-text {
-    margin-left: 10px;
-    font-weight: bold;
-    color: #cce7f5;
-}
-@keyframes prog {
+@keyframes prog-java {
     0% {width: 0%}
-    100% {width: 75%}
+    100% {width: 80%}
 }
-
-/* para conseguir los grados a los que hay que poner en la barra de progreso circular ->
-(porcentaje deseado/100) * 180 que son los grados que tiene en total el semicírculo 
-html 50%
-css 30%
-java 80%
-python 65%
-*/
+@keyframes prog-py {
+    0% {width: 0%}
+    100% {width: 65%}
+}
+@keyframes prog-html {
+    0% {width: 0%}
+    100% {width: 60%}
+}
+@keyframes prog-css {
+    0% {width: 0%}
+    100% {width: 40%}
+}
