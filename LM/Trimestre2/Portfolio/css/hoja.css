@@ -173,8 +173,8 @@ input{
     width: 200px;
     height: 50px;
     cursor: pointer;
-    transform: translate(310%, 650%);
     border-radius: 20px;
+    margin-left: 5%;
     border: rgb(20, 21, 38);
     background-color: rgb(20, 21, 38);
     box-shadow: 0 5px 10px rgb(20, 21, 38);
@@ -203,8 +203,8 @@ a{text-decoration: none;}
     color: aqua;
     font-size: 20px;
     font-weight: bold;
-    border-top-right-radius: 10px;
-    border-bottom-left-radius: 10px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
     transition: all .5s;
 }
 .btn:after, .btn:before {
@@ -248,7 +248,7 @@ a{text-decoration: none;}
     border-radius: 30%;
 }
 .formacionComplementaria1{
-    margin-left: 14%;
+    margin-left: 14.5%;
     padding-right: 14%;
     padding-bottom: 5%;
 }
