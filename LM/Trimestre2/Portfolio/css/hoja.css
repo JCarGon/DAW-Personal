@@ -187,6 +187,54 @@ input:hover{
     color: rgb(20, 21, 38);
     box-shadow: 0 5px 10px aqua;
 }
+a{text-decoration: none;}
+.data-container {
+    position: relative;
+    transform: translate(50%, 650%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn {
+    cursor: pointer;
+    position: relative;
+    padding: 20px 30px;
+    background: rgb(20, 21, 38);
+    color: aqua;
+    font-size: 20px;
+    font-weight: bold;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transition: all .5s;
+}
+.btn:after, .btn:before {
+    content: " ";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    border: 0px solid #fff;
+    transition: all .5s;
+}
+.btn:after {
+    top: -1px;
+    left: -1px;
+    border-top: 2px solid aqua;
+    border-left: 2px solid aqua;
+}
+.btn:before {
+    bottom: -1px;
+    right: -1px;
+    border-bottom: 2px solid aqua;
+    border-right: 2px solid aqua;
+}
+.btn:hover {
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+.btn:hover:before, .btn:hover:after {
+    width: 105%;
+    height: 110%;
+}
 #cinco{
     margin-top: 40%;
     margin-left: 87.5%;
@@ -310,23 +358,23 @@ h3{
     height: 100%;
     background: aqua;
     display: flex;
-    transition: width 0.7s;
+    transition: width 0.5s;
     border-radius: 5px;
 }
 .back-java:hover{
-    animation: prog-java 1s linear;
+    animation: prog-java .5s linear;
     animation-fill-mode: forwards;
 }
 .back-py:hover{
-    animation: prog-py 1s linear;
+    animation: prog-py .5s linear;
     animation-fill-mode: forwards;
 }
 .front-html:hover{
-    animation: prog-html 1s linear;
+    animation: prog-html .5s linear;
     animation-fill-mode: forwards;
 }
 .front-css:hover{
-    animation: prog-css 1s linear;
+    animation: prog-css .5s linear;
     animation-fill-mode: forwards;
 }
 .progress-bar-text {
@@ -359,7 +407,7 @@ h3{
     margin-top: -8%;
     margin-left: 80%;
     position: absolute;
-    animation: movimiento1 3s;
+    animation: movimiento1 2s;
     animation-fill-mode: forwards;
 }
 .efecto2{
@@ -369,7 +417,7 @@ h3{
     margin-top: -8%;
     margin-left: 20%;
     position: absolute;
-    animation: movimiento2 3s;
+    animation: movimiento2 2s;
     animation-fill-mode: forwards;
 }
 .efecto3{
@@ -379,7 +427,7 @@ h3{
     margin-top: -8%;
     margin-left: 135%;
     position: absolute;
-    animation: movimiento3 3s;
+    animation: movimiento3 2s;
     animation-fill-mode: forwards;
 }
 @keyframes movimiento1 {
@@ -409,53 +457,4 @@ h3{
 @keyframes prog-css {
     0% {width: 0%}
     100% {width: 40%}
-}
-
-a{text-decoration: none;}
-.data-container {
-    position: relative;
-    transform: translate(50%, 650%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.btn {
-    cursor: pointer;
-    position: relative;
-    padding: 20px 30px;
-    background: rgb(20, 21, 38);
-    color: aqua;
-    font-size: 20px;
-    font-weight: bold;
-    border-top-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    transition: all 1s;
-}
-.btn:after, .btn:before {
-    content: " ";
-    width: 10px;
-    height: 10px;
-    position: absolute;
-    border: 0px solid #fff;
-    transition: all 1s;
-}
-.btn:after {
-    top: -1px;
-    left: -1px;
-    border-top: 2px solid aqua;
-    border-left: 2px solid aqua;
-}
-.btn:before {
-    bottom: -1px;
-    right: -1px;
-    border-bottom: 2px solid aqua;
-    border-right: 2px solid aqua;
-}
-.btn:hover {
-    border-top-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-}
-.btn:hover:before, .btn:hover:after {
-    width: 105%;
-    height: 110%;
 }

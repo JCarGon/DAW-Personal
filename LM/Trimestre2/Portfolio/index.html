@@ -4,6 +4,72 @@
         <meta charset="UTF-8">
         <title>Portfolio - Jesús Carrillo González</title>
         <link rel="stylesheet" href="css/hoja.css">
+        <style>
+            @media only screen and (max-width: 900px){
+                .logoNombre{
+                    width: 100px;
+                    margin-left: -12%;
+                    margin-top: 5%;
+                    margin-bottom: 90%;
+                }
+                a img:hover{
+                    transition: transform .5s;
+                    transform: scale(1.15);
+                }
+                .lado1, .lado2{
+                    color: aqua;
+                    display: flex;
+                    justify-content: center;
+                }
+                .efecto{
+                    background-color: aqua;
+                    width: 400px;
+                    height: 5px;
+                    position: absolute;
+                    animation: movimiento1 2s;
+                    animation-fill-mode: forwards;
+                }
+                .efecto2{
+                    background-color: aqua;
+                    width: 400px;
+                    height: 5px;
+                    position: absolute;
+                    animation: movimiento2 2s;
+                    animation-fill-mode: forwards;
+                }
+                .efecto3{
+                    background-color: aqua;
+                    width: 400px;
+                    height: 5px;
+                    position: absolute;
+                    animation: movimiento3 2s;
+                    animation-fill-mode: forwards;
+                }
+                .presentacion{
+                    display: flex;
+                    width: 80%;
+                    border: 2px aqua solid;
+                    border-radius: 10% 50%;
+                    margin-left: 16.5%;
+                    box-shadow: 0 5px 15px aqua;
+                }
+                .programmer1{
+                    position: absolute;
+                    margin-top: 22%;
+                    margin-left: 5%;
+                }
+                .programmer2{
+                    position: absolute;
+                    margin-top: 22%;
+                    margin-left: 28%;
+                }
+                .programmer3{
+                    position: absolute;
+                    margin-top: 37%;
+                    margin-left: 16%;
+                }
+            }
+        </style>
     </head>
     <body>
         <div style="position: absolute;">
@@ -45,9 +111,9 @@
             <div class="presentacion" id="sombra">
                 <p>Hola, mi nombre es Jesús. Actualmente estudio para ser programador (CFGS DAW).</p>
                 <img class="fotoJCG" src="img/fotoJCG.png" alt="fotoJCG" title="fotoJCG" width="300px">
-                <img class="programmer1" src="img/programmer1.png" alt="programmer" title="programmer" height="100px">
-                <img class="programmer2" src="img/programmer2.png" alt="programmer" title="programmer" height="100px">
-                <img class="programmer3" src="img/programmer3.png" alt="programmer" title="programmer" height="100px">
+                <img class="programmer1" src="img/programmer1.png" alt="programmer1" title="programmer1" height="100px">
+                <img class="programmer2" src="img/programmer2.png" alt="programme2r" title="programmer2" height="100px">
+                <img class="programmer3" src="img/programmer3.png" alt="programm3er" title="programmer3" height="100px">
             </div>
             <h2 class="lado2" id="dos">Perfil Profesional</h2>
             <div class="efecto2"></div>
