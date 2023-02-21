@@ -458,3 +458,68 @@ h3{
     0% {width: 0%}
     100% {width: 40%}
 }
+
+@media (max-width: 900px){
+    .logoNombre{
+        width: 100px;
+        margin-left: -12%;
+        margin-top: 5%;
+        margin-bottom: 90%;
+    }
+    a img:hover{
+        transition: transform .5s;
+        transform: scale(1.15);
+    }
+    .lado1, .lado2{
+        color: aqua;
+        display: flex;
+        justify-content: center;
+    }
+    .efecto{
+        background-color: aqua;
+        width: 400px;
+        height: 5px;
+        position: absolute;
+        animation: movimiento1 2s;
+        animation-fill-mode: forwards;
+    }
+    .efecto2{
+        background-color: aqua;
+        width: 400px;
+        height: 5px;
+        position: absolute;
+        animation: movimiento2 2s;
+        animation-fill-mode: forwards;
+    }
+    .efecto3{
+        background-color: aqua;
+        width: 400px;
+        height: 5px;
+        position: absolute;
+        animation: movimiento3 2s;
+        animation-fill-mode: forwards;
+    }
+    .presentacion{
+        display: flex;
+        width: 80%;
+        border: 2px aqua solid;
+        border-radius: 10% 50%;
+        margin-left: 16.5%;
+        box-shadow: 0 5px 15px aqua;
+    }
+    .programmer1{
+        position: absolute;
+        margin-top: 22%;
+        margin-left: 5%;
+    }
+    .programmer2{
+        position: absolute;
+        margin-top: 22%;
+        margin-left: 28%;
+    }
+    .programmer3{
+        position: absolute;
+        margin-top: 37%;
+        margin-left: 16%;
+    }
+}
