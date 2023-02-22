@@ -410,7 +410,7 @@ h3{
     animation: movimiento1 2s;
     animation-fill-mode: forwards;
 }
-.efecto2{
+.efecto2, .efecto4, .efecto6{
     background-color: aqua;
     width: 400px;
     height: 5px;
@@ -420,7 +420,7 @@ h3{
     animation: movimiento2 2s;
     animation-fill-mode: forwards;
 }
-.efecto3{
+.efecto3, .efecto5, .efecto7{
     background-color: aqua;
     width: 400px;
     height: 5px;
@@ -475,29 +475,8 @@ h3{
         display: flex;
         justify-content: center;
     }
-    .efecto{
-        background-color: aqua;
-        width: 400px;
-        height: 5px;
-        position: absolute;
-        animation: movimiento1 2s;
-        animation-fill-mode: forwards;
-    }
-    .efecto2{
-        background-color: aqua;
-        width: 400px;
-        height: 5px;
-        position: absolute;
-        animation: movimiento2 2s;
-        animation-fill-mode: forwards;
-    }
-    .efecto3{
-        background-color: aqua;
-        width: 400px;
-        height: 5px;
-        position: absolute;
-        animation: movimiento3 2s;
-        animation-fill-mode: forwards;
+    #uno{
+        transform: translateX(-15%);
     }
     .presentacion{
         display: flex;
@@ -522,4 +501,106 @@ h3{
         margin-top: 37%;
         margin-left: 16%;
     }
+    #dos{
+        margin-left: 20%;
+    }
+    .perfilProfesional1{
+        width: 75%;
+    }
+    .listaPP{
+        margin-top: 1%;
+    }
+    .perfilProfesional2{
+        width: 75%;
+        transform: translate(-99%, 90%);
+    }
+    #tres{
+        transform: translate(-360%, 380%);
+    }
+    .experienciaLaboral1{
+        width: 75%;
+        transform: translate(-10%, 110%);
+    }
+    .experienciaLaboral2{
+        width: 75%;
+        transform: translate(-112%, 220%);
+    }
+    #cuatro{
+        transform: translate(-360%, 640%);
+    }
+    .formacionAcademica1{
+        width: 75%;
+        transform: translateY(130%);
+    }
+    .formacionAcademica2{
+        width: 75%;
+        transform: translate(-61%, 150%);
+    }
+    .formacionAcademica3{
+        width: 75%;
+        transform: translate(-122%, 350%);
+    }
+    .formacionAcademica4{
+        transform: translate(-60%, 1450%);
+    }
+    #cinco{
+        transform: translate(-300%, 1250%);
+    }
+    .formacionComplementaria1{
+        width: 68%;
+        transform: translateY(220%);
+    }
+    .elemento1{transform: translate(10%);}
+    .java{margin-left: 10%;}
+    .elemento2{transform: translate(3%);}
+    .formacionComplementaria2{
+        width: 68%;
+        transform: translate(-105%, 315%);
+    }
+    .elemento4{transform: translate(5%);}
+    .snow{margin-left: 8%;}
+    .elemento5{transform: translate(7%);}
+    .rcp{margin-left: 5%;}
+    .escalada{margin-left: -5%;}
+    #seis{transform: translate(-300%, 3600%);}
+    .lenguaje-java, .python, .html, .css{
+        position: absolute;
+        width: 60px;
+    }
+    .back{transform: translate(450%, 3400%);}
+    .lenguaje-java{transform: translate(20%, 5%);}
+    .competenciasBack{
+        width: 75%;
+        transform: translate(-15%, 540%);
+    }
+    .progress-java{transform: translate(80%, 2800%);}
+    .progress-py{transform: translate(80%, 2950%);}
+    .front{transform: translate(385%, 3450%);}
+    .competenciasFront{
+        width: 75%;
+        transform: translate(-15%, 550%);
+    }
+    .html{transform: translate(20%, 5%);}
+    .progress-html{transform: translate(80%, 2870%);}
+    .progress-css{transform: translate(80%, 3000%);}
+    #siete{
+        transform: translate(-450%, 4500%);
+    }
+    .idiomas{
+        transform: translate(-102%, 465%);
+    }
+    .efecto, .efecto2, .efecto3, .efecto4, .efecto5, .efecto6, .efecto7{
+        position: absolute;
+        background-color: aqua;
+        width: 400px;
+        height: 5px;
+        animation: none;
+    }
+    .efecto{transform: translate(-105%);}
+    .efecto2{transform: translate(35%);}
+    .efecto3{transform: translate(-220%, 4900%);}
+    .efecto4{transform: translate(35%, 8200%);}
+    .efecto5{transform: translate(-225%, 16000%);}
+    .efecto6{transform: translate(28%, 23000%);}
+    .efecto7{transform: translate(-230%, 28700%);}
 }
