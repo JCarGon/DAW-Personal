@@ -1,16 +1,17 @@
-palabras = ["esternocleidomastoideo", "papaya", "loquete"]
-palabranueva = ""
-
-for i in range(len(palabras)):
-    palabranueva += "*"
-    for a in range(len(palabras[i])):
+def getEnvoltura(palabras):
+    palabra = ""
+    for i in range(len(palabras)):
+        palabranueva = ""
         palabranueva += "*"
-    palabranueva += "*\n*"+palabras[i]+"*\n*"
-    for a in range(len(palabras[i])):
-        palabranueva += "*"
-    palabranueva += "*\n"
+        for a in range(len(palabras[i])):
+            palabranueva += "*"
+        palabranueva += "*\n*"+palabras[i]+"*\n*"
+        for a in range(len(palabras[i])):
+            palabranueva += "*"
+        palabranueva += "*\n"
+        palabra += palabranueva
+    return palabra
 
-print(palabranueva)
 
 def getCubo(numero):
     cubo = ""
