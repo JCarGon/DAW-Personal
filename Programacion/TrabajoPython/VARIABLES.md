@@ -1,3 +1,6 @@
+###Archivo para la teoría de la sintaxis de las variables
+----
+
 #comentario de una línea
 '''comentario de más
 de una línea'''
