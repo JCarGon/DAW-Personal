@@ -265,3 +265,25 @@ select distinct nomeq as "Nombre Equipo", avg(edad) as "Edad Media" from ciclist
 	select distinct nomeq as "Nombre Equipo", max(edad) as "Mayor Edad de Ciclista" from ciclista group by nomeq;
 	-nombre y edad del ciclista más joven
 	select nombre, edad from ciclista where edad = [lo mismo que poner "IN"] (select min(edad) from ciclista);
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+DELETE FROM DETALLE WHERE PEDIDO_NUMERO=620;
+Borra todos los pedidos que tengan el número 620
+ROLLBACK;
+Recuperar los elementos eliminados en el último cambio, siempre que el commit esté a 0 -> SET AUTOCOMMIT=0;
+
+INSERT INTO nombre_tabla (columna1, columna2...) VALUES 
+(valor1, valor2...),
+(valor1, valor2...),
+(valor1, valor2...);
+	-> Ejemplo db: empresa, tabla: departamento<-
+INSERT INTO DEPARTAMENTO (DEPT_NO, DNOM, LOC)
+VALUES (50, "INFORMÁTICA", "SEVILLA");
+/*
+Si voy a insertar valores en todas las columnas, podemos omitir la parte de identificar las columnas en el orden en el que voy a insertar datos, ya que
+se sobreentiende que vamos a insertar todos los valores en el orden en el que está en la tabla.
+	INSERT INTO DEPARTAMENTO VALUES (50, "INFORMÁTICA", "SEVILLA");
+*/
+Para borrar algo dentro de una tabla:
+DELETE FROM DEPARTAMENTO WHERE DEPT_NO=50;
