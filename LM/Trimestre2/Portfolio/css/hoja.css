@@ -460,6 +460,7 @@ h3{
 }
 
 @media (max-width: 900px){
+    body{width: 900px;}
     .logoNombre{
         width: 100px;
         margin-left: -12%;
