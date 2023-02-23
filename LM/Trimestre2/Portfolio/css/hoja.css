@@ -8,12 +8,12 @@ body{
 }
 p, li{
     color: white;
-    text-align: justify;
     font-weight: bold;
+    text-align: justify;
+    text-align: center;
     font-size: 16px;
     margin-top: 10%;
     margin-left: 5%;
-    text-align: center;
 }
 .nav{
     background-color: rgb(20, 21, 38);
@@ -445,10 +445,6 @@ a{text-decoration: none;}
     height: 5px;
     margin-top: -8%;
     margin-left: 78%;
-}
-@keyframes movimiento1 {
-    from {transform: translateX(0);}
-    to {transform: translateX(115%);}
 }
 @keyframes prog-java {
     0% {width: 0%}
