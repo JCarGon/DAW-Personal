@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 body{
+    overflow-x: hidden;
     display: grid;
     grid-template-columns: 15% 85%;
     background-color: rgba(20, 21, 38, 0.9);
@@ -140,11 +141,25 @@ li{width: 100%;}
     padding-bottom: 5%;
 }
 .experienciaLaboral1{
-    margin-left: 25%;
+    margin-left: 22.5%;
+    padding-bottom: 11%;
+}
+.escudo{
+    position: relative;
+    width: 25%;
+    margin-top: 10%;
+    margin-left: 43%;
 }
 .experienciaLaboral2{
-    margin-top: -18%;
+    margin-top: -45%;
     margin-left: 105%;
+}
+.maestro{
+    position: relative;
+    width: 70%;
+    margin-top: 7%;
+    margin-left: 20%;
+    border-radius: 5%;
 }
 .listaEL{
     margin-right: 10%;
@@ -237,40 +252,43 @@ a{text-decoration: none;}
 }
 .elemento1{
     margin-left: -20%;
+    margin-bottom: -7%;
 }
 .java, .socorrismo, .snow, .rcp, .escalada{
-    position: absolute;
+    position: relative;
     width: 80px;
 }
 .java{
-    margin-top: -12%;
-    margin-left: 7%;
+    margin-top: -3%;
+    margin-left: 67%;
 }
-.elemento2{margin-left: -7%;}
+.elemento2{
+    margin-left: -7%;
+    margin-bottom: -5%;
+}
 .socorrismo{
-    margin-top: -12%;
-    margin-left: 22%;
+    margin-top: -3%;
+    margin-left: 90%;
 }
 .formacionComplementaria2{
-    margin-top: -33%;
+    margin-top: -38%;
     margin-left: 101%;
     padding-left: 13.5%;
+    padding-bottom: 5%;
 }
 .elemento4{
     margin-left: -60%;
-    margin-bottom: 11%;
 }
 .snow{
-    margin-top: -11%;
-    margin-left: -25%;
+    margin-top: -10%;
+    margin-left: 10%;
 }
 .elemento5{
     margin-left: -27%;
-    margin-bottom: 11%;
 }
 .rcp{
-    margin-top: -11%;
-    margin-left: 10%;
+    margin-top: -9%;
+    margin-left: 72%;
 }
 .elemento6{
     margin-top: 10%;
@@ -278,7 +296,7 @@ a{text-decoration: none;}
 }
 .escalada{
     margin-top: -11%;
-    margin-left: 16%;
+    margin-left: 82%;
 }
 #seis{margin-left: 87.5%;}
 .back{
@@ -292,7 +310,7 @@ a{text-decoration: none;}
     position: absolute;
     color: aqua;
     font-size: 24px;
-    margin-top: -22%;
+    margin-top: -24%;
     margin-left: 125%;
 }
 .competenciasBack, .competenciasFront{
@@ -301,20 +319,25 @@ a{text-decoration: none;}
     border: 2px aqua solid;
     box-shadow: 0 5px 15px aqua;
     border-radius: 20%;
-    padding-bottom: 20%;
+    margin-bottom: 15%;
+    padding-bottom: 5%;
 }
 .competenciasBack{
     margin-left: 30%;
     margin-right: 10%;
 }
 .lenguaje-java, .python, .html, .css{
-    position: absolute;
-    width: 80px;
+    position: relative;
+    width: 90px;
+    height: 90px;
+}
+.lenguaje-java{
+    margin-top: 5%;
+    margin-left: 7%;
 }
 .python{
-    position: absolute;
-    margin-left: -4%;
-    margin-top: 11%;
+    margin-top: 25%;
+    margin-left: -14%;
 }
 .progress-java, .progress-py {
     display: flex;
@@ -324,23 +347,25 @@ a{text-decoration: none;}
     background-color: #e6f3fa;
 }
 .progress-java{
-    margin-top: -19%;
+    margin-top: -38%;
     margin-left: 45%;
 }
 .progress-py{
-    margin-top: 7%;
+    margin-top: 9%;
     margin-left: 45%;
 }
 .competenciasFront{
     margin-left: 100%;
     margin-right: -60%;
-    margin-top: -17%;
+    margin-top: -20%;
 }
-.html{margin-top: 1%;}
+.html{
+    margin-top: 5%;
+    margin-left: 7%;
+}
 .css{
-    position: absolute;
-    margin-top: 10%;
-    margin-left: -4%;
+    margin-top: 25%;
+    margin-left: -14%;
 }
 .progress-html, .progress-css {
     display: flex;
@@ -350,11 +375,11 @@ a{text-decoration: none;}
     background-color: #e6f3fa;
 }
 .progress-html{
-    margin-top: -18.5%;
+    margin-top: -38%;
     margin-left: 115%;
 }
 .progress-css{
-    margin-top: 5.5%;
+    margin-top: 8%;
     margin-left: 115%;
 }
 .back-java, .back-py, .front-html, .front-css {
@@ -400,50 +425,30 @@ a{text-decoration: none;}
     padding-left: 10%;
     padding-right: 10%;
     margin-left: 77.5%;
+    margin-bottom: 5%;
 }
 .listaIdioma{margin-left: -20%;}
 .listaIdioma li > img{margin-left: 5%;}
 .efecto{
+    position: relative;
     background-color: aqua;
     width: 400px;
     height: 5px;
     margin-top: -8%;
-    margin-left: 80%;
-    position: absolute;
-    animation: movimiento1 2s;
-    animation-fill-mode: forwards;
+    margin-left: 132%;
+    margin-bottom: 5%;
 }
-.efecto2, .efecto4, .efecto6{
+.efecto2, .efecto3, .efecto4, .efecto5, .efecto6, .efecto7{
+    position: absolute;
     background-color: aqua;
     width: 400px;
     height: 5px;
     margin-top: -8%;
-    margin-left: 20%;
-    position: absolute;
-    animation: movimiento2 2s;
-    animation-fill-mode: forwards;
-}
-.efecto3, .efecto5, .efecto7{
-    background-color: aqua;
-    width: 400px;
-    height: 5px;
-    margin-top: -8%;
-    margin-left: 135%;
-    position: absolute;
-    animation: movimiento3 2s;
-    animation-fill-mode: forwards;
+    margin-left: 78%;
 }
 @keyframes movimiento1 {
     from {transform: translateX(0);}
     to {transform: translateX(115%);}
-}
-@keyframes movimiento2 {
-    from {transform: translateX(0);}
-    to {transform: translateX(150%);}
-}
-@keyframes movimiento3 {
-    from {transform: translateX(0);}
-    to {transform: translateX(-150%);}
 }
 @keyframes prog-java {
     0% {width: 0%}
@@ -539,29 +544,23 @@ a{text-decoration: none;}
     }
     .formacionAcademica4{
         margin-top: -30%;
-        margin-bottom: 45%;
+        margin-bottom: -35%;
     }
     .data-container {
-        position: absolute;
-        margin-top: 37%;
-        margin-left: 17%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        position: relative;
+        margin-top: 50%;
+        margin-left: -110%;
     }
     .formacionComplementaria1{
         width: 65%;
         margin-left: 17%;
     }
     .elemento1{margin-left: -10%;}
-    .java{
-        margin-top: -12%;
-        margin-left: 18%;
-    }
+    .java{margin-left: 85%;}
     .elemento2{margin-left: -2%;}
     .socorrismo{
-        margin-top: -13%;
-        margin-left: 27%;
+        margin-top: -7%;
+        margin-left: 98%;
     }
     .formacionComplementaria2{
         width: 65.5%;
@@ -569,55 +568,55 @@ a{text-decoration: none;}
         margin-top: 5%;
     }
     .elemento4{margin-left: -55%;}
-    .snow{margin-left: -22%;}
+    .snow{margin-left: 20%;}
     .elemento5{margin-left: -30%;}
     .rcp{
         margin-top: -15%;
-        margin-left: 6%;
+        margin-left: 65%;
     }
     .elemento6{margin-left: -20%;}
     .escalada{
         margin-top: -14%;
-        margin-left: 15%;
+        margin-left: 80%;
     }
     .lenguaje-java, .python, .html, .css{
-        position: absolute;
-        width: 60px;
+        position: relative;
+        width: 90px;
+        height: 90px;
     }
     .back{
         margin-top: -3%;
         margin-left: 50%;
     }
-    .lenguaje-java{margin-left: 1%;}
+    .lenguaje-java{margin-left: 5%;}
     .competenciasBack{
         width: 75%;
         margin-top: 12%;
         margin-left: 19%;
     }
     .progress-java{
-        margin-top: -20%;
+        margin-top: -42%;
         margin-left: 37%;
     }
     .progress-py{
-        margin-top: 6.5%;
+        margin-top: 10%;
         margin-left: 37%;
     }
     .front{
-        margin-top: 10%;
+        margin-top: 15%;
         margin-left: 49.5%;
     }
     .competenciasFront{
         width: 75%;
-        margin-top: 16%;
+        margin-top: 20%;
         margin-left: 19%;
     }
-    .html{margin-left: 1.5%;}
     .progress-html{
-        margin-top: -20%;
+        margin-top: -42%;
         margin-left: 37%;
     }
     .progress-css{
-        margin-top: 5.5%;
+        margin-top: 10%;
         margin-left: 37%;
     }
     .idiomas{
@@ -625,12 +624,17 @@ a{text-decoration: none;}
         margin-left: 34.5%;
         margin-bottom: 5%;
     }
-    .efecto, .efecto2, .efecto3, .efecto4, .efecto5, .efecto6, .efecto7{
+    .idiomas ul{margin-left: -15%;}
+    .efecto, .efecto2, .efecto3, .efecto5, .efecto6, .efecto7{
         position: absolute;
         background-color: aqua;
         width: 400px;
         height: 5px;
-        animation: none;
-        margin-left: 31%;
     }
+    .efecto{
+        animation: none;
+        margin-left: 30%;
+    }
+    .efecto2, .efecto3, .efecto4, .efecto6, .efecto7{margin-left: 32%;}
+    .efecto5{margin-left: 32.5%;}
 }
