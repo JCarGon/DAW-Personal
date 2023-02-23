@@ -10,6 +10,7 @@ public class Main {
         Scanner entrada = new Scanner(System.in);
         System.out.print("Inserta números con espacios entre ellos: ");
         String numeros = entrada.nextLine();
+        entrada.close();
         String[] numerosSplit = numeros.split(" ");
         Integer[] numerosInt = new Integer[numerosSplit.length];
 
@@ -21,7 +22,7 @@ public class Main {
         for(int i=0; i<numerosInt.length; i++){
             if(mapa1.containsKey(numerosInt[i])){ //si el mapa contiene el número de la posición actual del array
                 //al mapa le damos en la clave número actual del array, el valor que tuviera + 1
-                mapa1.put(numerosInt[i], mapa1.get(numerosInt[i]) + 1);
+                mapa1.replace(numerosInt[i], mapa1.get(numerosInt[i]) + 1);
             }
             //la primera vez que se encuentre este número, entra aquí para añadirlo 1 vez
             else{
@@ -29,6 +30,6 @@ public class Main {
             }
         }
         //entrySet devuelve el conjunto clave=valor que contenga el mapa
-        System.out.println(mapa1.entrySet());
+        System.out.println(mapa1);
     }
 }
