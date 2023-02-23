@@ -22,7 +22,7 @@ p, li{
     margin-top: -1%;
     margin-left: -1%;
     padding-left: 3%;
-    padding-bottom: 1%;
+    padding-bottom: 2%;
 }
 .logoNombre{
     width: 100px;
@@ -169,33 +169,16 @@ li{width: 100%;}
 }
 .formacionAcademica4{margin-left: 30%;}
 .listaFA li img{width: 100px;}
-input{
-    width: 200px;
-    height: 50px;
-    cursor: pointer;
-    border-radius: 20px;
-    margin-left: 5%;
-    border: rgb(20, 21, 38);
-    background-color: rgb(20, 21, 38);
-    box-shadow: 0 5px 10px rgb(20, 21, 38);
-    font-size: 20px;
-    font-weight: bold;
-    color: aqua;
-}
-input:hover{
-    background-color: aqua;
-    color: rgb(20, 21, 38);
-    box-shadow: 0 5px 10px aqua;
-}
 a{text-decoration: none;}
 .data-container {
     position: relative;
-    transform: translate(50%, 650%);
+    margin-top: 50%;
+    margin-right: -90%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.btn {
+.btn{
     cursor: pointer;
     position: relative;
     padding: 20px 30px;
@@ -236,7 +219,7 @@ a{text-decoration: none;}
     height: 110%;
 }
 #cinco{
-    margin-top: 40%;
+    margin-top: 10%;
     margin-left: 87.5%;
 }
 .formacionComplementaria1, .formacionComplementaria2{
@@ -260,13 +243,13 @@ a{text-decoration: none;}
     width: 80px;
 }
 .java{
-    transform: translate(100%, -160%);
+    margin-top: -12%;
+    margin-left: 7%;
 }
-.elemento2{
-    margin-left: -7%;
-}
+.elemento2{margin-left: -7%;}
 .socorrismo{
-    transform: translate(320%, -160%);
+    margin-top: -12%;
+    margin-left: 22%;
 }
 .formacionComplementaria2{
     margin-top: -33%;
@@ -278,28 +261,39 @@ a{text-decoration: none;}
     margin-bottom: 11%;
 }
 .snow{
-    transform: translate(-330%, -150%);
+    margin-top: -11%;
+    margin-left: -25%;
 }
 .elemento5{
     margin-left: -27%;
     margin-bottom: 11%;
 }
 .rcp{
-    transform: translate(140%, -160%);
+    margin-top: -11%;
+    margin-left: 10%;
 }
 .elemento6{
     margin-top: 10%;
     margin-left: -17%;
 }
 .escalada{
-    transform: translate(220%, -140%);
+    margin-top: -11%;
+    margin-left: 16%;
 }
 #seis{margin-left: 87.5%;}
-h3{
+.back{
     position: absolute;
     color: aqua;
     font-size: 24px;
-    transform: translate(570%, -250%);
+    margin-top: -4%;
+    margin-left: 55%;
+}
+.front{
+    position: absolute;
+    color: aqua;
+    font-size: 24px;
+    margin-top: -22%;
+    margin-left: 125%;
 }
 .competenciasBack, .competenciasFront{
     display: flex;
@@ -312,7 +306,6 @@ h3{
 .competenciasBack{
     margin-left: 30%;
     margin-right: 10%;
-    
 }
 .lenguaje-java, .python, .html, .css{
     position: absolute;
@@ -320,7 +313,8 @@ h3{
 }
 .python{
     position: absolute;
-    transform: translate(-50%, 150%);
+    margin-left: -4%;
+    margin-top: 11%;
 }
 .progress-java, .progress-py {
     display: flex;
@@ -329,21 +323,24 @@ h3{
     border-radius: 5px;
     background-color: #e6f3fa;
 }
-.progress-java{transform: translate(120%, -600%);}
-.progress-py{transform: translate(120%, -350%);}
-.front{
-    position: absolute;
-    transform: translate(1150%, -1200%);
+.progress-java{
+    margin-top: -19%;
+    margin-left: 45%;
+}
+.progress-py{
+    margin-top: 7%;
+    margin-left: 45%;
 }
 .competenciasFront{
-    margin-left: 30%;
-    margin-right: 10%;
-    transform: translate(120%, -128%);
+    margin-left: 100%;
+    margin-right: -60%;
+    margin-top: -17%;
 }
 .html{margin-top: 1%;}
 .css{
     position: absolute;
-    transform: translate(-50%, 150%);
+    margin-top: 10%;
+    margin-left: -4%;
 }
 .progress-html, .progress-css {
     display: flex;
@@ -352,8 +349,14 @@ h3{
     border-radius: 5px;
     background-color: #e6f3fa;
 }
-.progress-html{transform: translate(310%, -1510%);}
-.progress-css{transform: translate(310%, -1258%);}
+.progress-html{
+    margin-top: -18.5%;
+    margin-left: 115%;
+}
+.progress-css{
+    margin-top: 5.5%;
+    margin-left: 115%;
+}
 .back-java, .back-py, .front-html, .front-css {
     height: 100%;
     background: aqua;
@@ -384,7 +387,7 @@ h3{
     color: rgb(20, 21, 38);
 }
 #siete{
-    margin-top: -25%;
+    margin-top: 15%;
     margin-left: 91%;
 }
 .idiomas{
@@ -460,7 +463,6 @@ h3{
 }
 
 @media (max-width: 900px){
-    body{width: 900px;}
     .logoNombre{
         width: 100px;
         margin-left: -12%;
@@ -477,8 +479,11 @@ h3{
         justify-content: center;
     }
     #uno{
-        transform: translateX(-15%);
+        margin-left: 8%;
+        margin-right: 1%;
     }
+    #dos, #tres, #cuatro, #cinco, #seis, #siete{margin-left: 10%;}
+    #cinco{margin-top: 50%;}
     .presentacion{
         display: flex;
         width: 80%;
@@ -502,9 +507,6 @@ h3{
         margin-top: 37%;
         margin-left: 16%;
     }
-    #dos{
-        margin-left: 20%;
-    }
     .perfilProfesional1{
         width: 75%;
     }
@@ -513,82 +515,115 @@ h3{
     }
     .perfilProfesional2{
         width: 75%;
-        transform: translate(-99%, 90%);
-    }
-    #tres{
-        transform: translate(-360%, 380%);
+        margin-left: 15%;
+        margin-top: 5%;
     }
     .experienciaLaboral1{
         width: 75%;
-        transform: translate(-10%, 110%);
+        margin-left: 17.5%;
     }
     .experienciaLaboral2{
         width: 75%;
-        transform: translate(-112%, 220%);
-    }
-    #cuatro{
-        transform: translate(-360%, 640%);
+        margin-left: 17.5%;
+        margin-top: 5%;
     }
     .formacionAcademica1{
-        width: 75%;
-        transform: translateY(130%);
+        width: 72.5%;
+        margin-left: 17%;
     }
-    .formacionAcademica2{
-        width: 75%;
-        transform: translate(-61%, 150%);
-    }
-    .formacionAcademica3{
-        width: 75%;
-        transform: translate(-122%, 350%);
+    .listaFA{margin-left: 1.5%;}
+    .formacionAcademica2, .formacionAcademica3{
+        width: 72.5%;
+        margin-left: 17%;
+        margin-top: 5%;
     }
     .formacionAcademica4{
-        transform: translate(-60%, 1450%);
+        margin-top: -30%;
+        margin-bottom: 45%;
     }
-    #cinco{
-        transform: translate(-300%, 1250%);
+    .data-container {
+        position: absolute;
+        margin-top: 37%;
+        margin-left: 17%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .formacionComplementaria1{
-        width: 68%;
-        transform: translateY(220%);
+        width: 65%;
+        margin-left: 17%;
     }
-    .elemento1{transform: translate(10%);}
-    .java{margin-left: 10%;}
-    .elemento2{transform: translate(3%);}
+    .elemento1{margin-left: -10%;}
+    .java{
+        margin-top: -12%;
+        margin-left: 18%;
+    }
+    .elemento2{margin-left: -2%;}
+    .socorrismo{
+        margin-top: -13%;
+        margin-left: 27%;
+    }
     .formacionComplementaria2{
-        width: 68%;
-        transform: translate(-105%, 315%);
+        width: 65.5%;
+        margin-left: 17%;
+        margin-top: 5%;
     }
-    .elemento4{transform: translate(5%);}
-    .snow{margin-left: 8%;}
-    .elemento5{transform: translate(7%);}
-    .rcp{margin-left: 5%;}
-    .escalada{margin-left: -5%;}
-    #seis{transform: translate(-300%, 3600%);}
+    .elemento4{margin-left: -55%;}
+    .snow{margin-left: -22%;}
+    .elemento5{margin-left: -30%;}
+    .rcp{
+        margin-top: -15%;
+        margin-left: 6%;
+    }
+    .elemento6{margin-left: -20%;}
+    .escalada{
+        margin-top: -14%;
+        margin-left: 15%;
+    }
     .lenguaje-java, .python, .html, .css{
         position: absolute;
         width: 60px;
     }
-    .back{transform: translate(450%, 3400%);}
-    .lenguaje-java{transform: translate(20%, 5%);}
+    .back{
+        margin-top: -3%;
+        margin-left: 50%;
+    }
+    .lenguaje-java{margin-left: 1%;}
     .competenciasBack{
         width: 75%;
-        transform: translate(-15%, 540%);
+        margin-top: 12%;
+        margin-left: 19%;
     }
-    .progress-java{transform: translate(80%, 2800%);}
-    .progress-py{transform: translate(80%, 2950%);}
-    .front{transform: translate(385%, 3450%);}
+    .progress-java{
+        margin-top: -20%;
+        margin-left: 37%;
+    }
+    .progress-py{
+        margin-top: 6.5%;
+        margin-left: 37%;
+    }
+    .front{
+        margin-top: 10%;
+        margin-left: 49.5%;
+    }
     .competenciasFront{
         width: 75%;
-        transform: translate(-15%, 550%);
+        margin-top: 16%;
+        margin-left: 19%;
     }
-    .html{transform: translate(20%, 5%);}
-    .progress-html{transform: translate(80%, 2870%);}
-    .progress-css{transform: translate(80%, 3000%);}
-    #siete{
-        transform: translate(-450%, 4500%);
+    .html{margin-left: 1.5%;}
+    .progress-html{
+        margin-top: -20%;
+        margin-left: 37%;
+    }
+    .progress-css{
+        margin-top: 5.5%;
+        margin-left: 37%;
     }
     .idiomas{
-        transform: translate(-102%, 465%);
+        margin-top: -4%;
+        margin-left: 34.5%;
+        margin-bottom: 5%;
     }
     .efecto, .efecto2, .efecto3, .efecto4, .efecto5, .efecto6, .efecto7{
         position: absolute;
@@ -596,12 +631,6 @@ h3{
         width: 400px;
         height: 5px;
         animation: none;
+        margin-left: 31%;
     }
-    .efecto{transform: translate(-105%);}
-    .efecto2{transform: translate(35%);}
-    .efecto3{transform: translate(-220%, 4900%);}
-    .efecto4{transform: translate(35%, 8200%);}
-    .efecto5{transform: translate(-225%, 16000%);}
-    .efecto6{transform: translate(28%, 23000%);}
-    .efecto7{transform: translate(-230%, 28700%);}
 }
