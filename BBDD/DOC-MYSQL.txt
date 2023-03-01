@@ -287,3 +287,18 @@ se sobreentiende que vamos a insertar todos los valores en el orden en el que es
 */
 Para borrar algo dentro de una tabla:
 DELETE FROM DEPARTAMENTO WHERE DEPT_NO=50;
+
+MODIFICACIONES
+UPDATE DEPARTAMENTO SET DNOM = LOWER(DNOM); -> Cambia los valores de la columna nombre-departamento, de la tabla departamento, a minúsculas
+UPDATE DEPARTAMENTO SET DNOM=UPPER(DNOM), LOC=UPPER(LOC); -> Cambia los valores de las dos columnas a mayúsculas
+UPDATE DETALLE SET IMPORTE = 0; -> Pone todos los importes de la tabla detalle a 0
+UPDATE DETALLE SET IMPORTE = (PRECIO_VENTA*CANTIDAD); -> Le da a cada importe su valor correspondiente de cada operación
+
+UPDATE DETALLE SET CANTIDAD=5 WHERE PEDIDO_NUMERO=604 AND DETALLE_NUMERO=3; -> Modifica la cantidad del pedido 604 de 10 a 5
+UPDATE DETALLE SET IMPORTE = (PRECIO_VENTA*CANTIDAD); -> actualizar el valor del importe conforme a la nueva cantidad
+
+/*Actualiza el total de la tabla PEDIDO, del pedido 604, con el importe total que le corresponde de la tabla DETALLE donde el pedido = 604*/
+UPDATE PEDIDO SET TOTAL = (SELECT SUM(IMPORTE) FROM DETALLE WHERE PEDIDO_NUMERO = 604) WHERE PEDIDO_NUMERO=604;
+
+actualizar columna total de la tabla PEDIDO al valor correspondiente de la suma de los importes de la tabla DETALLE;
+UPDATE PEDIDO SET TOTAL = (SELECT SUM(IMPORTE) FROM DETALLE WHERE PEDIDO_NUMERO=PEDIDO.PEDIDO_NUMERO);
