@@ -8,10 +8,48 @@ public class Agenda implements Iagenda{
         this.contactos = contactos;
     }
 
+    public boolean existeContacto(String nombre){
+        boolean nombreRepetido = false;
+        for (Contacto c : contactos) {
+            String nombreActual = c.getNombre();
+            if(nombreActual.equals(nombre)){
+                nombreRepetido = true;
+                break;
+            }
+        }
+        return nombreRepetido;
+    }
+
+    public String listarContactos(){
+        String acumular= "";
+        for (Contacto c : contactos) {
+            acumular += c.toString();
+            acumular += "\n";
+        }
+        return acumular;
+    }
+
+    public Integer buscarContacto(String nombre){
+        Integer posicion = null;
+        if(existeContacto(nombre)){
+            for(int i=0; i<contactos.size(); i++){
+                String nombreActual = contactos.get(i).getNombre();
+                if(nombreActual.equals(nombre)){
+                    System.out.println("Contacto encontrado en la posición: "+i);
+                    posicion = i;
+                    return posicion;
+                }
+            }
+        }else{
+            System.out.println("El contacto no existe.");
+        }
+        return posicion;
+    }
+
     public boolean addContacto(Contacto c){
         boolean addContacto = false;
         if(existeContacto(c.getNombre())){
-            System.out.println("Este contacto ya existe. No puedo añadirlo");
+            System.out.println("Este contacto ya existe. No puedo añadirlo a la agenda.");
             return addContacto;
         }else{
             contactos.add(c);
@@ -37,43 +75,5 @@ public class Agenda implements Iagenda{
             System.out.println("El contacto no se puede eliminar porque no existe.");
         }
         return eliminarContacto;
-    }
-
-    public boolean existeContacto(String nombre){
-        boolean nombreRepetido = false;
-        for (Contacto c : contactos) {
-            String nombreActual = c.getNombre();
-            if(nombreActual.equals(nombre)){
-                nombreRepetido = true;
-                break;
-            }
-        }
-        return nombreRepetido;
-    }
-
-    public String listarContactos(){
-        String acumular= "";
-        for (Contacto c : contactos) {
-            acumular += c.toString();
-            acumular += "\n";
-        }
-        return acumular;
-    }
-
-    public int buscarContacto(String nombre){
-        int posicion = 0;
-        if(existeContacto(nombre)){
-            for(int i=0; i<contactos.size(); i++){
-                String nombreActual = contactos.get(i).getNombre();
-                if(nombreActual.equals(nombre)){
-                    System.out.println("Contacto encontrado en la posición: "+i);
-                    posicion = i;
-                    return posicion;
-                }
-            }
-        }else{
-            System.out.println("El contacto no existe.");
-        }
-        return posicion;
     }
 }

@@ -5,5 +5,5 @@ public interface Iagenda {
     public boolean eliminarContacto(String nombre);
     public boolean existeContacto(String nombre);
     public String listarContactos();
-    public int buscarContacto(String nombre);
+    public Integer buscarContacto(String nombre);
 }

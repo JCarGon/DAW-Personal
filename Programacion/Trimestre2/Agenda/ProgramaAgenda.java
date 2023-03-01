@@ -17,7 +17,14 @@ public class ProgramaAgenda{
         System.out.println(agenda.listarContactos());
         System.out.println(agenda.existeContacto("Manolete"));
         System.out.println(agenda.existeContacto("Francisco"));
-        System.out.println(agenda.buscarContacto("Paquito"));
-        System.out.println(agenda.buscarContacto("Antonio"));
+
+        agenda.buscarContacto("Paquito");
+        agenda.buscarContacto("Antonio");
+
+        ContactoPersona contactoPersona2 = new ContactoPersona("Lolito", "765432987", fechaContactoPersona1);
+        agenda.addContacto(contactoPersona2);
+        System.out.println(agenda.listarContactos());
+        agenda.eliminarContacto("Lolito");
+        System.out.println(agenda.listarContactos());
     }
 }
