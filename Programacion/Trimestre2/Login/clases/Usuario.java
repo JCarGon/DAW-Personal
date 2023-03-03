@@ -31,6 +31,6 @@ public class Usuario {
 
     @Override
     public String toString(){
-        return "Soy un usuario nomral y corriente.";
+        return "Soy un usuario normal y corriente.";
     }
 }

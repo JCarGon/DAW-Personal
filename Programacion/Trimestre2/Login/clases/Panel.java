@@ -12,7 +12,6 @@ public class Panel {
     public Panel(List<Comentario> comentarios, BBDD baseDatos) {
         this.comentarios = comentarios;
         this.baseDatos = baseDatos;
-        this.start();
     }
 
     public void start(){

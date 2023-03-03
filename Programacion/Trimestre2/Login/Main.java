@@ -5,13 +5,12 @@ import java.util.ArrayList;
 public class Main{
     public static void main(String[] args) {
         Usuario user1 = new Usuario("user1", "1234");
-        
-        List<Usuario> lista1 = new ArrayList<>();
-        lista1.add(user1);
+        List<Usuario> listaUsuarios = new ArrayList<>();
+        listaUsuarios.add(user1);
 
         List<Comentario> comentarios = new ArrayList<>();
 
-        BBDD baseDatos = new BBDD(lista1, comentarios);
+        BBDD baseDatos = new BBDD(listaUsuarios, comentarios);
 
         Panel panel1 = new Panel(comentarios, baseDatos);
 

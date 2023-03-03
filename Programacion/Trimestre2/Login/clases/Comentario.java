@@ -39,7 +39,7 @@ public class Comentario {
 
     @Override
     public String toString(){
-        return "Usuario del comentario: "+this.usuario+
+        return "\nUsuario del comentario: "+this.usuario+
         "\nComentario: "+this.texto+
         "\nFecha del comentario: "+this.fecha;
     }
