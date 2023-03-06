@@ -302,3 +302,30 @@ UPDATE PEDIDO SET TOTAL = (SELECT SUM(IMPORTE) FROM DETALLE WHERE PEDIDO_NUMERO 
 
 actualizar columna total de la tabla PEDIDO al valor correspondiente de la suma de los importes de la tabla DETALLE;
 UPDATE PEDIDO SET TOTAL = (SELECT SUM(IMPORTE) FROM DETALLE WHERE PEDIDO_NUMERO=PEDIDO.PEDIDO_NUMERO);
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+		TEMA 7: CREACIÓN Y MANIPULACIÓN DE OTROS OBJETOS DE LA BASE DE DATOS
+-VISTAS:
+CREATE VIEW [nombre_baseDatos] nombre_vista [columna1, columna2... [aliasColumna1, aliasColumna2...]] AS (sentencia_select);
+CREATE VIEW GANADORES AS SELECT CICLISTA.NOMBRE, COUNT(ETAPA.DORSAL) AS ETAPAS_GANADAS FROM CICLISTA INNER JOIN ETAPA ON 
+CICLISTA.DORSAL = ETAPA.DORSAL WHERE CICLISTA.DORSAL = ETAPA.DORSAL GROUP BY CICLISTA.NOMBRE;
+
+-> SELECT * FROM GANADORES -> MUESTRA EL MISMO RESULTADO QUE LA SELECT ANTERIOR, PERO NO SE PUEDE HACER INSERT INTO SOBRE ELLA PORQUE ES UNA VISTA, NO SE PUEDE MODIFICAR
+
+CREATE OR REPLACE VIEW -> Para "machacar" o modificar la vista actual
+CREATE OR REPLACE VIEW GANADORES (Ciclistas, Etapas) AS SELECT CICLISTA.NOMBRE, COUNT(ETAPA.DORSAL) FROM CICLISTA INNER JOIN ETAPA ON 
+CICLISTA.DORSAL = ETAPA.DORSAL WHERE CICLISTA.DORSAL = ETAPA.DORSAL GROUP BY CICLISTA.NOMBRE;
+
+-> Para borrar una vista: DROP VIEW nombre_vista;
+
+-> Sinónimo: crear un sobrenombre para la tabla; se quedan guardados como las vistas
+CREATE SYNONYM nombre_sinonimo for nombre_tabla;
+
+-> Crear usuario: create user "jesus"@localhost identified by "jesus";
+Por defecto al crear el usuario se crea sin permisos.
+
+-> Con la siguiente sentencia le damos todos los privilegios al usuario "jesus" sobre la database vuelta:
+GRANT ALL PRIVILEGES ON VUELTA.* TO "jesus"@localhost; [WITH GRANT OPTION] significa que este usuario también puede otorgar permisos.
+GRANT SELECT, INSERT, UPDATE ON VUELTA.* TO "jesus"@localhost; -> podemos darle los permisos concretos que queramos (nivel de BBDD).
+GRANT SELECT (ID, NOMBRE) ON VUELTA.CICLISTA TO "jesus"@localhost; -> restricciones más concretas (nivel de tabla).
