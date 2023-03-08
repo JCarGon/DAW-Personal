@@ -39,14 +39,14 @@ public class Tienda {
     }
 
     public void verClientes(){
-        for (Cliente c : listaClientes) {
-            System.out.println(c.toString());
+        for(int i=0; i<listaClientes.size(); i++){
+            System.out.println((i+1)+". "+listaClientes.get(i).toString());
         }
     }
 
     public void listar(){
-        for (Libro l : listaLibros) {
-            System.out.println(l.toString());
+        for(int i=0; i<listaLibros.size(); i++){
+            System.out.println((i+1)+". "+listaLibros.get(i).toString());
         }
     }
 
@@ -55,27 +55,27 @@ public class Tienda {
             case 1: //titulo
                 System.out.print("Introduce un título para buscar: ");
                 String titulo = entrada.nextLine();
-                for (Libro l : listaLibros) {
-                    if(l.getNombre().toUpperCase().contains(titulo.toUpperCase())){
-                        System.out.println(l.toString());
+                for(int i=0; i< listaLibros.size(); i++){
+                    if(listaLibros.get(i).getNombre().toUpperCase().contains(titulo.toUpperCase())){
+                        System.out.println((i+1)+". "+listaLibros.get(i).toString());
                     }
                 }
                 break;
             case 2: //autor
                 System.out.print("Introduce un autor para buscar: ");
                 String autor = entrada.nextLine();
-                for (Libro l : listaLibros) {
-                    if(l.getAutor().toUpperCase().contains(autor.toUpperCase())){
-                        System.out.println(l.toString());
+                for(int i=0; i< listaLibros.size(); i++){
+                    if(listaLibros.get(i).getAutor().toUpperCase().contains(autor.toUpperCase())){
+                        System.out.println((i+1)+". "+listaLibros.get(i).toString());
                     }
                 }
                 break;
             case 3: //categoria
                 System.out.print("Introduce una categoría para buscar: ");
                 String categoria = entrada.nextLine();
-                for (Libro l : listaLibros) {
-                    if(l.getCategoria().toUpperCase().contains(categoria.toUpperCase())){
-                        System.out.println(l.toString());
+                for(int i=0; i< listaLibros.size(); i++){
+                    if(listaLibros.get(i).getCategoria().toUpperCase().contains(categoria.toUpperCase())){
+                        System.out.println((i+1)+". "+listaLibros.get(i).toString());
                     }
                 }
                 break;
@@ -86,32 +86,34 @@ public class Tienda {
     }
 
     public void addLibro(){
-        System.out.print("Introduce el nombro del libro: ");
-        String nombre = entrada.nextLine();
+        System.out.print("Introduce el nombre del libro: ");
+        String nombreLibro = entrada.nextLine();
         for (Libro l : listaLibros) {
-            if(l.getNombre().toUpperCase().equals(nombre.toUpperCase())){
+            if(l.getNombre().toUpperCase().equals(nombreLibro.toUpperCase())){
                 //si el libro existe -> sumar uno a la cantidad
+                System.out.println("Ese libro ya existe, por lo que se sumará uno al stock.");
                 l.setCantidad(l.getCantidad()+1);
             }else{
                 //si el libro no existe, añado el libro
                 System.out.print("Introduce el nombre del autor: ");
-                String autor = entrada.nextLine();
+                String autorLibro = entrada.nextLine();
                 System.out.print("Introduce la categoría: ");
-                String categoria = entrada.nextLine();
+                String categoriaLibro = entrada.nextLine();
                 System.out.print("Introduce un precio: ");
-                double precio = entrada.nextDouble();
-                System.out.print("Introduce una cantidad de stock para el libro");
+                double precioLibro = entrada.nextDouble();
+                System.out.print("Introduce una cantidad de stock para el libro: ");
                 int stock = entrada.nextInt();
                 //creamos el libro y lo añadimos
-                Libro libronuevo = new Libro(nombre, autor, categoria, precio, stock);
+                Libro libronuevo = new Libro(nombreLibro, autorLibro, categoriaLibro, precioLibro, stock);
                 this.listaLibros.add(libronuevo);
+                break; //para que no salte el error: Exception in thread "main" java.util.ConcurrentModificationException
             }
         }
     }
 
     public void addCliente(){
         System.out.print("Introduce el nombre del cliente: ");
-        String nombreCliente = entrada.nextLine();
+        String nombreCliente = entrada.next();
         for (Cliente c : listaClientes) {
             if(c.getNombre().toUpperCase().equals(nombreCliente.toUpperCase())){
                 //si el cliente ya existe
@@ -122,6 +124,7 @@ public class Tienda {
                 double dinero = entrada.nextDouble();
                 Cliente clientenuevo = new Cliente(nombreCliente, dinero);
                 this.listaClientes.add(clientenuevo);
+                break; //para que no salte el error: Exception in thread "main" java.util.ConcurrentModificationException
             }
         }
     }
@@ -138,6 +141,8 @@ public class Tienda {
                 //añadir a la colección
                 cliente.addLibro(libro);
                 System.out.println("Comprado!");
+            }else{
+                System.out.println("No puedes comprar este libro. No nos queda stock.");
             }
         }
     }

@@ -52,7 +52,7 @@ public class Main {
             System.out.println();
             switch(opcion){
                 case 0:
-                System.out.println("Saliendo del programa :).");
+                System.out.println("Saliendo de la tienda virtual. Gracias por visitarnos.");
                     break;
                 case 1:
                     tienda.listar();
@@ -75,6 +75,7 @@ public class Main {
                     }while(letra != 's' && letra != 'n');
                     if(letra == 's'){
                         tienda.listar();
+                        System.out.println("-----------------------------------");
                     }else{
                         int busqueda = 0;
                         do{
@@ -99,14 +100,14 @@ public class Main {
                     tienda.verClientes();
                     do{
                         System.out.print("Elija un comprador: ");
-                        comprador = entrada.nextInt();
+                        comprador = (entrada.nextInt()-1);
                         System.out.println();
                     }while(comprador < 0 && comprador > listaClientes.size());
                     tienda.listar();
                     int numlibro = -1;
                     do{
                         System.out.print("Elija un libro: ");
-                        numlibro = entrada.nextInt();
+                        numlibro = (entrada.nextInt()-1);
                         System.out.println();
                     }while(numlibro < 0 && numlibro > listaLibros.size());
                     tienda.venderLibro(listaLibros.get(numlibro), listaClientes.get(comprador));
@@ -126,7 +127,7 @@ public class Main {
                     System.out.println("No ha introducido una opción correcta.");
                     System.out.println("-----------------------------------");
             }
-        }while(opcion > 0 && opcion < 6);
+        }while(opcion > 0 && opcion < 7);
         entrada.close();
     }
 }
