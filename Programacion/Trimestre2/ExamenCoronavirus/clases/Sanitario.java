@@ -28,7 +28,8 @@ public class Sanitario extends Persona{
     }
 
     public void curar(Paciente paciente){
-        if(paciente.getEnfermedades().size() == 1){
+        //si el tamaño de la lista de enfermedades es 1 y el nombre es diferente de Coronavirus, vacío la lista
+        if((paciente.getEnfermedades().size() == 1) && (!paciente.getEnfermedades().get(0).getClass().getSimpleName().equals("Coronavirus"))){
             paciente.getEnfermedades().removeAll(paciente.getEnfermedades());
         }else{
             paciente.curarse(paciente.getEnfermedades());
