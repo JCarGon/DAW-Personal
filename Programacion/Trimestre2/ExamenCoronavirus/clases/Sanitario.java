@@ -17,20 +17,23 @@ public class Sanitario extends Persona{
     }
 
     public void diagnosticar(Paciente paciente){
+        System.out.println("Diagnóstico del paciente "+paciente.getNombre()+": ");
         for (Ienfermedad e : paciente.getEnfermedades()) {
-            System.out.println("La enfermedad "+e.getCodigo()+" es "+e.getEsCurable());
+            if(e.getEsCurable()){
+                System.out.println("La enfermedad "+e.getClass().getSimpleName()+" es curable.");
+            }else{
+                System.out.println("La enfermedad "+e.getClass().getSimpleName()+" no es curable.");
+            }
         }
     }
 
     public void curar(Paciente paciente){
-        for(int i=0; i<paciente.getEnfermedades().size(); i++){
-            if(paciente.getEnfermedades().get(i).getEsCurable()){
-                paciente.getEnfermedades().remove(paciente.getEnfermedades().get(i));
-                System.out.println("La enfermedad "+paciente.getEnfermedades().get(i)+" se ha curado.");
-            }else{
-                System.out.println("La enfermedad "+paciente.getEnfermedades().get(i)+" no es curable.");
-            }
+        if(paciente.getEnfermedades().size() == 1){
+            paciente.getEnfermedades().removeAll(paciente.getEnfermedades());
+        }else{
+            paciente.curarse(paciente.getEnfermedades());
         }
+        System.out.println("El sanitario ha curado las enfermedades posibles del paciente "+paciente.getNombre()+".");
     }
 
     @Override

@@ -11,7 +11,7 @@ public class Paciente extends Persona{
     }
 
     public void saludar(Sanitario sanitario){
-        System.out.println("El paciente "+this.getNombre()+" saluda al sanitario "+ sanitario.getNombre());
+        System.out.println("El paciente "+this.getNombre()+" saluda al sanitario "+ sanitario.getNombre()+".");
         
     }
 
@@ -21,9 +21,9 @@ public class Paciente extends Persona{
             int index = (int) (Math.random() * enfermedades.size());
             //comprobar si esa enfermedad está en la lista de la otra persona
             if(p.enfermedades.contains(this.enfermedades.get(index))){
-                System.out.println("Saluda sin contagiar porque ya tiene esa enfermedad.");
+                System.out.println("El paciente "+this.getNombre()+" saluda sin contagiar al paciente "+p.getNombre()+" porque ya tiene la enfermedad: "+this.enfermedades.get(index).getClass().getSimpleName()+".");
             }else{
-                System.out.println("La persona a la que ha saludado se ha contagiado.");
+                System.out.println("El paciente "+this.getNombre()+" al saludar al paciente "+p.getNombre()+", le ha contagiado de: "+this.enfermedades.get(index).getClass().getSimpleName()+".");
                 p.enfermar(this.enfermedades.get(index));
             }
                 //si está en la lista, saluda sin más
@@ -45,10 +45,12 @@ public class Paciente extends Persona{
         this.enfermedades.add(enfermedad);
     }
 
-    public void curarse(Ienfermedad enfermedad){
+    public void curarse(ArrayList<Ienfermedad> enfermedades){
         for (int i = 0; i<enfermedades.size(); i++) {
-            if(enfermedades.get(i).getEsCurable())
-            this.enfermedades.remove(enfermedades.get(i));
+            if(enfermedades.get(i).getEsCurable()){
+                enfermedades.remove(enfermedades.get(i));
+                i--; //si tiene dos enfermedades curables, elimina la primera, la segunda ocupa el primer lugar y al haberlo pasado no la elimina.
+            }
         }
     }
 

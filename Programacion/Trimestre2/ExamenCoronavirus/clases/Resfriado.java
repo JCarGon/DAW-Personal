@@ -31,6 +31,6 @@ public class Resfriado implements Ienfermedad{
 
     @Override
     public String toString(){
-        return this.codigo + ", curable: "+this.esCurable;
+        return this.getClass().getSimpleName() + ", curable: "+this.esCurable;
     }
 }
