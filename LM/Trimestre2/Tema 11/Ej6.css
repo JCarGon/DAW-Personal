@@ -1,0 +1,32 @@
+*{
+    box-sizing: border-box;
+    display: block;
+}
+clase{margin: 10px;}
+clase:before{
+    content: "ALUMNOS";
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgba(20, 21, 38, 0.9);
+    background-color: lightgray;
+    padding: 5px;
+}
+persona{
+    background-color: rgba(20, 21, 38, 0.9);
+    border: solid 2px aqua;
+    color: white;
+    padding: 15px;margin: 10px;
+}
+nombre, primerApellido, alias, telefono, direccion, marcaOrdernador{
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: aqua;
+}

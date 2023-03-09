@@ -1,0 +1,9 @@
+<!ELEMENT clase (persona+)>
+<!ELEMENT persona (nombre, primerApellido, alias, telefono, direccion, marcaOrdernador)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT primerApellido (#PCDATA)>
+<!ELEMENT alias (#PCDATA)>
+<!ELEMENT telefono (#PCDATA)>
+<!ELEMENT direccion (#PCDATA)>
+<!ELEMENT marcaOrdernador (#PCDATA)>
+<!ATTLIST nombre pelo CDATA #REQUIRED>

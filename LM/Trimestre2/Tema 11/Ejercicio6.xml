@@ -1,18 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE agenda [
-    <!-- <!ELEMENT agenda (contacto+)>
-    <!ELEMENT contacto (nombre, telefonoFijo+, telefonoMovil?)>
-    <!ELEMENT nombre (#PCDATA)>
-    <!ELEMENT telefonoFijo (#PCDATA)>
-    <!ELEMENT telefonoMovil (#PCDATA)> -->
-]>
+<?xml-stylesheet type="text/css" href="Ej6.css"?>
+<!DOCTYPE clase SYSTEM "Ej6.dtd">
 <clase>
   <persona>
-    <nombre>Ayuntamiento</nombre>
-    <primerApellido>010</primerApellido>
-    <segundoApellido></segundoApellido>
-    <edad></edad>
-    <telefono></telefono>
-    <direccion></direccion>
+    <nombre pelo="peinaito">Jesus</nombre>
+    <primerApellido>Carrillo</primerApellido>
+    <alias>Alias "El varitas"</alias>
+    <telefono>987 98 79 87</telefono>
+    <direccion>c/ Hogwarts</direccion>
+    <marcaOrdernador>Asus</marcaOrdernador>
+  </persona>
+  <persona>
+    <nombre pelo="tupé">Manuel</nombre>
+    <primerApellido>Pacheco</primerApellido>
+    <alias>Alias "El Hacker"</alias>
+    <telefono>666 66 66 66</telefono>
+    <direccion>c/ Vulnerabilidades</direccion>
+    <marcaOrdernador>HP</marcaOrdernador>
+  </persona>
+  <persona>
+    <nombre pelo="rapaditoGolfo">Daniel</nombre>
+    <primerApellido>Santaella</primerApellido>
+    <alias>Alias "El pistolitas"</alias>
+    <telefono>888 88 88 88</telefono>
+    <direccion>c/ Valorant</direccion>
+    <marcaOrdernador>Asus</marcaOrdernador>
+  </persona>
+  <persona>
+    <nombre pelo="degradaitoPotente">Jose</nombre>
+    <primerApellido>Sobrino</primerApellido>
+    <alias>Alias "El metralleta"</alias>
+    <telefono>555 55 55 55</telefono>
+    <direccion>c/ Desorden</direccion>
+    <marcaOrdernador>Asus</marcaOrdernador>
+  </persona>
+  <persona>
+    <nombre pelo="alborotado">Fernando</nombre>
+    <primerApellido>Tirados</primerApellido>
+    <alias>Alias "El estilista"</alias>
+    <telefono>444 33 33 33</telefono>
+    <direccion>c/ Colorcitos</direccion>
+    <marcaOrdernador>HP</marcaOrdernador>
   </persona>
 </clase>
