@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE catalogo SYSTEM "Ej5.dtd">
+<catalogo>
+    <!--El catalogo lleva uno o más elementos producto-->
+    <producto> <!--Producto puede tener un atributo codigo-->
+        <nombre>Caja con autocierre</nombre>
+        <!--La descripción es optativa-->
+        <descripcion>Caja de seguridad...</descripcion>
+        <origen>Alemania</origen>
+    </producto>
+    <producto codigo="jjjjj">
+        <nombre>Caja llaves</nombre>
+        <!-- Despues de la descripcion debe haber
+        uno de estos dos elementos :
+          a) origen
+          b) pais -->
+        <pais>Francia</pais>
+    </producto>
+</catalogo>

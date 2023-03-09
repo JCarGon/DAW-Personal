@@ -1,0 +1,29 @@
+*{
+    box-sizing: border-box;
+    display: block;
+}
+nombreCentro{
+    font-size: 28px;
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    margin: 5px;
+}
+web{display: none;}
+ciclos{
+    border: solid 1px black;
+    margin: 5px;
+    padding: 15px;
+}
+ciclo{
+    display: flex;
+}
+nombre, grado, decretoTitulo{
+    border: solid 1px black;
+    margin: 8px;
+    padding: 10px;
+    font-size: 24px;
+}
+nombre{width: 550px;}
+grado{width: 120px;}

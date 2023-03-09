@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE agenda [
+    <!-- <!ELEMENT agenda (contacto+)>
+    <!ELEMENT contacto (nombre, telefonoFijo+, telefonoMovil?)>
+    <!ELEMENT nombre (#PCDATA)>
+    <!ELEMENT telefonoFijo (#PCDATA)>
+    <!ELEMENT telefonoMovil (#PCDATA)> -->
+]>
+<clase>
+  <persona>
+    <nombre>Ayuntamiento</nombre>
+    <primerApellido>010</primerApellido>
+    <segundoApellido></segundoApellido>
+    <edad></edad>
+    <telefono></telefono>
+    <direccion></direccion>
+  </persona>
+</clase>

@@ -1,0 +1,7 @@
+<!ELEMENT catalogo (producto+)>
+<!ELEMENT producto (nombre, descripcion?, (origen|pais))>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT descripcion (#PCDATA)>
+<!ELEMENT origen (#PCDATA)>
+<!ELEMENT pais (#PCDATA)>
+<!ATTLIST producto codigo CDATA #IMPLIED>
