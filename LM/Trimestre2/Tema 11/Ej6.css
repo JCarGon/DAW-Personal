@@ -2,7 +2,6 @@
     box-sizing: border-box;
     display: block;
 }
-clase{margin: 10px;}
 clase:before{
     content: "ALUMNOS";
     display: flex;
@@ -15,11 +14,18 @@ clase:before{
     background-color: lightgray;
     padding: 5px;
 }
+clase{
+    display: grid;
+    justify-content: center;
+    margin: 10px;
+}
 persona{
     background-color: rgba(20, 21, 38, 0.9);
     border: solid 2px aqua;
     color: white;
-    padding: 15px;margin: 10px;
+    padding: 10px;
+    margin: 10px;
+    width: 500px;
 }
 nombre, primerApellido, alias, telefono, direccion, marcaOrdernador{
     display: flex;
