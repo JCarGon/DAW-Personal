@@ -19,9 +19,7 @@ public class Ejercicios {
 			}
 			palabraAux += "*";
 
-			palabraAux += "\n*";
-			palabraAux += regalos[i];
-			palabraAux += "*\n";
+			palabraAux += "\n*" + regalos[i] + "*\n";
 
 			palabraAux += "*";
 			for(int j=0; j<regalos[i].length(); j++){
