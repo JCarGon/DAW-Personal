@@ -81,6 +81,7 @@ public class MaquinaExpendedora {
             System.out.println(menuArticulo);
             System.out.print("Introduce una opción: ");
             opcion2 = entrada.nextInt();
+            entrada.nextLine(); //para que la siguiente entrada no se salte una pregunta
             switch(opcion2){
                 case 1: //juguete
                     System.out.print("Introduce un nombre para el juguete: ");
@@ -151,18 +152,21 @@ public class MaquinaExpendedora {
         int opcion = -1;
         do{
             for (int i=0; i<this.articulos.size(); i++) {
-                System.out.println((i+1)+": "+articulos.get(i));
+                System.out.print((i+1)+": "+articulos.get(i));
             }
             System.out.print("Selecciona el artículo: ");
             opcion = entrada.nextInt();
+            opcion -= 1;
+            System.out.println();
         }while((opcion<0) && (opcion > this.articulos.size()-1));
         System.out.print("Introduce el dinero en la máquina para comprar un artículo: ");
         double cantidad = entrada.nextDouble();
         if(articulos.get(opcion).getPrecio()>cantidad){
             System.out.println("No tienes dinero suficiente para comprar este artículo.\n");
         }else{
-            this.articulos.remove(articulos.get(opcion));
             articulos.get(opcion).usar();
+            this.articulos.remove(articulos.get(opcion));
+            System.out.println();
         }
     }
 
@@ -175,10 +179,11 @@ public class MaquinaExpendedora {
                 System.out.println(menu);
                 System.out.print("Elige una opción: ");
                 opcion1 = entrada.nextInt();
+                System.out.println();
                 switch(opcion1){
                     case 0:
                         start = false;
-                        System.out.println("Gracias por usar nuestros servicios. Hasta la próxima :).");
+                        System.out.println("Gracias por usar nuestros servicios. Hasta la próxima :).\n");
                         break;
                     case 1:
                         //ver artículos

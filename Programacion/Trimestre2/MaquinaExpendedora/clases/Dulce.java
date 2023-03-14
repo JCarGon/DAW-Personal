@@ -26,6 +26,6 @@ public class Dulce extends Comida{
 
     @Override
     public String toString(){
-        return super.toString()+". Esto engorda: "+this.grasas+" gramos."; 
+        return super.getNombre()+", "+super.getCodigo()+", "+super.getPrecio()+". Esto engorda: "+this.grasas+" gramos, caducado: "+super.isCaducado()+"\n"; 
     }
 }

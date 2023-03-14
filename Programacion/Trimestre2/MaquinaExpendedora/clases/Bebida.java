@@ -52,6 +52,6 @@ public class Bebida extends Articulo implements Ialimento{
 
     @Override
     public String toString(){
-        return super.toString()+", caducado: "+this.caducado+", nutrienes: "+this.nutrientes+", grasas: "+this.grasas; 
+        return super.getNombre()+", "+super.getCodigo()+", "+super.getPrecio()+", caducado: "+this.caducado+", nutrienes: "+this.nutrientes+", grasas: "+this.grasas+"\n";
     }
 }
