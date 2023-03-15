@@ -27,6 +27,6 @@ public class Salado extends Comida{
 
     @Override
     public String toString(){
-        return super.getNombre()+", "+super.getCodigo()+", "+super.getPrecio()+". Esto nutre: "+this.nutrientes+" gramos, caducado: "+super.isCaducado()+"\n";
+        return "\n"+super.getNombre()+", "+super.getCodigo()+", "+super.getPrecio()+". Esto nutre: "+this.nutrientes+" gramos, caducado: "+super.isCaducado();
     }
 }

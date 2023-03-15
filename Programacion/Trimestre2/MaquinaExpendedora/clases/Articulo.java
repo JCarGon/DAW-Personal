@@ -39,6 +39,6 @@ public abstract class Articulo {
 
     @Override
     public String toString(){
-        return this.nombre+", "+this.codigo+", "+this.precio+"\n";
+        return "\n"+this.nombre+", "+this.codigo+", "+this.precio;
     }
 }
