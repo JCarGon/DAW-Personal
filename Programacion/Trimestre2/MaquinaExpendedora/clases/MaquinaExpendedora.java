@@ -31,7 +31,11 @@ public class MaquinaExpendedora {
     }
 
     public void verArticulos(){
-        System.out.println(this.articulos.toString());
+        System.out.println("---Listando los artículos de la máquina---");
+        for(int i=0; i<this.articulos.size(); i++){
+            System.out.println((i+1)+") "+this.articulos.get(i));
+        }
+        System.out.println();
     }
 
     public void actualizarArticulos(){ //comprobar si el alimento está caducado y eliminar
