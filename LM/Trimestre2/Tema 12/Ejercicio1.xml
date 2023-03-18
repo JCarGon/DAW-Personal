@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<libreria>
+    <libro categoria="thriller">
+    <titulo lang="en">La chica de nieve</titulo>
+    <autor>Javier Castillo</autor>
+    <año>2005</año>
+    <precio>30.00</precio>
+    </libro>
+
+    <libro categoria="adultos">
+    <titulo lang="en">El Kamasutra</titulo>
+    <autor>J K. Rowling</autor>
+    <año>2005</año>
+    <precio>29.99</precio>
+    </libro>
+
+    <libro categori="web">
+    <titulo lang="en">XPATH for dummies</titulo>
+    <autor>James Mason</autor>
+    <autor>Per Bor</autor>
+    <autor>Kurt Eagle</autor>
+    <autor>John Lennon</autor>
+    <autor>Jessica Simpson</autor>
+    <año>2014</año>
+    <precio>49.99</precio>
+    </libro>
+
+    <libro category="web">
+    <titulo lang="es">Learning JSON</titulo>
+    <autor>José Ángel Tejera</autor>
+    <año>2023</año>
+    <precio>39.95</precio>
+    </libro>
+</libreria>
+
+Seleccionar todos los títulos de los libros.
+//titulo
+Seleccionar el título del tercer libro
+//libro[3]/titulo
+Seleccionar todos los precios
+//libro/precio
+Seleccionar nodos con precios mayores a 36.
+//libro[precio>36]
+Seleccionar los títulos de los libros que cuesten más de 36.
+//libro[precio>36]/titulo
