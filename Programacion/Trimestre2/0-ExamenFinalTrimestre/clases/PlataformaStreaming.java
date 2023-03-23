@@ -90,7 +90,7 @@ public class PlataformaStreaming implements IplataformaStreaming{
 
     public String reproducirAnuncioAleatoriamente(){
         String[] anuncios = {"anuncio de comida", "anuncio de fútbol", "anuncio de bebida", "anuncio de loción de pelo", "anuncio de juego de PS5", "anuncio de juego de Xbox", "anuncio de juego de Switch", "anuncio de ordenadores"};
-        int opcion = (int)Math.random()*anuncios.length;
+        int opcion = (int)(Math.random()*anuncios.length);
         return anuncios[opcion];
     }
 

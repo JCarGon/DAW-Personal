@@ -55,6 +55,6 @@ public abstract class Contenido {
     
     @Override
     public String toString(){
-        return this.nombre+", id "+this.id+", duración "+this.duracion+", edad mínima "+this.edadMinima+"años, horas reproducidas "+this.numeroHorasReproducidas;
+        return this.nombre+", id "+this.id+", duración "+this.duracion+", edad mínima "+this.edadMinima+" años, horas reproducidas "+this.numeroHorasReproducidas;
     }
 }
