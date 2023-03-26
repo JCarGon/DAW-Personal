@@ -268,6 +268,8 @@ select distinct nomeq as "Nombre Equipo", avg(edad) as "Edad Media" from ciclist
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
+		TEMA 6: MANIPULACIÓN DE DATOS
+
 DELETE FROM DETALLE WHERE PEDIDO_NUMERO=620;
 Borra todos los pedidos que tengan el número 620
 ROLLBACK;
@@ -285,11 +287,12 @@ Si voy a insertar valores en todas las columnas, podemos omitir la parte de iden
 se sobreentiende que vamos a insertar todos los valores en el orden en el que está en la tabla.
 	INSERT INTO DEPARTAMENTO VALUES (50, "INFORMÁTICA", "SEVILLA");
 */
-Para borrar algo dentro de una tabla:
-DELETE FROM DEPARTAMENTO WHERE DEPT_NO=50;
 
 MODIFICACIONES
-UPDATE DEPARTAMENTO SET DNOM = LOWER(DNOM); -> Cambia los valores de la columna nombre-departamento, de la tabla departamento, a minúsculas
+-> Actualizar: UPDATE DEPARTAMENTO SET DNOM = LOWER(DNOM); -> Cambia los valores de la columna nombre-departamento, de la tabla departamento, a minúsculas
+
+-> Para borrar algo dentro de una tabla: DELETE FROM DEPARTAMENTO WHERE DEPT_NO=50;
+
 UPDATE DEPARTAMENTO SET DNOM=UPPER(DNOM), LOC=UPPER(LOC); -> Cambia los valores de las dos columnas a mayúsculas
 UPDATE DETALLE SET IMPORTE = 0; -> Pone todos los importes de la tabla detalle a 0
 UPDATE DETALLE SET IMPORTE = (PRECIO_VENTA*CANTIDAD); -> Le da a cada importe su valor correspondiente de cada operación
@@ -306,8 +309,9 @@ UPDATE PEDIDO SET TOTAL = (SELECT SUM(IMPORTE) FROM DETALLE WHERE PEDIDO_NUMERO=
 ------------------------------------------------------------------------------------------------------------------------------------
 
 		TEMA 7: CREACIÓN Y MANIPULACIÓN DE OTROS OBJETOS DE LA BASE DE DATOS
+
 -VISTAS:
-CREATE VIEW [nombre_baseDatos] nombre_vista [columna1, columna2... [aliasColumna1, aliasColumna2...]] AS (sentencia_select);
+CREATE VIEW [nombre_Vista] AS (sentencia_select);
 CREATE VIEW GANADORES AS SELECT CICLISTA.NOMBRE, COUNT(ETAPA.DORSAL) AS ETAPAS_GANADAS FROM CICLISTA INNER JOIN ETAPA ON 
 CICLISTA.DORSAL = ETAPA.DORSAL WHERE CICLISTA.DORSAL = ETAPA.DORSAL GROUP BY CICLISTA.NOMBRE;
 
@@ -322,10 +326,19 @@ CICLISTA.DORSAL = ETAPA.DORSAL WHERE CICLISTA.DORSAL = ETAPA.DORSAL GROUP BY CIC
 -> Sinónimo: crear un sobrenombre para la tabla; se quedan guardados como las vistas
 CREATE SYNONYM nombre_sinonimo for nombre_tabla;
 
--> Crear usuario: create user "jesus"@localhost identified by "jesus";
+-> Crear usuario: CREATE USER "jesus"@localhost IDENTIFIED BY "jesus" (contraseña);
 Por defecto al crear el usuario se crea sin permisos.
 
 -> Con la siguiente sentencia le damos todos los privilegios al usuario "jesus" sobre la database vuelta:
 GRANT ALL PRIVILEGES ON VUELTA.* TO "jesus"@localhost; [WITH GRANT OPTION] significa que este usuario también puede otorgar permisos.
 GRANT SELECT, INSERT, UPDATE ON VUELTA.* TO "jesus"@localhost; -> podemos darle los permisos concretos que queramos (nivel de BBDD).
 GRANT SELECT (ID, NOMBRE) ON VUELTA.CICLISTA TO "jesus"@localhost; -> restricciones más concretas (nivel de tabla).
+
+-> Después de dar permisos a usuarios, es aconsejable refrescar los privilegios:
+FLUSH PRIVILEGES;
+
+-> Para ver privilegios: SHOW GRANTS "user"@host;
+-> Para quitar permisos de un usuario: REVOKE ALL PRIVILEGES ON VUELTA.* FROM "jesus"@localhost;
+-> Para quitar el permiso de dar privilegios: REVOKE GRANT OPTION ON *.* FROM "jesus"@localhost;
+
+->Para borrar un usuario: DROP USER "nombre"@host; / DROP USER "jesus"@localhost;
