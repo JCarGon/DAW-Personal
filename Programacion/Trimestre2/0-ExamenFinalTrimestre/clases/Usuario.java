@@ -46,31 +46,46 @@ public class Usuario extends Persona{
     }
 
     public void darAltaPLataforma(PlataformaStreaming p){
-        //buscar si contengo el ID 1 y si lo está, dar de baja primero
-        if(this.plataformasStreaming.size()>0){
-            for(int i=0; i<this.plataformasStreaming.size(); i++){
-                if(this.plataformasStreaming.get(i).getId() == p.getId()){ //si el id ya está, lo elimino
-                    this.plataformasStreaming.remove(i);
-                    if(this.saldo >= p.getPrecioSuscripcion()){ //si el saldo del usuario es suficiente para pagar la suscripción, la añado a la lista
-                        this.plataformasStreaming.add(p);
-                    }else{
-                        System.out.println("No tiene suficiente dinero para pagar la suscripción.");
-                    }
-                }else{
-                    if(this.saldo >= p.getPrecioSuscripcion()){ //si el saldo del usuario es suficiente para pagar la suscripción, la añado a la lista
-                        this.plataformasStreaming.add(p);
-                    }else{
-                        System.out.println("No tiene suficiente dinero para pagar la suscripción.");
+        if(this.saldo > p.getPrecioSuscripcion()){ //compruebo si tiene dinero suficiente para pagar la suscripción
+            if(this.plataformasStreaming.size()>0){ //compruebo que la lista tenga algo
+                for(int i=0; i<this.plataformasStreaming.size(); i++){
+                    if(this.plataformasStreaming.get(i).getId() == p.getId()){ //si el id de la plataforma que se quiere añadir coincide con un id ya existente
+                        this.plataformasStreaming.remove(i); //elimino esa plataforma
                     }
                 }
-            }
-        }else{
-            if(this.saldo >= p.getPrecioSuscripcion()){ //si el saldo del usuario es suficiente para pagar la suscripción, la añado a la lista
+                this.plataformasStreaming.add(p); //añado la nueva
+            }else{ //si la lista está vacía, lo añado directamente
                 this.plataformasStreaming.add(p);
-            }else{
-                System.out.println("No tiene suficiente dinero para pagar la suscripción.");
             }
+        }else{ //no tiene suficiente dinero
+            System.out.println("No tienes suficiente dinero para pagar la suscripción.");
         }
+
+        //buscar si contengo el ID 1 y si lo está, dar de baja primero
+        // if(this.plataformasStreaming.size()>0){
+        //     for(int i=0; i<this.plataformasStreaming.size(); i++){
+        //         if(this.plataformasStreaming.get(i).getId() == p.getId()){ //si el id ya está, lo elimino
+        //             this.plataformasStreaming.remove(i);
+        //             if(this.saldo >= p.getPrecioSuscripcion()){ //si el saldo del usuario es suficiente para pagar la suscripción, la añado a la lista
+        //                 this.plataformasStreaming.add(p);
+        //             }else{
+        //                 System.out.println("No tiene suficiente dinero para pagar la suscripción.");
+        //             }
+        //         }else{
+        //             if(this.saldo >= p.getPrecioSuscripcion()){ //si el saldo del usuario es suficiente para pagar la suscripción, la añado a la lista
+        //                 this.plataformasStreaming.add(p);
+        //             }else{
+        //                 System.out.println("No tiene suficiente dinero para pagar la suscripción.");
+        //             }
+        //         }
+        //     }
+        // }else{
+        //     if(this.saldo >= p.getPrecioSuscripcion()){ //si el saldo del usuario es suficiente para pagar la suscripción, la añado a la lista
+        //         this.plataformasStreaming.add(p);
+        //     }else{
+        //         System.out.println("No tiene suficiente dinero para pagar la suscripción.");
+        //     }
+        // }
         
     }
 
