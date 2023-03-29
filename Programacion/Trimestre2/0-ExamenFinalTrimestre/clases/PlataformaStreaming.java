@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class PlataformaStreaming implements IplataformaStreaming{
     private int id;
@@ -64,8 +66,19 @@ public class PlataformaStreaming implements IplataformaStreaming{
     }
 
     public ArrayList<Contenido> obtenerTopDiez(){ //ordenar por número de horas hasta máximo 10
-        // CAMBIAR MÉTODO
-        return this.contenidos;
+        // Ordenamos la lista de contenidos por horas de visualización
+        Collections.sort(this.contenidos, new Comparator<Contenido>() {
+            @Override
+            public int compare(Contenido c1, Contenido c2) {
+                return (int) (c2.getNumeroHorasReproducidas() - c1.getNumeroHorasReproducidas());
+            }
+        });
+        // Devolvemos los primeros 10 elementos de la lista (o menos si no hay suficientes)
+        int size = Math.min(this.contenidos.size(), 10);
+        ArrayList<Contenido> top10 = new ArrayList<Contenido>(this.contenidos.subList(0, size));
+        return top10;
+        /* Es importante tener en cuenta que al utilizar el método sublist no se puede hacer un cast como tal,
+        hay que utilizarlo en el constructor de la creación de una nueva arraylist */
     }
 
     public int obtenerCalidadImagen(){

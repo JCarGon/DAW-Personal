@@ -1,6 +1,7 @@
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -13,6 +14,8 @@ public class Main {
         Serie serieTLOU = new Serie(2, "The Last Of Us", 10, 18, 800, "Ficción", 9, 1);
         Serie serieAndor = new Serie(3, "Andor", 12, 16, 300, "Ficción", 8, 1);
         CanalProfesor canalProfe1 = new CanalProfesor(1, "KnekroGamer", 6, 18, 500, knekro);
+
+        ArrayList<Contenido> listaPrueba = new ArrayList<>(Arrays.asList(canalProfe1, pelicula1, serie1, serieAndor, serieTLOU));
 
         ArrayList<Contenido> contenido1 = new ArrayList<>();
         contenido1.add(pelicula1);
@@ -64,7 +67,7 @@ public class Main {
             switch(opcion){
                 case 1: //listar las suscripciones existentes
                     for (PlataformaStreaming p : listaSubscripciones) {
-                        System.out.println(p.toString());
+                        System.out.println("Plataforma de Streaming: "+p.getNombre()+", ID: "+p.getId()+", precio: "+p.getPrecioSuscripcion()+" euros.");
                     }
                     System.out.println();
                     break;
@@ -98,29 +101,52 @@ public class Main {
                         System.out.println();
                         switch(o){
                             case 1: //series
+                                for (Contenido l : listaPrueba) {
+                                    if(l.getClass().getSimpleName().equals("Serie")){
+                                        System.out.println(l.toString());
+                                    }
+                                }
+                                System.out.println();
                                 break;
                             case 2: //pelis
+                                for (Contenido l : listaPrueba) {
+                                    if(l.getClass().getSimpleName().equals("Pelicula")){
+                                        System.out.println(l.toString());
+                                    }
+                                }
+                                System.out.println();
                                 break;
                             case 3: //canal profesores
+                                for (Contenido l : listaPrueba) {
+                                    if(l.getClass().getSimpleName().equals("CanalProfesor")){
+                                        System.out.println(l.toString());
+                                    }
+                                }
+                                System.out.println();
                                 break;
                             default:
                                 System.out.println("Opción no válida.\n");
                                 break;
                         }
-                    }while(o>1 && o<2);
+                    }while(o<1 || o>3);
                     break;
-                case 5:
-                    
+                case 5: //top 10 de una lista
+                    ArrayList<Contenido> top10 = adaflixPremium.obtenerTopDiez();
+                    for (Contenido t : top10) {
+                        System.out.println(t.toString());
+                    }
+                    System.out.println();
                     break;
                 case 6:
                     System.out.println("Saliendo del programa. Hasta la próxima.\n");
                     System.out.println(u1.toString()); //esto es para tener feedback de los datos del usuario 1
+                    System.out.println();
                     break;
                 default:
                     System.out.println("Has introducido una opción no válida.\n");
                     break;
             }
-        }while(opcion > 0 && opcion < 6);
+        }while(opcion != 6);
         entrada.close();
     }
 }

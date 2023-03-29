@@ -54,8 +54,10 @@ public class Usuario extends Persona{
                     }
                 }
                 this.plataformasStreaming.add(p); //añado la nueva
+                setSaldo(this.saldo-p.getPrecioSuscripcion()); //restamos el dinero de la suscripción al dinero que tiene el usuario
             }else{ //si la lista está vacía, lo añado directamente
                 this.plataformasStreaming.add(p);
+                setSaldo(this.saldo-p.getPrecioSuscripcion()); //restamos el dinero de la suscripción al dinero que tiene el usuario
             }
         }else{ //no tiene suficiente dinero
             System.out.println("No tienes suficiente dinero para pagar la suscripción.");
@@ -115,7 +117,6 @@ public class Usuario extends Persona{
         }else{ //si ya lo tengo en mi lista, no lo añado
             return false;
         }
-        //si no está en la lista, añadir
     }
 
     public boolean eliminarContenidoFavorito(Contenido c){
@@ -136,6 +137,6 @@ public class Usuario extends Persona{
 
     @Override
     public String toString(){
-        return super.toString()+", saldo "+this.saldo+", plataformas de streaming "+this.plataformasStreaming+", contenidos favoritos "+this.contenidoFavoritos;
+        return super.toString()+", saldo: "+this.saldo+", plataformas de streaming: "+this.plataformasStreaming+", contenidos favoritos: "+this.contenidoFavoritos;
     }
 }

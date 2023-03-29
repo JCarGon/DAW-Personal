@@ -37,6 +37,6 @@ public class Persona{
     
     @Override
     public String toString(){
-        return this.nombre+", "+this.id+", "+this.fechaNacimiento;
+        return "Nombre: "+this.nombre+", ID: "+this.id+", fecha nacimiento: "+this.fechaNacimiento;
     }
 }
