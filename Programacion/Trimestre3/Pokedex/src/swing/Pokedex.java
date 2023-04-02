@@ -3,6 +3,9 @@ package swing;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import javax.swing.SpinnerModel;
+import javax.swing.SpinnerNumberModel;
 
 public class Pokedex extends javax.swing.JFrame {
     private AudioPlayer audioPlayer;
@@ -11,13 +14,12 @@ public class Pokedex extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         setVisible(true);
-        //Para reescalar una imagen a otras dimensiones:
-        ImageIcon imageIcon = new ImageIcon(getClass().getResource("/img/charizard.png"));
+        ImageIcon imageIcon = new ImageIcon(getClass().getResource("/img/Pokeball.jpg"));
         Icon icon = new ImageIcon(imageIcon.getImage().getScaledInstance(PkmImg.getWidth(), PkmImg.getHeight(), Image.SCALE_DEFAULT));
         PkmImg.setIcon(icon);
-        
         audioPlayer = new AudioPlayer();
         audioPlayer.playAudio("/img/Kanto2.wav");
+        JOptionPane.showMessageDialog(null, "Bienvenido entrenador. Escribe el número del Pokémon para ver su información.");
     }
 
     @SuppressWarnings("unchecked")
@@ -27,6 +29,8 @@ public class Pokedex extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         PkmImg = new javax.swing.JLabel();
+        SpinnerModel model = new SpinnerNumberModel(1, 1, 251, 1);
+        NumPokedex = new javax.swing.JSpinner(model);
         jScrollPane1 = new javax.swing.JScrollPane();
         CampoDatos = new javax.swing.JTextArea();
         ImagenFondo = new javax.swing.JLabel();
@@ -55,11 +59,14 @@ public class Pokedex extends javax.swing.JFrame {
 
         PkmImg.setBackground(new java.awt.Color(255, 255, 255));
         PkmImg.setForeground(new java.awt.Color(255, 255, 255));
-        PkmImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/charizard.png"))); // NOI18N
+        PkmImg.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Pokeball.jpg"))); // NOI18N
         PkmImg.setMaximumSize(new java.awt.Dimension(180, 150));
         PkmImg.setMinimumSize(new java.awt.Dimension(180, 150));
         PkmImg.setPreferredSize(new java.awt.Dimension(180, 150));
         jPanel1.add(PkmImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 180, 150));
+
+        NumPokedex.setEditor(new javax.swing.JSpinner.NumberEditor(NumPokedex, ""));
+        jPanel1.add(NumPokedex, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 380, 90, 40));
 
         jScrollPane1.setBackground(new java.awt.Color(0, 0, 0));
         jScrollPane1.setBorder(null);
@@ -91,11 +98,16 @@ public class Pokedex extends javax.swing.JFrame {
         String region = "     Región: Kanto";
         String datos = nombrePkm+"\n"+region;
         CampoDatos.setText(datos);
+        //Para reescalar una imagen a otras dimensiones:
+        ImageIcon imageIcon = new ImageIcon(getClass().getResource("/img/charizard.png"));
+        Icon icon = new ImageIcon(imageIcon.getImage().getScaledInstance(PkmImg.getWidth(), PkmImg.getHeight(), Image.SCALE_DEFAULT));
+        PkmImg.setIcon(icon);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea CampoDatos;
     private javax.swing.JLabel ImagenFondo;
+    private javax.swing.JSpinner NumPokedex;
     private javax.swing.JLabel PkmImg;
     private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
