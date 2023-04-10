@@ -19,7 +19,7 @@ public class Pokedex extends javax.swing.JFrame {
         PkmImg.setIcon(icon);
         audioPlayer = new AudioPlayer();
         audioPlayer.playAudio("/img/Kanto2.wav");
-        JOptionPane.showMessageDialog(null, "Bienvenido entrenador. Escribe el número del Pokémon para ver su información.");
+        JOptionPane.showMessageDialog(null, "Escribe el número de Pokédex del Pokémon para ver su información. Solo están las dos primeras generaciones (1-251)");
     }
 
     @SuppressWarnings("unchecked")
