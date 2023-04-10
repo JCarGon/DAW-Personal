@@ -22,3 +22,24 @@ BEGIN
 END
 $$
 DELIMITER ;
+
+
+/* EJEMPLO DE CREAR PROCEDIMIENTO CON VARIAS VARIABLES USANDO INTO */
+DROP PROCEDURE IF EXISTS lista_cliente;
+
+DELIMITER $$
+
+CREATE PROCEDURE lista_cliente()
+BEGIN
+    DECLARE nombre VARCHAR(100);
+    DECLARE apellido1 VARCHAR(100);
+    DECLARE apellido2 VARCHAR(100);
+
+    SELECT clientes.nombre, clientes.apellido1, clientes.apellido2
+    INTO nombre, apellido1, apellido2
+    FROM clientes WHERE clientes.codigo = 1;
+
+    SELECT nombre, apellido1, apellido2;
+END $$
+
+DELIMITER ;
