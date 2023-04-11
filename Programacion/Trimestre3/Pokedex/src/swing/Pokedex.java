@@ -1,6 +1,13 @@
 package swing;
 
 import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -94,14 +101,28 @@ public class Pokedex extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         //botón de búsqueda para resultado de la select
+        int numeroPokedex = (int) NumPokedex.getValue();
         String nombrePkm = "\n     Nombre: Charizard";
         String region = "     Región: Kanto";
         String datos = nombrePkm+"\n"+region;
         CampoDatos.setText(datos);
         //Para reescalar una imagen a otras dimensiones:
-        ImageIcon imageIcon = new ImageIcon(getClass().getResource("/img/charizard.png"));
-        Icon icon = new ImageIcon(imageIcon.getImage().getScaledInstance(PkmImg.getWidth(), PkmImg.getHeight(), Image.SCALE_DEFAULT));
-        PkmImg.setIcon(icon);
+        // Read the image file into a BufferedImage object
+        BufferedImage img;
+        try {
+            img = ImageIO.read(new File("C:\\Users\\jesus\\Desktop\\venusaur.jpg"));
+            // Create a ByteArrayOutputStream to write the image bytes to
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            // Write the image bytes to the ByteArrayOutputStream
+            ImageIO.write(img, "jpg", baos);
+            // Get the byte array from the ByteArrayOutputStream
+            byte[] imageBytes = baos.toByteArray();
+            ImageIcon imageIcon = new ImageIcon(imageBytes);
+            Icon icon = new ImageIcon(imageIcon.getImage().getScaledInstance(PkmImg.getWidth(), PkmImg.getHeight(), Image.SCALE_DEFAULT));
+            PkmImg.setIcon(icon);
+        } catch (IOException ex) {
+            Logger.getLogger(Pokedex.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
