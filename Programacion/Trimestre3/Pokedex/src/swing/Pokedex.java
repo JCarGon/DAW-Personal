@@ -106,7 +106,6 @@ public class Pokedex extends javax.swing.JFrame {
         String region = "     Región: Kanto";
         String datos = nombrePkm+"\n"+region;
         CampoDatos.setText(datos);
-        //Para reescalar una imagen a otras dimensiones:
         // Read the image file into a BufferedImage object
         BufferedImage img;
         try {
@@ -118,10 +117,11 @@ public class Pokedex extends javax.swing.JFrame {
             // Get the byte array from the ByteArrayOutputStream
             byte[] imageBytes = baos.toByteArray();
             ImageIcon imageIcon = new ImageIcon(imageBytes);
+            //Para reescalar una imagen a otras dimensiones:
             Icon icon = new ImageIcon(imageIcon.getImage().getScaledInstance(PkmImg.getWidth(), PkmImg.getHeight(), Image.SCALE_DEFAULT));
             PkmImg.setIcon(icon);
         } catch (IOException ex) {
-            Logger.getLogger(Pokedex.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "No se ha encontrado la imagen.");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
