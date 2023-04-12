@@ -18,9 +18,15 @@ public class CSVaBBDD {
             String linea;
             while ((linea = br.readLine()) != null) {
                 String[] campos = linea.split(separador);
-                String nombre = campos[0];
-                int edad = Integer.parseInt(campos[1]);
-                String sql = "INSERT INTO personas (nombre, edad) VALUES ('" + nombre + "', " + edad + ")";
+                String ID = campos[0];
+                String nombrePokemon = campos[1];
+                String tipoPokemon = campos[2];
+                String habilidadPokemon = campos[3];
+                String habilidadOculta = campos[4];
+                int faseEvolutiva = campos[5];
+                String imagenPkm = campos[6];
+                String sql = "INSERT INTO personas (nombre, edad) VALUES ('" + ID + "', '" + nombrePokemon + "', '" + tipoPokemon + "', '" + habilidadPokemon 
+                + "', '" + habilidadOculta + "', " + faseEvolutiva + ", '" + imagenPkm + "')";
                 stmt.executeUpdate(sql);
             }
             br.close();
