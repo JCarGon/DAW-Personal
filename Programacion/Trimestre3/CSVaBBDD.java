@@ -7,8 +7,8 @@ public class CSVaBBDD {
         String url = "jdbc:mysql://localhost:3306/mi_bd";
         String usuario = "usuario";
         String contraseña = "contraseña";
-        String archivo = "datos.csv";
-        String separador = ",";
+        String archivo = "pokedex.csv";
+        String separador = ";";
         
         try {
             Connection conn = DriverManager.getConnection(url, usuario, contraseña);
