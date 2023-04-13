@@ -1,4 +1,4 @@
-package pokedex;
+package Main;
 
 import swing.Inicio;
 
