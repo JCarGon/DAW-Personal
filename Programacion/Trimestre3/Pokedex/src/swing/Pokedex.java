@@ -11,6 +11,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.SpinnerModel;
 import javax.swing.SpinnerNumberModel;
+import ConnectionBBDD.Conexion;
+import java.sql.*;
 
 public class Pokedex extends javax.swing.JFrame {
     private AudioPlayer audioPlayer;
@@ -82,12 +84,12 @@ public class Pokedex extends javax.swing.JFrame {
         CampoDatos.setEditable(false);
         CampoDatos.setBackground(new java.awt.Color(0, 0, 0));
         CampoDatos.setColumns(20);
-        CampoDatos.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
+        CampoDatos.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
         CampoDatos.setForeground(new java.awt.Color(255, 255, 255));
         CampoDatos.setRows(5);
         jScrollPane1.setViewportView(CampoDatos);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 130, 220, 80));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 130, 220, 90));
 
         ImagenFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Pokedex.png"))); // NOI18N
         jPanel1.add(ImagenFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -99,27 +101,48 @@ public class Pokedex extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         //botón de búsqueda para resultado de la select
-        int numeroPokedex = (int) NumPokedex.getValue();
-        String nombrePkm = "\n     Nombre: Charizard";
-        String region = "     Región: Kanto";
-        String datos = nombrePkm+"\n"+region;
-        CampoDatos.setText(datos);
-        // Read the image file into a BufferedImage object
-        BufferedImage img;
+        Conexion.conectar();
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        String valorConsulta = NumPokedex.getValue().toString();
+        String consulta = "SELECT * FROM pokemon WHERE ID = "+valorConsulta;
+        System.out.println(consulta);
         try {
-            img = ImageIO.read(new File("C:\\Users\\jesus\\Desktop\\venusaur.jpg"));
-            // Create a ByteArrayOutputStream to write the image bytes to
-            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            // Write the image bytes to the ByteArrayOutputStream
-            ImageIO.write(img, "jpg", baos);
-            // Get the byte array from the ByteArrayOutputStream
-            byte[] imageBytes = baos.toByteArray();
-            ImageIcon imageIcon = new ImageIcon(imageBytes);
-            //Para reescalar una imagen a otras dimensiones:
-            Icon icon = new ImageIcon(imageIcon.getImage().getScaledInstance(PkmImg.getWidth(), PkmImg.getHeight(), Image.SCALE_DEFAULT));
-            PkmImg.setIcon(icon);
-        } catch (IOException ex) {
+            rs = Conexion.ejecutarSentencia(consulta);
+            while(rs.next()){
+                String nombre_Pokemon = rs.getString("nombre_Pokemon");
+                String tipo_Pokemon = rs.getString("tipo_Pokemon");
+                String habilidad_Pokemon = rs.getString("habilidad_Pokemon");
+                String habilidad_Oculta = rs.getString("habilidad_Oculta");
+                String fase_Evolutiva = rs.getString("fase_Evolutiva");
+                String foto = rs.getString("imagen_Pokemon");
+                // Read the image file into a BufferedImage object
+                BufferedImage img;
+                try {
+                img = ImageIO.read(new File("C:\\Users\\Jesus\\Documents\\GitHub\\DAW-Personal\\Programacion\\Trimestre3\\Pokedex\\src\\img\\pokemons\\"+foto));
+                // Create a ByteArrayOutputStream to write the image bytes to
+                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                // Write the image bytes to the ByteArrayOutputStream
+                ImageIO.write(img, "jpg", baos);
+                // Get the byte array from the ByteArrayOutputStream
+                byte[] imageBytes = baos.toByteArray();
+                ImageIcon imageIcon = new ImageIcon(imageBytes);
+                //Para reescalar una imagen a otras dimensiones:
+                Icon icon = new ImageIcon(imageIcon.getImage().getScaledInstance(PkmImg.getWidth(), PkmImg.getHeight(), Image.SCALE_DEFAULT));
+                PkmImg.setIcon(icon);
+            } catch (IOException exc) {
             JOptionPane.showMessageDialog(null, "No se ha encontrado la imagen.");
+            }
+                String mostrarPantalla = "\n\tNombre: "+nombre_Pokemon+"\n"
+                        +"\tTipo: "+tipo_Pokemon+"\n"
+                        +"\tHabilidad: "+habilidad_Pokemon+"\n"
+                        +"\tHabilidad Oculta: "+habilidad_Oculta+"\n"
+                        +"\tFase evolutiva: "+fase_Evolutiva;
+                CampoDatos.setText(mostrarPantalla);
+            }
+        } catch (SQLException ex) {
+            System.out.println("Error en la consulta");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

@@ -53,40 +53,40 @@ public class Conexion {
     
     public static void conectar(){
     	try {
-		Class.forName(driver) ;
-        conexion = DriverManager.getConnection(url, user, pass);
-        System.out.println("Base de datos situada en :\n "+url);
-        consulta = conexion.createStatement();
-      }catch(Exception e){
-        JOptionPane.showMessageDialog(null, e.getMessage());
-        e.printStackTrace();
-      }
+            Class.forName(driver) ;
+            conexion = DriverManager.getConnection(url, user, pass);
+            System.out.println("Base de datos situada en :\n "+url);
+            consulta = conexion.createStatement();
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e.getMessage());
+            e.printStackTrace();
+        }
     }
     
     public static ResultSet ejecutarSentencia(String sentencia){
-      try {
-        resultado = consulta.executeQuery(sentencia);
-      }catch(Exception e){
-        JOptionPane.showMessageDialog(null, e.getMessage());
-        System.out.println("Error: " + sentencia);
-      }
-      return resultado;
+        try {
+            resultado = consulta.executeQuery(sentencia);
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e.getMessage());
+            System.out.println("Error: " + sentencia);
+        }
+        return resultado;
     }
       
     public static void ejecutarUpdate(String sentencia){
     	try{
-    		consulta.executeUpdate(sentencia);
-    		System.out.println("Done: " + sentencia);
+            consulta.executeUpdate(sentencia);
+            System.out.println("Done: " + sentencia);
     	}catch(SQLException e){
-    		JOptionPane.showMessageDialog(null, e.getMessage());
-        System.out.println("Error: " + sentencia);
+            JOptionPane.showMessageDialog(null, e.getMessage());
+            System.out.println("Error: " + sentencia);
     	} 
     }
     
     public static void cerrar(){
-      try{
-        consulta.close();
-      }catch(Exception e){}
+        try{
+            consulta.close();
+        }catch(Exception e){}
     }
     
 }
