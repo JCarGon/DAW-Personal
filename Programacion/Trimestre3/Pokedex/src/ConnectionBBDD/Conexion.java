@@ -12,7 +12,7 @@ public class Conexion {
     static String timeZone = "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
     static String dbName = "pokedex";
     static String host = "localhost";
-    static int port = 3306;
+    static int port = 3307;
     static String url = "jdbc:mysql://" + host + ":" + port + "/" + dbName + timeZone;
     static String user = "root";
     static String pass = "1234";
@@ -41,7 +41,7 @@ public class Conexion {
             + habilidadPokemon + "', '" + habilidadOculta + "', " + faseEvolutiva + ", '" + imagenPkm + "')";
             System.out.println(sql);
             try {
-                consulta.executeUpdate(sql);
+                consulta.execute(sql);
             } catch (SQLException ex) {
                 ex.printStackTrace();
                 System.out.println("Error en la consulta:" + ex.getMessage());

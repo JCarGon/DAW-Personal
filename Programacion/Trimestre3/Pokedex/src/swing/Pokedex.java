@@ -134,11 +134,11 @@ public class Pokedex extends javax.swing.JFrame {
             } catch (IOException exc) {
             JOptionPane.showMessageDialog(null, "No se ha encontrado la imagen.");
             }
-                String mostrarPantalla = "\n\tNombre: "+nombre_Pokemon+"\n"
-                        +"\tTipo: "+tipo_Pokemon+"\n"
-                        +"\tHabilidad: "+habilidad_Pokemon+"\n"
-                        +"\tHabilidad Oculta: "+habilidad_Oculta+"\n"
-                        +"\tFase evolutiva: "+fase_Evolutiva;
+                String mostrarPantalla = "\n   Nombre: "+nombre_Pokemon+"\n"
+                        +"   Tipo: "+tipo_Pokemon+"\n"
+                        +"   Habilidad: "+habilidad_Pokemon+"\n"
+                        +"   Habilidad Oculta: "+habilidad_Oculta+"\n"
+                        +"   Fase evolutiva: "+fase_Evolutiva;
                 CampoDatos.setText(mostrarPantalla);
             }
         } catch (SQLException ex) {
