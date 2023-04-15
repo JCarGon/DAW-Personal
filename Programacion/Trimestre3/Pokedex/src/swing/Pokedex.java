@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
 import javax.swing.SpinnerModel;
 import javax.swing.SpinnerNumberModel;
 import ConnectionBBDD.Conexion;
+import java.awt.Toolkit;
 import java.sql.*;
 
 public class Pokedex extends javax.swing.JFrame {
@@ -19,6 +20,7 @@ public class Pokedex extends javax.swing.JFrame {
     
     public Pokedex() {
         initComponents();
+        setIconImage(getIconImage()); //logo en la aplicación y en la barra de tareas
         this.setLocationRelativeTo(null);
         setVisible(true);
         ImageIcon imageIcon = new ImageIcon(getClass().getResource("/img/Pokeball.jpg"));
@@ -29,6 +31,13 @@ public class Pokedex extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Escribe el número de Pokédex del Pokémon para ver su información. Solo están las dos primeras generaciones (1-251)");
     }
 
+    //icono de la ventana y barra de tareas
+    @Override
+    public Image getIconImage(){
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("img/Pokeball.png"));
+        return retValue;
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -115,12 +124,17 @@ public class Pokedex extends javax.swing.JFrame {
                 String tipo_Pokemon = rs.getString("tipo_Pokemon");
                 String habilidad_Pokemon = rs.getString("habilidad_Pokemon");
                 String habilidad_Oculta = rs.getString("habilidad_Oculta");
-                String fase_Evolutiva = rs.getString("fase_Evolutiva");
+                String fase_Evolutiva = "";
+                if(rs.getString("fase_Evolutiva")== null){
+                    fase_Evolutiva = "No tiene evolución.";
+                }else{
+                    fase_Evolutiva = rs.getString("fase_Evolutiva");
+                }
                 String foto = rs.getString("imagen_Pokemon");
                 // Read the image file into a BufferedImage object
                 BufferedImage img;
                 try {
-                img = ImageIO.read(new File("C:\\Users\\Jesus\\Documents\\GitHub\\DAW-Personal\\Programacion\\Trimestre3\\Pokedex\\src\\img\\pokemons\\"+foto));
+                img = ImageIO.read(new File("src/img/pokemons/"+foto));
                 // Create a ByteArrayOutputStream to write the image bytes to
                 ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 // Write the image bytes to the ByteArrayOutputStream
