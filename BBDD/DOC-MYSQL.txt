@@ -342,3 +342,7 @@ FLUSH PRIVILEGES;
 -> Para quitar el permiso de dar privilegios: REVOKE GRANT OPTION ON *.* FROM "jesus"@localhost;
 
 ->Para borrar un usuario: DROP USER "nombre"@host; / DROP USER "jesus"@localhost;
+
+		PROCEDIMIENTOS Y FUNCIONES
+
+Un procedimiento no se puede usar en una select, una función sí (tanto en las columnas que quiero sacar, como en el WHERE).
