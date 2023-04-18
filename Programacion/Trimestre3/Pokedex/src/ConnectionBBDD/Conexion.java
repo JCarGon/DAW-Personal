@@ -1,9 +1,5 @@
 package ConnectionBBDD;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.sql.*;
 import javax.swing.JOptionPane;
 
@@ -21,35 +17,6 @@ public class Conexion {
     static Connection conexion;
     static Statement consulta;
     static ResultSet resultado;
-    
-    public static void main(String[] args) throws FileNotFoundException, IOException {
-        conectar();
-        String archivo = "pokedex.csv";
-        String separador = ";";
-        BufferedReader br = new BufferedReader(new FileReader(archivo));
-        String linea;
-        while ((linea = br.readLine()) != null) {
-            String[] campos = linea.split(separador);
-            String ID = campos[0];
-            String nombrePokemon = campos[1];
-            String tipoPokemon = campos[2];
-            String habilidadPokemon = campos[3];
-            String habilidadOculta = campos[4];
-            String faseEvolutiva = campos[5];
-            String imagenPkm = campos[6];
-            String sql = "INSERT INTO pokemon VALUES (" + ID + ", '" + nombrePokemon + "', '" + tipoPokemon + "', '" 
-            + habilidadPokemon + "', '" + habilidadOculta + "', " + faseEvolutiva + ", '" + imagenPkm + "')";
-            System.out.println(sql);
-            try {
-                consulta.execute(sql);
-            } catch (SQLException ex) {
-                ex.printStackTrace();
-                System.out.println("Error en la consulta:" + ex.getMessage());
-            }
-        }
-        br.close();
-        cerrar();
-    }
     
     public static void conectar(){
     	try {
