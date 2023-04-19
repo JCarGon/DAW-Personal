@@ -2,6 +2,9 @@ package ConnectionBBDD;
 
 import java.sql.*;
 import javax.swing.JOptionPane;
+import Modelo.Pokemon;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Conexion {
 	
@@ -56,4 +59,28 @@ public class Conexion {
         }catch(Exception e){}
     }
     
+    public static Pokemon darPokemon(String numero){
+        String consulta = "SELECT * FROM pokemon WHERE ID = "+numero;
+        ResultSet rs = ejecutarSentencia(consulta);
+        Pokemon pokemon = null;
+        try {
+            while(rs.next()){
+                String nombre_Pokemon = rs.getString("nombre_Pokemon");
+                String tipo_Pokemon = rs.getString("tipo_Pokemon");
+                String habilidad_Pokemon = rs.getString("habilidad_Pokemon");
+                String habilidad_Oculta = rs.getString("habilidad_Oculta");
+                String fase_Evolutiva = "";
+                if(rs.getString("fase_Evolutiva")== null){
+                    fase_Evolutiva = "No tiene evolución.";
+                }else{
+                    fase_Evolutiva = rs.getString("fase_Evolutiva");
+                }
+                String foto = rs.getString("imagen_Pokemon");
+                pokemon = new Pokemon(nombre_Pokemon, tipo_Pokemon, habilidad_Pokemon, habilidad_Oculta, fase_Evolutiva, foto);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return pokemon;
+    }
 }

@@ -1,4 +1,4 @@
-package swing;
+package Vista;
 
 import javax.sound.sampled.*;
 

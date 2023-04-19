@@ -194,3 +194,72 @@ CREATE FUNCTION factorial(num INT)
 DELIMITER ;
 
 SELECT factorial(5);
+
+/* CUATRO FUNCIONES CON SENTENCIA SQL:
+1. Escribe una FUNCIÓN para la base de datos tienda que devuelva el número total de productos que hay en la tabla productos. */
+DROP FUNCTION IF EXISTS totalProductos;
+DELIMITER //
+CREATE FUNCTION totalProductos()
+    RETURNS INT
+    BEGIN
+        DECLARE totalProductos int;
+        SET totalProductos = (select count(*) from producto);
+    RETURN totalProductos;
+    END //
+DELIMITER ;
+
+SELECT totalProductos();
+
+/* 2. Escribe una FUNCIÓN para la base de datos tienda que devuelva el valor medio del precio de los productos de 
+un determinado fabricante que se recibirá como parámetro de entrada. El parámetro de entrada será el nombre del fabricante. */
+DROP FUNCTION IF EXISTS valorMedioProductosDeFabricante;
+DELIMITER //
+CREATE FUNCTION valorMedioProductosDeFabricante(nombreFabricante VARCHAR(15))
+    RETURNS REAL
+    BEGIN
+        DECLARE valorMedio REAL;
+        SET valorMedio = (SELECT SUM(PRODUCTO.PRECIO)/COUNT(*) FROM PRODUCTO INNER JOIN FABRICANTE ON PRODUCTO.ID_FABRICANTE = FABRICANTE.ID WHERE FABRICANTE.NOMBRE = nombreFabricante);
+    RETURN valorMedio;
+    END //
+DELIMITER ;
+
+SELECT valorMedioProductosDeFabricante("Lenovo");
+
+/* 3. Escribe una FUNCIÓN para la base de datos tienda que devuelva el valor máximo del precio de los productos 
+de un determinado fabricante que se recibirá como parámetro de entrada. El parámetro de entrada será el nombre del fabricante. */
+DROP FUNCTION IF EXISTS valorMaximodeProducto;
+DELIMITER //
+CREATE FUNCTION valorMaximodeProducto(nombreFabricante VARCHAR(15))
+    RETURNS REAL
+    BEGIN
+        DECLARE valorMaximo REAL;
+        SET valorMaximo = (SELECT MAX(PRODUCTO.PRECIO) FROM PRODUCTO INNER JOIN FABRICANTE ON PRODUCTO.ID_FABRICANTE = FABRICANTE.ID WHERE FABRICANTE.NOMBRE = nombreFabricante);
+    RETURN valorMaximo;
+    END //
+DELIMITER ;
+
+SELECT valorMaximodeProducto("Hewlett-Packard");
+
+/* 4. Escribe una FUNCIÓN para la base de datos tienda que devuelva el valor mínimo del precio de los productos de 
+un determinado fabricante que se recibirá como parámetro de entrada. El parámetro de entrada será el nombre del fabricante. */
+DROP FUNCTION IF EXISTS valorMinimodeProducto;
+DELIMITER //
+CREATE FUNCTION valorMinimodeProducto(nombreFabricante VARCHAR(15))
+    RETURNS REAL
+    BEGIN
+        DECLARE valorMinimo REAL;
+        SET valorMinimo = (SELECT MIN(PRODUCTO.PRECIO) FROM PRODUCTO INNER JOIN FABRICANTE ON PRODUCTO.ID_FABRICANTE = FABRICANTE.ID WHERE FABRICANTE.NOMBRE = nombreFabricante);
+    RETURN valorMinimo;
+    END //
+DELIMITER ;
+
+SELECT valorMinimodeProducto("Asus");
+
+/* Escribe CINCO FUNCIONES SIN SENTENCIA SQL como estas:
+1. Escribe una FUNCIÓN que reciba un número entero de entrada y devuelva TRUE si el número es par o FALSE en caso contrario. */
+/* 2. Escribe una FUNCIÓN que devuelva el valor de la distancia entre dos puntos (x1,y1) y (x2,y2). */
+/* 3. Escribe una FUNCIÓN que reciba como parámetro de entrada un valor numérico que represente un día de la semana y 
+que devuelva una cadena de caracteres con el nombre del día de la semana correspondiente. Por ejemplo, para el 
+valor de entrada 1 debería devolver la cadena lunes.  */
+/* 4. Escribe una FUNCIÓN que reciba tres números reales como parámetros de entrada y devuelva el mayor de los tres. */
+/* 5. Escribe una FUNCIÓN que devuelva el valor del área de un círculo a partir del valor del radio que se recibirá como parámetro de entrada. */

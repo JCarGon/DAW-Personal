@@ -1,4 +1,4 @@
-package swing;
+package Vista;
 
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -50,9 +50,7 @@ public class Inicio extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Inicio");
-        setMaximumSize(new java.awt.Dimension(420, 540));
         setMinimumSize(new java.awt.Dimension(420, 540));
-        setPreferredSize(new java.awt.Dimension(420, 540));
         setResizable(false);
         setSize(new java.awt.Dimension(420, 540));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -94,7 +92,7 @@ public class Inicio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
-        File fichero = new File("src/swing/Credenciales.txt");
+        File fichero = new File("src/Vista/Credenciales.txt");
         Scanner entrada = new Scanner(System.in);
         boolean login = false;
         String userTrainer = CampoUser.getText();
