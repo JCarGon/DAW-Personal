@@ -2,9 +2,10 @@ package ConnectionBBDD;
 
 import java.sql.*;
 import javax.swing.JOptionPane;
-import Modelo.Pokemon;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import Modelo.Pokemon;
+import Modelo.User;
 
 public class Conexion {
 	
@@ -82,5 +83,28 @@ public class Conexion {
             Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
         }
         return pokemon;
+    }
+    
+    public static void crearUsuario(String nombre, String pass){
+        User user = new User(nombre, pass);
+        int count = 0;
+        ResultSet r = null;
+        if(user.getNombre().toUpperCase().equals("ROOT")){
+            JOptionPane.showMessageDialog(null, "No se puede crear un usuario root. Ya eres el root.");
+        }else{
+            //SELECT COUNT(*) FROM USER WHERE NOMBRE=user.getNOMBRE(); si == 1 -> no se puede crear; si == 0 -> lo creo
+            try {
+                r = ejecutarSentencia("SELECT COUNT(*) FROM user WHERE Nombre = '"+user.getNombre()+"';");
+                count = r.getInt(1);
+                if(count == 1){
+                    JOptionPane.showMessageDialog(null, "El usuario ya existe.");
+                }else{
+                    String insert = "INSERT INTO user VALUES ('" + user.getNombre() + "', '" + user.getPassword() + "')";
+                    ejecutarUpdate(insert);
+                }
+            } catch (SQLException ex) {
+                System.out.println("Error en el Select COUNT(*)."+ex);
+            }
+        }
     }
 }

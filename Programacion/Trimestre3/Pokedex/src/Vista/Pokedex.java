@@ -112,9 +112,6 @@ public class Pokedex extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         //botón de búsqueda para resultado de la select
-        Conexion.conectar();
-        PreparedStatement pst = null;
-        ResultSet rs = null;
         String valorConsulta = NumPokedex.getValue().toString();
         Pokemon pokemon = Controlador.obtenerPkmDeBBDD(valorConsulta);
         // Read the image file into a BufferedImage object

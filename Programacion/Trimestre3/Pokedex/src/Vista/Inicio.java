@@ -46,6 +46,7 @@ public class Inicio extends javax.swing.JFrame {
         CampoUser = new javax.swing.JTextField();
         Login = new javax.swing.JButton();
         logoInicio = new javax.swing.JLabel();
+        Gestor = new javax.swing.JButton();
         PokedexFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -79,6 +80,14 @@ public class Inicio extends javax.swing.JFrame {
         logoInicio.setMinimumSize(new java.awt.Dimension(310, 110));
         logoInicio.setPreferredSize(new java.awt.Dimension(310, 110));
         jPanel1.add(logoInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 310, 100));
+
+        Gestor.setText("Gestor");
+        Gestor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GestorActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Gestor, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, -1, -1));
 
         PokedexFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/pokedexCerrada.png"))); // NOI18N
         PokedexFondo.setMaximumSize(new java.awt.Dimension(400, 500));
@@ -117,9 +126,14 @@ public class Inicio extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_LoginActionPerformed
 
+    private void GestorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GestorActionPerformed
+        ConfirmacionRoot confirmacion = new ConfirmacionRoot();
+    }//GEN-LAST:event_GestorActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPasswordField CampoPass;
     private javax.swing.JTextField CampoUser;
+    private javax.swing.JButton Gestor;
     private javax.swing.JButton Login;
     private javax.swing.JLabel PokedexFondo;
     private javax.swing.JPanel jPanel1;

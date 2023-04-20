@@ -9,4 +9,8 @@ public class Controlador {
     public static Pokemon obtenerPkmDeBBDD(String numero){
         return Conexion.darPokemon(numero);
     }
+    
+    public static void crearUser(String nombre, String pass){
+        Conexion.crearUsuario(nombre, pass);
+    }
 }
