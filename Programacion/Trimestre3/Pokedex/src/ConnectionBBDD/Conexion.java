@@ -12,7 +12,7 @@ public class Conexion {
     static String timeZone = "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
     static String dbName = "pokedex";
     static String host = "localhost";
-    static int port = 3307;
+    static int port = 3306;
     static String url = "jdbc:mysql://" + host + ":" + port + "/" + dbName + timeZone;
     static String user = "root";
     static String pass = "1234";
@@ -87,14 +87,14 @@ public class Conexion {
     
     public static void crearUsuario(String nombre, String pass){
         User user = new User(nombre, pass);
-        int count = 0;
-        ResultSet r = null;
+        int count;
+        ResultSet r;
         if(user.getNombre().toUpperCase().equals("ROOT")){
             JOptionPane.showMessageDialog(null, "No se puede crear un usuario root. Ya eres el root.");
         }else{
             //SELECT COUNT(*) FROM USER WHERE NOMBRE=user.getNOMBRE(); si == 1 -> no se puede crear; si == 0 -> lo creo
             try {
-                r = ejecutarSentencia("SELECT COUNT(*) FROM user WHERE Nombre = '"+user.getNombre()+"';");
+                r = ejecutarSentencia("SELECT COUNT(*) FROM user WHERE Nombre = '"+user.getNombre()+"'");
                 count = r.getInt(1);
                 if(count == 1){
                     JOptionPane.showMessageDialog(null, "El usuario ya existe.");
