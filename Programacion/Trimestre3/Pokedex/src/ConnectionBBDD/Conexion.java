@@ -6,6 +6,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import Modelo.Pokemon;
 import Modelo.User;
+import Vista.Pokedex;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class Conexion {
 	
@@ -62,6 +65,7 @@ public class Conexion {
     
     public static Pokemon darPokemon(String numero){
         String consulta = "SELECT * FROM pokemon WHERE ID = "+numero;
+        System.out.println(consulta);
         ResultSet rs = ejecutarSentencia(consulta);
         Pokemon pokemon = null;
         try {
@@ -87,7 +91,7 @@ public class Conexion {
     
     public static void crearUsuario(String nombre, String pass){
         User user = new User(nombre, pass);
-        int count;
+        int count = 0;
         ResultSet r;
         if(user.getNombre().toUpperCase().equals("ROOT")){
             JOptionPane.showMessageDialog(null, "No se puede crear un usuario root. Ya eres el root.");
@@ -95,16 +99,73 @@ public class Conexion {
             //SELECT COUNT(*) FROM USER WHERE NOMBRE=user.getNOMBRE(); si == 1 -> no se puede crear; si == 0 -> lo creo
             try {
                 r = ejecutarSentencia("SELECT COUNT(*) FROM user WHERE Nombre = '"+user.getNombre()+"'");
-                count = r.getInt(1);
+                if(r.next()){
+                   count = r.getInt(1);
+                }
                 if(count == 1){
                     JOptionPane.showMessageDialog(null, "El usuario ya existe.");
                 }else{
                     String insert = "INSERT INTO user VALUES ('" + user.getNombre() + "', '" + user.getPassword() + "')";
                     ejecutarUpdate(insert);
+                    JOptionPane.showMessageDialog(null, "Usuario agregado a la base de datos correctamente.");
                 }
             } catch (SQLException ex) {
                 System.out.println("Error en el Select COUNT(*)."+ex);
             }
         }
+    }
+    
+    public static boolean login(String nombreUser, String pass){
+        User user = new User(nombreUser, pass);
+        String select = "SELECT COUNT(*) FROM user WHERE Nombre = '" + user.getNombre() + "' AND Pass = '" + user.getPassword() + "'";
+        System.out.println(select);
+        int count = 0;
+        boolean login = false;
+        ResultSet result;
+        result = ejecutarSentencia(select);
+        try {
+            if(result.next()){
+                count = result.getInt(1);
+            }
+        } catch (SQLException ex) {
+            System.out.println("Error en la consulta sql: SELECT COUNT(*) FROM user WHERE Nombre = '" + user.getNombre() + "' AND Pass = '" + user.getPassword() + "'");
+        }
+        if(count == 1){
+            JOptionPane.showMessageDialog(null, "Bienvenido a la Pokédex, entrenador "+user.getNombre()+".");
+            login = true;
+        }else{
+            JOptionPane.showMessageDialog(null, "Credenciales incorrectas.");
+        }
+        return login;
+    }
+    
+    public static boolean deleteUser(String nombreUser){
+        User user = new User(nombreUser, null);
+        int count = 0;
+        ResultSet r;
+        boolean eliminar = false;
+        if(user.getNombre().toUpperCase().equals("ROOT")){
+            JOptionPane.showMessageDialog(null, "No se puede eliminar al usuario root.");
+        }else{
+            //SELECT COUNT(*) FROM USER WHERE NOMBRE=user.getNOMBRE(); si == 1 -> se elimina porque existe; si == 0 -> no existe y no se puede eliminar
+            try {
+                r = ejecutarSentencia("SELECT COUNT(*) FROM user WHERE Nombre = '"+user.getNombre()+"'");
+                if(r.next()){
+                   count = r.getInt(1);
+                }
+                if(count == 1){
+                    eliminar = true;
+                    String delete = "DELETE FROM user WHERE Nombre = '"+user.getNombre()+"'";
+                    System.out.println(delete);
+                    ejecutarUpdate(delete);
+                    JOptionPane.showMessageDialog(null, "El usuario "+user.getNombre()+" ha sido borrado.");
+                }else{
+                    JOptionPane.showMessageDialog(null, "Este usuario no se puede borrar porque no existe.");
+                }
+            } catch (SQLException ex) {
+                System.out.println("Error en el Select COUNT(*)."+ex);
+            }
+        }
+        return eliminar;
     }
 }

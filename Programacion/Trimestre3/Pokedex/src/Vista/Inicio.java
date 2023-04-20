@@ -8,6 +8,7 @@ import java.util.Scanner;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import Controlador.Controlador;
 
 public class Inicio extends javax.swing.JFrame {
     private AudioPlayer audioPlayer;
@@ -101,28 +102,12 @@ public class Inicio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
-        File fichero = new File("src/Vista/Credenciales.txt");
-        Scanner entrada = new Scanner(System.in);
-        boolean login = false;
         String userTrainer = CampoUser.getText();
         String passTrainer = CampoPass.getText();
-        try {
-            Scanner lector = new Scanner(fichero);
-            while(lector.hasNextLine() && !login){
-                String[] linea = lector.nextLine().split(";");
-                if(userTrainer.equals(linea[0]) && passTrainer.equals(linea[1])){
-                    login = true;
-                    JOptionPane.showMessageDialog(null, "Bienvenido a la Pokédex, entrenador "+userTrainer+".");
-                    this.dispose();
-                    audioPlayer.stopAudio();
-                    Pokedex ventanaPokedex = new Pokedex();
-                }
-            }
-            if(!login){
-                JOptionPane.showMessageDialog(null, "Credenciales incorrectas.");
-            }
-        } catch (FileNotFoundException e) {
-            System.out.println(e);
+        if(Controlador.login(userTrainer, passTrainer)){
+            this.dispose();
+            audioPlayer.stopAudio();
+            Pokedex ventanaPokedex = new Pokedex();
         }
     }//GEN-LAST:event_LoginActionPerformed
 
