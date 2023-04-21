@@ -168,4 +168,30 @@ public class Conexion {
         }
         return eliminar;
     }
+    
+    public static boolean comprobarExistenciaUser(String nombre){
+        User user = new User(nombre, null);
+        int count = 0;
+        ResultSet r;
+        boolean existe = false;
+        if(user.getNombre().toUpperCase().equals("ROOT")){
+            JOptionPane.showMessageDialog(null, "No se puede modificar al usuario root.");
+        }else{
+            //SELECT COUNT(*) FROM USER WHERE NOMBRE=user.getNOMBRE(); si == 1 -> existe; si == 0 -> no existe
+            try {
+                r = ejecutarSentencia("SELECT COUNT(*) FROM user WHERE Nombre = '"+user.getNombre()+"'");
+                if(r.next()){
+                   count = r.getInt(1);
+                }
+                if(count == 1){
+                    existe = true;
+                }else{
+                    JOptionPane.showMessageDialog(null, "Este usuario no se puede modificar porque no existe.");
+                }
+            } catch (SQLException ex) {
+                System.out.println("Error en el Select COUNT(*)."+ex);
+            }
+        }
+        return existe;
+    }
 }

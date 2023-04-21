@@ -19,7 +19,9 @@ public class Controlador {
     }
     
     //método que recoja nombre de usuario y lo mande a bbdd para ver si está; si retorna true -> ventana de modificar / si retorna false -> usuario no enocntrado
-    
+    public static boolean comprobarExistenciaUser(String nombre){
+        return Conexion.comprobarExistenciaUser(nombre);
+    }
     
     //método que recoja nombre de usuario y lo mande a bbdd para ver si está; si no está no hay login - si está y contraseña coincide hay login
     public static boolean login(String nombre, String pass){
