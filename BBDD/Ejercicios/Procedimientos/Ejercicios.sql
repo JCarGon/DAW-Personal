@@ -257,9 +257,88 @@ SELECT valorMinimodeProducto("Asus");
 
 /* Escribe CINCO FUNCIONES SIN SENTENCIA SQL como estas:
 1. Escribe una FUNCIÓN que reciba un número entero de entrada y devuelva TRUE si el número es par o FALSE en caso contrario. */
+DROP FUNCTION IF EXISTS numeroPar;
+DELIMITER //
+CREATE FUNCTION numeroPar(numero INT)
+    RETURNS BOOLEAN
+    BEGIN
+        DECLARE numeroPar BOOLEAN;
+        IF ((numero%2) = 0) THEN SET numeroPar = TRUE;
+        ELSE SET numeroPar = FALSE;
+        END IF;
+    RETURN numeroPar;
+    END //
+DELIMITER ;
+
+SELECT numeroPar(5);
+
 /* 2. Escribe una FUNCIÓN que devuelva el valor de la distancia entre dos puntos (x1,y1) y (x2,y2). */
+DROP FUNCTION IF EXISTS distanciaEntreDosPuntos;
+DELIMITER //
+CREATE FUNCTION distanciaEntreDosPuntos(x1 INT, y1 INT, x2 INT, y2 INT)
+    RETURNS REAL
+    BEGIN
+        DECLARE distancia REAL;
+        SET distancia = (SQRT(POWER(x2-x1, 2) + POWER(y2-y1, 2)));
+    RETURN distancia;
+    END //
+DELIMITER ;
+
+SELECT distanciaEntreDosPuntos(2, 1, 4, 4);
+
 /* 3. Escribe una FUNCIÓN que reciba como parámetro de entrada un valor numérico que represente un día de la semana y 
 que devuelva una cadena de caracteres con el nombre del día de la semana correspondiente. Por ejemplo, para el 
-valor de entrada 1 debería devolver la cadena lunes.  */
+valor de entrada 1 debería devolver la cadena lunes. */
+DROP FUNCTION IF EXISTS diaSemana;
+DELIMITER //
+CREATE FUNCTION diaSemana(numero INT)
+    RETURNS VARCHAR(10)
+    BEGIN
+        DECLARE dia VARCHAR(10);
+
+        CASE numero
+            WHEN numero=1 THEN SET dia = "Lunes";
+            WHEN numero=2 THEN SET dia = "Marte";
+            WHEN numero=3 THEN SET dia = "Miércoles";
+            WHEN numero=4 THEN SET dia = "Jueves";
+            WHEN numero=5 THEN SET dia = "Viernes";
+            WHEN numero=6 THEN SET dia = "Sábado";
+            WHEN numero=7 THEN SET dia = "Domingo";
+        END CASE;
+
+    RETURN dia;
+END //
+DELIMITER ;
+
+SELECT diaSemana(4);
+
 /* 4. Escribe una FUNCIÓN que reciba tres números reales como parámetros de entrada y devuelva el mayor de los tres. */
+DROP FUNCTION IF EXISTS numeroRealMayor;
+DELIMITER //
+CREATE FUNCTION numeroRealMayor(numero1 REAL, numero2 REAL, numero3 REAL)
+    RETURNS REAL
+    BEGIN
+        DECLARE numeroMayor REAL;
+        IF (numero1 > numero2 AND numero1>numero3) THEN SET numeroMayor = numero1;
+        ELSEIF (numero2 > numero1 AND numero2 > numero3) THEN SET numeroMayor = numero2;
+        ELSE SET numeroMayor = numero3;
+        END IF;
+    RETURN numeroMayor;
+    END //
+DELIMITER ;
+
+SELECT numeroRealMayor(5.32, 7.88, 1.22);
+
 /* 5. Escribe una FUNCIÓN que devuelva el valor del área de un círculo a partir del valor del radio que se recibirá como parámetro de entrada. */
+DROP FUNCTION IF EXISTS areaCirculo;
+DELIMITER //
+CREATE FUNCTION areaCirculo(radio REAL)
+    RETURNS REAL
+    BEGIN
+        DECLARE area REAL;
+        SET area = PI() * POWER(radio, 2);
+    RETURN area;
+    END //
+DELIMITER ;
+
+SELECT areaCirculo(4.2);

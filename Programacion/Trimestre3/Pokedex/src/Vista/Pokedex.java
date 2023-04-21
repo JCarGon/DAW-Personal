@@ -1,5 +1,6 @@
 package Vista;
 
+import Modelo.AudioPlayer;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
