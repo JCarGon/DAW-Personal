@@ -15,6 +15,8 @@ import javax.swing.SpinnerNumberModel;
 import java.awt.Toolkit;
 import Modelo.Pokemon;
 import Controlador.Controlador;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -50,7 +52,7 @@ public class Pokedex extends javax.swing.JFrame {
         PkmImg = new javax.swing.JLabel();
         SpinnerModel model = new SpinnerNumberModel(1, 1, 251, 1);
         NumPokedex = new javax.swing.JSpinner(model);
-        jButton2 = new javax.swing.JButton();
+        PrintDatos = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         CampoDatos = new javax.swing.JTextArea();
         ImagenFondo = new javax.swing.JLabel();
@@ -86,9 +88,14 @@ public class Pokedex extends javax.swing.JFrame {
         NumPokedex.setEditor(new javax.swing.JSpinner.NumberEditor(NumPokedex, ""));
         jPanel1.add(NumPokedex, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 380, 90, 40));
 
-        jButton2.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
-        jButton2.setText("Imprimir datos");
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 380, 110, 40));
+        PrintDatos.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
+        PrintDatos.setText("Imprimir datos");
+        PrintDatos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PrintDatosActionPerformed(evt);
+            }
+        });
+        jPanel1.add(PrintDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 380, 110, 40));
 
         jScrollPane1.setBackground(new java.awt.Color(0, 0, 0));
         jScrollPane1.setBorder(null);
@@ -143,13 +150,36 @@ public class Pokedex extends javax.swing.JFrame {
         CampoDatos.setText(mostrarPantalla);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void PrintDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrintDatosActionPerformed
+        String ruta = "DatosPokemon.txt";
+        String valorConsulta = NumPokedex.getValue().toString();
+        Pokemon pokemon = Controlador.obtenerPkmDeBBDD(valorConsulta);
+        try {
+            // Crear un objeto BufferedWriter para escribir en el archivo
+            BufferedWriter writer = new BufferedWriter(new FileWriter(ruta, true));
+        
+            // Escribir el nombre y la contraseña del usuario en una nueva línea
+            writer.write("Número de Pokédex: " +NumPokedex.getValue()+ ", " +pokemon.getNombre_Pokemon() +", " +pokemon.getTipo_Pokemon() 
+                    + ", " + pokemon.getHabilidad_pokemon() + ", " + pokemon.getHabilidad_Oculta() + ", fase evolutiva: " + pokemon.getFase_Evolutiva()+".");
+            writer.newLine();
+        
+            // Cerrar el BufferedWriter para guardar los cambios en el archivo
+            writer.close();
+        
+            // Mostrar un mensaje de éxito al usuario
+            JOptionPane.showMessageDialog(null, "Datos generados correctamente.");
+        } catch (IOException ex) {
+            System.out.println("Error al escribir en el archivo: " + ex.getMessage());
+        }
+    }//GEN-LAST:event_PrintDatosActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea CampoDatos;
     private javax.swing.JLabel ImagenFondo;
     private javax.swing.JSpinner NumPokedex;
     private javax.swing.JLabel PkmImg;
+    private javax.swing.JButton PrintDatos;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
