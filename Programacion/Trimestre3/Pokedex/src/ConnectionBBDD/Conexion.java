@@ -6,9 +6,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import Modelo.Pokemon;
 import Modelo.User;
-import Vista.Pokedex;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
 
 public class Conexion {
 	
@@ -31,16 +28,15 @@ public class Conexion {
             conexion = DriverManager.getConnection(url, user, pass);
             System.out.println("Base de datos situada en :\n "+url);
             consulta = conexion.createStatement();
-        }catch(Exception e){
+        }catch(ClassNotFoundException | SQLException e){
             JOptionPane.showMessageDialog(null, e.getMessage());
-            e.printStackTrace();
         }
     }
     
     public static ResultSet ejecutarSentencia(String sentencia){
         try {
             resultado = consulta.executeQuery(sentencia);
-        }catch(Exception e){
+        }catch(SQLException e){
             JOptionPane.showMessageDialog(null, e.getMessage());
             System.out.println("Error: " + sentencia);
         }
@@ -60,9 +56,10 @@ public class Conexion {
     public static void cerrar(){
         try{
             consulta.close();
-        }catch(Exception e){}
+        }catch(SQLException e){}
     }
     
+    /*Recibe el número del pokemon por parámetro, monta la consulta con dicho número, crea el objeto Pokemon y lo devuelve*/
     public static Pokemon darPokemon(String numero){
         String consulta = "SELECT * FROM pokemon WHERE ID = "+numero;
         System.out.println(consulta);
@@ -89,32 +86,10 @@ public class Conexion {
         return pokemon;
     }
     
-    public static void crearUsuario(String nombre, String pass){
-        User user = new User(nombre, pass);
-        int count = 0;
-        ResultSet r;
-        if(user.getNombre().toUpperCase().equals("ROOT")){
-            JOptionPane.showMessageDialog(null, "No se puede crear un usuario root. Ya eres el root.");
-        }else{
-            //SELECT COUNT(*) FROM USER WHERE NOMBRE=user.getNOMBRE(); si == 1 -> no se puede crear; si == 0 -> lo creo
-            try {
-                r = ejecutarSentencia("SELECT COUNT(*) FROM user WHERE Nombre = '"+user.getNombre()+"'");
-                if(r.next()){
-                   count = r.getInt(1);
-                }
-                if(count == 1){
-                    JOptionPane.showMessageDialog(null, "El usuario ya existe.");
-                }else{
-                    String insert = "INSERT INTO user VALUES ('" + user.getNombre() + "', '" + user.getPassword() + "')";
-                    ejecutarUpdate(insert);
-                    JOptionPane.showMessageDialog(null, "Usuario agregado a la base de datos correctamente.");
-                }
-            } catch (SQLException ex) {
-                System.out.println("Error en el Select COUNT(*)."+ex);
-            }
-        }
-    }
-    
+    /*Recibe por parámetro nombre y contraseña;
+    Hago una consulta a la bbdd para comprobar si hay alguna coincidencia con ese nombre y contraseña:
+    -Si devuelve 1, significa que hay un usuario con esos datos y hace login (entra al sistema)
+    -Si devuelve 0, significa que no hay un usuario con esos datos y no hace login.*/
     public static boolean login(String nombreUser, String pass){
         User user = new User(nombreUser, pass);
         String select = "SELECT COUNT(*) FROM user WHERE Nombre = '" + user.getNombre() + "' AND Pass = '" + user.getPassword() + "'";
@@ -139,6 +114,39 @@ public class Conexion {
         return login;
     }
     
+    /*Recibe por parámetro nombre y contraseña; si el usuario es root, no se puede crear;
+    Hago una consulta a la bbdd para comprobar si hay alguna coincidencia con ese nombre de usuario:
+    -Si devuelve 1, significa que ya hay un usuario y no dejo crear otro con el mismo nombre
+    -Si devuelve 0, significa que no existe ese nombre y creo el usuario.*/
+    public static void crearUsuario(String nombre, String pass){
+        User user = new User(nombre, pass);
+        int count = 0;
+        ResultSet r;
+        if(user.getNombre().toUpperCase().equals("ROOT")){
+            JOptionPane.showMessageDialog(null, "No se puede crear un usuario root. Ya eres el root.");
+        }else{
+            try {
+                r = ejecutarSentencia("SELECT COUNT(*) FROM user WHERE Nombre = '"+user.getNombre()+"'");
+                if(r.next()){
+                   count = r.getInt(1);
+                }
+                if(count == 1){
+                    JOptionPane.showMessageDialog(null, "El usuario ya existe.");
+                }else{
+                    String insert = "INSERT INTO user VALUES ('" + user.getNombre() + "', '" + user.getPassword() + "')";
+                    ejecutarUpdate(insert);
+                    JOptionPane.showMessageDialog(null, "Usuario agregado a la base de datos correctamente.");
+                }
+            } catch (SQLException ex) {
+                System.out.println("Error en el Select COUNT(*)."+ex);
+            }
+        }
+    }
+    
+    /*Recibe por parámetro nombre de usuario; si el nombre introducido es ROOT, no se puede eliminar a dicho usuario;
+    Hago una consulta a la bbdd para comprobar si hay alguna coincidencia con ese nombre:
+    -Si devuelve 1, significa que hay un usuario con ese nombre, lo elimina de la bbdd y devuelve un true;
+    -Si devuelve 0, significa que no hay un usuario con esos datos y devuelve un false.*/
     public static boolean deleteUser(String nombreUser){
         User user = new User(nombreUser, null);
         int count = 0;
@@ -147,28 +155,31 @@ public class Conexion {
         if(user.getNombre().toUpperCase().equals("ROOT")){
             JOptionPane.showMessageDialog(null, "No se puede eliminar al usuario root.");
         }else{
-            //SELECT COUNT(*) FROM USER WHERE NOMBRE=user.getNOMBRE(); si == 1 -> se elimina porque existe; si == 0 -> no existe y no se puede eliminar
             try {
                 r = ejecutarSentencia("SELECT COUNT(*) FROM user WHERE Nombre = '"+user.getNombre()+"'");
                 if(r.next()){
                    count = r.getInt(1);
                 }
-                if(count == 1){
-                    eliminar = true;
-                    String delete = "DELETE FROM user WHERE Nombre = '"+user.getNombre()+"'";
-                    System.out.println(delete);
-                    ejecutarUpdate(delete);
-                    JOptionPane.showMessageDialog(null, "El usuario "+user.getNombre()+" ha sido borrado.");
-                }else{
-                    JOptionPane.showMessageDialog(null, "Este usuario no se puede borrar porque no existe.");
-                }
             } catch (SQLException ex) {
                 System.out.println("Error en el Select COUNT(*)."+ex);
+            }
+            if(count == 1){
+                eliminar = true;
+                String delete = "DELETE FROM user WHERE Nombre = '"+user.getNombre()+"'";
+                System.out.println(delete);
+                ejecutarUpdate(delete);
+                JOptionPane.showMessageDialog(null, "El usuario "+user.getNombre()+" ha sido borrado.");
+            }else{
+                JOptionPane.showMessageDialog(null, "Este usuario no se puede borrar porque no existe.");
             }
         }
         return eliminar;
     }
     
+    /*Recibe por parámetro nombre de usuario; si el nombre introducido es ROOT, no se puede modificar a dicho usuario;
+    Hago una consulta a la bbdd para comprobar si hay alguna coincidencia con ese nombre:
+    -Si devuelve 1, significa que hay un usuario con ese nombre y devuelve un true;
+    -Si devuelve 0, significa que no hay un usuario con esos datos y devuelve un false.*/
     public static boolean comprobarExistenciaUser(String nombre){
         User user = new User(nombre, null);
         int count = 0;
@@ -177,7 +188,6 @@ public class Conexion {
         if(user.getNombre().toUpperCase().equals("ROOT")){
             JOptionPane.showMessageDialog(null, "No se puede modificar al usuario root.");
         }else{
-            //SELECT COUNT(*) FROM USER WHERE NOMBRE=user.getNOMBRE(); si == 1 -> existe; si == 0 -> no existe
             try {
                 r = ejecutarSentencia("SELECT COUNT(*) FROM user WHERE Nombre = '"+user.getNombre()+"'");
                 if(r.next()){
@@ -194,4 +204,9 @@ public class Conexion {
         }
         return existe;
     }
+    
+    public static void modificarUser(String nombre, String pass, String nombreParaModificar){
+        String update = "UPDATE user SET Nombre = '"+nombre+"', Pass = '"+pass+"' WHERE Nombre = '"+nombreParaModificar+"'";
+        ejecutarUpdate(update);
+   }
 }

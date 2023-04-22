@@ -1,8 +1,12 @@
 package Vista;
+import Controlador.Controlador;
+import javax.swing.JOptionPane;
 
 public class ModificarUser extends javax.swing.JFrame {
-
-    public ModificarUser() {
+    private String nombreParaModificar;
+    
+    public ModificarUser(String nombreParaModificar) {
+        this.nombreParaModificar = nombreParaModificar;
         initComponents();
         this.setVisible(true);
         this.setLocationRelativeTo(null);
@@ -23,7 +27,6 @@ public class ModificarUser extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(300, 200));
         setMinimumSize(new java.awt.Dimension(300, 200));
-        setPreferredSize(new java.awt.Dimension(300, 200));
         setResizable(false);
 
         jPanel1.setPreferredSize(new java.awt.Dimension(300, 200));
@@ -102,7 +105,11 @@ public class ModificarUser extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+        String userNameModificado = UserNameModificado.getText();
+        String passModificada = UserPassModificado.getText();
+        Controlador.modificarUser(userNameModificado, passModificada, this.nombreParaModificar);
+        JOptionPane.showMessageDialog(null, "Usuario modificado correctamente.");
+        this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

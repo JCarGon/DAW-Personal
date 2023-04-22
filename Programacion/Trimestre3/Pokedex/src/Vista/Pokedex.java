@@ -50,6 +50,7 @@ public class Pokedex extends javax.swing.JFrame {
         PkmImg = new javax.swing.JLabel();
         SpinnerModel model = new SpinnerNumberModel(1, 1, 251, 1);
         NumPokedex = new javax.swing.JSpinner(model);
+        jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         CampoDatos = new javax.swing.JTextArea();
         ImagenFondo = new javax.swing.JLabel();
@@ -84,6 +85,10 @@ public class Pokedex extends javax.swing.JFrame {
 
         NumPokedex.setEditor(new javax.swing.JSpinner.NumberEditor(NumPokedex, ""));
         jPanel1.add(NumPokedex, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 380, 90, 40));
+
+        jButton2.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
+        jButton2.setText("Imprimir datos");
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 380, 110, 40));
 
         jScrollPane1.setBackground(new java.awt.Color(0, 0, 0));
         jScrollPane1.setBorder(null);
@@ -144,6 +149,7 @@ public class Pokedex extends javax.swing.JFrame {
     private javax.swing.JSpinner NumPokedex;
     private javax.swing.JLabel PkmImg;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables

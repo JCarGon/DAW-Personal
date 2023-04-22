@@ -46,7 +46,7 @@ public class Main {
                 }
                 Conexion.cerrar();
             }
-        }catch(Exception e){
+        }catch(SQLException e){
             System.out.println(e);
         }
         Inicio inicio = new Inicio();

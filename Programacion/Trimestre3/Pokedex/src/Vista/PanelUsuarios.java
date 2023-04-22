@@ -136,9 +136,9 @@ public class PanelUsuarios extends javax.swing.JFrame {
     }//GEN-LAST:event_DeleteUserActionPerformed
 
     private void ModificarUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarUserActionPerformed
-        String nombreUser = UDUser.getText();
-        if(Controlador.comprobarExistenciaUser(nombreUser)){
-            ModificarUser modificar = new ModificarUser();
+        String nombreParaModificar = UDUser.getText();
+        if(Controlador.comprobarExistenciaUser(nombreParaModificar)){
+            ModificarUser modificar = new ModificarUser(nombreParaModificar);
         }
     }//GEN-LAST:event_ModificarUserActionPerformed
 
