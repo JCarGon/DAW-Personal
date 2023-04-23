@@ -34,6 +34,7 @@ public class ModificarUser extends javax.swing.JFrame {
         jLabel1.setText("Inserte los nuevos datos del usuario:");
 
         jButton1.setText("Modificar user");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);

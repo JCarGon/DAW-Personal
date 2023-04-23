@@ -3,3 +3,4 @@ Número de Pokédex: 26, Raichu, Eléctrico, Electricidad Estática, Pararrayos,
 Número de Pokédex: 249, Lugia, Psíquico / Volador, Presión, Multitipo, fase evolutiva: No tiene evolución..
 Número de Pokédex: 11, Metapod, Bicho, Mudar, NULL, fase evolutiva: 2.
 Número de Pokédex: 12, Butterfree, Bicho/Volador, Ojo Compuesto, Allanamiento, fase evolutiva: 3.
+Número de Pokédex: 250, Ho-Oh, Fuego / Volador, Presión, Regeneración, fase evolutiva: No tiene evolución.

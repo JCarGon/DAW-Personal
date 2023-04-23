@@ -3,12 +3,8 @@ package Vista;
 import Modelo.AudioPlayer;
 import java.awt.Image;
 import java.awt.Toolkit;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
 import Controlador.Controlador;
 
 public class Inicio extends javax.swing.JFrame {
@@ -35,7 +31,7 @@ public class Inicio extends javax.swing.JFrame {
     //icono de la ventana y barra de tareas
     @Override
     public Image getIconImage(){
-        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("img/Pokeball.png"));
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("img/pokeball.png"));
         return retValue;
     }
 
@@ -70,6 +66,7 @@ public class Inicio extends javax.swing.JFrame {
         jPanel1.add(CampoUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 320, 130, 30));
 
         Login.setText("Entrar");
+        Login.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LoginActionPerformed(evt);
@@ -84,6 +81,7 @@ public class Inicio extends javax.swing.JFrame {
         jPanel1.add(logoInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 310, 100));
 
         Gestor.setText("Gestor");
+        Gestor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Gestor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GestorActionPerformed(evt);

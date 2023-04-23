@@ -34,6 +34,7 @@ public class ConfirmacionRoot extends javax.swing.JFrame {
         jLabel3.setText("Ingresa como usuario root si quieres entrar al gestor de usuarios");
 
         GestorButton.setText("Gestor de usuarios");
+        GestorButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         GestorButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GestorButtonActionPerformed(evt);

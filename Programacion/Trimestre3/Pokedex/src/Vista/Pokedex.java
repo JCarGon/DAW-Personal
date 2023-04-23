@@ -70,6 +70,7 @@ public class Pokedex extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         jButton1.setText("Ver datos");
         jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -90,6 +91,7 @@ public class Pokedex extends javax.swing.JFrame {
 
         PrintDatos.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
         PrintDatos.setText("Imprimir datos");
+        PrintDatos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         PrintDatos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PrintDatosActionPerformed(evt);
