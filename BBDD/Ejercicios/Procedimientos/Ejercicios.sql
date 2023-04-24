@@ -297,13 +297,13 @@ CREATE FUNCTION diaSemana(numero INT)
         DECLARE dia VARCHAR(10);
 
         CASE numero
-            WHEN numero=1 THEN SET dia = "Lunes";
-            WHEN numero=2 THEN SET dia = "Marte";
-            WHEN numero=3 THEN SET dia = "Miércoles";
-            WHEN numero=4 THEN SET dia = "Jueves";
-            WHEN numero=5 THEN SET dia = "Viernes";
-            WHEN numero=6 THEN SET dia = "Sábado";
-            WHEN numero=7 THEN SET dia = "Domingo";
+            WHEN 1 THEN SET dia = "Lunes";
+            WHEN 2 THEN SET dia = "Marte";
+            WHEN 3 THEN SET dia = "Miércoles";
+            WHEN 4 THEN SET dia = "Jueves";
+            WHEN 5 THEN SET dia = "Viernes";
+            WHEN 6 THEN SET dia = "Sábado";
+            WHEN 7 THEN SET dia = "Domingo";
         END CASE;
 
     RETURN dia;
