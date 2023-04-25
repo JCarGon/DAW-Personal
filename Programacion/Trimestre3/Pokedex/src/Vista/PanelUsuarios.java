@@ -1,5 +1,7 @@
 package Vista;
+
 import Controlador.Controlador;
+import javax.swing.JOptionPane;
 
 public class PanelUsuarios extends javax.swing.JFrame {
 
@@ -170,12 +172,23 @@ public class PanelUsuarios extends javax.swing.JFrame {
     private void CrearUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearUserActionPerformed
         String nombreNuevoUser = NombreCrearUser.getText();
         String passNuevoUser = PassCrearUser.getText();
-        Controlador.crearUser(nombreNuevoUser, passNuevoUser);
+        if(!nombreNuevoUser.contains(" ") && nombreNuevoUser.length()>0 && passNuevoUser.length()>0){
+            Controlador.crearUser(nombreNuevoUser, passNuevoUser);
+            NombreCrearUser.setText("");
+            PassCrearUser.setText("");
+        }else if(nombreNuevoUser.length()==0){
+            JOptionPane.showMessageDialog(null, "No se puede crear un usuario sin nombre. Inserta uno.");
+        }else if(passNuevoUser.length()==0){
+            JOptionPane.showMessageDialog(null, "No se puede crear un usuario sin contraseña. Inserta una.");
+        }else{
+            JOptionPane.showMessageDialog(null, "No se pueden usar espacios en el nombre de usuario.");
+        }
     }//GEN-LAST:event_CrearUserActionPerformed
 
     private void DeleteUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteUserActionPerformed
         String nombreUser = UDUser.getText();
         Controlador.deleteUser(nombreUser);
+        UDUser.setText("");
     }//GEN-LAST:event_DeleteUserActionPerformed
 
     private void ModificarUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarUserActionPerformed

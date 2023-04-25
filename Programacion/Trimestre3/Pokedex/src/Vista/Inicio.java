@@ -6,6 +6,7 @@ import java.awt.Toolkit;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import Controlador.Controlador;
+import javax.swing.JOptionPane;
 
 public class Inicio extends javax.swing.JFrame {
     private AudioPlayer audioPlayer;
@@ -103,10 +104,18 @@ public class Inicio extends javax.swing.JFrame {
     private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
         String userTrainer = CampoUser.getText();
         String passTrainer = CampoPass.getText();
-        if(Controlador.login(userTrainer, passTrainer)){
-            this.dispose();
-            audioPlayer.stopAudio();
-            Pokedex ventanaPokedex = new Pokedex();
+        if(!userTrainer.contains(" ") && userTrainer.length()>0 && passTrainer.length()>0){
+            if(Controlador.login(userTrainer, passTrainer)){
+                this.dispose();
+                audioPlayer.stopAudio();
+                Pokedex ventanaPokedex = new Pokedex();
+            }
+        }else if(userTrainer.length()==0){
+            JOptionPane.showMessageDialog(null, "Inserta un nombre de usuario.");
+        }else if(passTrainer.length()==0){
+            JOptionPane.showMessageDialog(null, "Es necesaria una contraseña para identificarse.");
+        }else{
+            JOptionPane.showMessageDialog(null, "No se pueden usar espacios en el nombre de usuario.");
         }
     }//GEN-LAST:event_LoginActionPerformed
 

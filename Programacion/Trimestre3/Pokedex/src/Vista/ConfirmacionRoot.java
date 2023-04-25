@@ -106,12 +106,19 @@ public class ConfirmacionRoot extends javax.swing.JFrame {
     private void GestorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GestorButtonActionPerformed
         String username = Username.getText();
         String password = Passname.getText();
-        if(username.toUpperCase().equals("ROOT") && password.toUpperCase().equals("ROOT")){
-            //entrar al gestor
-            this.dispose();
-            PanelUsuarios panel = new PanelUsuarios();
+        if(!username.contains(" ") && username.length()>0 && password.length()>0){
+            if(username.toUpperCase().equals("ROOT") && password.toUpperCase().equals("ROOT")){
+                this.dispose();
+                PanelUsuarios panel = new PanelUsuarios();
+            }else{
+                JOptionPane.showMessageDialog(null, "Credenciales de user root incorrectas.");
+            }
+        }else if(username.length()==0){
+            JOptionPane.showMessageDialog(null, "Inserta un nombre de usuario.");
+        }else if(password.length()==0){
+            JOptionPane.showMessageDialog(null, "Es necesaria una contraseña para identificarse.");
         }else{
-            JOptionPane.showMessageDialog(null, "Credenciales de user root incorrectas.");
+            JOptionPane.showMessageDialog(null, "No se pueden usar espacios en el nombre de usuario.");
         }
     }//GEN-LAST:event_GestorButtonActionPerformed
 
