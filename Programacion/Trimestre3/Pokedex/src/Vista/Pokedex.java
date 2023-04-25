@@ -160,7 +160,7 @@ public class Pokedex extends javax.swing.JFrame {
             // Crear un objeto BufferedWriter para escribir en el archivo
             BufferedWriter writer = new BufferedWriter(new FileWriter(ruta, true));
         
-            // Escribir el nombre y la contraseña del usuario en una nueva línea
+            // Escribir en el fichero DatosPokemon.txt los datos del pokemon actual
             writer.write("Número de Pokédex: " +NumPokedex.getValue()+ ", " +pokemon.getNombre_Pokemon() +", " +pokemon.getTipo_Pokemon() 
                     + ", " + pokemon.getHabilidad_pokemon() + ", " + pokemon.getHabilidad_Oculta() + ", fase evolutiva: " + pokemon.getFase_Evolutiva()+".");
             writer.newLine();

@@ -4,3 +4,6 @@ Número de Pokédex: 249, Lugia, Psíquico / Volador, Presión, Multitipo, fase 
 Número de Pokédex: 11, Metapod, Bicho, Mudar, NULL, fase evolutiva: 2.
 Número de Pokédex: 12, Butterfree, Bicho/Volador, Ojo Compuesto, Allanamiento, fase evolutiva: 3.
 Número de Pokédex: 250, Ho-Oh, Fuego / Volador, Presión, Regeneración, fase evolutiva: No tiene evolución.
+Número de Pokédex: 183, Marill, Agua/Hada, Absorber Agua, Potencia Bruta, fase evolutiva: 1.
+Número de Pokédex: 155, Cyndaquil, Fuego, Mar Llamas, Absorbe Fuego, fase evolutiva: 1.
+Número de Pokédex: 154, Meganium, Planta, Espesura, Hoja Mágica, fase evolutiva: 3.
