@@ -103,7 +103,7 @@ public class Inicio extends javax.swing.JFrame {
 
     private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
         String userTrainer = CampoUser.getText();
-        String passTrainer = CampoPass.getText();
+        String passTrainer = String.valueOf(CampoPass.getPassword());
         if(!userTrainer.contains(" ") && userTrainer.length()>0 && passTrainer.length()>0){
             if(Controlador.login(userTrainer, passTrainer)){
                 this.dispose();

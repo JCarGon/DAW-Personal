@@ -105,7 +105,7 @@ public class ConfirmacionRoot extends javax.swing.JFrame {
 
     private void GestorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GestorButtonActionPerformed
         String username = Username.getText();
-        String password = Passname.getText();
+        String password = String.valueOf(Passname.getPassword());
         if(!username.contains(" ") && username.length()>0 && password.length()>0){
             if(username.toUpperCase().equals("ROOT") && password.toUpperCase().equals("ROOT")){
                 this.dispose();

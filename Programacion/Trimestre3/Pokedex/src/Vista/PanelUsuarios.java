@@ -171,7 +171,7 @@ public class PanelUsuarios extends javax.swing.JFrame {
 
     private void CrearUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearUserActionPerformed
         String nombreNuevoUser = NombreCrearUser.getText();
-        String passNuevoUser = PassCrearUser.getText();
+        String passNuevoUser = String.valueOf(PassCrearUser.getPassword());
         if(!nombreNuevoUser.contains(" ") && nombreNuevoUser.length()>0 && passNuevoUser.length()>0){
             Controlador.crearUser(nombreNuevoUser, passNuevoUser);
             NombreCrearUser.setText("");

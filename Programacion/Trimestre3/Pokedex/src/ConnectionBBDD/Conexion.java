@@ -71,14 +71,14 @@ public class Conexion {
                 String tipo_Pokemon = rs.getString("tipo_Pokemon");
                 String habilidad_Pokemon = rs.getString("habilidad_Pokemon");
                 String habilidad_Oculta = "";
-                if(rs.getString("habilidad_Oculta")== null){
-                    habilidad_Oculta = "No tiene habilidad oculta";
+                if(rs.getString("habilidad_Oculta").equals("NULL")){
+                    habilidad_Oculta = "No tiene";
                 }else{
                     habilidad_Oculta = rs.getString("habilidad_Oculta");
                 }
                 String fase_Evolutiva = "";
                 if(rs.getString("fase_Evolutiva")== null){
-                    fase_Evolutiva = "No tiene evolución";
+                    fase_Evolutiva = "No tiene";
                 }else{
                     fase_Evolutiva = rs.getString("fase_Evolutiva");
                 }
