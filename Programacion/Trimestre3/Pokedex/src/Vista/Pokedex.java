@@ -27,12 +27,11 @@ public class Pokedex extends javax.swing.JFrame {
         initComponents();
         setIconImage(getIconImage()); //logo en la aplicación y en la barra de tareas
         this.setLocationRelativeTo(null);
-        setVisible(true);
-        ImageIcon imageIcon = new ImageIcon(getClass().getResource("/img/Pokeball.jpg"));
+        setVisible(true);audioPlayer = new AudioPlayer();
+        audioPlayer.playAudio("/img/Kanto2.wav");
+        ImageIcon imageIcon = new ImageIcon(getClass().getResource("/img/Pokeball.png"));
         Icon icon = new ImageIcon(imageIcon.getImage().getScaledInstance(PkmImg.getWidth(), PkmImg.getHeight(), Image.SCALE_DEFAULT));
         PkmImg.setIcon(icon);
-        audioPlayer = new AudioPlayer();
-        audioPlayer.playAudio("/img/Kanto2.wav");
         JOptionPane.showMessageDialog(null, "Escribe el número de Pokédex del Pokémon para ver su información. Solo están las dos primeras generaciones (1-251)");
     }
 
@@ -48,11 +47,12 @@ public class Pokedex extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        verDatos = new javax.swing.JButton();
         PkmImg = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         SpinnerModel model = new SpinnerNumberModel(1, 1, 251, 1);
         NumPokedex = new javax.swing.JSpinner(model);
-        PrintDatos = new javax.swing.JButton();
+        printDatos = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         CampoDatos = new javax.swing.JTextArea();
         ImagenFondo = new javax.swing.JLabel();
@@ -67,16 +67,16 @@ public class Pokedex extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        jButton1.setText("Ver datos");
-        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        verDatos.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        verDatos.setText("Ver datos");
+        verDatos.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        verDatos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        verDatos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                verDatosActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(385, 430, 90, -1));
+        jPanel1.add(verDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(385, 430, 90, -1));
 
         PkmImg.setBackground(new java.awt.Color(255, 255, 255));
         PkmImg.setForeground(new java.awt.Color(255, 255, 255));
@@ -86,18 +86,21 @@ public class Pokedex extends javax.swing.JFrame {
         PkmImg.setPreferredSize(new java.awt.Dimension(180, 150));
         jPanel1.add(PkmImg, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 180, 150));
 
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 180, 150));
+
         NumPokedex.setEditor(new javax.swing.JSpinner.NumberEditor(NumPokedex, ""));
         jPanel1.add(NumPokedex, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 380, 90, 40));
 
-        PrintDatos.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
-        PrintDatos.setText("Imprimir datos");
-        PrintDatos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        PrintDatos.addActionListener(new java.awt.event.ActionListener() {
+        printDatos.setFont(new java.awt.Font("Calibri", 0, 11)); // NOI18N
+        printDatos.setText("Imprimir datos");
+        printDatos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        printDatos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PrintDatosActionPerformed(evt);
+                printDatosActionPerformed(evt);
             }
         });
-        jPanel1.add(PrintDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 380, 110, 40));
+        jPanel1.add(printDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 380, 110, 40));
 
         jScrollPane1.setBackground(new java.awt.Color(0, 0, 0));
         jScrollPane1.setBorder(null);
@@ -123,7 +126,7 @@ public class Pokedex extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void verDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verDatosActionPerformed
         //botón de búsqueda para resultado de la select
         String valorConsulta = NumPokedex.getValue().toString();
         Pokemon pokemon = Controlador.obtenerPkmDeBBDD(valorConsulta);
@@ -134,7 +137,7 @@ public class Pokedex extends javax.swing.JFrame {
             // Create a ByteArrayOutputStream to write the image bytes to
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             // Write the image bytes to the ByteArrayOutputStream
-            ImageIO.write(img, "jpg", baos);
+            ImageIO.write(img, "png", baos);
             // Get the byte array from the ByteArrayOutputStream
             byte[] imageBytes = baos.toByteArray();
             ImageIcon imageIcon = new ImageIcon(imageBytes);
@@ -150,9 +153,9 @@ public class Pokedex extends javax.swing.JFrame {
                 +"   Habilidad Oculta: "+pokemon.getHabilidad_Oculta()+"\n"
                 +"   Fase evolutiva: "+pokemon.getFase_Evolutiva();
         CampoDatos.setText(mostrarPantalla);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_verDatosActionPerformed
 
-    private void PrintDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrintDatosActionPerformed
+    private void printDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printDatosActionPerformed
         String ruta = "DatosPokemon.txt";
         String valorConsulta = NumPokedex.getValue().toString();
         Pokemon pokemon = Controlador.obtenerPkmDeBBDD(valorConsulta);
@@ -173,16 +176,17 @@ public class Pokedex extends javax.swing.JFrame {
         } catch (IOException ex) {
             System.out.println("Error al escribir en el archivo: " + ex.getMessage());
         }
-    }//GEN-LAST:event_PrintDatosActionPerformed
+    }//GEN-LAST:event_printDatosActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea CampoDatos;
     private javax.swing.JLabel ImagenFondo;
     private javax.swing.JSpinner NumPokedex;
     private javax.swing.JLabel PkmImg;
-    private javax.swing.JButton PrintDatos;
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton printDatos;
+    private javax.swing.JButton verDatos;
     // End of variables declaration//GEN-END:variables
 }
