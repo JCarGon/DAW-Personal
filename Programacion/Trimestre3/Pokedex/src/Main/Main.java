@@ -44,7 +44,6 @@ public class Main {
                 } catch (IOException ex) {
                 System.out.println(ex);
                 }
-                Conexion.cerrar();
             }
         }catch(SQLException e){
             System.out.println(e);

@@ -12,7 +12,7 @@ public class Conexion {
     static String timeZone = "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
     static String dbName = "pokedex";
     static String host = "localhost";
-    static int port = 3306;
+    static int port = 3307;
     static String url = "jdbc:mysql://" + host + ":" + port + "/" + dbName + timeZone;
     static String user = "root";
     static String pass = "1234";
