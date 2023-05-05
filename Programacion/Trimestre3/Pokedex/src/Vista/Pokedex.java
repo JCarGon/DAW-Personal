@@ -130,30 +130,14 @@ public class Pokedex extends javax.swing.JFrame {
         //botón de búsqueda para resultado de la select
         String valorConsulta = NumPokedex.getValue().toString();
         Pokemon pokemon = Controlador.obtenerPkmDeBBDD(valorConsulta);
-        // Read the image file into a BufferedImage object
-        BufferedImage img;
         try {
-            //método para procesar la imagen
-            img = ImageIO.read(new File("src/img/pokemons/"+pokemon.getImagen_pokemon()));
-            // Create a ByteArrayOutputStream to write the image bytes to
-            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            // Write the image bytes to the ByteArrayOutputStream
-            ImageIO.write(img, "png", baos);
-            // Get the byte array from the ByteArrayOutputStream
-            byte[] imageBytes = baos.toByteArray();
-            ImageIcon imageIcon = new ImageIcon(imageBytes);
-            //Para reescalar una imagen a otras dimensiones:
-            Icon icon = new ImageIcon(imageIcon.getImage().getScaledInstance(PkmImg.getWidth(), PkmImg.getHeight(), Image.SCALE_DEFAULT));
+            Icon icon = Controlador.obtenerIcon(pokemon, PkmImg.getWidth(), PkmImg.getHeight());
             PkmImg.setIcon(icon);
         } catch (IOException ex) {
             Logger.getLogger(Pokedex.class.getName()).log(Level.SEVERE, null, ex);
         }
-        String mostrarPantalla = "\n   Nombre: "+pokemon.getNombre_Pokemon()+"\n"
-                +"   Tipo: "+pokemon.getTipo_Pokemon()+"\n"
-                +"   Habilidad: "+pokemon.getHabilidad_pokemon()+"\n"
-                +"   Habilidad Oculta: "+pokemon.getHabilidad_Oculta()+"\n"
-                +"   Fase evolutiva: "+pokemon.getFase_Evolutiva();
-        CampoDatos.setText(mostrarPantalla);
+        String DatosPokemon = Controlador.devolverDatosPokemon(pokemon);
+        CampoDatos.setText(DatosPokemon);
     }//GEN-LAST:event_verDatosActionPerformed
 
     private void printDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printDatosActionPerformed
