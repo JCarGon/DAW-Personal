@@ -9,3 +9,4 @@ Número de Pokédex: 155, Cyndaquil, Fuego, Mar Llamas, Absorbe Fuego, fase evol
 Número de Pokédex: 154, Meganium, Planta, Espesura, Hoja Mágica, fase evolutiva: 3.
 Número de Pokédex: 158, Totodile, Agua, Torrente, Potencia Bruta, fase evolutiva: 1.
 Número de Pokédex: 157, Typhlosion, Fuego, Mar Llamas, Absorbe Fuego, fase evolutiva: 3.
+Número de Pokédex: 249, Lugia, Psíquico / Volador, Presión, Multitipo, fase evolutiva: No tiene.

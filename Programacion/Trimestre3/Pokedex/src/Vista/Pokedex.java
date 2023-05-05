@@ -2,11 +2,7 @@ package Vista;
 
 import Modelo.AudioPlayer;
 import java.awt.Image;
-import java.awt.image.BufferedImage;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.io.IOException;
-import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -15,8 +11,6 @@ import javax.swing.SpinnerNumberModel;
 import java.awt.Toolkit;
 import Modelo.Pokemon;
 import Controlador.Controlador;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -144,23 +138,10 @@ public class Pokedex extends javax.swing.JFrame {
         String ruta = "DatosPokemon.txt";
         String valorConsulta = NumPokedex.getValue().toString();
         Pokemon pokemon = Controlador.obtenerPkmDeBBDD(valorConsulta);
-        //método para escribir en otro lugar (sacar de aquí)
         try {
-            // Crear un objeto BufferedWriter para escribir en el archivo
-            BufferedWriter writer = new BufferedWriter(new FileWriter(ruta, true));
-        
-            // Escribir en el fichero DatosPokemon.txt los datos del pokemon actual
-            writer.write("Número de Pokédex: " +NumPokedex.getValue()+ ", " +pokemon.getNombre_Pokemon() +", " +pokemon.getTipo_Pokemon() 
-                    + ", " + pokemon.getHabilidad_pokemon() + ", " + pokemon.getHabilidad_Oculta() + ", fase evolutiva: " + pokemon.getFase_Evolutiva()+".");
-            writer.newLine();
-        
-            // Cerrar el BufferedWriter para guardar los cambios en el archivo
-            writer.close();
-        
-            // Mostrar un mensaje de éxito al usuario
-            JOptionPane.showMessageDialog(null, "Datos generados correctamente.");
+            Controlador.escribirDatosPokemon(pokemon, ruta);
         } catch (IOException ex) {
-            System.out.println("Error al escribir en el archivo: " + ex.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al intentar escribir en el archivo.");
         }
     }//GEN-LAST:event_printDatosActionPerformed
 

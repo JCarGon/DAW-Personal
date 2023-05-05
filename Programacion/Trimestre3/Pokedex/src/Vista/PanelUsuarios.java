@@ -187,8 +187,9 @@ public class PanelUsuarios extends javax.swing.JFrame {
 
     private void DeleteUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteUserActionPerformed
         String nombreUser = UDUser.getText();
-        Controlador.deleteUser(nombreUser);
-        UDUser.setText("");
+        if(Controlador.deleteUser(nombreUser)){
+                    UDUser.setText("");
+        }
     }//GEN-LAST:event_DeleteUserActionPerformed
 
     private void ModificarUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarUserActionPerformed

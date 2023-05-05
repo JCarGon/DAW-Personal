@@ -12,7 +12,7 @@ public class Controlador {
     
     //método que recoje por parámetros un pokemon, altura y anchura para devolver un icon reescalado a dichos tamaños
     public static Icon obtenerIcon(Pokemon pokemon, int width, int height) throws IOException{
-        return ServicesPokemon.devolverIcon(pokemon, width, height);
+        return ServicesPokemon.devolverIconPokemon(pokemon, width, height);
     }
     
     //método que recoja por parámetros un pokemon y devuelva un String para montar los datos
@@ -42,5 +42,10 @@ public class Controlador {
     
     public static void modificarUser(String nombre, String pass, String nombreParaModificar){
         ServicesUsuario.modificarUser(nombre, pass, nombreParaModificar);
+    }
+    
+    //método pque recibe por parámetro el pokemon y una ruta de archivo para escribir los datos del pokemon en dicho archivo
+    public static void escribirDatosPokemon(Pokemon pokemon, String ruta) throws IOException{
+        ServicesPokemon.escribirPokemonEnFichero(pokemon, ruta);
     }
 }

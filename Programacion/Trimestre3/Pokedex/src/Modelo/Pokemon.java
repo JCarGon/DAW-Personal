@@ -9,7 +9,8 @@ public class Pokemon {
     private String fase_Evolutiva;
     private String imagen_pokemon;
 
-    public Pokemon(String nombre_Pokemon, String tipo_Pokemon, String habilidad_pokemon, String habilidad_Oculta, String fase_Evolutiva, String imagen_pokemon) {
+    public Pokemon(int ID, String nombre_Pokemon, String tipo_Pokemon, String habilidad_pokemon, String habilidad_Oculta, String fase_Evolutiva, String imagen_pokemon) {
+        this.ID = ID;
         this.nombre_Pokemon = nombre_Pokemon;
         this.tipo_Pokemon = tipo_Pokemon;
         this.habilidad_pokemon = habilidad_pokemon;

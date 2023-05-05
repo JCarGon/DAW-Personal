@@ -3,8 +3,10 @@ package Services;
 import Modelo.Pokemon;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
+import java.io.BufferedWriter;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,6 +15,7 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 public class ServicesPokemon {
     /*Recibe el número del pokemon por parámetro, monta la consulta con dicho número, crea el objeto Pokemon y lo devuelve*/
@@ -23,6 +26,7 @@ public class ServicesPokemon {
         Pokemon pokemon = null;
         try {
             while(rs.next()){
+                int numero_Pokemon = rs.getInt("ID");
                 String nombre_Pokemon = rs.getString("nombre_Pokemon");
                 String tipo_Pokemon = rs.getString("tipo_Pokemon");
                 String habilidad_Pokemon = rs.getString("habilidad_Pokemon");
@@ -39,7 +43,7 @@ public class ServicesPokemon {
                     fase_Evolutiva = rs.getString("fase_Evolutiva");
                 }
                 String foto = rs.getString("imagen_Pokemon");
-                pokemon = new Pokemon(nombre_Pokemon, tipo_Pokemon, habilidad_Pokemon, habilidad_Oculta, fase_Evolutiva, foto);
+                pokemon = new Pokemon(numero_Pokemon, nombre_Pokemon, tipo_Pokemon, habilidad_Pokemon, habilidad_Oculta, fase_Evolutiva, foto);
             }
         } catch (SQLException ex) {
             Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
@@ -48,7 +52,7 @@ public class ServicesPokemon {
     }
     
     //Recibe por parámetros un pokemon, alto y ancho para montar, reescalar la imagen y devolver un icon
-    public static Icon devolverIcon(Pokemon pokemon, int width, int height) throws IOException{
+    public static Icon devolverIconPokemon(Pokemon pokemon, int width, int height) throws IOException{
         BufferedImage img;
         //método para procesar la imagen
         img = ImageIO.read(new File("src/img/pokemons/"+pokemon.getImagen_pokemon()));
@@ -71,5 +75,21 @@ public class ServicesPokemon {
                 +"   Habilidad Oculta: "+pokemon.getHabilidad_Oculta()+"\n"
                 +"   Fase evolutiva: "+pokemon.getFase_Evolutiva();
         return mostrarPantalla;
+    }
+    
+    public static void escribirPokemonEnFichero(Pokemon pokemon, String ruta) throws IOException{
+        // Crear un objeto BufferedWriter para escribir en el archivo
+        BufferedWriter writer = new BufferedWriter(new FileWriter(ruta, true));
+        
+        // Escribir en el fichero DatosPokemon.txt los datos del pokemon actual
+        writer.write("Número de Pokédex: " +pokemon.getID()+ ", " +pokemon.getNombre_Pokemon() +", " +pokemon.getTipo_Pokemon() 
+            + ", " + pokemon.getHabilidad_pokemon() + ", " + pokemon.getHabilidad_Oculta() + ", fase evolutiva: " + pokemon.getFase_Evolutiva()+".");
+        writer.newLine();
+
+        // Cerrar el BufferedWriter para guardar los cambios en el archivo
+        writer.close();
+        
+        // Mostrar un mensaje de éxito al usuario
+        JOptionPane.showMessageDialog(null, "Datos generados correctamente.");
     }
 }
