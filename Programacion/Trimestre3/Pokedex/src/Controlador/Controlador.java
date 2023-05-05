@@ -1,6 +1,6 @@
 package Controlador;
 import Modelo.Pokemon;
-import ConnectionBBDD.Conexion;
+import Services.Conexion;
 
 public class Controlador {
     //método que recoja por parámetro el número para montar la consulta, se lo pasa al método darPokemon y me devuelva el objeto Pokemon creado

@@ -1,4 +1,4 @@
-package ConnectionBBDD;
+package Services;
 
 import java.sql.*;
 import javax.swing.JOptionPane;

@@ -133,6 +133,7 @@ public class Pokedex extends javax.swing.JFrame {
         // Read the image file into a BufferedImage object
         BufferedImage img;
         try {
+            //método para procesar la imagen
             img = ImageIO.read(new File("src/img/pokemons/"+pokemon.getImagen_pokemon()));
             // Create a ByteArrayOutputStream to write the image bytes to
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -159,6 +160,7 @@ public class Pokedex extends javax.swing.JFrame {
         String ruta = "DatosPokemon.txt";
         String valorConsulta = NumPokedex.getValue().toString();
         Pokemon pokemon = Controlador.obtenerPkmDeBBDD(valorConsulta);
+        //método para escribir en otro lugar (sacar de aquí)
         try {
             // Crear un objeto BufferedWriter para escribir en el archivo
             BufferedWriter writer = new BufferedWriter(new FileWriter(ruta, true));

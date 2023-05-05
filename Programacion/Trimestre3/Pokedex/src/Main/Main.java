@@ -1,6 +1,6 @@
 package Main;
 
-import ConnectionBBDD.Conexion;
+import Services.Conexion;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
