@@ -172,7 +172,7 @@ public class PanelUsuarios extends javax.swing.JFrame {
     private void CrearUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearUserActionPerformed
         String nombreNuevoUser = NombreCrearUser.getText();
         String passNuevoUser = String.valueOf(PassCrearUser.getPassword());
-        if(!nombreNuevoUser.contains(" ") && nombreNuevoUser.length()>0 && passNuevoUser.length()>0){
+        if(!nombreNuevoUser.contains(" ") && nombreNuevoUser.length()>0 && !passNuevoUser.contains(" ") && passNuevoUser.length()>0){
             Controlador.crearUser(nombreNuevoUser, passNuevoUser);
             NombreCrearUser.setText("");
             PassCrearUser.setText("");
@@ -180,15 +180,17 @@ public class PanelUsuarios extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "No se puede crear un usuario sin nombre. Inserta uno.");
         }else if(passNuevoUser.length()==0){
             JOptionPane.showMessageDialog(null, "No se puede crear un usuario sin contraseña. Inserta una.");
-        }else{
+        }else if(nombreNuevoUser.contains(" ")){
             JOptionPane.showMessageDialog(null, "No se pueden usar espacios en el nombre de usuario.");
+        }else{
+            JOptionPane.showMessageDialog(null, "No se pueden usar espacios en la contraseña de usuario.");
         }
     }//GEN-LAST:event_CrearUserActionPerformed
 
     private void DeleteUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteUserActionPerformed
         String nombreUser = UDUser.getText();
         if(Controlador.deleteUser(nombreUser)){
-                    UDUser.setText("");
+            UDUser.setText("");
         }
     }//GEN-LAST:event_DeleteUserActionPerformed
 
@@ -196,6 +198,7 @@ public class PanelUsuarios extends javax.swing.JFrame {
         String nombreParaModificar = UDUser.getText();
         if(Controlador.comprobarExistenciaUser(nombreParaModificar)){
             ModificarUser modificar = new ModificarUser(nombreParaModificar);
+            UDUser.setText("");
         }
     }//GEN-LAST:event_ModificarUserActionPerformed
 

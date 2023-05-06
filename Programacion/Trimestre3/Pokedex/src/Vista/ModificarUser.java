@@ -109,7 +109,7 @@ public class ModificarUser extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String userNameModificado = UserNameModificado.getText();
         String passModificada = String.valueOf(UserPassModificado.getPassword());
-        if(!userNameModificado.contains(" ") && userNameModificado.length()>0 && passModificada.length()>0){
+        if(!userNameModificado.contains(" ") && userNameModificado.length()>0 && !passModificada.contains(" ") && passModificada.length()>0){
             Controlador.modificarUser(userNameModificado, passModificada, this.nombreParaModificar);
             JOptionPane.showMessageDialog(null, "Usuario modificado correctamente.");
             this.dispose();
@@ -117,8 +117,10 @@ public class ModificarUser extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "No se puede modificar un usuario sin nombre. Inserta uno.");
         }else if(passModificada.length()==0){
             JOptionPane.showMessageDialog(null, "No se puede modificar un usuario sin contraseña. Inserta una.");
-        }else{
+        }else if(userNameModificado.contains(" ")){
             JOptionPane.showMessageDialog(null, "No se pueden usar espacios en el nombre de usuario.");
+        }else{
+            JOptionPane.showMessageDialog(null, "No se pueden usar espacios en la contraseña de usuario.");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
