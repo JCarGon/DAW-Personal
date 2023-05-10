@@ -16,8 +16,10 @@ import java.util.logging.Logger;
 
 public class Pokedex extends javax.swing.JFrame {
     private AudioPlayer audioPlayer;
+    private Inicio ventanaInicio;
     
-    public Pokedex() {
+    public Pokedex(Inicio ventanaInicio) {
+        this.ventanaInicio = ventanaInicio;
         initComponents();
         setIconImage(getIconImage()); //logo en la aplicación y en la barra de tareas
         this.setLocationRelativeTo(null);
@@ -47,6 +49,7 @@ public class Pokedex extends javax.swing.JFrame {
         SpinnerModel model = new SpinnerNumberModel(1, 1, 251, 1);
         NumPokedex = new javax.swing.JSpinner(model);
         printDatos = new javax.swing.JButton();
+        BotonCerrarSesion = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         CampoDatos = new javax.swing.JTextArea();
         ImagenFondo = new javax.swing.JLabel();
@@ -95,6 +98,14 @@ public class Pokedex extends javax.swing.JFrame {
             }
         });
         jPanel1.add(printDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 380, 110, 40));
+
+        BotonCerrarSesion.setText("Cerrar Cesión");
+        BotonCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonCerrarSesionActionPerformed(evt);
+            }
+        });
+        jPanel1.add(BotonCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, -1, -1));
 
         jScrollPane1.setBackground(new java.awt.Color(0, 0, 0));
         jScrollPane1.setBorder(null);
@@ -145,7 +156,13 @@ public class Pokedex extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_printDatosActionPerformed
 
+    private void BotonCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCerrarSesionActionPerformed
+        this.dispose();
+        ventanaInicio.setVisible(true);
+    }//GEN-LAST:event_BotonCerrarSesionActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotonCerrarSesion;
     private javax.swing.JTextArea CampoDatos;
     private javax.swing.JLabel ImagenFondo;
     private javax.swing.JSpinner NumPokedex;

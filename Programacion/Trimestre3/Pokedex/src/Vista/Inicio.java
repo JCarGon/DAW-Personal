@@ -106,9 +106,11 @@ public class Inicio extends javax.swing.JFrame {
         String passTrainer = String.valueOf(CampoPass.getPassword());
         if(!userTrainer.contains(" ") && userTrainer.length()>0 && passTrainer.length()>0){
             if(Controlador.login(userTrainer, passTrainer)){
-                this.dispose();
                 audioPlayer.stopAudio();
-                Pokedex ventanaPokedex = new Pokedex();
+                this.setVisible(false);
+                CampoUser.setText("");
+                CampoPass.setText("");
+                Pokedex ventanaPokedex = new Pokedex(this);
             }
         }else if(userTrainer.length()==0){
             JOptionPane.showMessageDialog(null, "Inserta un nombre de usuario.");
