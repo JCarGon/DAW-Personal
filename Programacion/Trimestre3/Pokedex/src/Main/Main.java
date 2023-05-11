@@ -7,6 +7,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.sql.*;
 import Vista.Inicio;
+import Vista.PantallaCarga;
 
 public class Main {
 
@@ -48,6 +49,6 @@ public class Main {
         }catch(SQLException e){
             System.out.println(e);
         }
-        Inicio inicio = new Inicio();
+        PantallaCarga pantallaCarga = new PantallaCarga();
     }
 }

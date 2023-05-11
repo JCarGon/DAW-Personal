@@ -12,6 +12,12 @@ public class AudioPlayer {
             clip = AudioSystem.getClip();
             clip.open(audioInputStream);
             clip.loop(Clip.LOOP_CONTINUOUSLY);
+            /*
+            // Obtener el control de volumen
+            FloatControl gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+            // Bajar el volumen en decibelios (-10dB)
+            gainControl.setValue(-10.0f); 
+            */
         } catch (Exception ex) {
             System.out.println("Error: " + ex.getMessage());
         }
