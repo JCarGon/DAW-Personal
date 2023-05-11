@@ -158,6 +158,7 @@ public class Pokedex extends javax.swing.JFrame {
 
     private void BotonCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCerrarSesionActionPerformed
         this.dispose();
+        audioPlayer.stopAudio();
         ventanaInicio.setVisible(true);
     }//GEN-LAST:event_BotonCerrarSesionActionPerformed
 

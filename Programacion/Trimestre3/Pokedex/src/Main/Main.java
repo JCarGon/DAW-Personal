@@ -6,7 +6,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.*;
-import Vista.Inicio;
 import Vista.PantallaCarga;
 
 public class Main {
