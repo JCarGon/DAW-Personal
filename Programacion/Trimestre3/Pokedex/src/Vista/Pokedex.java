@@ -20,10 +20,12 @@ public class Pokedex extends javax.swing.JFrame {
     
     public Pokedex(Inicio ventanaInicio) {
         this.ventanaInicio = ventanaInicio;
+        this.ventanaInicio.audioPlayer.stopAudio();
         initComponents();
         setIconImage(getIconImage()); //logo en la aplicación y en la barra de tareas
         this.setLocationRelativeTo(null);
-        setVisible(true);audioPlayer = new AudioPlayer();
+        setVisible(true);
+        audioPlayer = new AudioPlayer();
         audioPlayer.playAudio("/img/Kanto2.wav");
         ImageIcon imageIcon = new ImageIcon(getClass().getResource("/img/Pokeball.png"));
         Icon icon = new ImageIcon(imageIcon.getImage().getScaledInstance(PkmImg.getWidth(), PkmImg.getHeight(), Image.SCALE_DEFAULT));
@@ -99,13 +101,16 @@ public class Pokedex extends javax.swing.JFrame {
         });
         jPanel1.add(printDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 380, 110, 40));
 
-        BotonCerrarSesion.setText("Cerrar Cesión");
+        BotonCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cerrarSesion.png"))); // NOI18N
+        BotonCerrarSesion.setBorderPainted(false);
+        BotonCerrarSesion.setContentAreaFilled(false);
+        BotonCerrarSesion.setFocusPainted(false);
         BotonCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonCerrarSesionActionPerformed(evt);
             }
         });
-        jPanel1.add(BotonCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 20, -1, -1));
+        jPanel1.add(BotonCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 20, -1, -1));
 
         jScrollPane1.setBackground(new java.awt.Color(0, 0, 0));
         jScrollPane1.setBorder(null);
@@ -157,9 +162,11 @@ public class Pokedex extends javax.swing.JFrame {
     }//GEN-LAST:event_printDatosActionPerformed
 
     private void BotonCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCerrarSesionActionPerformed
-        this.dispose();
         audioPlayer.stopAudio();
+        this.dispose();
         ventanaInicio.setVisible(true);
+        ventanaInicio.audioPlayer.playAudio("/img/Kanto1.wav");
+        
     }//GEN-LAST:event_BotonCerrarSesionActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

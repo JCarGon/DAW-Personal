@@ -9,7 +9,7 @@ import Controlador.Controlador;
 import javax.swing.JOptionPane;
 
 public class Inicio extends javax.swing.JFrame {
-    private AudioPlayer audioPlayer;
+    public AudioPlayer audioPlayer;
     
     public Inicio() {
         initComponents();
@@ -105,7 +105,7 @@ public class Inicio extends javax.swing.JFrame {
         String passTrainer = String.valueOf(CampoPass.getPassword());
         if(!userTrainer.contains(" ") && userTrainer.length()>0 && passTrainer.length()>0){
             if(Controlador.login(userTrainer, passTrainer)){
-                audioPlayer.stopAudio();
+                //audioPlayer.stopAudio();
                 this.setVisible(false);
                 CampoUser.setText("");
                 CampoPass.setText("");
