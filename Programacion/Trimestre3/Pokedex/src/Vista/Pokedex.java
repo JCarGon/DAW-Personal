@@ -48,7 +48,8 @@ public class Pokedex extends javax.swing.JFrame {
                         "Confirmar cierre", javax.swing.JOptionPane.YES_NO_OPTION);
 
                 if (option == javax.swing.JOptionPane.YES_OPTION) {
-                    // Para musica y cerrar la ventana
+                    // Para musica y cerrar la ventana inicio y pokedex
+                    ventanaInicio.dispose();
                     audioPlayer.stopAudio();
                     dispose();
                     Creditos c = new Creditos();
@@ -211,7 +212,7 @@ public class Pokedex extends javax.swing.JFrame {
     }//GEN-LAST:event_verDatosActionPerformed
 
     private void printDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printDatosActionPerformed
-        String ruta = "DatosPokemon.txt";
+        String ruta = "DatosPokemon.md";
         String valorConsulta = NumPokedex.getValue().toString();
         Pokemon pokemon = Controlador.obtenerPkmDeBBDD(valorConsulta);
         try {

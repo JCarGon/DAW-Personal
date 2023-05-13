@@ -82,8 +82,11 @@ public class ServicesPokemon {
         BufferedWriter writer = new BufferedWriter(new FileWriter(ruta, true));
         
         // Escribir en el fichero DatosPokemon.txt los datos del pokemon actual
-        writer.write("Número de Pokédex: " +pokemon.getID()+ ", " +pokemon.getNombre_Pokemon() +", " +pokemon.getTipo_Pokemon() 
-            + ", " + pokemon.getHabilidad_pokemon() + ", " + pokemon.getHabilidad_Oculta() + ", fase evolutiva: " + pokemon.getFase_Evolutiva()+".");
+        writer.write("###Número de Pokédex " +pokemon.getID()+ ", " +pokemon.getNombre_Pokemon() +" ![foto"+pokemon.getNombre_Pokemon()+"](.\\src\\img\\pokemons\\"+pokemon.getImagen_pokemon()+")"
+            +"\n- Tipo: " +pokemon.getTipo_Pokemon() 
+            +"\n- Habilidad: " + pokemon.getHabilidad_pokemon() 
+            +"\n- Habilidad Oculta: " + pokemon.getHabilidad_Oculta() 
+            +"\n- Fase evolutiva: " + pokemon.getFase_Evolutiva()+".");
         writer.newLine();
 
         // Cerrar el BufferedWriter para guardar los cambios en el archivo
