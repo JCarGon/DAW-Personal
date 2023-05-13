@@ -14,6 +14,7 @@ import Controlador.Controlador;
 import Modelo.User;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.WindowConstants;
 
 public class Pokedex extends javax.swing.JFrame {
     private AudioPlayer audioPlayer;
@@ -34,6 +35,26 @@ public class Pokedex extends javax.swing.JFrame {
         Icon icon = new ImageIcon(imageIcon.getImage().getScaledInstance(PkmImg.getWidth(), PkmImg.getHeight(), Image.SCALE_DEFAULT));
         PkmImg.setIcon(icon);
         JOptionPane.showMessageDialog(null, "Escribe el número de Pokédex del Pokémon para ver su información. Solo están las dos primeras generaciones (1-251)");
+        
+        // Cambiar el comportamiento de cierre de ventana
+        setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                // Acciones personalizadas al cerrar la ventana
+                // Por ejemplo, mostrar un mensaje de confirmación antes de cerrar
+                int option = javax.swing.JOptionPane.showConfirmDialog(null,
+                        "¿Estás seguro de que deseas salir del programa?",
+                        "Confirmar cierre", javax.swing.JOptionPane.YES_NO_OPTION);
+
+                if (option == javax.swing.JOptionPane.YES_OPTION) {
+                    // Para musica y cerrar la ventana
+                    audioPlayer.stopAudio();
+                    dispose();
+                    Creditos c = new Creditos();
+                }
+            }
+        });
     }
 
     //icono de la ventana y barra de tareas
@@ -137,7 +158,7 @@ public class Pokedex extends javax.swing.JFrame {
                 BotonCapturarPokemonActionPerformed(evt);
             }
         });
-        jPanel1.add(BotonCapturarPokemon, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 320, -1, -1));
+        jPanel1.add(BotonCapturarPokemon, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 320, -1, -1));
 
         BotonBorrarPokemon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/deletePokemon.png"))); // NOI18N
         BotonBorrarPokemon.setBorderPainted(false);

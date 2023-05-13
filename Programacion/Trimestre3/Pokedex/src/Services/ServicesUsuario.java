@@ -164,8 +164,10 @@ public class ServicesUsuario {
     
     public static boolean deletePokemonDeEquipo(User user, Pokemon pokemon){
         boolean delete = false;
-        if(user.getEquipoPokemon().isEmpty()){ //si el equipo está vacía, no hay nada que eliminar
+        if(user.getEquipoPokemon().isEmpty()){ //si el equipo está vacío, no hay nada que eliminar
             JOptionPane.showMessageDialog(null, "El equipo está vacío, no hay nada que eliminar.");
+        }else if(!comprobarSiUserTienePokemon(user, pokemon)){
+            JOptionPane.showMessageDialog(null, "No puedes eliminar este pokemon porque no está en tu equipo.");
         }else{
             for (Pokemon p : user.getEquipoPokemon()) {
                 if(p.getID() == pokemon.getID()){ //si los ID son iguales, se trata del mismo pokemon y no lo añado

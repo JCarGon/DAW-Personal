@@ -8,6 +8,7 @@ import javax.swing.ImageIcon;
 import Controlador.Controlador;
 import Modelo.User;
 import javax.swing.JOptionPane;
+import javax.swing.WindowConstants;
 
 public class Inicio extends javax.swing.JFrame {
     public AudioPlayer audioPlayer;
@@ -28,6 +29,26 @@ public class Inicio extends javax.swing.JFrame {
         //canción de fondo
         audioPlayer = new AudioPlayer();
         audioPlayer.playAudio("/img/Kanto1.wav");
+        
+        // Cambiar el comportamiento de cierre de ventana
+        setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                // Acciones personalizadas al cerrar la ventana
+                // Por ejemplo, mostrar un mensaje de confirmación antes de cerrar
+                int option = javax.swing.JOptionPane.showConfirmDialog(null,
+                        "¿Estás seguro de que deseas salir del programa?",
+                        "Confirmar cierre", javax.swing.JOptionPane.YES_NO_OPTION);
+
+                if (option == javax.swing.JOptionPane.YES_OPTION) {
+                    // Para musica y cerrar la ventana
+                    audioPlayer.stopAudio();
+                    dispose();
+                    Creditos c = new Creditos();
+                }
+            }
+        });
     }
     
     //icono de la ventana y barra de tareas

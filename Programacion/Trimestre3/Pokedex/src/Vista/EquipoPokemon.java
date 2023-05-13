@@ -14,7 +14,8 @@ public class EquipoPokemon extends javax.swing.JFrame {
         setVisible(true);
         setLocationRelativeTo(null);
         setIconImage(getIconImage()); //logo en la aplicación y en la barra de tareas
-        if(user.getEquipoPokemon().size() == 1){ //equipo de 1 pokemon
+        if(user.getEquipoPokemon().isEmpty()){ //equipo vacío
+        }else if(user.getEquipoPokemon().size() == 1){ //equipo de 1 pokemon
             Icon icon1 = Controlador.obtenerIcon(user.getEquipoPokemon().get(0), Pokemon1.getWidth(), Pokemon1.getHeight());
             Pokemon1.setIcon(icon1);
         }else if((user.getEquipoPokemon().size() >= 2) && (user.getEquipoPokemon().size() < 3)){ //equipo de 2 pokemon

@@ -11,3 +11,4 @@ Número de Pokédex: 158, Totodile, Agua, Torrente, Potencia Bruta, fase evoluti
 Número de Pokédex: 157, Typhlosion, Fuego, Mar Llamas, Absorbe Fuego, fase evolutiva: 3.
 Número de Pokédex: 249, Lugia, Psíquico / Volador, Presión, Multitipo, fase evolutiva: No tiene.
 Número de Pokédex: 9, Blastoise, Agua, Torrente, Caparazón, fase evolutiva: 3.
+Número de Pokédex: 244, Entei, Fuego, Presión, Absorbe Fuego, fase evolutiva: No tiene.
