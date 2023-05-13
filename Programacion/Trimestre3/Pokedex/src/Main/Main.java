@@ -29,14 +29,14 @@ public class Main {
                 try {
                     while ((linea = br.readLine()) != null) {
                         String[] campos = linea.split(separador);
-                        String ID = campos[0];
+                        String PokemonID = campos[0];
                         String nombrePokemon = campos[1];
                         String tipoPokemon = campos[2];
                         String habilidadPokemon = campos[3];
                         String habilidadOculta = campos[4];
                         String faseEvolutiva = campos[5];
                         String imagenPkm = campos[6];
-                        String sql = "INSERT INTO pokemon VALUES (" + ID + ", '" + nombrePokemon + "', '" + tipoPokemon + "', '"
+                        String sql = "INSERT INTO pokemon VALUES (" + PokemonID + ", '" + nombrePokemon + "', '" + tipoPokemon + "', '"
                             + habilidadPokemon + "', '" + habilidadOculta + "', " + faseEvolutiva + ", '" + imagenPkm + "')";
                         System.out.println(sql);
                         Conexion.ejecutarUpdate(sql);

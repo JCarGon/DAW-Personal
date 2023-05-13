@@ -1,5 +1,6 @@
 package Controlador;
 import Modelo.Pokemon;
+import Modelo.User;
 import Services.*;
 import java.io.IOException;
 import javax.swing.Icon;
@@ -47,5 +48,17 @@ public class Controlador {
     //método pque recibe por parámetro el pokemon y una ruta de archivo para escribir los datos del pokemon en dicho archivo
     public static void escribirDatosPokemon(Pokemon pokemon, String ruta) throws IOException{
         ServicesPokemon.escribirPokemonEnFichero(pokemon, ruta);
+    }
+    
+    // método que recibe user y pokemon por parámetro para añadirlo a su equipo (si no lo tiene ya)
+    public static boolean capturarPokemon(User user, Pokemon pokemon){
+        boolean capturar = ServicesUsuario.addPokemonAlEquipo(user, pokemon);
+        return capturar;
+    }
+    
+    //método que recibe user y pokemon por parámetro para liberarlo del equipo
+    public static boolean liberarPokemon(User user, Pokemon pokemon){
+        boolean liberar = ServicesUsuario.deletePokemonDeEquipo(user, pokemon);
+        return liberar;
     }
 }

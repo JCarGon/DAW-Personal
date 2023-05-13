@@ -1,5 +1,6 @@
 package Services;
 
+import Modelo.Pokemon;
 import Modelo.User;
 import java.sql.*;
 import javax.swing.JOptionPane;
@@ -52,7 +53,7 @@ public class ServicesUsuario {
                 if(count == 1){
                     JOptionPane.showMessageDialog(null, "El usuario ya existe.");
                 }else{
-                    String insert = "INSERT INTO user VALUES ('" + user.getNombre() + "', '" + user.getPassword() + "')";
+                    String insert = "INSERT INTO user (Nombre, Pass) VALUES ('" + user.getNombre() + "', '" + user.getPassword() + "')";
                     Conexion.ejecutarUpdate(insert);
                     JOptionPane.showMessageDialog(null, "Usuario agregado a la base de datos correctamente.");
                 }
@@ -127,5 +128,53 @@ public class ServicesUsuario {
     public static void modificarUser(String nombre, String pass, String nombreParaModificar){
         String update = "UPDATE user SET Nombre = '"+nombre+"', Pass = '"+pass+"' WHERE Nombre = '"+nombreParaModificar+"'";
         Conexion.ejecutarUpdate(update);
-   }
+    }
+    
+    public static boolean comprobarSiUserTienePokemon(User user, Pokemon pokemon){
+        boolean tienePokemon = false;
+        for (Pokemon p : user.getEquipoPokemon()) {
+            if(p.getID() == pokemon.getID()){ //si los ID son iguales, se trata del mismo pokemon y no lo añado
+                tienePokemon = true;
+                break; //que salga en el momento que encuentre el mismo pokemon, no es necesario seguir buscando
+            }
+        }
+        return tienePokemon;
+    }
+    
+    public static boolean addPokemonAlEquipo(User user, Pokemon pokemon){
+        boolean add = false;
+        if(user.getEquipoPokemon().isEmpty()){ //si la lista está vacía, añado al pokemon al equipo directamente
+            add = true;
+        }else if(user.getEquipoPokemon().size()==6){ // si la lista tiene un tamaño de 6, no se puede agregar más pokemon
+            JOptionPane.showMessageDialog(null, "Ya tienes 6 pokemon en el equipo.");
+            add = false;
+        }else{ //si la lista no está vacía, la recorro para ver si ya está en la lista ese pokemon
+            if(comprobarSiUserTienePokemon(user, pokemon)){ //si este método me devuelve true significa que ya está ese pokemon en la lista
+               JOptionPane.showMessageDialog(null, "Ya tienes este pokemon en tu equipo.");
+                add = false;
+            }else{
+                add = true;
+            }
+        }
+        if(add){
+            user.getEquipoPokemon().add(pokemon);
+        }
+        return add;
+    }
+    
+    public static boolean deletePokemonDeEquipo(User user, Pokemon pokemon){
+        boolean delete = false;
+        if(user.getEquipoPokemon().isEmpty()){ //si el equipo está vacía, no hay nada que eliminar
+            JOptionPane.showMessageDialog(null, "El equipo está vacío, no hay nada que eliminar.");
+        }else{
+            for (Pokemon p : user.getEquipoPokemon()) {
+                if(p.getID() == pokemon.getID()){ //si los ID son iguales, se trata del mismo pokemon y no lo añado
+                    user.getEquipoPokemon().remove(p);
+                    delete = true;
+                    break; //que salga en el momento que encuentre el mismo pokemon, no es necesario seguir buscando
+                }
+            }
+        }
+        return delete;
+    }
 }

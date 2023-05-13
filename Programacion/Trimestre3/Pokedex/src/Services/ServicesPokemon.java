@@ -20,13 +20,13 @@ import javax.swing.JOptionPane;
 public class ServicesPokemon {
     /*Recibe el número del pokemon por parámetro, monta la consulta con dicho número, crea el objeto Pokemon y lo devuelve*/
     public static Pokemon darPokemon(String numero){
-        String consulta = "SELECT * FROM pokemon WHERE ID = "+numero;
+        String consulta = "SELECT * FROM pokemon WHERE PokemonID = "+numero;
         System.out.println(consulta);
         ResultSet rs = Conexion.ejecutarSentencia(consulta);
         Pokemon pokemon = null;
         try {
             while(rs.next()){
-                int numero_Pokemon = rs.getInt("ID");
+                int numero_Pokemon = rs.getInt("PokemonID");
                 String nombre_Pokemon = rs.getString("nombre_Pokemon");
                 String tipo_Pokemon = rs.getString("tipo_Pokemon");
                 String habilidad_Pokemon = rs.getString("habilidad_Pokemon");

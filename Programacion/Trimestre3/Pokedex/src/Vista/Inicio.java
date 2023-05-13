@@ -6,6 +6,7 @@ import java.awt.Toolkit;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import Controlador.Controlador;
+import Modelo.User;
 import javax.swing.JOptionPane;
 
 public class Inicio extends javax.swing.JFrame {
@@ -82,6 +83,7 @@ public class Inicio extends javax.swing.JFrame {
 
         Gestor.setText("Gestor");
         Gestor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Gestor.setFocusable(false);
         Gestor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 GestorActionPerformed(evt);
@@ -103,13 +105,14 @@ public class Inicio extends javax.swing.JFrame {
     private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
         String userTrainer = CampoUser.getText();
         String passTrainer = String.valueOf(CampoPass.getPassword());
+        User user = new User(userTrainer, passTrainer);
         if(!userTrainer.contains(" ") && userTrainer.length()>0 && passTrainer.length()>0){
             if(Controlador.login(userTrainer, passTrainer)){
                 //audioPlayer.stopAudio();
                 this.setVisible(false);
                 CampoUser.setText("");
                 CampoPass.setText("");
-                Pokedex ventanaPokedex = new Pokedex(this);
+                Pokedex ventanaPokedex = new Pokedex(this, user);
             }
         }else if(userTrainer.length()==0){
             JOptionPane.showMessageDialog(null, "Inserta un nombre de usuario.");

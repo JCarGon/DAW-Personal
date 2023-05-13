@@ -11,15 +11,18 @@ import javax.swing.SpinnerNumberModel;
 import java.awt.Toolkit;
 import Modelo.Pokemon;
 import Controlador.Controlador;
+import Modelo.User;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Pokedex extends javax.swing.JFrame {
     private AudioPlayer audioPlayer;
     private Inicio ventanaInicio;
+    private User user;
     
-    public Pokedex(Inicio ventanaInicio) {
+    public Pokedex(Inicio ventanaInicio, User user) {
         this.ventanaInicio = ventanaInicio;
+        this.user = user;
         this.ventanaInicio.audioPlayer.stopAudio();
         initComponents();
         setIconImage(getIconImage()); //logo en la aplicación y en la barra de tareas
@@ -52,6 +55,9 @@ public class Pokedex extends javax.swing.JFrame {
         NumPokedex = new javax.swing.JSpinner(model);
         printDatos = new javax.swing.JButton();
         BotonCerrarSesion = new javax.swing.JButton();
+        VerEquipo = new javax.swing.JButton();
+        BotonCapturarPokemon = new javax.swing.JButton();
+        BotonBorrarPokemon = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         CampoDatos = new javax.swing.JTextArea();
         ImagenFondo = new javax.swing.JLabel();
@@ -75,7 +81,7 @@ public class Pokedex extends javax.swing.JFrame {
                 verDatosActionPerformed(evt);
             }
         });
-        jPanel1.add(verDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(385, 430, 90, -1));
+        jPanel1.add(verDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 430, 90, -1));
 
         PkmImg.setBackground(new java.awt.Color(255, 255, 255));
         PkmImg.setForeground(new java.awt.Color(255, 255, 255));
@@ -104,6 +110,7 @@ public class Pokedex extends javax.swing.JFrame {
         BotonCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cerrarSesion.png"))); // NOI18N
         BotonCerrarSesion.setBorderPainted(false);
         BotonCerrarSesion.setContentAreaFilled(false);
+        BotonCerrarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         BotonCerrarSesion.setFocusPainted(false);
         BotonCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,6 +118,38 @@ public class Pokedex extends javax.swing.JFrame {
             }
         });
         jPanel1.add(BotonCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 20, -1, -1));
+
+        VerEquipo.setText("Ver Equipo");
+        VerEquipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VerEquipoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(VerEquipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 430, 110, -1));
+
+        BotonCapturarPokemon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/addPokemon.png"))); // NOI18N
+        BotonCapturarPokemon.setBorderPainted(false);
+        BotonCapturarPokemon.setContentAreaFilled(false);
+        BotonCapturarPokemon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BotonCapturarPokemon.setFocusPainted(false);
+        BotonCapturarPokemon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonCapturarPokemonActionPerformed(evt);
+            }
+        });
+        jPanel1.add(BotonCapturarPokemon, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 320, -1, -1));
+
+        BotonBorrarPokemon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/deletePokemon.png"))); // NOI18N
+        BotonBorrarPokemon.setBorderPainted(false);
+        BotonBorrarPokemon.setContentAreaFilled(false);
+        BotonBorrarPokemon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BotonBorrarPokemon.setFocusPainted(false);
+        BotonBorrarPokemon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonBorrarPokemonActionPerformed(evt);
+            }
+        });
+        jPanel1.add(BotonBorrarPokemon, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 320, -1, -1));
 
         jScrollPane1.setBackground(new java.awt.Color(0, 0, 0));
         jScrollPane1.setBorder(null);
@@ -169,12 +208,39 @@ public class Pokedex extends javax.swing.JFrame {
         
     }//GEN-LAST:event_BotonCerrarSesionActionPerformed
 
+    private void BotonCapturarPokemonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCapturarPokemonActionPerformed
+        String valorConsulta = NumPokedex.getValue().toString();
+        Pokemon pokemon = Controlador.obtenerPkmDeBBDD(valorConsulta);
+        if(Controlador.capturarPokemon(user, pokemon)){
+            JOptionPane.showMessageDialog(null, "Pokemon añadido al equipo.");
+        }
+    }//GEN-LAST:event_BotonCapturarPokemonActionPerformed
+
+    private void BotonBorrarPokemonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonBorrarPokemonActionPerformed
+        String valorConsulta = NumPokedex.getValue().toString();
+        Pokemon pokemon = Controlador.obtenerPkmDeBBDD(valorConsulta);
+        if(Controlador.liberarPokemon(user, pokemon)){
+            JOptionPane.showMessageDialog(null, "Pokemon liberado. Vuela alto compañero.");
+        }
+    }//GEN-LAST:event_BotonBorrarPokemonActionPerformed
+
+    private void VerEquipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerEquipoActionPerformed
+        try {
+            EquipoPokemon equipo = new EquipoPokemon(user);
+        } catch (IOException ex) {
+            Logger.getLogger(Pokedex.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_VerEquipoActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotonBorrarPokemon;
+    private javax.swing.JButton BotonCapturarPokemon;
     private javax.swing.JButton BotonCerrarSesion;
     private javax.swing.JTextArea CampoDatos;
     private javax.swing.JLabel ImagenFondo;
     private javax.swing.JSpinner NumPokedex;
     private javax.swing.JLabel PkmImg;
+    private javax.swing.JButton VerEquipo;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
