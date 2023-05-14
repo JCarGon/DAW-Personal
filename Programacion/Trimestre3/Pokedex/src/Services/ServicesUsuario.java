@@ -125,11 +125,13 @@ public class ServicesUsuario {
         return existe;
     }
     
+    //método para modificar el usuario
     public static void modificarUser(String nombre, String pass, String nombreParaModificar){
         String update = "UPDATE user SET Nombre = '"+nombre+"', Pass = '"+pass+"' WHERE Nombre = '"+nombreParaModificar+"'";
         Conexion.ejecutarUpdate(update);
     }
     
+    //método para comprobar si el usuario ya tiene el pokemon
     public static boolean comprobarSiUserTienePokemon(User user, Pokemon pokemon){
         boolean tienePokemon = false;
         for (Pokemon p : user.getEquipoPokemon()) {
@@ -141,6 +143,7 @@ public class ServicesUsuario {
         return tienePokemon;
     }
     
+    //método para añadir un pokemon al equipo del usuario
     public static boolean addPokemonAlEquipo(User user, Pokemon pokemon){
         boolean add = false;
         if(user.getEquipoPokemon().isEmpty()){ //si la lista está vacía, añado al pokemon al equipo directamente
@@ -162,6 +165,7 @@ public class ServicesUsuario {
         return add;
     }
     
+    //método para borrar un pokemon del equipo del usuario
     public static boolean deletePokemonDeEquipo(User user, Pokemon pokemon){
         boolean delete = false;
         if(user.getEquipoPokemon().isEmpty()){ //si el equipo está vacío, no hay nada que eliminar
