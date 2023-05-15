@@ -114,6 +114,7 @@ public class Pokedex extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 180, 150));
 
+        NumPokedex.setModel(new javax.swing.SpinnerNumberModel(1, 1, 251, 1));
         NumPokedex.setEditor(new javax.swing.JSpinner.NumberEditor(NumPokedex, ""));
         jPanel1.add(NumPokedex, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 380, 90, 40));
 
