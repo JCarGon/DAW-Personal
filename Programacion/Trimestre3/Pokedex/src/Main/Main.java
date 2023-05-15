@@ -46,9 +46,9 @@ public class Main {
                     JOptionPane.showMessageDialog(null, ex.getMessage());
                 }
             }
-        }catch(SQLException e){
+            PantallaCarga pantallaCarga = new PantallaCarga();
+        }catch(Exception e){
             JOptionPane.showMessageDialog(null, "Error al ejecutar la sentencia SELECT.");
         }
-        PantallaCarga pantallaCarga = new PantallaCarga();
     }
 }

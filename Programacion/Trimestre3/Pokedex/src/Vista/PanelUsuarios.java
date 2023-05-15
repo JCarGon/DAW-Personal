@@ -27,17 +27,17 @@ public class PanelUsuarios extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        UDUser = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        CrearUser = new javax.swing.JButton();
+        UDUser = new javax.swing.JTextField();
         DeleteUser = new javax.swing.JButton();
         ModificarUser = new javax.swing.JButton();
-        NombreCrearUser = new javax.swing.JTextField();
-        PassCrearUser = new javax.swing.JPasswordField();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        NombreCrearUser = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
+        PassCrearUser = new javax.swing.JPasswordField();
+        CrearUser = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Gestor de usuario");
@@ -46,18 +46,6 @@ public class PanelUsuarios extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(400, 300));
 
         jLabel1.setText("Introduce el  usuario para eliminar o modificar: ");
-
-        CrearUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/newUser.png"))); // NOI18N
-        CrearUser.setBorder(null);
-        CrearUser.setBorderPainted(false);
-        CrearUser.setContentAreaFilled(false);
-        CrearUser.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        CrearUser.setFocusPainted(false);
-        CrearUser.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CrearUserActionPerformed(evt);
-            }
-        });
 
         DeleteUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/deleteUser.png"))); // NOI18N
         DeleteUser.setBorderPainted(false);
@@ -89,6 +77,18 @@ public class PanelUsuarios extends javax.swing.JFrame {
         jLabel3.setText("Nombre de usuario:");
 
         jLabel4.setText("Contraseña:");
+
+        CrearUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/newUser.png"))); // NOI18N
+        CrearUser.setBorder(null);
+        CrearUser.setBorderPainted(false);
+        CrearUser.setContentAreaFilled(false);
+        CrearUser.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        CrearUser.setFocusPainted(false);
+        CrearUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CrearUserActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -184,18 +184,24 @@ public class PanelUsuarios extends javax.swing.JFrame {
     private void CrearUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearUserActionPerformed
         String nombreNuevoUser = NombreCrearUser.getText();
         String passNuevoUser = String.valueOf(PassCrearUser.getPassword());
-        if(!nombreNuevoUser.contains(" ") && nombreNuevoUser.length()>0 && !passNuevoUser.contains(" ") && passNuevoUser.length()>0){
+        if(nombreNuevoUser.length()>20){
+            JOptionPane.showMessageDialog(null, "El nombre de usuario no puede tener más de 20 caracteres.");
+        }else if(passNuevoUser.length()>20){
+            JOptionPane.showMessageDialog(null, "La contraseña de usuario no puede tener más de 20 caracteres.");
+        }else{
+            if(!nombreNuevoUser.contains(" ") && nombreNuevoUser.length()>0 && !passNuevoUser.contains(" ") && passNuevoUser.length()>0){
             Controlador.crearUser(nombreNuevoUser, passNuevoUser);
             NombreCrearUser.setText("");
             PassCrearUser.setText("");
-        }else if(nombreNuevoUser.length()==0){
-            JOptionPane.showMessageDialog(null, "No se puede crear un usuario sin nombre. Inserta uno.");
-        }else if(passNuevoUser.length()==0){
-            JOptionPane.showMessageDialog(null, "No se puede crear un usuario sin contraseña. Inserta una.");
-        }else if(nombreNuevoUser.contains(" ")){
-            JOptionPane.showMessageDialog(null, "No se pueden usar espacios en el nombre de usuario.");
-        }else{
-            JOptionPane.showMessageDialog(null, "No se pueden usar espacios en la contraseña de usuario.");
+            }else if(nombreNuevoUser.length()==0){
+                JOptionPane.showMessageDialog(null, "No se puede crear un usuario sin nombre. Inserta uno.");
+            }else if(passNuevoUser.length()==0){
+                JOptionPane.showMessageDialog(null, "No se puede crear un usuario sin contraseña. Inserta una.");
+            }else if(nombreNuevoUser.contains(" ")){
+                JOptionPane.showMessageDialog(null, "No se pueden usar espacios en el nombre de usuario.");
+            }else{
+                JOptionPane.showMessageDialog(null, "No se pueden usar espacios en la contraseña de usuario.");
+            }
         }
     }//GEN-LAST:event_CrearUserActionPerformed
 

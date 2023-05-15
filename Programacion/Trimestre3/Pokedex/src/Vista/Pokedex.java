@@ -12,8 +12,6 @@ import java.awt.Toolkit;
 import Modelo.Pokemon;
 import Controlador.Controlador;
 import Modelo.User;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.WindowConstants;
 
 public class Pokedex extends javax.swing.JFrame {
@@ -42,7 +40,7 @@ public class Pokedex extends javax.swing.JFrame {
             @Override
             public void windowClosing(java.awt.event.WindowEvent windowEvent) {
                 // Acciones personalizadas al cerrar la ventana
-                // Por ejemplo, mostrar un mensaje de confirmación antes de cerrar
+                // mostrar un mensaje de confirmación antes de cerrar
                 int option = javax.swing.JOptionPane.showConfirmDialog(null,
                         "¿Estás seguro de que deseas salir del programa?",
                         "Confirmar cierre", javax.swing.JOptionPane.YES_NO_OPTION);
@@ -205,7 +203,7 @@ public class Pokedex extends javax.swing.JFrame {
             Icon icon = Controlador.obtenerIcon(pokemon, PkmImg.getWidth(), PkmImg.getHeight());
             PkmImg.setIcon(icon);
         } catch (IOException ex) {
-            Logger.getLogger(Pokedex.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, ex.getMessage());
         }
         String DatosPokemon = Controlador.devolverDatosPokemon(pokemon);
         CampoDatos.setText(DatosPokemon);
@@ -215,6 +213,13 @@ public class Pokedex extends javax.swing.JFrame {
         String ruta = "DatosPokemon.md";
         String valorConsulta = NumPokedex.getValue().toString();
         Pokemon pokemon = Controlador.obtenerPkmDeBBDD(valorConsulta);
+        try {
+                Icon icon = Controlador.obtenerIcon(pokemon, PkmImg.getWidth(), PkmImg.getHeight());
+                PkmImg.setIcon(icon);
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
+        String DatosPokemon = Controlador.devolverDatosPokemon(pokemon);
         try {
             Controlador.escribirDatosPokemon(pokemon, ruta);
         } catch (IOException ex) {
@@ -233,6 +238,14 @@ public class Pokedex extends javax.swing.JFrame {
     private void BotonCapturarPokemonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCapturarPokemonActionPerformed
         String valorConsulta = NumPokedex.getValue().toString();
         Pokemon pokemon = Controlador.obtenerPkmDeBBDD(valorConsulta);
+        try {
+                Icon icon = Controlador.obtenerIcon(pokemon, PkmImg.getWidth(), PkmImg.getHeight());
+                PkmImg.setIcon(icon);
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
+        String DatosPokemon = Controlador.devolverDatosPokemon(pokemon);
+        CampoDatos.setText(DatosPokemon);
         if(Controlador.capturarPokemon(user, pokemon)){
             JOptionPane.showMessageDialog(null, "Pokemon añadido al equipo.");
         }
@@ -241,6 +254,13 @@ public class Pokedex extends javax.swing.JFrame {
     private void BotonBorrarPokemonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonBorrarPokemonActionPerformed
         String valorConsulta = NumPokedex.getValue().toString();
         Pokemon pokemon = Controlador.obtenerPkmDeBBDD(valorConsulta);
+        try {
+                Icon icon = Controlador.obtenerIcon(pokemon, PkmImg.getWidth(), PkmImg.getHeight());
+                PkmImg.setIcon(icon);
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
+        String DatosPokemon = Controlador.devolverDatosPokemon(pokemon);
         if(Controlador.liberarPokemon(user, pokemon)){
             JOptionPane.showMessageDialog(null, "Pokemon liberado. Vuela alto compañero.");
         }
@@ -248,9 +268,10 @@ public class Pokedex extends javax.swing.JFrame {
 
     private void VerEquipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerEquipoActionPerformed
         try {
-            EquipoPokemon equipo = new EquipoPokemon(user);
+            this.setVisible(false);
+            EquipoPokemon equipo = new EquipoPokemon(user, this);
         } catch (IOException ex) {
-            Logger.getLogger(Pokedex.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, ex.getMessage());
         }
     }//GEN-LAST:event_VerEquipoActionPerformed
 

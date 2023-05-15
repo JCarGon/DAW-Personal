@@ -6,10 +6,12 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.io.IOException;
 import javax.swing.Icon;
+import javax.swing.WindowConstants;
 
 public class EquipoPokemon extends javax.swing.JFrame {
-
-    public EquipoPokemon(User user) throws IOException {
+    private Pokedex pokedex;
+    
+    public EquipoPokemon(User user, Pokedex pokedex) throws IOException {
         initComponents();
         setVisible(true);
         setLocationRelativeTo(null);
@@ -64,18 +66,17 @@ public class EquipoPokemon extends javax.swing.JFrame {
             Icon icon6 = Controlador.obtenerIcon(user.getEquipoPokemon().get(5), Pokemon6.getWidth(), Pokemon1.getHeight());
             Pokemon6.setIcon(icon6);
         }
-        /*Icon icon1 = Controlador.obtenerIcon(user.getEquipoPokemon().get(0), Pokemon1.getWidth(), Pokemon1.getHeight());
-        Pokemon1.setIcon(icon1);
-        Icon icon2 = Controlador.obtenerIcon(user.getEquipoPokemon().get(1), Pokemon2.getWidth(), Pokemon1.getHeight());
-        Pokemon2.setIcon(icon2);
-        Icon icon3 = Controlador.obtenerIcon(user.getEquipoPokemon().get(2), Pokemon3.getWidth(), Pokemon1.getHeight());
-        Pokemon3.setIcon(icon3);
-        Icon icon4 = Controlador.obtenerIcon(user.getEquipoPokemon().get(3), Pokemon4.getWidth(), Pokemon1.getHeight());
-        Pokemon4.setIcon(icon4);
-        Icon icon5 = Controlador.obtenerIcon(user.getEquipoPokemon().get(4), Pokemon5.getWidth(), Pokemon1.getHeight());
-        Pokemon5.setIcon(icon5);
-        Icon icon6 = Controlador.obtenerIcon(user.getEquipoPokemon().get(5), Pokemon6.getWidth(), Pokemon1.getHeight());
-        Pokemon6.setIcon(icon6);*/
+        // Cambiar el comportamiento de cierre de ventana
+        setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                // Acciones personalizadas al cerrar la ventana
+                // Cerrar la ventana y abrir la ventana pokedex
+                dispose();
+                pokedex.setVisible(true);
+            }
+        });
     }
 
     //icono de la ventana y barra de tareas
@@ -84,7 +85,7 @@ public class EquipoPokemon extends javax.swing.JFrame {
         Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("img/Pokeball.png"));
         return retValue;
     }
-    
+        
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

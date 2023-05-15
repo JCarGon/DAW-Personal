@@ -36,7 +36,7 @@ public class Inicio extends javax.swing.JFrame {
             @Override
             public void windowClosing(java.awt.event.WindowEvent windowEvent) {
                 // Acciones personalizadas al cerrar la ventana
-                // Por ejemplo, mostrar un mensaje de confirmación antes de cerrar
+                // mostrar un mensaje de confirmación antes de cerrar
                 int option = javax.swing.JOptionPane.showConfirmDialog(null,
                         "¿Estás seguro de que deseas salir del programa?",
                         "Confirmar cierre", javax.swing.JOptionPane.YES_NO_OPTION);
@@ -127,9 +127,8 @@ public class Inicio extends javax.swing.JFrame {
         String userTrainer = CampoUser.getText();
         String passTrainer = String.valueOf(CampoPass.getPassword());
         User user = new User(userTrainer, passTrainer);
-        if(!userTrainer.contains(" ") && userTrainer.length()>0 && passTrainer.length()>0){
+        if(!userTrainer.contains(" ") && userTrainer.length()>0 && !passTrainer.contains(" ") && passTrainer.length()>0){
             if(Controlador.login(userTrainer, passTrainer)){
-                //audioPlayer.stopAudio();
                 this.setVisible(false);
                 CampoUser.setText("");
                 CampoPass.setText("");
@@ -139,8 +138,10 @@ public class Inicio extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Inserta un nombre de usuario.");
         }else if(passTrainer.length()==0){
             JOptionPane.showMessageDialog(null, "Es necesaria una contraseña para identificarse.");
-        }else{
+        }else if(userTrainer.contains(" ")){
             JOptionPane.showMessageDialog(null, "No se pueden usar espacios en el nombre de usuario.");
+        }else{
+            JOptionPane.showMessageDialog(null, "No se pueden usar espacios en la contraseña de usuario.");
         }
     }//GEN-LAST:event_LoginActionPerformed
 
