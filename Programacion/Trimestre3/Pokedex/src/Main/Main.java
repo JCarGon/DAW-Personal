@@ -7,12 +7,13 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.sql.*;
 import Vista.PantallaCarga;
+import javax.swing.JOptionPane;
 
 public class Main {
 
     public static void main(String[] args) {
+        Conexion.conectar();
         try{
-            Conexion.conectar();
             ResultSet rs = Conexion.ejecutarSentencia("SELECT COUNT(*) FROM pokemon;");
             rs.next();
             int cantidadRegistros = rs.getInt(1);
@@ -23,7 +24,7 @@ public class Main {
                 try {
                     br = new BufferedReader(new FileReader(archivo));
                 } catch (FileNotFoundException ex) {
-                    System.out.println("Error en la lectura del archivo.");
+                    JOptionPane.showMessageDialog(null, "Archivo no encontrado.");
                 }
                 String linea;
                 try {
@@ -42,11 +43,11 @@ public class Main {
                         Conexion.ejecutarUpdate(sql);
                     }
                 } catch (IOException ex) {
-                System.out.println(ex);
+                    JOptionPane.showMessageDialog(null, ex.getMessage());
                 }
             }
         }catch(SQLException e){
-            System.out.println(e);
+            JOptionPane.showMessageDialog(null, "Error al ejecutar la sentencia SELECT.");
         }
         PantallaCarga pantallaCarga = new PantallaCarga();
     }

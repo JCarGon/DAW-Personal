@@ -1,6 +1,8 @@
 package Vista;
 
 import Controlador.Controlador;
+import java.awt.Image;
+import java.awt.Toolkit;
 import javax.swing.JOptionPane;
 
 public class ModificarUser extends javax.swing.JFrame {
@@ -11,8 +13,17 @@ public class ModificarUser extends javax.swing.JFrame {
         initComponents();
         this.setVisible(true);
         this.setLocationRelativeTo(null);
+        setIconImage(getIconImage()); //logo en la aplicación y en la barra de tareas
+
     }
 
+    //icono de la ventana y barra de tareas
+    @Override
+    public Image getIconImage(){
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("img/pokeball.png"));
+        return retValue;
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -26,6 +37,7 @@ public class ModificarUser extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Modificar usuario");
         setMaximumSize(new java.awt.Dimension(300, 200));
         setMinimumSize(new java.awt.Dimension(300, 200));
         setResizable(false);

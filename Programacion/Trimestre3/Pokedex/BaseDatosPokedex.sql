@@ -25,14 +25,7 @@ CREATE TABLE IF NOT EXISTS tiene(
     CONSTRAINT fk_tiene_user FOREIGN KEY(UserID) REFERENCES user(UserID)
 );
 
-DESC pokemon;
-DELETE FROM pokemon;
-select * from pokemon;
-
 INSERT INTO user VALUES
 ("root", "root"),
 ("Jesus", "1234"),
 ("Emilio", "4567");
-select * from user;
-DELETE FROM USER WHERE Pass="hola";
-SELECT COUNT(*) FROM USER WHERE NOMBRE="Jesus";

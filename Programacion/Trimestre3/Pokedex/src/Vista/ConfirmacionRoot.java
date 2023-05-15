@@ -1,5 +1,7 @@
 package Vista;
 
+import java.awt.Image;
+import java.awt.Toolkit;
 import javax.swing.JOptionPane;
 
 public class ConfirmacionRoot extends javax.swing.JFrame {
@@ -8,6 +10,15 @@ public class ConfirmacionRoot extends javax.swing.JFrame {
         initComponents();
         this.setVisible(true);
         this.setLocationRelativeTo(null);
+        setIconImage(getIconImage()); //logo en la aplicación y en la barra de tareas
+
+    }
+    
+    //icono de la ventana y barra de tareas
+    @Override
+    public Image getIconImage(){
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("img/pokeball.png"));
+        return retValue;
     }
     
     @SuppressWarnings("unchecked")
@@ -23,6 +34,7 @@ public class ConfirmacionRoot extends javax.swing.JFrame {
         GestorButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Identificación");
         setResizable(false);
 
         jPanel1.setPreferredSize(new java.awt.Dimension(400, 200));

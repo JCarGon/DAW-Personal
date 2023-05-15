@@ -52,6 +52,8 @@ public class Conexion {
     public static void cerrar(){
         try{
             consulta.close();
-        }catch(SQLException e){}
+        }catch(SQLException e){
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
     }
 }

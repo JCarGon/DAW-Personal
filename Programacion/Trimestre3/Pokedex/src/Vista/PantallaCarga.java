@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.Timer;
+import javax.swing.WindowConstants;
 
 public class PantallaCarga extends javax.swing.JFrame {
     private AudioPlayer audioPlayer;
@@ -38,6 +39,20 @@ public class PantallaCarga extends javax.swing.JFrame {
         timer.setRepeats(false); // Configurar el temporizador para no repetirse
         // Iniciar el temporizador
         timer.start();
+        
+        // Cambiar el comportamiento de cierre de ventana
+        setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                // Acciones personalizadas al cerrar la ventana
+                // Para musica y cerrar la ventana
+                timer.stop();
+                audioPlayer.stopAudio();
+                dispose();
+                Inicio inicio = new Inicio();
+            }
+        });
     }
 
     @Override
