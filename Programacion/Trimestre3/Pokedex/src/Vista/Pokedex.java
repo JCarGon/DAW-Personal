@@ -158,7 +158,7 @@ public class Pokedex extends javax.swing.JFrame {
                 BotonCapturarPokemonActionPerformed(evt);
             }
         });
-        jPanel1.add(BotonCapturarPokemon, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 320, -1, -1));
+        jPanel1.add(BotonCapturarPokemon, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 320, -1, -1));
 
         BotonBorrarPokemon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/deletePokemon.png"))); // NOI18N
         BotonBorrarPokemon.setBorderPainted(false);
@@ -170,7 +170,7 @@ public class Pokedex extends javax.swing.JFrame {
                 BotonBorrarPokemonActionPerformed(evt);
             }
         });
-        jPanel1.add(BotonBorrarPokemon, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 320, -1, -1));
+        jPanel1.add(BotonBorrarPokemon, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 320, -1, -1));
 
         jScrollPane1.setBackground(new java.awt.Color(0, 0, 0));
         jScrollPane1.setBorder(null);

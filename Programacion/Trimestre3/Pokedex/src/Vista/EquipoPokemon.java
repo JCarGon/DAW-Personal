@@ -164,61 +164,67 @@ public class EquipoPokemon extends javax.swing.JFrame {
         Pokemon1.setPreferredSize(new java.awt.Dimension(120, 120));
         jPanel1.add(Pokemon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, -1, -1));
 
-        NumPkm1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jPanel1.add(NumPkm1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 30, 20));
+        NumPkm1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jPanel1.add(NumPkm1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, 30, 20));
 
         NombrePkm1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jPanel1.add(NombrePkm1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 470, 80, 20));
+        NombrePkm1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(NombrePkm1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, 100, 20));
 
         Pokemon2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/iconoPokeball.png"))); // NOI18N
         Pokemon2.setPreferredSize(new java.awt.Dimension(120, 120));
         jPanel1.add(Pokemon2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, -1, -1));
 
-        NumPkm2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jPanel1.add(NumPkm2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 470, 30, 20));
+        NumPkm2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jPanel1.add(NumPkm2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 30, 20));
 
         NombrePkm2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jPanel1.add(NombrePkm2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 470, 80, 20));
+        NombrePkm2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(NombrePkm2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 460, 100, 20));
 
         Pokemon3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/iconoPokeball.png"))); // NOI18N
         Pokemon3.setPreferredSize(new java.awt.Dimension(120, 120));
         jPanel1.add(Pokemon3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 340, -1, -1));
 
-        NumPkm3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jPanel1.add(NumPkm3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 470, 30, 20));
+        NumPkm3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jPanel1.add(NumPkm3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 310, 30, 20));
 
         NombrePkm3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jPanel1.add(NombrePkm3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 470, 80, 20));
+        NombrePkm3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(NombrePkm3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 460, 100, 20));
 
         Pokemon4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/iconoPokeball.png"))); // NOI18N
         Pokemon4.setPreferredSize(new java.awt.Dimension(120, 120));
         jPanel1.add(Pokemon4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 340, -1, -1));
 
-        NumPkm4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jPanel1.add(NumPkm4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 470, 30, 20));
+        NumPkm4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jPanel1.add(NumPkm4, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 310, 30, 20));
 
         NombrePkm4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jPanel1.add(NombrePkm4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 470, 80, 20));
+        NombrePkm4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(NombrePkm4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 460, 100, 20));
 
         Pokemon5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/iconoPokeball.png"))); // NOI18N
         Pokemon5.setPreferredSize(new java.awt.Dimension(120, 120));
         jPanel1.add(Pokemon5, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 340, -1, -1));
 
-        NumPkm5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jPanel1.add(NumPkm5, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 470, 30, 20));
+        NumPkm5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jPanel1.add(NumPkm5, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 310, 30, 20));
 
         NombrePkm5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jPanel1.add(NombrePkm5, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 470, 80, 20));
+        NombrePkm5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(NombrePkm5, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 460, 100, 20));
 
         Pokemon6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/iconoPokeball.png"))); // NOI18N
         Pokemon6.setPreferredSize(new java.awt.Dimension(120, 120));
         jPanel1.add(Pokemon6, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 340, -1, -1));
 
-        NumPkm6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jPanel1.add(NumPkm6, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 470, 30, 20));
+        NumPkm6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jPanel1.add(NumPkm6, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 310, 30, 20));
 
         NombrePkm6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jPanel1.add(NombrePkm6, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 470, 80, 20));
+        NombrePkm6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel1.add(NombrePkm6, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 460, 100, 20));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/fondo1.jpg"))); // NOI18N
         jPanel1.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
