@@ -177,7 +177,7 @@ public class ServicesUsuario {
                 if(p.getID() == pokemon.getID()){ //si los ID son iguales, se trata del mismo pokemon y no lo añado
                     user.getEquipoPokemon().remove(p);
                     delete = true;
-                    break; //que salga en el momento que encuentre el mismo pokemon, no es necesario seguir buscando
+                    break; //que salga en el momento que encuentre y borre el mismo pokemon, no es necesario seguir buscando
                 }
             }
         }

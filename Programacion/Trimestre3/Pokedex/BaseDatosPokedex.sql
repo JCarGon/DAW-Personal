@@ -20,12 +20,12 @@ CREATE TABLE IF NOT EXISTS user(
 CREATE TABLE IF NOT EXISTS tiene(
 	UserID SMALLINT(3) UNSIGNED AUTO_INCREMENT,
     PokemonID SMALLINT(3) UNSIGNED,
-    PRIMARY KEY(UserID, ID),
+    PRIMARY KEY(UserID, PokemonID),
     CONSTRAINT fk_tiene_pokemon FOREIGN KEY(PokemonID) REFERENCES Pokemon(PokemonID),
     CONSTRAINT fk_tiene_user FOREIGN KEY(UserID) REFERENCES user(UserID)
 );
 
-INSERT INTO user VALUES
+INSERT INTO user(Nombre, Pass) VALUES
 ("root", "root"),
 ("Jesus", "1234"),
 ("Emilio", "4567");
