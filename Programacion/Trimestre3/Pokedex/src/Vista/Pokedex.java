@@ -256,8 +256,8 @@ public class Pokedex extends javax.swing.JFrame {
         String valorConsulta = NumPokedex.getValue().toString();
         Pokemon pokemon = Controlador.obtenerPkmDeBBDD(valorConsulta);
         try {
-                Icon icon = Controlador.obtenerIcon(pokemon, PkmImg.getWidth(), PkmImg.getHeight());
-                PkmImg.setIcon(icon);
+            Icon icon = Controlador.obtenerIcon(pokemon, PkmImg.getWidth(), PkmImg.getHeight());
+            PkmImg.setIcon(icon);
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
         }
