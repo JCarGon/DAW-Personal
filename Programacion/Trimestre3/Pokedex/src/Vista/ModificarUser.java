@@ -4,16 +4,31 @@ import Controlador.Controlador;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.JOptionPane;
+import javax.swing.WindowConstants;
 
 public class ModificarUser extends javax.swing.JFrame {
     private String nombreParaModificar;
+    private PanelUsuarios panel;
     
-    public ModificarUser(String nombreParaModificar) {
+    public ModificarUser(String nombreParaModificar, PanelUsuarios panel) {
+        this.panel = panel;
         this.nombreParaModificar = nombreParaModificar;
         initComponents();
         this.setVisible(true);
         this.setLocationRelativeTo(null);
         setIconImage(getIconImage()); //logo en la aplicación y en la barra de tareas
+        
+        // Cambiar el comportamiento de cierre de ventana
+        setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                // Acciones personalizadas al cerrar la ventana
+                // Cerrar la ventana y abrir la ventana panel de usuario
+                dispose();
+                panel.setVisible(true);
+            }
+        });
     }
 
     //icono de la ventana y barra de tareas

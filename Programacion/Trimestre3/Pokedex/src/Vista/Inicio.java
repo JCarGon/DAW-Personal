@@ -146,7 +146,8 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_LoginActionPerformed
 
     private void GestorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GestorActionPerformed
-        ConfirmacionRoot confirmacion = new ConfirmacionRoot();
+        this.setVisible(false);
+        ConfirmacionRoot confirmacion = new ConfirmacionRoot(this);
     }//GEN-LAST:event_GestorActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

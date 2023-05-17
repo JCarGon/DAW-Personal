@@ -3,15 +3,28 @@ package Vista;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.JOptionPane;
+import javax.swing.WindowConstants;
 
 public class ConfirmacionRoot extends javax.swing.JFrame {
-
-    public ConfirmacionRoot() {
+    private Inicio inicio;
+    public ConfirmacionRoot(Inicio inicio) {
+        this.inicio = inicio;
         initComponents();
         this.setVisible(true);
         this.setLocationRelativeTo(null);
         setIconImage(getIconImage()); //logo en la aplicación y en la barra de tareas
 
+        // Cambiar el comportamiento de cierre de ventana
+        setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                // Acciones personalizadas al cerrar la ventana
+                // Cerrar la ventana y abrir la ventana de inicio
+                dispose();
+                inicio.setVisible(true);
+            }
+        });
     }
     
     //icono de la ventana y barra de tareas
@@ -121,7 +134,7 @@ public class ConfirmacionRoot extends javax.swing.JFrame {
         if(!username.contains(" ") && username.length()>0 && password.length()>0){
             if(username.toUpperCase().equals("ROOT") && password.toUpperCase().equals("ROOT")){
                 this.dispose();
-                PanelUsuarios panel = new PanelUsuarios();
+                PanelUsuarios panel = new PanelUsuarios(inicio);
             }else{
                 JOptionPane.showMessageDialog(null, "Credenciales de user root incorrectas.");
             }
