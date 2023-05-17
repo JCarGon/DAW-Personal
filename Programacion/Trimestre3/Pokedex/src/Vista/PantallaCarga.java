@@ -26,7 +26,7 @@ public class PantallaCarga extends javax.swing.JFrame {
         audioPlayer.playAudio("/img/PeleaIntro.wav");
         
         // Configurar el temporizador para cerrar la ventana después de 5 segundos
-        int delay = 10400; // 10.4 segundos en milisegundos
+        int delay = 10200; // 10.4 segundos en milisegundos
         Timer timer = new Timer(delay, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

@@ -149,6 +149,7 @@ public class ModificarUser extends javax.swing.JFrame {
             Controlador.modificarUser(userNameModificado, passModificada, this.nombreParaModificar);
             JOptionPane.showMessageDialog(null, "Usuario modificado correctamente.");
             this.dispose();
+            panel.setVisible(true);
             }else if(userNameModificado.length()==0){
                 JOptionPane.showMessageDialog(null, "No se puede modificar un usuario sin nombre. Inserta uno.");
             }else if(passModificada.length()==0){
