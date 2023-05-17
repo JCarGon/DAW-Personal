@@ -182,9 +182,14 @@ public class PanelUsuarios extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void CrearUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearUserActionPerformed
+        String restriccion = "^[a-zA-Z0-9]+$";
         String nombreNuevoUser = NombreCrearUser.getText();
         String passNuevoUser = String.valueOf(PassCrearUser.getPassword());
-        if(nombreNuevoUser.length()>20){
+        if(!nombreNuevoUser.matches(restriccion)){
+            JOptionPane.showMessageDialog(null, "El nombre de usuario no puede contener caracteres especiales, solo letras y números.");
+        }else if(!passNuevoUser.matches(restriccion)){
+            JOptionPane.showMessageDialog(null, "La contraseña no puede contener caracteres especiales, solo letras y números.");
+        }else if(nombreNuevoUser.length()>20){
             JOptionPane.showMessageDialog(null, "El nombre de usuario no puede tener más de 20 caracteres.");
         }else if(passNuevoUser.length()>20){
             JOptionPane.showMessageDialog(null, "La contraseña de usuario no puede tener más de 20 caracteres.");

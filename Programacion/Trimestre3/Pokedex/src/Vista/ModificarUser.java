@@ -118,9 +118,14 @@ public class ModificarUser extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String restriccion = "^[a-zA-Z0-9]+$";
         String userNameModificado = UserNameModificado.getText();
         String passModificada = String.valueOf(UserPassModificado.getPassword());
-        if(userNameModificado.length()>20){
+        if(!userNameModificado.matches(restriccion)){
+            JOptionPane.showMessageDialog(null, "El nombre de usuario no puede contener caracteres especiales, solo letras y números.");
+        }else if(!passModificada.matches(restriccion)){
+            JOptionPane.showMessageDialog(null, "La contraseña no puede contener caracteres especiales, solo letras y números.");
+        }else if(userNameModificado.length()>20){
             JOptionPane.showMessageDialog(null, "El nombre de usuario no puede tener más de 20 caracteres.");
         }else if(passModificada.length()>20){
             JOptionPane.showMessageDialog(null, "La contraseña de usuario no puede tener más de 20 caracteres.");
@@ -140,7 +145,6 @@ public class ModificarUser extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField UserNameModificado;
