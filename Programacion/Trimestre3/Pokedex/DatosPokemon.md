@@ -1,1 +1,1 @@
-![logoPokemon](/src/img/pokemon_logo.png)
+![logoPokemon](src/img/pokemon_logo.png)
