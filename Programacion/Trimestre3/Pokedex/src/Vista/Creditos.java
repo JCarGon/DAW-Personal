@@ -57,6 +57,7 @@ public class Creditos extends javax.swing.JFrame {
         fotoTrainer = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 700));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
