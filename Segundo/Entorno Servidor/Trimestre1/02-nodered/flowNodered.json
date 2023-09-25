@@ -1,0 +1,409 @@
+[
+    {
+        "id": "f6f2187d.f17ca8",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "5af17ad7cc875fa0",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "2b3767277de71a72",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 80,
+        "wires": [
+            [
+                "e638a232cb014ca6"
+            ]
+        ]
+    },
+    {
+        "id": "e638a232cb014ca6",
+        "type": "http request",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://pokeapi.co/api/v2/pokemon/charizard",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 310,
+        "y": 160,
+        "wires": [
+            [
+                "97a5406599996d8c"
+            ]
+        ]
+    },
+    {
+        "id": "97a5406599996d8c",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Datos a mostrar",
+        "func": "var respuesta = msg.payload;\n\nvar data = {\n    sprites: respuesta.abilities[0].ability.name\n}\n\nmsg.payload = data;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 120,
+        "wires": [
+            [
+                "5af17ad7cc875fa0"
+            ]
+        ]
+    },
+    {
+        "id": "3baa482e079e46c4",
+        "type": "http in",
+        "z": "f6f2187d.f17ca8",
+        "name": "Peticion /ping",
+        "url": "/ping",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 890,
+        "y": 120,
+        "wires": [
+            [
+                "8d46953947c08011",
+                "67ea1e4955509410"
+            ]
+        ]
+    },
+    {
+        "id": "8d46953947c08011",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "http request",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1150,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "99e97e345d280222",
+        "type": "http response",
+        "z": "f6f2187d.f17ca8",
+        "name": "200 OK",
+        "statusCode": "200",
+        "headers": {},
+        "x": 1220,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "67ea1e4955509410",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "function 1",
+        "func": "msg.payload = \"pong\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1040,
+        "y": 200,
+        "wires": [
+            [
+                "99e97e345d280222"
+            ]
+        ]
+    },
+    {
+        "id": "a348960473071236",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "Piedra",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "piedra",
+        "payloadType": "str",
+        "x": 110,
+        "y": 340,
+        "wires": [
+            [
+                "44fb1541c783a4f0"
+            ]
+        ]
+    },
+    {
+        "id": "4f699ea024c548a8",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "Papel",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "papel",
+        "payloadType": "str",
+        "x": 110,
+        "y": 400,
+        "wires": [
+            [
+                "44fb1541c783a4f0"
+            ]
+        ]
+    },
+    {
+        "id": "6db0b3a4d212dff8",
+        "type": "inject",
+        "z": "f6f2187d.f17ca8",
+        "name": "Tijeras",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "tijeras",
+        "payloadType": "str",
+        "x": 110,
+        "y": 460,
+        "wires": [
+            [
+                "44fb1541c783a4f0"
+            ]
+        ]
+    },
+    {
+        "id": "44fb1541c783a4f0",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Combate",
+        "func": "var jugadaUser = msg.payload;\n\nvar numeroAleatorio = Math.floor(Math.random() * 3) + 1;\n\nif (jugadaUser === \"piedra\" && numeroAleatorio === 1) {\n    msg.payload = \"empate\"\n} else if (jugadaUser === \"piedra\" && numeroAleatorio === 2) {\n    msg.payload = \"Gana la máquina (ha sacado papel y tú piedra)\"\n} else if (jugadaUser === \"piedra\" && numeroAleatorio === 3) {\n    msg.payload = \"Gana el usuario (la máquina ha sacado tijeras)\"\n} else if (jugadaUser === \"papel\" && numeroAleatorio === 1) {\n    msg.payload = \"Gana el usuario (la máquina ha sacado piedra)\"\n} else if (jugadaUser === \"papel\" && numeroAleatorio === 2) {\n    msg.payload = \"Empate\"\n} else if (jugadaUser === \"papel\" && numeroAleatorio === 3) {\n    msg.payload = \"Gana la máquina (ha sacado tijeras y tú papel)\"\n} else if (jugadaUser === \"tijeras\" && numeroAleatorio === 1) {\n    msg.payload = \"Gana la máquina (ha sacado piedra y tú tijeras)\"\n} else if (jugadaUser === \"tijeras\" && numeroAleatorio === 2) {\n    msg.payload = \"Gana el usuario (la máquina ha sacado papel)\"\n} else {\n    msg.payload = \"Empate\"\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 400,
+        "wires": [
+            [
+                "381d44f95bfb3ad7"
+            ]
+        ]
+    },
+    {
+        "id": "381d44f95bfb3ad7",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "Respuesta",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 550,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "d9dd2686c536fb9c",
+        "type": "http in",
+        "z": "f6f2187d.f17ca8",
+        "name": "Piedra",
+        "url": "/piedra",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 750,
+        "y": 340,
+        "wires": [
+            [
+                "12e20a1471b90874"
+            ]
+        ]
+    },
+    {
+        "id": "4cba303e5bea97af",
+        "type": "http in",
+        "z": "f6f2187d.f17ca8",
+        "name": "Papel",
+        "url": "/papel",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 750,
+        "y": 400,
+        "wires": [
+            [
+                "12e20a1471b90874"
+            ]
+        ]
+    },
+    {
+        "id": "213656f650d02402",
+        "type": "http in",
+        "z": "f6f2187d.f17ca8",
+        "name": "Tijeras",
+        "url": "/tijeras",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 750,
+        "y": 460,
+        "wires": [
+            [
+                "12e20a1471b90874"
+            ]
+        ]
+    },
+    {
+        "id": "528d3d19642f2c25",
+        "type": "http response",
+        "z": "f6f2187d.f17ca8",
+        "name": "Respuesta",
+        "statusCode": "200",
+        "headers": {},
+        "x": 1210,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "a2ed8a4ed087133f",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "Salida HTTP Debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1240,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "12e20a1471b90874",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "Combate HTTP",
+        "func": "let eleccion = msg.req.url;\neleccion = eleccion.replace(\"/\", \"\");\n\nvar numeroAleatorio = Math.floor(Math.random() * 3) + 1;\n\nif (eleccion === \"piedra\" && numeroAleatorio === 1) {\n    msg.payload = \"empate\"\n} else if (eleccion === \"piedra\" && numeroAleatorio === 2) {\n    msg.payload = \"Gana la máquina (ha sacado papel y tú piedra)\"\n} else if (eleccion === \"piedra\" && numeroAleatorio === 3) {\n    msg.payload = \"Gana el usuario (la máquina ha sacado tijeras)\"\n} else if (eleccion === \"papel\" && numeroAleatorio === 1) {\n    msg.payload = \"Gana el usuario (la máquina ha sacado piedra)\"\n} else if (eleccion === \"papel\" && numeroAleatorio === 2) {\n    msg.payload = \"Empate\"\n} else if (eleccion === \"papel\" && numeroAleatorio === 3) {\n    msg.payload = \"Gana la máquina (ha sacado tijeras y tú papel)\"\n} else if (eleccion === \"tijeras\" && numeroAleatorio === 1) {\n    msg.payload = \"Gana la máquina (ha sacado piedra y tú tijeras)\"\n} else if (eleccion === \"tijeras\" && numeroAleatorio === 2) {\n    msg.payload = \"Gana el usuario (la máquina ha sacado papel)\"\n} else {\n    msg.payload = \"Empate\"\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 980,
+        "y": 400,
+        "wires": [
+            [
+                "a2ed8a4ed087133f",
+                "528d3d19642f2c25"
+            ]
+        ]
+    },
+    {
+        "id": "d12f442b9e8d9606",
+        "type": "comment",
+        "z": "f6f2187d.f17ca8",
+        "name": "Piedra, papel, tijeras Debug",
+        "info": "",
+        "x": 400,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "d178de6dba760297",
+        "type": "comment",
+        "z": "f6f2187d.f17ca8",
+        "name": "Piedra, papel, tijeras HHTTP",
+        "info": "",
+        "x": 960,
+        "y": 300,
+        "wires": []
+    }
+]
