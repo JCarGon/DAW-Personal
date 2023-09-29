@@ -40,13 +40,13 @@ Enlace al archivo .js: [Ejercicio1](./ejercicio1.js)
 
 El ejercicio 2 debería mostrar en la consola del navegador los valores de las variables que van a realizar la operación y el resultado de dicha operación.
 
-Enlace al archivo .js: [Ejercicio2](./Ejercicio2.js)
+Enlace al archivo .js: [Ejercicio2](./ejercicio2.js)
 
 ![Ejercicio2](./imgs/ej2.jpg)
 
 El ejercicio 3 debería mostrar en la consola del navegador el valor de los elementos que se comparan, así como el resultado en booleano de la comparación
 
-Enlace al archivo .js: [Ejercicio3](./Ejercicio3.js)
+Enlace al archivo .js: [Ejercicio3](./ejercicio3.js)
 
 ![Ejercicio3](./imgs/ej3.jpg)
 
