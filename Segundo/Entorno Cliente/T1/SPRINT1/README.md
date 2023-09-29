@@ -34,19 +34,19 @@ Para realizar este apartado he seguido las instrucciones del enunciado apoyándo
 ### 💡 Pruebas
 El ejercicio 1 debería mostrar en la consola del navegador el valor de las variables definidas en el código, así como su tipo.
 
-Enlace al archivo .js: [Ejercicio1](./ejercicio1.js)
+Enlace al archivo .js: [Ejercicio1](./Ejercicio1.js)
 
 ![Ejercicio1](./imgs/ej1.jpg)
 
 El ejercicio 2 debería mostrar en la consola del navegador los valores de las variables que van a realizar la operación y el resultado de dicha operación.
 
-Enlace al archivo .js: [Ejercicio2](./ejercicio2.js)
+Enlace al archivo .js: [Ejercicio2](./Ejercicio2.js)
 
 ![Ejercicio2](./imgs/ej2.jpg)
 
 El ejercicio 3 debería mostrar en la consola del navegador el valor de los elementos que se comparan, así como el resultado en booleano de la comparación
 
-Enlace al archivo .js: [Ejercicio3](./ejercicio3.js)
+Enlace al archivo .js: [Ejercicio3](./Ejercicio3.js)
 
 ![Ejercicio3](./imgs/ej3.jpg)
 
@@ -55,12 +55,12 @@ El ejercicio 4 debería mostrar un gif en el que aparece un alert en pantalla, e
 - El número insertado es 10 por lo que al pulsar "Aceptar" sale otro alert que indica que ese número es exactamente 10.
 - El número insertado es mayor de 10 por lo que al pulsar "Aceptar" sale otro alert que indica que ese número es mayor que 10.
 
-Enlace al archivo .js: [Ejercicio4](./ejercicio4.js)
+Enlace al archivo .js: [Ejercicio4](./Ejercicio4.js)
 
 ![Ejercicio4](./imgs/ej4.gif)
 
 El ejercicio 5 debería mostrar en la consola del navegador los números del 1 al 10 realizados por un bucle y los números pares del 1 al 10 realizados por otro bucle.
 
-Enlace al archivo .js: [Ejercicio5](./ejercicio5.js)
+Enlace al archivo .js: [Ejercicio5](./Ejercicio5.js)
 
 ![Ejercicio5](./imgs/ej5.jpg)
