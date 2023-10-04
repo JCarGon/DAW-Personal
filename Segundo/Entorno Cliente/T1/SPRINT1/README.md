@@ -61,6 +61,6 @@ Enlace al archivo .js: [Ejercicio4](./Ejercicio4.js)
 
 El ejercicio 5 debería mostrar en la consola del navegador los números del 1 al 10 realizados por un bucle y los números pares del 1 al 10 realizados por otro bucle.
 
-Enlace al archivo .js: [Ejercicio5](./Ejercicio5.js)
+Enlace al archivo .js: [Ejercicio5](./ejercicio5.js)
 
 ![Ejercicio5](./imgs/ej5.jpg)
