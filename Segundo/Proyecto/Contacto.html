@@ -1,120 +1,222 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset=”UTF-8”>
-        <title>Contacto</title>
-        <style>
-            td, label, p{
-                font-family: 'Times New Roman', Times, serif;
-                font-weight: bold;
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>FrikiLevel - Contacto</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('./imagenes/fondo1.svg') no-repeat center center fixed;
+            background-size: cover;
+            z-index: 1;
+            font-weight: bold;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        header {
+            position: relative;
+        }
+
+        nav {
+            text-align: center;
+            margin-top: -2.5%;
+        }
+
+        nav a {
+            margin: 0 2%;
+        }
+
+        .login-form {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 5%;
+        }
+
+        main {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 200px);
+        }
+
+        form {
+            max-width: 700px;
+            width: 100%;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            color: white;
+            margin: 5% auto;
+        }
+
+        form p {
+            text-align: left;
+        }
+
+        textarea {
+            width: 100%;
+        }
+
+        iframe {
+            max-width: 100%;
+            height: auto;
+        }
+
+        svg {
+            z-index: -1;
+            position: relative;
+        }
+
+        footer {
+            text-align: center;
+            padding-top: 5%;
+            padding-bottom: 1%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer img {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        footer .contact-info {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        footer .contact-info p {
+            margin: 0;
+        }
+
+        footer .social-icons {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        footer .social-icons a {
+            margin-right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .login-form {
+                margin-left: 20px;
             }
-        </style>
-    </head>
-    <body>
-        <header>
-            <nav style="position: absolute;">
-            </br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
-                <table>
-                    <tr>
-                        <td><pre>     </pre></td>
-                        <td><a href="Inicio.html"><img src="imagenes/LogoInicio.png" alt="LogoInicio" title="LogoInicio" width="90"></a></td>
-                        <td><pre>     </pre></td>
-                        <td><a href="Productos.html"><img src="imagenes/LogoProductos.png" alt="LogoProductos" title="LogoProductos" width="160"></a></td>
-                        <td><pre>     </pre></td>
-                        <td><a href="Registro.html"><img src="imagenes/LogoRegistro.png" alt="LogoRegistro" title="LogoRegistro" width="130"></a></td>
-                        <td><pre>     </pre></td>
-                        <td><a href="QuienesSomos.html"><img src="imagenes/LogoQuienesSomos.png" alt="LogoQuienesSomos" title="LogoQuienesSomos" width="220"></a></td>
-                        <td><pre>     </pre></td>
-                        <td><a href="Contacto.html"><img src="imagenes/LogoContacto.png" alt="LogoContacto" title="LogoContacto" width="150"></a></td>
-                        <td><pre>     </pre></td>
-                        <td><a href="FAQ.html"><img src="imagenes/LogoFAQs.png" alt="LogoFAQs" title="LogoFAQs" width="80"></a></td>
-                        <td><pre>                                                                                                      </pre></td>
-                        <td>
-                            <select>
-                                <option>Español</option>
-                                <option>Inglés</option>
-                            </select>
-                        </td>
-                    </tr>
-                </table>
+
+            nav a {
+                margin: 0 10px;
+            }
+
+            form {
+                max-width: 380px;
+            }
+
+            .direccion {
+                margin-left: 5%;
+            }
+
+            iframe {
+                max-width: 100%;
+                height: auto;
+                margin: 0 5%;
+            }
+
+            footer {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-logo {
+                margin-top: 15%;
+            }
+
+            .contact-info {
+                margin: 5%;
+            }
+
+            .social-icons {
+                margin-bottom: 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="imagenes/Encabezado/encabezado.jpg" alt="cabecera" title="cabecera" width="100%">
+        <div class="nav-bg">
+            <nav>
+                <a href="index.html"><img src="imagenes/LogoInicio.png" alt="LogoInicio" title="LogoInicio" width="90"></a>
+                <a href="Productos.html"><img src="imagenes/LogoProductos.png" alt="LogoProductos" title="LogoProductos" width="160"></a>
+                <a href="Registro.html"><img src="imagenes/LogoRegistro.png" alt="LogoRegistro" title="LogoRegistro" width="130"></a>
+                <a href="QuienesSomos.html"><img src="imagenes/LogoQuienesSomos.png" alt="LogoQuienesSomos" title="LogoQuienesSomos" width="220"></a>
+                <a href="Contacto.html"><img src="imagenes/LogoContacto.png" alt="LogoContacto" title="LogoContacto" width="150"></a>
+                <a href="FAQ.html"><img src="imagenes/LogoFAQs.png" alt="LogoFAQs" title="LogoFAQs" width="80"></a>
+                <div class="login-form">
+                    <input type="text" placeholder="Usuario">
+                    <input type="password" placeholder="Contraseña">
+                    <input type="submit" value="Login">
+                </div>
             </nav>
-            <img src="imagenes/Encabezado/encabezado.jpg" alt="cabecera" title="cabecera" width="100%">
-        </header>
-        <hr/>
-        <container>
-            <main>
-                <table style="z-index: 1; position: absolute">
-                    <tr>
-                        <td></td>
-                        <td></br></br><img src="imagenes/LogoContacto.png" alt="LogoContacto" title="LogoContacto" width="400"></br></br></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td><pre>                                                                                                 </pre></td>
-                        <td>
-                            <form action="proceso.php" method="post">
-                                <p>Si quiere que la tienda se ponga en contacto con usted, rellene estos campos:</p>
-                                <label for="name">Nombre:</label>
-                                <input type="text" placeholder="Nombre" size="20">
-                                <p>
-                                    <label for="name">Apellidos:</label>
-                                    <input type="text" placeholder="Apellidos" size="30">
-                                </p>
-                                <p>
-                                    <label for="email">Email:</label>
-                                    <input type="email" size="40" placeholder="correo@correo.com" required>
-                                    <small>*Campo obligatorio</small>
-                                </p>
-                                <p>
-                                    <label for="telefono">Número de teléfono: </label>
-                                    <input type="tel" maxlength="9" size="15">
-                                </p>
-                                <label>Indique el motivo de su consulta o duda: </label>
-                                <p>
-                                    <textarea rows="4" cols="70" maxlength="300"></textarea>
-                                </p>
-                                <input type="reset" value="Reiniciar">
-                                <input type="submit" value="Enviar">
-                            </form>
-                            </br></br></br>
-                            <p>Si quiere visitarnos: </p>
-                            <p>Dirección: Centro Comercial Lagoh Sevilla Primera Planta, Av. de Palmas Altas, 1, 41016 Sevilla</p>
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3171.958609817615!2d-5.988673748714869!3d37.3434885778605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126d1f558d7a6d%3A0xd57b578dea57e6ef!2sCentro%20Comercial%20Lagoh%20Sevilla!5e0!3m2!1ses!2ses!4v1669722808864!5m2!1ses!2ses" width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </td>
-                    </tr>
-                </table>
-                <img src="imagenes/fondo.png" width="100%" style="opacity: .2;">
-            </main>
-        </container>
-        <hr/>
-        <footer>
-            <table WIDTH="100%">
-                <tr>
-                    <td rowspan="2" width="33%"><img src="imagenes/LogoEmpresa.png" alt="logoEmpresa" title="logoEmpresa" width="300"></td>
-                    <td width="33%">
-                        <table width="100%">
-                            <tr>
-                                <td width="33%"></td>
-                                <td width="40%">Teléfono: 954 65 42 55</br>Correo: FrikiLevel@gmail.com</td>
-                                <td width="27%"></td>
-                            </tr>
-                        </table>
-                    </td>
-                    <td width="33%">
-                        <table>
-                            <tr>
-                                <td><pre>                                         </pre></td>
-                                <td>
-                                    <a href="https://www.facebook.com/FrikiLevel" target="_blank"><img src="imagenes/facebook.png" alt="Facebook" title="Facebook" width="50"></a>
-                                    <a href="https://www.twitter.com/FrikiLevel" target="_blank"><img src="imagenes/twitter.png" alt="Twitter" title="Twitter" width="50"></a>
-                                    <a href="https://www.youtube.com/@FrikiLevel" target="_blank"><img src="imagenes/YouTube.png" alt="Youtube" title="Youtube" width="50"></a>
-                                    <a href="https://www.instagram.com/FrikiLevel/" target="_blank"><img src="imagenes/instagram.png" alt="Instagram" title="Instagram" width="50"></a>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </table>
-        </footer>
-    </body>
+        </div>
+    </header>
+    <container>
+        <main>
+            <form action="proceso.php" method="post">
+                <p>Si quiere que la tienda se ponga en contacto con usted, rellene estos campos:</p>
+                <label for="name">Nombre:</label>
+                <input type="text" placeholder="Nombre" size="20">
+                <small>*Campo obligatorio</small>
+                <p>
+                    <label for="name">Apellidos:</label>
+                    <input type="text" placeholder="Apellidos" size="30">
+                    <small>*Campo obligatorio</small>
+                </p>
+                <p>
+                    <label for="email">Email:</label>
+                    <input type="email" size="40" placeholder="correo@correo.com" required>
+                    <small>*Campo obligatorio</small>
+                </p>
+                <p>
+                    <label for="telefono">Número de teléfono: </label>
+                    <input type="tel" maxlength="9" size="15">
+                </p>
+                <label>Indique el motivo de su consulta o duda: </label>
+                <p>
+                    <textarea rows="4" cols="70" maxlength="300"></textarea>
+                    <small>*Campo obligatorio</small>
+                </p>
+                <input type="reset" value="Reiniciar">
+                <input type="submit" value="Enviar">
+            </form>
+            <p>Si quiere visitarnos: </p>
+            <p class="direccion">Dirección: Centro Comercial Lagoh Sevilla Primera Planta, Av. de Palmas Altas, 1, 41016 Sevilla</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3171.958609817615!2d-5.988673748714869!3d37.3434885778605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126d1f558d7a6d%3A0xd57b578dea57e6ef!2sCentro%20Comercial%20Lagoh%20Sevilla!5e0!3m2!1ses!2ses!4v1669722808864!5m2!1ses!2ses" width="700" style="border:0;"></iframe>
+        </main>
+    </container>
+    <footer>
+        <img class="footer-logo" src="imagenes/LogoEmpresa.png" alt="logoEmpresa" title="logoEmpresa" width="300">
+        <div class="contact-info">
+            <p>Teléfono: 954 65 42 55</p>
+            <p>Correo: FrikiLevel@gmail.com</p>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/FrikiLevel" target="_blank"><img src="imagenes/facebook.png" alt="Facebook" title="Facebook" width="50"></a>
+            <a href="https://www.twitter.com/FrikiLevel" target="_blank"><img src="imagenes/twitter.png" alt="Twitter" title="Twitter" width="50"></a>
+            <a href="https://www.youtube.com/@FrikiLevel" target="_blank"><img src="imagenes/YouTube.png" alt="Youtube" title="Youtube" width="50"></a>
+            <a href="https://www.instagram.com/FrikiLevel/" target="_blank"><img src="imagenes/instagram.png" alt="Instagram" title="Instagram" width="50"></a>
+        </div>
+    </footer>
+</body>
 </html>

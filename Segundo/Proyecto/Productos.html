@@ -1,161 +1,215 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset=”UTF-8”>
-        <title>Productos</title>
-        <style>
-            td, a, small, p{
-                font-family: 'Times New Roman', Times, serif;
-                font-weight: bold;
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>FrikiLevel - Productos</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('./imagenes/fondo1.svg') no-repeat center center fixed;
+            background-size: cover;
+            z-index: 1;
+            font-weight: bold;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        header {
+            position: relative;
+        }
+
+        nav {
+            text-align: center;
+            margin-top: -2.5%;
+        }
+
+        nav a {
+            margin: 0 2%;
+        }
+
+        .login-form {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 5%;
+        }
+
+        main {
+            position: relative;
+        }
+
+        svg {
+            z-index: -1;
+            position: relative;
+        }
+
+        .product-image {
+            width: 40%;
+            display: block;
+            margin: 2% auto;
+        }
+
+        .product-container {
+            text-align: center;
+        }
+
+        .product-row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .header-image {
+            max-width: 30%;
+            display: flex;
+            margin: 3% auto;
+        }
+
+        .product-title {
+            margin-top: 2%;
+        }
+
+        footer {
+            text-align: center;
+            padding-top: 2%;
+            padding-bottom: 1%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer img {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        footer .contact-info {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        footer .contact-info p {
+            margin: 0;
+        }
+
+        footer .social-icons {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        footer .social-icons a {
+            margin-right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .login-form {
+                margin-left: 20px;
             }
-        </style>
-    </head>
-    <body>
-        <header>
-            <nav style="position: absolute;">
-            </br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
-                <table>
-                    <tr>
-                        <td><pre>     </pre></td>
-                        <td><a href="Inicio.html"><img src="imagenes/LogoInicio.png" alt="LogoInicio" title="LogoInicio" width="90"></a></td>
-                        <td><pre>     </pre></td>
-                        <td><a href="Productos.html"><img src="imagenes/LogoProductos.png" alt="LogoProductos" title="LogoProductos" width="160"></a></td>
-                        <td><pre>     </pre></td>
-                        <td><a href="Registro.html"><img src="imagenes/LogoRegistro.png" alt="LogoRegistro" title="LogoRegistro" width="130"></a></td>
-                        <td><pre>     </pre></td>
-                        <td><a href="QuienesSomos.html"><img src="imagenes/LogoQuienesSomos.png" alt="LogoQuienesSomos" title="LogoQuienesSomos" width="220"></a></td>
-                        <td><pre>     </pre></td>
-                        <td><a href="Contacto.html"><img src="imagenes/LogoContacto.png" alt="LogoContacto" title="LogoContacto" width="150"></a></td>
-                        <td><pre>     </pre></td>
-                        <td><a href="FAQ.html"><img src="imagenes/LogoFAQs.png" alt="LogoFAQs" title="LogoFAQs" width="80"></a></td>
-                        <td><pre>                                                                                                      </pre></td>
-                        <td>
-                            <select>
-                                <option>Español</option>
-                                <option>Inglés</option>
-                            </select>
-                        </td>
-                    </tr>
-                </table>
+
+            nav a {
+                margin: 0 10px;
+            }
+
+            .header-image {
+                max-width: 60%;
+                margin: 10% auto;
+            }
+
+            .product-row {
+                flex-direction: column;
+                align-items: center;
+                margin-top: 2%;
+            }
+
+            .product-image {
+                width: 80%;
+                margin: 2% 0;
+            }
+
+            footer {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-logo {
+                margin-top: 15%;
+            }
+
+            .contact-info {
+                margin: 5%;
+            }
+
+            .social-icons {
+                margin-bottom: 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="imagenes/Encabezado/encabezado.jpg" alt="cabecera" title="cabecera" width="100%">
+        <div class="nav-bg">
+            <nav>
+                <a href="index.html"><img src="imagenes/LogoInicio.png" alt="LogoInicio" title="LogoInicio" width="90"></a>
+                <a href="Productos.html"><img src="imagenes/LogoProductos.png" alt="LogoProductos" title="LogoProductos" width="160"></a>
+                <a href="Registro.html"><img src="imagenes/LogoRegistro.png" alt="LogoRegistro" title="LogoRegistro" width="130"></a>
+                <a href="QuienesSomos.html"><img src="imagenes/LogoQuienesSomos.png" alt="LogoQuienesSomos" title="LogoQuienesSomos" width="220"></a>
+                <a href="Contacto.html"><img src="imagenes/LogoContacto.png" alt="LogoContacto" title="LogoContacto" width="150"></a>
+                <a href="FAQ.html"><img src="imagenes/LogoFAQs.png" alt="LogoFAQs" title="LogoFAQs" width="80"></a>
+                <div class="login-form">
+                    <input type="text" placeholder="Usuario">
+                    <input type="password" placeholder="Contraseña">
+                    <input type="submit" value="Login">
+                </div>
             </nav>
-            <img src="imagenes/Encabezado/encabezado.jpg" alt="cabecera" title="cabecera" width="100%">
-        </header>
-        <hr/>
-        <container>
-            <main>
-                <table>
-                    <tr>
-                        <table style="z-index: 1; position: absolute">
-                            <tr>
-                                <td width="35%"></td>
-                                <td></br></br><img src="imagenes/LogoProductos.png" alt="LogoProductos" title="LogoProductos" width="550"></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td></br></br></br></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <table>
-                                        <tr>
-                                            <td><pre>          </pre></td>
-                                            <td>
-                                                <a href="ProductosDBZ.html" target="_self"><img src="imagenes/DBZ/logoDBZ.png" alt="LogoDBZ" title="LogoDBZ" width="450"></a>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                                <td>
-                                    <table>
-                                        <tr>
-                                            <td><pre>               </pre></td>
-                                            <td>
-                                                <a href="ProductosKNY.html" target="_self"><img src="imagenes/Kimetsu/LogoKNY.png" alt="LogoKNY" title="LogoKNY" width="425"></a>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                                <td>
-                                    <table>
-                                        <tr>
-                                            <td><pre>                    </pre></td>
-                                            <td>
-                                                <a href="ProductosMHA.html" target="_self"><img src="imagenes/Academia/LogoMHA.png" alt="LogoMHA" title="LogoMHA" width="450"></a>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td></br></br></br></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <table>
-                                        <tr>
-                                            <td><pre>          </pre></td>
-                                            <td>
-                                                <a href="ProductosAOT.html" target="_self"><img src="imagenes/AOT/LogoAOT.png" alt="LogoAOT" title="LogoAOT" width="450"></a>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                                <td>
-                                    <table>
-                                        <tr>
-                                            <td><pre>            </pre></td>
-                                            <td>
-                                                <a href="ProductosOP.html" target="_self"><img src="imagenes/One Piece/LogoOnePiece.png" alt="LogoOnePiece" title="LogoOnePiece" width="450"></a>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                                <td>
-                                    <table>
-                                        <tr>
-                                            <td><pre>                   </pre></td>
-                                            <td>
-                                                <a href="ProductosNaruto.html" target="_self"><img src="imagenes/Naruto/LogoNaruto.png" alt="LogoNaruto" title="LogoNaruto" width="450"></a>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
-                        </table>
-                    </tr>
-                </table>
-                <img src="imagenes/fondo.png" alt="fondo" title="fondo" width="100%" style="opacity: .3;">
-            </main>
-        </container>
-        <hr/>
-        <footer>
-            <table WIDTH="100%">
-                <tr>
-                    <td rowspan="2" width="33%"><img src="imagenes/LogoEmpresa.png" alt="logoEmpresa" title="logoEmpresa" width="300"></td>
-                    <td width="33%">
-                        <table width="100%">
-                            <tr>
-                                <td width="33%"></td>
-                                <td width="40%">Teléfono: 954 65 42 55</br>Correo: FrikiLevel@gmail.com</td>
-                                <td width="27%"></td>
-                            </tr>
-                        </table>
-                    </td>
-                    <td width="33%">
-                        <table>
-                            <tr>
-                                <td><pre>                                         </pre></td>
-                                <td>
-                                    <a href="https://www.facebook.com/FrikiLevel" target="_blank"><img src="imagenes/facebook.png" alt="Facebook" title="Facebook" width="50"></a>
-                                    <a href="https://www.twitter.com/FrikiLevel" target="_blank"><img src="imagenes/twitter.png" alt="Twitter" title="Twitter" width="50"></a>
-                                    <a href="https://www.youtube.com/@FrikiLevel" target="_blank"><img src="imagenes/YouTube.png" alt="Youtube" title="Youtube" width="50"></a>
-                                    <a href="https://www.instagram.com/FrikiLevel/" target="_blank"><img src="imagenes/instagram.png" alt="Instagram" title="Instagram" width="50"></a>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </table>
-        </footer>
-    </body>
+        </div>
+    </header>
+    <container>
+        <main>
+            <img class="header-image" src="imagenes/LogoProductos.png" alt="LogoProductos" title="LogoProductos"></td>
+            <div class="product-container">
+                <div class="product-row">
+                    <div class="product-image">
+                        <a href="ProductosDBZ.html" target="_self"><img src="imagenes/DBZ/logoDBZ.png" alt="LogoDBZ" title="LogoDBZ" width="80%"></a>
+                    </div>
+                    <div class="product-image">
+                        <a href="ProductosKNY.html" target="_self"><img src="imagenes/Kimetsu/LogoKNY.png" alt="LogoKNY" title="LogoKNY" width="60%"></a>
+                    </div>
+                    <div class="product-image">
+                        <a href="ProductosMHA.html" target="_self"><img src="imagenes/Academia/LogoMHA.png" alt="LogoMHA" title="LogoMHA" width="70%"></a>
+                    </div>
+                </div>
+                <div class="product-row">
+                    <div class="product-image">
+                        <a href="ProductosAOT.html" target="_self"><img src="imagenes/AOT/LogoAOT.png" alt="LogoAOT" title="LogoAOT" width="90%"></a>
+                    </div>
+                    <div class="product-image">
+                        <a href="ProductosOP.html" target="_self"><img src="imagenes/One Piece/LogoOnePiece.png" alt="LogoOnePiece" title="LogoOnePiece" width="75%"></a>
+                    </div>
+                    <div class="product-image">
+                        <a href="ProductosNaruto.html" target="_self"><img src="imagenes/Naruto/LogoNaruto.png" alt="LogoNaruto" title="LogoNaruto" width="70%"></a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </container>
+    <footer>
+        <img class="footer-logo" src="imagenes/LogoEmpresa.png" alt="logoEmpresa" title="logoEmpresa" width="300">
+        <div class="contact-info">
+            <p>Teléfono: 954 65 42 55</p>
+            <p>Correo: FrikiLevel@gmail.com</p>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/FrikiLevel" target="_blank"><img src="imagenes/facebook.png" alt="Facebook" title="Facebook" width="50"></a>
+            <a href="https://www.twitter.com/FrikiLevel" target="_blank"><img src="imagenes/twitter.png" alt="Twitter" title="Twitter" width="50"></a>
+            <a href="https://www.youtube.com/@FrikiLevel" target="_blank"><img src="imagenes/YouTube.png" alt="Youtube" title="Youtube" width="50"></a>
+            <a href="https://www.instagram.com/FrikiLevel/" target="_blank"><img src="imagenes/instagram.png" alt="Instagram" title="Instagram" width="50"></a>
+        </div>
+    </footer>
+</body>
 </html>

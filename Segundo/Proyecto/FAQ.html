@@ -1,119 +1,161 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset=”UTF-8”>
-        <title>Preguntas frecuentes</title>
-        <style>
-            td, a, p{
-                font-family: 'Times New Roman', Times, serif;
-                font-weight: bold;
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>FrikiLevel - Contacto</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('./imagenes/fondo1.svg') no-repeat center center fixed;
+            background-size: cover;
+            z-index: 1;
+            font-weight: bold;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        header {
+            position: relative;
+        }
+
+        nav {
+            text-align: center;
+            margin-top: -2.5%;
+        }
+
+        nav a {
+            margin: 0 2%;
+        }
+
+        .login-form {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 5%;
+        }
+
+        main {
+            position: relative;
+        }
+
+        svg {
+            z-index: -1;
+            position: relative;
+        }
+
+        footer {
+            text-align: center;
+            padding-top: 2%;
+            padding-bottom: 1%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer img {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        footer .contact-info {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        footer .contact-info p {
+            margin: 0;
+        }
+
+        footer .social-icons {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        footer .social-icons a {
+            margin-right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .login-form {
+                margin-left: 20px;
             }
-        </style>
-    </head>
-    <body>
-        <header>
-            <nav style="position: absolute;">
-            </br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
-                <table>
-                    <tr>
-                        <td><pre>     </pre></td>
-                        <td><a href="Inicio.html"><img src="imagenes/LogoInicio.png" alt="LogoInicio" title="LogoInicio" width="90"></a></td>
-                        <td><pre>     </pre></td>
-                        <td><a href="Productos.html"><img src="imagenes/LogoProductos.png" alt="LogoProductos" title="LogoProductos" width="160"></a></td>
-                        <td><pre>     </pre></td>
-                        <td><a href="Registro.html"><img src="imagenes/LogoRegistro.png" alt="LogoRegistro" title="LogoRegistro" width="130"></a></td>
-                        <td><pre>     </pre></td>
-                        <td><a href="QuienesSomos.html"><img src="imagenes/LogoQuienesSomos.png" alt="LogoQuienesSomos" title="LogoQuienesSomos" width="220"></a></td>
-                        <td><pre>     </pre></td>
-                        <td><a href="Contacto.html"><img src="imagenes/LogoContacto.png" alt="LogoContacto" title="LogoContacto" width="150"></a></td>
-                        <td><pre>     </pre></td>
-                        <td><a href="FAQ.html"><img src="imagenes/LogoFAQs.png" alt="LogoFAQs" title="LogoFAQs" width="80"></a></td>
-                        <td><pre>                                                                                                      </pre></td>
-                        <td>
-                            <select>
-                                <option>Español</option>
-                                <option>Inglés</option>
-                            </select>
-                        </td>
-                    </tr>
-                </table>
+
+            nav a {
+                margin: 0 10px;
+            }
+
+            footer {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="imagenes/Encabezado/encabezado.jpg" alt="cabecera" title="cabecera" width="100%">
+        <div class="nav-bg">
+            <nav>
+                <a href="index.html"><img src="imagenes/LogoInicio.png" alt="LogoInicio" title="LogoInicio" width="90"></a>
+                <a href="Productos.html"><img src="imagenes/LogoProductos.png" alt="LogoProductos" title="LogoProductos" width="160"></a>
+                <a href="Registro.html"><img src="imagenes/LogoRegistro.png" alt="LogoRegistro" title="LogoRegistro" width="130"></a>
+                <a href="QuienesSomos.html"><img src="imagenes/LogoQuienesSomos.png" alt="LogoQuienesSomos" title="LogoQuienesSomos" width="220"></a>
+                <a href="Contacto.html"><img src="imagenes/LogoContacto.png" alt="LogoContacto" title="LogoContacto" width="150"></a>
+                <a href="FAQ.html"><img src="imagenes/LogoFAQs.png" alt="LogoFAQs" title="LogoFAQs" width="80"></a>
+                <div class="login-form">
+                    <input type="text" placeholder="Usuario">
+                    <input type="password" placeholder="Contraseña">
+                    <input type="submit" value="Login">
+                </div>
             </nav>
-            <img src="imagenes/Encabezado/encabezado.jpg" alt="cabecera" title="cabecera" width="100%">
-        </header>
-        <hr/>
-        <container>
-            <main>
-                <table style="z-index: 1; position: absolute">
-                    <tr>
-                        <td><pre>                                                                                                                </pre></td>
-                        <td></br></br><img src="imagenes/LogoFAQs.png" alt="LogoFAQs" title="LogoFAQs" width="200"></td>
-                        <td></td>
-                    </tr>
-                </table>
-                <table style="z-index: 1; position: absolute">
-                    <tr>
-                        <td width="50"></td>
-                        <td>
-                            </br></br></br></br></br></br></br></br></br></br>
-                            <details>
-                                <summary>¿Las figuras son originales?</summary>
-                                <p>Las figuras que vendemos en nuestra tienda y en web son productos originales con su etiqueta correspondiente que lo acredita.</p>
-                            </details>
-                            </br></br>
-                            <details>
-                                <summary>¿Cuánto tiempo tarda el pedido en llegar al domicilio?</summary>
-                                <p>Dependerá de si hay existencias en tienda de la figura solicitada, o si por el contrario hay que pedirla al proveedor.</p>
-                                <p>Si hay existencias disponibles en tienda, el pedido debería recibirse en menos de una semana aproximadamente; en el caso de 
-                                no tener disponibilidad, los tiempos de entrega podrían variar en función del proveedor.</p>
-                            </details>
-                            </br></br>
-                            <details>
-                                <summary>¿Qué es necesario para tramitar una devolución?</summary>
-                                <p>En caso de necesitar una devolución es necesario entregar el ticket de compra y la figura en el mismo estado en el que se 
-                                entregó, incluyendo sus embalajes y caja sin ningún desperfecto ocasionado por el usuario.</p>
-                            </details>
-                            </br></br>
-                            <details>
-                                <summary>¿Qué métodos de pago aceptan en el envío a domicilio?</summary>
-                                <p>Aceptamos pago con tarjeta de crédito o débito en el momento de la compra, o a contrareembolso en el momento de recepción del pedido.
-                                 En este último caso, se podría hacer con tarjeta de crédito/débito o en efectivo.
-                                </p>
-                            </details>
-                        </td>
-                    </tr>
-                </table>
-                <img src="imagenes/fondo.png" width="100%" style="opacity: .2;">
-            </main>
-        </container>
-        <hr/>
-        <footer>
-            <table WIDTH="100%">
-                <tr>
-                    <td rowspan="2" width="33%"><img src="imagenes/LogoEmpresa.png" alt="logoEmpresa" title="logoEmpresa" width="300"></td>
-                    <td width="33%">
-                        <table width="100%">
-                            <tr>
-                                <td width="33%"></td>
-                                <td width="40%">Teléfono: 954 65 42 55</br>Correo: FrikiLevel@gmail.com</td>
-                                <td width="27%"></td>
-                            </tr>
-                        </table>
-                    </td>
-                    <td width="33%">
-                        <table>
-                            <tr>
-                                <td><pre>                                         </pre></td>
-                                <td>
-                                    <a href="https://www.facebook.com/FrikiLevel" target="_blank"><img src="imagenes/facebook.png" alt="Facebook" title="Facebook" width="50"></a>
-                                    <a href="https://www.twitter.com/FrikiLevel" target="_blank"><img src="imagenes/twitter.png" alt="Twitter" title="Twitter" width="50"></a>
-                                    <a href="https://www.youtube.com/@FrikiLevel" target="_blank"><img src="imagenes/YouTube.png" alt="Youtube" title="Youtube" width="50"></a>
-                                    <a href="https://www.instagram.com/FrikiLevel/" target="_blank"><img src="imagenes/instagram.png" alt="Instagram" title="Instagram" width="50"></a>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-            </table>
-        </footer>
-    </body>
+        </div>
+    </header>
+    <container>
+        <main>
+            <details>
+                <summary>¿Las figuras son originales?</summary>
+                <p>Las figuras que vendemos en nuestra tienda y en web son productos originales con su etiqueta correspondiente que lo acredita.</p>
+            </details>
+            </br></br>
+            <details>
+                <summary>¿Cuánto tiempo tarda el pedido en llegar al domicilio?</summary>
+                <p>Dependerá de si hay existencias en tienda de la figura solicitada, o si por el contrario hay que pedirla al proveedor.</p>
+                <p>Si hay existencias disponibles en tienda, el pedido debería recibirse en menos de una semana aproximadamente; en el caso de 
+                no tener disponibilidad, los tiempos de entrega podrían variar en función del proveedor.</p>
+            </details>
+            </br></br>
+            <details>
+                <summary>¿Qué es necesario para tramitar una devolución?</summary>
+                <p>En caso de necesitar una devolución es necesario entregar el ticket de compra y la figura en el mismo estado en el que se 
+                entregó, incluyendo sus embalajes y caja sin ningún desperfecto ocasionado por el usuario.</p>
+            </details>
+            </br></br>
+            <details>
+                <summary>¿Qué métodos de pago aceptan en el envío a domicilio?</summary>
+                <p>Aceptamos pago con tarjeta de crédito o débito en el momento de la compra, o a contrareembolso en el momento de recepción del pedido.
+                 En este último caso, se podría hacer con tarjeta de crédito/débito o en efectivo.
+                </p>
+            </details>
+        </main>
+    </container>
+    <footer>
+        <img src="imagenes/LogoEmpresa.png" alt="logoEmpresa" title="logoEmpresa" width="300">
+        <div class="contact-info">
+            <p>Teléfono: 954 65 42 55</p>
+            <p>Correo: FrikiLevel@gmail.com</p>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/FrikiLevel" target="_blank"><img src="imagenes/facebook.png" alt="Facebook" title="Facebook" width="50"></a>
+            <a href="https://www.twitter.com/FrikiLevel" target="_blank"><img src="imagenes/twitter.png" alt="Twitter" title="Twitter" width="50"></a>
+            <a href="https://www.youtube.com/@FrikiLevel" target="_blank"><img src="imagenes/YouTube.png" alt="Youtube" title="Youtube" width="50"></a>
+            <a href="https://www.instagram.com/FrikiLevel/" target="_blank"><img src="imagenes/instagram.png" alt="Instagram" title="Instagram" width="50"></a>
+        </div>
+    </footer>
+</body>
 </html>
