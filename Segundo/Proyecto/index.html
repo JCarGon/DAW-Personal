@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>FrikiLevel - Inicio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('./imagenes/fondo1.svg') no-repeat center center fixed;
+            background-size: cover;
+            z-index: 1;
+            font-weight: bold;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            /* Estilo para el contenido que estará encima de la imagen de fondo */
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        header {
+            position: relative;
+        }
+
+        nav {
+            text-align: center;
+            margin-top: -2.5%;
+        }
+
+        nav a {
+            margin: 0 2%;
+        }
+
+        .login-form {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 5%;
+        }
+
+        main {
+            position: relative;
+        }
+
+        svg {
+            z-index: -1;
+            position: relative;
+        }
+
+        .promo-image {
+            width: 40%;
+            display: block; /* Centrar la imagen horizontalmente */
+            margin: 2% auto; /* Centrar la imagen horizontalmente */
+        }
+
+        .product-container {
+            text-align: center;
+        }
+
+        .product-row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .product-image {
+            max-width: 30%; /* Ajustar el tamaño máximo de las imágenes */
+            height: auto;
+            margin: 0 1%; /* Espaciado entre las imágenes */
+        }
+
+        .product-title {
+            margin-top: 2%;
+        }
+
+        footer {
+            text-align: center;
+            padding-top: 2%;
+            padding-bottom: 1%;
+            display: flex;
+            justify-content: space-between; /* Espaciado uniforme entre elementos */
+            align-items: center; /* Centrar verticalmente */
+        }
+
+        footer img {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        footer .contact-info {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        footer .contact-info p {
+            margin: 0;
+        }
+
+        footer .social-icons {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        footer .social-icons a {
+            margin-right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .login-form {
+                margin-left: 20px; /* Reducir el espacio a la izquierda del formulario */
+            }
+
+            nav a {
+                margin: 0 10px; /* Reducir el espacio entre elementos del menú */
+            }
+
+            .product-row {
+                flex-direction: column; /* Cambiar a una columna en pantallas pequeñas */
+                align-items: center; /* Centrar horizontalmente */
+                margin-top: 2%; /* Espaciado entre filas de productos */
+            }
+
+            .product-image {
+                max-width: 100%; /* Ajustar el tamaño máximo de las imágenes */
+                margin: 2% 0; /* Espaciado entre las imágenes */
+            }
+
+            footer {
+                flex-direction: column; /* Cambiar a una columna en pantallas pequeñas */
+                align-items: center; /* Centrar horizontalmente */
+            }
+
+            .promo-image {
+                width: 70%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="imagenes/Encabezado/encabezado.jpg" alt="cabecera" title="cabecera" width="100%">
+        <div class="nav-bg">
+            <nav>
+                <a href="index.html"><img src="imagenes/LogoInicio.png" alt="LogoInicio" title="LogoInicio" width="90"></a>
+                <a href="Productos.html"><img src="imagenes/LogoProductos.png" alt="LogoProductos" title="LogoProductos" width="160"></a>
+                <a href="Registro.html"><img src="imagenes/LogoRegistro.png" alt="LogoRegistro" title="LogoRegistro" width="130"></a>
+                <a href="QuienesSomos.html"><img src="imagenes/LogoQuienesSomos.png" alt="LogoQuienesSomos" title="LogoQuienesSomos" width="220"></a>
+                <a href="Contacto.html"><img src="imagenes/LogoContacto.png" alt="LogoContacto" title="LogoContacto" width="150"></a>
+                <a href="FAQ.html"><img src="imagenes/LogoFAQs.png" alt="LogoFAQs" title="LogoFAQs" width="80"></a>
+                <div class="login-form">
+                    <input type="text" placeholder="Usuario">
+                    <input type="password" placeholder="Contraseña">
+                    <input type="submit" value="Login">
+                </div>
+            </nav>
+        </div>
+    </header>
+    <container>
+        <main>
+            <img class="promo-image" src="imagenes/PromocionLanzamiento.png" alt="Promocion" title="promocion">
+            <div class="product-container">
+                <div class="product-row">
+                    <div class="product-image">
+                        <img src="imagenes/DBZ/DBZ1.png" alt="DBZ1" title="DBZ1" width="100%">
+                        <p class="product-title">Figura Vegeta SS Blue; PRECIO: 350€ <del><small>(PVP: 420€)</small></del></p>
+                    </div>
+                    <div class="product-image">
+                        <img src="imagenes/Kimetsu/Kimetsu2.png" alt="Kimetsu1" title="Kimetsu2" width="70%">
+                        <p class="product-title">Figura Zenitsu Agatsuma; PRECIO: 120€ <del><small>(PVP: 150€)</small></del></p>
+                    </div>
+                    <div class="product-image">
+                        <img src="imagenes/Academia/Academia1.png" alt="Academia1" title="Academia1" width="85%">
+                        <p class="product-title">Figura Midoriya Izuku "Deku"; PRECIO: 200€ <del><small>(PVP: 250€)</small></del></p>
+                    </div>
+                </div>
+                <section class="container">
+                    <div class="wave"></div>
+                </section>
+                <div class="product-row">
+                    <div class="product-image">
+                        <img src="imagenes/AOT/AOT2.png" alt="AOT2" title="AOT2" width="70%">
+                        <p class="product-title">Figura Titán Acorazado vs Titán de Ataque;</p>
+                        <p class="product-title">PRECIO: 1500€ <del><small>(PVP: 1700€)</small></del></p>
+                    </div>
+                    <div class="product-image">
+                        <img src="imagenes/One Piece/OnePiece1.png" alt="OnePiece1" title="OnePiece1" width="65%">
+                        <p class="product-title">One Piece; PRECIO 30€ <del><small>(PVP: 45€)</small></del></p>
+                    </div>
+                    <div class="product-image">
+                        <img src="imagenes/Naruto/Naruto4.png" alt="Naruto1" title="Naruto1" width="80%">
+                        <p class="product-title">Figura Naruto Shippuden, Minato y Jiraiya;</p>
+                        <p class="product-title">PRECIO: 200€<del><small>(PVP: 250€)</small></del></p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </container>
+    <footer>
+        <img src="imagenes/LogoEmpresa.png" alt="logoEmpresa" title="logoEmpresa" width="300">
+        <div class="contact-info">
+            <p>Teléfono: 954 65 42 55</p>
+            <p>Correo: FrikiLevel@gmail.com</p>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/FrikiLevel" target="_blank"><img src="imagenes/facebook.png" alt="Facebook" title="Facebook" width="50"></a>
+            <a href="https://www.twitter.com/FrikiLevel" target="_blank"><img src="imagenes/twitter.png" alt="Twitter" title="Twitter" width="50"></a>
+            <a href="https://www.youtube.com/@FrikiLevel" target="_blank"><img src="imagenes/YouTube.png" alt="Youtube" title="Youtube" width="50"></a>
+            <a href="https://www.instagram.com/FrikiLevel/" target="_blank"><img src="imagenes/instagram.png" alt="Instagram" title="Instagram" width="50"></a>
+        </div>
+    </footer>
+</body>
+</html>
