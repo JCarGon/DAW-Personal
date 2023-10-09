@@ -3,152 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>FrikiLevel - Inicio</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: url('./imagenes/fondo1.svg') no-repeat center center fixed;
-            background-size: cover;
-            z-index: 1;
-            font-weight: bold;
-        }
-
-        .content {
-            position: relative;
-            z-index: 2;
-            /* Estilo para el contenido que estará encima de la imagen de fondo */
-            padding: 20px;
-            text-align: center;
-            color: white;
-        }
-
-        header {
-            position: relative;
-        }
-
-        nav {
-            text-align: center;
-            margin-top: -2.5%;
-        }
-
-        nav a {
-            margin: 0 2%;
-        }
-
-        .login-form {
-            display: inline-block;
-            vertical-align: middle;
-            margin-left: 5%;
-        }
-
-        main {
-            position: relative;
-        }
-
-        svg {
-            z-index: -1;
-            position: relative;
-        }
-
-        .promo-image {
-            width: 40%;
-            display: block; /* Centrar la imagen horizontalmente */
-            margin: 2% auto; /* Centrar la imagen horizontalmente */
-        }
-
-        .product-container {
-            text-align: center;
-        }
-
-        .product-row {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .product-image {
-            max-width: 30%; /* Ajustar el tamaño máximo de las imágenes */
-            height: auto;
-            margin: 0 1%; /* Espaciado entre las imágenes */
-        }
-
-        .product-title {
-            margin-top: 2%;
-        }
-
-        footer {
-            text-align: center;
-            padding-top: 2%;
-            padding-bottom: 1%;
-            display: flex;
-            justify-content: space-between; /* Espaciado uniforme entre elementos */
-            align-items: center; /* Centrar verticalmente */
-        }
-
-        footer img {
-            display: inline-block;
-            vertical-align: middle;
-        }
-
-        footer .contact-info {
-            display: inline-block;
-            vertical-align: middle;
-        }
-
-        footer .contact-info p {
-            margin: 0;
-        }
-
-        footer .social-icons {
-            display: inline-block;
-            vertical-align: middle;
-        }
-
-        footer .social-icons a {
-            margin-right: 10px;
-        }
-
-        @media (max-width: 768px) {
-            .login-form {
-                margin-left: 20px; /* Reducir el espacio a la izquierda del formulario */
-            }
-
-            nav a {
-                margin: 0 10px; /* Reducir el espacio entre elementos del menú */
-            }
-
-            .promo-image {
-                width: 70%;
-            }
-
-            .product-row {
-                flex-direction: column; /* Cambiar a una columna en pantallas pequeñas */
-                align-items: center; /* Centrar horizontalmente */
-                margin-top: 2%; /* Espaciado entre filas de productos */
-            }
-
-            .product-image {
-                max-width: 100%; /* Ajustar el tamaño máximo de las imágenes */
-                margin: 2% 0; /* Espaciado entre las imágenes */
-            }
-
-            footer {
-                flex-direction: column; /* Cambiar a una columna en pantallas pequeñas */
-                align-items: center; /* Centrar horizontalmente */
-            }
-
-            .footer-logo {
-                margin-top: 15%;
-            }
-
-            .contact-info {
-                margin: 5%;
-            }
-
-            .social-icons {
-                margin-bottom: 5%;
-            }
-        }
-    </style>
+    <link rel="stylesheet" src="./index.css">
+    <script src="./index.js"></script>
 </head>
 <body>
     <header>
@@ -157,15 +13,18 @@
             <nav>
                 <a href="index.html"><img src="imagenes/LogoInicio.png" alt="LogoInicio" title="LogoInicio" width="90"></a>
                 <a href="Productos.html"><img src="imagenes/LogoProductos.png" alt="LogoProductos" title="LogoProductos" width="160"></a>
+                <div class="categorias">
+                    <a href="#">Categoría 1</a>
+                    <a href="#">Categoría 2</a>
+                    <a href="#">Categoría 3</a>
+                    <a href="#">Categoría 4</a>
+                </div>
                 <a href="Registro.html"><img src="imagenes/LogoRegistro.png" alt="LogoRegistro" title="LogoRegistro" width="130"></a>
                 <a href="QuienesSomos.html"><img src="imagenes/LogoQuienesSomos.png" alt="LogoQuienesSomos" title="LogoQuienesSomos" width="220"></a>
                 <a href="Contacto.html"><img src="imagenes/LogoContacto.png" alt="LogoContacto" title="LogoContacto" width="150"></a>
                 <a href="FAQ.html"><img src="imagenes/LogoFAQs.png" alt="LogoFAQs" title="LogoFAQs" width="80"></a>
-                <div class="login-form">
-                    <input type="text" placeholder="Usuario">
-                    <input type="password" placeholder="Contraseña">
-                    <input type="submit" value="Login">
-                </div>
+                <a href="#login"><img src="imagenes/user.svg" alt="user" title="user" width="50"></a>
+                <a href="#carrito"><img src="imagenes/cart.svg" alt="cartMarket" title="cartMarket" width="50"></a>
             </nav>
         </div>
     </header>
