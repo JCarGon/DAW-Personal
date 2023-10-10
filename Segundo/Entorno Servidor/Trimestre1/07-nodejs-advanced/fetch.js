@@ -1,15 +1,18 @@
-let response;
-let data;
-
-try {
-    response = await fetch('https://pokeapi.co/api/v2/pokemon/dragonite');
-} catch (err) {
+async function petition(url) {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      console.log("Error.");
+    } else {
+      const data = await response.json();
+      return data;
+    }
+  } catch (err) {
     console.log(err);
+  }
 }
-if(!response.ok){
-    console.log('Error.');
-} else{
-    console.log(`Status Code: ${response.status}`);
-    data = await response.json();
-}
-console.log(data);
+
+const data = await petition("https://pokeapi.co/api/v2/pokemon/dragonite");
+console.log(`Nombre: ${data.name}`);
+console.log(`Número de pokédex: ${data.id}`);
+console.log(data.stats);
