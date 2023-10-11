@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .input-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        p {
+            margin-right: 10px;
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        input {
+            width: 75px;
+        }
+
+        #alto {
+            margin-bottom: 100px;
+        }
+
+        #total {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <p>Inserta el valor para el ancho del rectángulo</p>
+    <div class="input-container">
+        <input type="number" id="ancho">
+    </div>
+
+    <p>Inserta el valor para el alto del rectángulo</p>
+    <div class="input-container">
+        <input type="number" id="alto">
+    </div>
+
+    <p id="total">El área del rectángulo es: <span id="area">0</span></p>
+
+    <script src="ejercicio2.js"></script>
+</body>
+</html>

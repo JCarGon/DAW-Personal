@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 3</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        padding: 20px;
+        overflow-y: hidden;
+      }
+
+      #left {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 20px;
+      }
+
+      #left input,
+      #left button {
+        margin: 5px 0;
+      }
+
+      #left button {
+        margin: 10px 0;
+        padding: 10px 20px;
+        border-radius: 20px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        font-size: 16px;
+        background-color: #007bff;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      #right {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      li {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="left">
+      <input type="text" id="textoInput" placeholder="Escribe un elemento" />
+      <button onclick="agregarElemento()">Agregar</button>
+    </div>
+    <div id="right">
+      <h2>Lista de Elementos:</h2>
+      <ul id="lista"></ul>
+    </div>
+    <script src="ejercicio3.js"></script>
+  </body>
+</html>
