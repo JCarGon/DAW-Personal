@@ -1,0 +1,19 @@
+{
+  "name": "proyecto-notas",
+  "version": "1.0.0",
+  "description": "proyecto de ejercicio notas",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "notas",
+    "archivos",
+    "lectura",
+    "escritura",
+    "borrado"
+  ],
+  "author": "Jesus",
+  "license": "ISC"
+}
