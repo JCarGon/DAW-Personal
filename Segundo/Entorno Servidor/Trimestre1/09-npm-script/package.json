@@ -1,0 +1,29 @@
+{
+  "name": "09-npm-script",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "clear:modules": "rimraf **/node_modules",
+    "clear:locks": "rimraf **/package-lock.json",
+    "clear": "npm run clear:test && npm run clear:locks && npm run clear:modules",
+    "date": "date",
+    "crear": "mkdir files",
+    "crear:js": "cd files && touch",
+    "crear:carpeta": "cd files && mkdir",
+    "borrar": "rm -rf files",
+    "borrar:js": "rm files/*.js",
+    "imprimir:azul": "node azul.js",
+    "imprimir:rojo": "node rojo.js",
+    "imprimir:verde": "node verde.js"
+  },
+  "author": "Jesus",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.3.0"
+  }
+}
