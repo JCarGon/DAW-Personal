@@ -7,45 +7,70 @@ body {
     font-weight: bold;
 }
 
-.content {
-    position: relative;
-    z-index: 2;
-    /* Estilo para el contenido que estará encima de la imagen de fondo */
-    padding: 20px;
-    text-align: center;
-    color: white;
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f1d49a;
+    padding: 1%;
 }
 
-header {
-    position: relative;
+.header-logo {
+    margin: 10px;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.search-bar {
+    background: white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    width: 100%; /* Utilizamos el 100% del ancho disponible */
+    max-width: 1000px; /* Establecemos un ancho máximo */
+    margin-left: -8%;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    padding: 10px; /* Aumentamos el espaciado para alargar la barra de búsqueda */
+    flex-grow: 1; /* Permite que el input ocupe el espacio restante */
+}
+
+.search-bar button {
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.search-bar button img {
+    width: 20px;
 }
 
 nav {
-    text-align: center;
-    margin-top: -3.5%;
+    background-color: #f1d49a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 nav a {
-    margin: 0 2%;
+    margin: 1% 80px;
 }
 
-.categorias {
-    display: none;
-    position: absolute;
-    background-color: #fff; /* Color de fondo del desplegable */
-    border: 1px solid #ccc; /* Borde del desplegable */
-    z-index: 2; /* Coloca el desplegable por encima del contenido */
-}
-
-.categorias a {
-    display: block;
-    padding: 10px;
-    color: #333; /* Color del texto de las categorías */
-    text-decoration: none;
-}
-
-.categorias a:hover {
-    background-color: #f2f2f2; /* Color de fondo al pasar el ratón por encima */
+.nav-bg {
+    width: 100%;
+    z-index: 1000;
 }
 
 main {
@@ -59,8 +84,8 @@ svg {
 
 .promo-image {
     width: 40%;
-    display: block; /* Centrar la imagen horizontalmente */
-    margin: 2% auto; /* Centrar la imagen horizontalmente */
+    display: block;
+    margin: 2% auto;
 }
 
 .product-container {
@@ -69,13 +94,14 @@ svg {
 
 .product-row {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
 .product-image {
-    max-width: 30%; /* Ajustar el tamaño máximo de las imágenes */
-    height: auto;
-    margin: 0 1%; /* Espaciado entre las imágenes */
+    max-width: 30%;
+    width: 100%;
+    margin: 0 1%;
 }
 
 .product-title {
@@ -84,16 +110,19 @@ svg {
 
 footer {
     text-align: center;
-    padding-top: 2%;
-    padding-bottom: 1%;
+    padding: 2%;
     display: flex;
-    justify-content: space-between; /* Espaciado uniforme entre elementos */
-    align-items: center; /* Centrar verticalmente */
+    justify-content: space-between;
+    align-items: center;
 }
 
 footer img {
     display: inline-block;
     vertical-align: middle;
+}
+
+.footer-logo {
+    cursor: pointer;
 }
 
 footer .contact-info {
@@ -115,8 +144,20 @@ footer .social-icons a {
 }
 
 @media (max-width: 768px) {
+    .header-logo {
+        margin: 10px;
+    }
+
+    .header-right {
+        margin: 10px;
+    }
+
+    nav {
+        flex-direction: row;
+    }
+
     nav a {
-        margin: 0 10px; /* Reducir el espacio entre elementos del menú */
+        margin: 0 10px;
     }
 
     .promo-image {
@@ -124,19 +165,19 @@ footer .social-icons a {
     }
 
     .product-row {
-        flex-direction: column; /* Cambiar a una columna en pantallas pequeñas */
-        align-items: center; /* Centrar horizontalmente */
-        margin-top: 2%; /* Espaciado entre filas de productos */
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2%;
     }
 
     .product-image {
-        max-width: 100%; /* Ajustar el tamaño máximo de las imágenes */
-        margin: 2% 0; /* Espaciado entre las imágenes */
+        max-width: 100%;
+        margin: 2% 0;
     }
 
     footer {
-        flex-direction: column; /* Cambiar a una columna en pantallas pequeñas */
-        align-items: center; /* Centrar horizontalmente */
+        flex-direction: column;
+        align-items: center;
     }
 
     .footer-logo {
