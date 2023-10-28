@@ -1,23 +1,30 @@
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+}
 body {
     margin: 0;
     padding: 0;
-    background: url('./imagenes/fondo1.svg') no-repeat center center fixed;
+    background: url('./imagenes/fondo2.svg') no-repeat center center fixed;
     background-size: cover;
     z-index: 1;
     font-weight: bold;
 }
+
+.logo-principal { display: none; }
 
 header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: #f1d49a;
+    background-color: #F1D8A3;
     padding: 1%;
 }
 
 .header-logo {
-    margin: 10px;
+    margin: 1%;
+    width: 20%;
 }
 
 .header-top {
@@ -33,8 +40,8 @@ header {
     display: flex;
     align-items: center;
     width: 100%; /* Utilizamos el 100% del ancho disponible */
-    max-width: 1000px; /* Establecemos un ancho máximo */
-    margin-left: -8%;
+    max-width: 50%; /* Establecemos un ancho máximo */
+    
 }
 
 .search-bar input {
@@ -58,7 +65,7 @@ header {
 }
 
 nav {
-    background-color: #f1d49a;
+    background-color: #F1D8A3;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -99,13 +106,32 @@ svg {
 }
 
 .product-image {
-    max-width: 30%;
-    width: 100%;
-    margin: 0 1%;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 3%;
+}
+
+.product-image img {
+    max-width: 100%; /* La imagen se redimensionará para adaptarse al cuadrado */
+    max-height: 100%; /* La imagen se redimensionará para adaptarse al cuadrado */
 }
 
 .product-title {
     margin-top: 2%;
+    text-align: center;
+    max-width: 90%;
+    margin-bottom: 2%;
+}
+
+.product-price {
+    text-align: center;
+    margin-top: 1%;
+    max-width: 90%;
+    margin-bottom: 5%;
 }
 
 footer {
@@ -144,20 +170,21 @@ footer .social-icons a {
 }
 
 @media (max-width: 768px) {
-    .header-logo {
-        margin: 10px;
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
-    .header-right {
-        margin: 10px;
+    .logo-principal {
+        display: flex;
+        width: 80%;
+        margin: 5%;
     }
 
-    nav {
-        flex-direction: row;
-    }
-
-    nav a {
-        margin: 0 10px;
+    .header-top, .nav-bg{
+        display: none;
     }
 
     .promo-image {
@@ -172,7 +199,7 @@ footer .social-icons a {
 
     .product-image {
         max-width: 100%;
-        margin: 2% 0;
+        margin: 10%;
     }
 
     footer {
