@@ -9,6 +9,7 @@ body {
     background-size: cover;
     z-index: 1;
     font-weight: bold;
+    overflow-x: hidden;
 }
 
 .logo-principal { display: none; }
@@ -32,6 +33,14 @@ header {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+}
+
+.cartMarket, .userImage {
+    transition: all 400ms ease;
+}
+
+.cartMarket:hover, .userImage:hover {
+    transform: scale(1.2);
 }
 
 .search-bar {
@@ -64,6 +73,11 @@ header {
     width: 20px;
 }
 
+.nav-bg {
+    width: 100%;
+    z-index: 1000;
+}
+
 nav {
     background-color: #F1D8A3;
     display: flex;
@@ -71,13 +85,109 @@ nav {
     align-items: center;
 }
 
-nav a {
-    margin: 1% 80px;
+nav > ul {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 0px;
 }
 
-.nav-bg {
+nav ul li {
+    height: 100%;
+    list-style: none;
+    position: relative;
+}
+
+.logoIndex {width: 120px;}
+
+.logoProducts {width: 220px;}
+
+.logoWAW {width: 300px;}
+
+.logoContact {width: 200px;}
+
+.logoFAQs {width: 100px;}
+
+nav > ul > li > a{
     width: 100%;
-    z-index: 1000;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 14px;
+    transition: all 400ms ease;
+}
+
+nav > ul > li > a:hover{
+    transform: scale(1.2);
+}
+
+/*SUBMENU*/
+nav ul li ul{
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    top: 40px;
+    padding: 14px, 0px;
+    visibility: hidden;
+    opacity: 0;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    transition: all 400ms ease;
+    border-radius: 20px;
+}
+
+.dbz-title, .kny-title {width: 90%;}
+
+.op-title {width: 60%;}
+
+.n-title {width: 45%;}
+
+nav ul li ul li {
+    margin-left: -25px;
+    padding-right: 20px;
+}
+
+nav ul li:hover ul{
+    visibility: visible;
+    opacity: 1;
+    top: 50px;
+}
+
+nav ul li ul:before{
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid white;
+    position: absolute;
+    top: -12px;
+    left: 20px;
+}
+
+nav ul li ul li a{
+    display: block;
+    padding: 6px;
+    padding-left: 14px;
+    margin-top: 10px;
+    transition: all 300ms ease;
+}
+
+nav ul li ul li a img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+nav ul li ul li a:hover{
+    transform: scale(1.1);
+}
+
+.bars__menu {
+    display: none;
 }
 
 main {
@@ -151,40 +261,71 @@ footer img {
     cursor: pointer;
 }
 
-footer .contact-info {
+.contact-info {
     display: inline-block;
     vertical-align: middle;
 }
 
-footer .contact-info p {
+.contact-info p {
     margin: 0;
 }
 
-footer .social-icons {
+.social-icons {
     display: inline-block;
     vertical-align: middle;
 }
 
-footer .social-icons a {
+.social-icons a img {
     margin-right: 10px;
+    transition: all 400ms ease;
 }
+
+.social-icons a img:hover {transform: scale(1.2);}
 
 @media (max-width: 768px) {
     header {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+        flex-direction: row;
     }
-
     .logo-principal {
         display: flex;
-        width: 80%;
+        width: 70%;
         margin: 5%;
     }
 
-    .header-top, .nav-bg{
+    .header-top, .nav-bg {
         display: none;
+    }
+
+    .bars__menu {
+        display: flex;
+        width: 40px;
+        cursor: pointer;
+        flex-direction: column; /* Agrega esta propiedad para que los span se coloquen uno debajo del otro */
+        transform: translate(-25px, -5px);
+    }
+
+    .bars__menu span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: #000000;
+        margin-bottom: 6px;
+        transform-origin: 0px 100%;
+        transition: all 400ms;
+    }
+
+    .activeline1__bars-menu {
+        transform: rotate(45deg) translate(-10px, 3px);
+    }
+
+    .activeline2__bars-menu {
+        opacity: 0;
+        margin-left: -30px;
+    }
+
+    .activeline3__bars-menu {
+        transform: rotate(-45deg) translate(-10px, 1px);
     }
 
     .promo-image {
