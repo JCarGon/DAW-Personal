@@ -127,6 +127,7 @@ function run() {
         console.log('Saliendo del programa.');
       } else {
         console.log('Opción no válida. Por favor, selecciona una opción del menú.\n');
+        run();
       }
     });
   }
