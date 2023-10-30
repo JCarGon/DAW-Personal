@@ -186,6 +186,8 @@ nav ul li ul li a:hover{
     transform: scale(1.1);
 }
 
+#btn_menu {display: none;}
+
 .bars__menu {
     display: none;
 }
@@ -282,18 +284,78 @@ footer img {
 
 .social-icons a img:hover {transform: scale(1.2);}
 
-@media (max-width: 768px) {
+/* CSS para pantallas medianas (menos de 1100px) */
+@media (max-width: 1100px) {
+    nav > ul > li > a {
+        padding: 10px;
+    }
+
+    nav ul li a img {
+        max-width: 80%;
+        max-height: 80%;
+    }
+
+    .dbz-title, .kny-title, .mya-title, .aot-title {width: 80%;}
+
+    .op-title {width: 50%;}
+
+    .n-title {width: 35%;}
+}
+
+@media (max-width: 910px) {
     header {
         display: flex;
         flex-direction: row;
     }
+    
     .logo-principal {
         display: flex;
-        width: 70%;
+        width: 60%;
         margin: 5%;
     }
 
-    .header-top, .nav-bg {
+    .header-top { /*añadir nav-bg para ocultarlo*/
+        display: none;
+    }
+
+    /* MENU DESPLEGABLE */
+    nav {background-color: white;}
+
+    nav > ul > li > a:hover{transform: scale(1);}
+    nav ul li:hover ul{visibility: hidden;}
+
+    .nav-bg {
+        position: fixed;
+        top: 0;
+        right: -330px;
+        background-color: white;
+        width: 250px;
+        height: 100vh;
+        padding: 40px;
+    }
+
+    .nav-bg ul {
+        flex-direction: column;
+        margin-top: 40px;
+    }
+
+    .nav-bg ul li {
+        list-style: none;
+        margin-left: 0;
+    }
+
+    .nav-bg ul li a img {
+        width: 60%; /* cambiar tamaño imagenes del menú desplegable */
+    }
+
+    #back_menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 15;
         display: none;
     }
 
@@ -301,7 +363,7 @@ footer img {
         display: flex;
         width: 40px;
         cursor: pointer;
-        flex-direction: column; /* Agrega esta propiedad para que los span se coloquen uno debajo del otro */
+        flex-direction: column;
         transform: translate(-25px, -5px);
     }
 
