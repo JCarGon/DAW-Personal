@@ -17,14 +17,17 @@ window.addEventListener('scroll', function() {
   }
 });
 
-let line1__bars = document.querySelector(".line1__bars-menu");
-let line2__bars = document.querySelector(".line2__bars-menu");
-let line3__bars = document.querySelector(".line3__bars-menu");
+document.getElementById("btn_menu").addEventListener("click", showMenu);
+document.getElementById("back_menu").addEventListener("click", hideMenu);
+nav = document.querySelector(".nav-responsive");
+background_menu = document.getElementById("back_menu");
 
-function animateBars() {
-  line1__bars.classList.toggle("activeline1__bars-menu");
-  line2__bars.classList.toggle("activeline2__bars-menu");
-  line3__bars.classList.toggle("activeline3__bars-menu");
+function showMenu(){
+  nav.style.right = "0px";
+  background_menu.style.display = "block";
 }
 
-document.querySelector(".bars__menu").addEventListener("click", animateBars);
+function hideMenu(){
+  nav.style.right = "-330px";
+  background_menu.style.display = "none";
+}
