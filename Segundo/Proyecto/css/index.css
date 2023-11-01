@@ -13,7 +13,7 @@ body {
 }
 
 .logo-principal { display: none; }
-.nav-responsive { margin-left: 201%; }
+.nav-responsive { margin-left: 205%; }
 
 header {
   display: flex;
@@ -51,7 +51,6 @@ header {
   align-items: center;
   width: 100%;
   max-width: 50%;
-    
 }
 
 .search-bar input {
@@ -201,7 +200,7 @@ svg {
 .promo-image {
   width: 40%;
   display: block;
-  margin: 2% auto;
+  margin: 1% auto;
 }
 
 .product-container {
@@ -211,7 +210,8 @@ svg {
 .product-row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
+  margin-bottom: 20px;
 }
 
 .product-image {
@@ -291,6 +291,13 @@ footer img {
     max-height: 80%;
   }
 
+  .logo-responsive {
+    position: absolute;
+    width: 60%;
+    margin-top: 1320px;
+    margin-left: 30px;
+  }
+
   .dbz-title, .kny-title, .mya-title, .aot-title {width: 80%;}
 
   .op-title {width: 50%;}
@@ -330,9 +337,25 @@ footer img {
     padding: 40px;
   }
 
+  .header-icons-responsive {
+    display: flex;
+    position: absolute;
+    top: 15px;
+  }
+
+  .cartMarket-responsive {
+    position: absolute;
+    margin-left: 200px;
+  }
+
+  .header-icons-responsive a img:hover {transform: scale(1);}
+
+  .social-icons a img:hover {transform: scale(1);}
+
   .nav-responsive ul {
     flex-direction: column;
-    margin-top: 40px;
+    margin-top: 80px;
+    align-items: center;
   }
 
   .nav-responsive ul li {
@@ -344,6 +367,8 @@ footer img {
     margin: 5%;
     /* width: 40%; cambiar tamaño imagenes del menú desplegable */
   }
+
+
 
   .logoIndex {width: 90px;}
 
@@ -384,7 +409,7 @@ footer img {
   }
 
   .promo-image {
-    width: 70%;
+    width: 90%;
   }
 
   .product-row {

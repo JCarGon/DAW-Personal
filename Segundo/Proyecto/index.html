@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
     <title>FrikiLevel - Inicio</title>
     <script src="https://kit.fontawesome.com/a1540bfe61.js" crossorigin="anonymous"></script>
     <link rel=StyleSheet href="/css/index.css" type="text/css">
@@ -9,10 +9,10 @@
 <body>
     <header>
         <div class="header-top">
-            <img class="header-logo" src="imagenes/LogoEmpresa.png" alt="cabecera" title="cabecera">
+            <img class="header-logo" src="imagenes/LogoEmpresa.png" alt="cabecera">
             <div class="search-bar">
                 <input type="text" placeholder="Buscar">
-                <button><img src="imagenes/search.png" alt="Buscar" title="Buscar"></button>
+                <button><img src="imagenes/search.png" alt="Buscar"></button>
             </div>
             <div class="header-icons">
                 <a href="#carrito"><img src="imagenes/cart.svg" alt="cartMarket" class="cartMarket" width="50"></a>
@@ -40,63 +40,61 @@
             </nav>
         </div>
         <div id="back_menu"></div>
-        <img class="logo-principal" src="imagenes/LogoEmpresa.png" alt="cabecera" title="cabecera">
+        <img class="logo-principal" src="imagenes/LogoEmpresa.png" alt="cabecera">
         <i class="fa-solid fa-bars" id="btn_menu"></i>
         <div class="nav-responsive">
             <nav id="nav-responsive">
+                <div class="header-icons-responsive">
+                    <a href="#carrito"><img src="imagenes/cart.svg" alt="cartMarket" class="cartMarket-responsive" width="50"></a>
+                    <a href="#login"><img src="imagenes/user.svg" alt="user" class="userImage-responsive" width="50"></a>
+                </div>
                 <ul>
                     <li><a class="enlace-index" href="index.html"><img src="imagenes/LogoInicio.png" alt="LogoInicio" class="logoIndex" width="90"></a></li>
-                    <li><a href="Productos.html"><img src="imagenes/LogoProductos.png" alt="LogoProductos" class="logoProducts" width="160"></a>
-                        <ul>
-                            <li><a href="ProductosDBZ.html"><img src="imagenes/DBZ-section.png" class="dbz-title"></a></li>
-                            <li><a href="ProductosKNY.html"><img src="imagenes/DemonSlayer-section.png" class="kny-title"></a></li>
-                            <li><a href="ProductosMHA.html"><img src="imagenes/MyHeroAcademia-section.png" class="mha-title"></a></li>
-                            <li><a href="ProductosAOT.html"><img src="imagenes/AOT-section.png" class="aot-title"></a></li>
-                            <li><a href="ProductosOP.html"><img src="imagenes/OP-section.png" class="op-title"></a></li>
-                            <li><a href="ProductosNaruto.html"><img src="imagenes/Naruto-section.png" class="n-title"></a></li>
-                        </ul>
-                    </li>
+                    <li><a href="Productos.html"><img src="imagenes/LogoProductos.png" alt="LogoProductos" class="logoProducts" width="160"></a></li>
                     <li><a href="QuienesSomos.html"><img src="imagenes/LogoQuienesSomos.png" alt="LogoWAW" class="logoWAW" width="220"></a></li>
                     <li><a href="Contacto.html"><img src="imagenes/LogoContacto.png" alt="LogoContact" class="logoContact" width="150"></a></li>
                     <li><a href="FAQ.html"><img src="imagenes/LogoFAQs.png" alt="LogoFAQs" class="logoFAQs" width="80"></a></li>
                 </ul>
+                <img class="logo-responsive" src="imagenes/LogoEmpresa.png" alt="cabecera">
             </nav>
         </div>
     </header>
     <container>
         <main>
-            <img class="promo-image" src="imagenes/PromocionLanzamiento.png" alt="Promocion" title="promocion">
+            <img class="promo-image" src="imagenes/PromocionLanzamiento.png" alt="Promocion">
             <div class="product-container">
                 <div class="product-row">
                     <div class="product-image">
-                        <img class="product-promo" src="imagenes/DBZ/DBZ1.png" alt="DBZ1" title="DBZ1" width="500px">
+                        <img class="product-promo" src="imagenes/DBZ/DBZ1.png" alt="DBZ1" width="500px">
                         <p class="product-title">Figura Vegeta SS Blue</p>
                         <p class="product-price">PRECIO: 350€ <del><small>(PVP: 420€)</small></del></p>
                     </div>
                     <div class="product-image">
-                        <img class="product-promo" src="imagenes/Kimetsu/Kimetsu2.png" alt="Kimetsu1" title="Kimetsu2" width="500px">
+                        <img class="product-promo" src="imagenes/Kimetsu/Kimetsu2.png" alt="Kimetsu1" width="500px">
                         <p class="product-title">Figura Rengoku</p>
                         <p class="product-price">PRECIO: 120€ <del><small>(PVP: 150€)</small></del></p>
                     </div>
-                    <div class="product-image">
-                        <img class="product-promo" src="imagenes/Academia/Academia1.png" alt="Academia1" title="Academia1" width="500px">
-                        <p class="product-title">Figura Midoriya Izuku "Deku"</p>
-                        <p class="product-price">PRECIO: 200€ <del><small>(PVP: 250€)</small></del></p>
-                    </div>
+                </div>
+                <div class="product-row">
+                  <div class="product-image">
+                    <img class="product-promo" src="imagenes/Academia/Academia1.png" alt="Academia1" width="500px">
+                    <p class="product-title">Figura Midoriya Izuku "Deku"</p>
+                    <p class="product-price">PRECIO: 200€ <del><small>(PVP: 250€)</small></del></p>
+                  </div>
+                  <div class="product-image">
+                    <img class="product-promo" src="imagenes/AOT/AOT2.png" alt="AOT2" width="500px">
+                    <p class="product-title">Figura Capitán Levi vs Titán Bestia</p>
+                    <p class="product-price">PRECIO: 1500€ <del><small>(PVP: 1700€)</small></del></p>
+                  </div>
                 </div>
                 <div class="product-row">
                     <div class="product-image">
-                        <img class="product-promo" src="imagenes/AOT/AOT2.png" alt="AOT2" title="AOT2" width="500px">
-                        <p class="product-title">Figura Capitán Levi vs Titán Bestia</p>
-                        <p class="product-price">PRECIO: 1500€ <del><small>(PVP: 1700€)</small></del></p>
-                    </div>
-                    <div class="product-image">
-                        <img class="product-promo" src="imagenes/One Piece/OnePiece1.png" alt="OnePiece1" title="OnePiece1" width="500px">
+                        <img class="product-promo" src="imagenes/One Piece/OnePiece1.png" alt="OnePiece1" width="500px">
                         <p class="product-title">Figura Zoro</p>
                         <p class="product-price">PRECIO: 30€ <del><small>(PVP: 45€)</small></del></p>
                     </div>
                     <div class="product-image">
-                        <img class="product-promo" src="imagenes/Naruto/Naruto4.png" alt="Naruto1" title="Naruto1" width="500px">
+                        <img class="product-promo" src="imagenes/Naruto/Naruto4.png" alt="Naruto1" width="500px">
                         <p class="product-title">Figura Naruto Shippuden, Minato y Jiraiya</p>
                         <p class="product-price">PRECIO: 200€<del><small>(PVP: 250€)</small></del></p>
                     </div>
@@ -105,16 +103,16 @@
         </main>
     </container>
     <footer>
-        <img class="footer-logo" src="imagenes/LogoEmpresa.png" alt="logoEmpresa" title="logoEmpresa" width="300">
+        <img class="footer-logo" src="imagenes/LogoEmpresa.png" alt="logoEmpresa" width="300">
         <div class="contact-info">
             <p>Teléfono: 954 65 42 55</p>
             <p>Correo: FrikiLevel@gmail.com</p>
         </div>
         <div class="social-icons">
-            <a href="https://www.facebook.com/FrikiLevel" target="_blank"><img src="imagenes/facebook.png" alt="Facebook" title="Facebook" width="50"></a>
-            <a href="https://www.twitter.com/FrikiLevel" target="_blank"><img src="imagenes/twitter.png" alt="Twitter" title="Twitter" width="50"></a>
-            <a href="https://www.youtube.com/@FrikiLevel" target="_blank"><img src="imagenes/YouTube.png" alt="Youtube" title="Youtube" width="50"></a>
-            <a href="https://www.instagram.com/FrikiLevel/" target="_blank"><img src="imagenes/instagram.png" alt="Instagram" title="Instagram" width="50"></a>
+            <a href="https://www.facebook.com/FrikiLevel" target="_blank"><img src="imagenes/facebook.png" alt="Facebook" width="50"></a>
+            <a href="https://www.twitter.com/FrikiLevel" target="_blank"><img src="imagenes/twitter.png" alt="Twitter" width="50"></a>
+            <a href="https://www.youtube.com/@FrikiLevel" target="_blank"><img src="imagenes/YouTube.png" alt="Youtube" width="50"></a>
+            <a href="https://www.instagram.com/FrikiLevel/" target="_blank"><img src="imagenes/instagram.png" alt="Instagram" width="50"></a>
         </div>
     </footer>
     <script src="javascript/script.js"></script>
