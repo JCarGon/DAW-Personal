@@ -400,4 +400,10 @@ footer img {
   .social-icons {
     margin-bottom: 5%;
   }
+
+  /* Page content */
+  .work-in-progress img, main img {
+    width: 40%;
+    margin-top: 5%;
+  }
 }
