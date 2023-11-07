@@ -89,6 +89,8 @@ export function tirardado(req, res) {
   } else if ((computerPlace !== 63) && (playerPlace === 63)) {
     msgPlayer = `El jugador ha sacado un ${playerNumber} y ha llegado a 
     la casilla 63. Gana la partida!`;
+  } else if ((computerPlace === 63) && (playerPlace === 63)) {
+    return res.status(200).send('Empate, los dos llegaron a 63 a la vez.');
   }
   return res.status(200).send(`${msgPlayer} || ${msgComputer}`);
 }
