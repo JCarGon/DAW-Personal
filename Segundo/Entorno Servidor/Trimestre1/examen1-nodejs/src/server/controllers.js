@@ -96,8 +96,8 @@ export function tirardado(req, res) {
 }
 
 export function restartGame(req, res) {
-  playerPlace = 0;
-  computerPlace = 0;
+  playerPlace = 1;
+  computerPlace = 1;
   const headers = {
     'Content-Type': 'text/html',
   };
