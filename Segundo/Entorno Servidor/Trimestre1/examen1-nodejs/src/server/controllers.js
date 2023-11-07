@@ -37,7 +37,7 @@ export function tirardado(req, res) {
       msgPlayer = `El jugador ha sacado un ${playerNumber}, ha llegado a la casilla 12 y 
       retrocede a la casilla ${playerPlace}.`;
     } else if (playerPlace === 58) {
-      playerPlace = 57;
+      playerPlace = 1;
       msgPlayer = `El jugador ha sacado un ${playerNumber}, ha llegado a la casilla 58 y 
       retrocede a la casilla ${playerPlace}.`;
     } else {
@@ -69,7 +69,7 @@ export function tirardado(req, res) {
       msgComputer = `La máquina ha sacado un ${computerNumber}, ha llegado a la casilla 12 y 
       retrocede a la casilla ${computerPlace}.`;
     } else if (computerPlace === 58) {
-      computerPlace = 57;
+      computerPlace = 1;
       msgComputer = `La máquina ha sacado un ${computerNumber}, ha llegado a la casilla 58 y 
       retrocede a la casilla ${computerPlace}.`;
     } else {
