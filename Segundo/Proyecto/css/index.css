@@ -256,140 +256,6 @@ svg {
   margin-bottom: 30px;
 }
 
-/*boton 1
-.show-more-btn {
-  border: 2px solid #5192F5;
-  background-color: transparent;
-  color: black;
-  border-radius: 25px;
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.show-more-btn:hover {
-  background-color: #5192F5;
-  color: white;
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}*/
-
-/*boton 2
-button {
-  background: transparent;
-  position: relative;
-  padding: 5px 15px;
-  display: flex;
-  align-items: center;
-  font-size: 17px;
-  font-weight: 600;
-  text-decoration: none;
-  cursor: pointer;
-  border: 2px solid #5192F5;
-  border-radius: 25px;
-  outline: none;
-  overflow: hidden;
-  color: #000000;
-  transition: color 0.3s 0.1s ease-out;
-  text-align: center;
-}
-
-button span {
-  margin: 10px;
-}
-
-button::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  content: '';
-  border-radius: 50%;
-  display: block;
-  width: 20em;
-  height: 20em;
-  left: -5em;
-  text-align: center;
-  transition: box-shadow 0.5s ease-out;
-  z-index: -1;
-}
-
-button:hover {
-  color: #ffffff;
-  border: 2px solid #000000;
-}
-
-button:hover::before {
-  box-shadow: inset 0 0 0 10em #5192F5;
-}*/
-
-/*boton 3
-.button {
-  all: unset;
-  display: flex;
-  align-items: center;
-  position: relative;
-  padding: 0.1em 2em;
-  border: #5192F5 solid 0.15em;
-  border-radius: 0.25em;
-  color: #000000;
-  font-size: 1.5em;
-  font-weight: 600;
-  cursor: pointer;
-  overflow: hidden;
-  transition: border 300ms, color 300ms;
-  user-select: none;
-}
-
-.button p {
-  z-index: 1;
-}
-
-.button:hover {
-  color: #212121;
-}
-
-.button:active {
-  border-color: teal;
-}
-
-.button::after, .button::before {
-  content: "";
-  position: absolute;
-  width: 9em;
-  aspect-ratio: 1;
-  background: #5192F5;
-  opacity: 50%;
-  border-radius: 50%;
-  transition: transform 500ms, background 300ms;
-}
-
-.button::before {
-  left: 0;
-  transform: translateX(-8em);
-}
-
-.button::after {
-  right: 0;
-  transform: translateX(8em);
-}
-
-.button:hover:before {
-  transform: translateX(-1em);
-}
-
-.button:hover:after {
-  transform: translateX(1em);
-}
-
-.button:active:before,
-.button:active:after {
-  background: teal;
-}*/
-
-/*boton 4
 button {
   padding: 1.3em 3em;
   font-size: 12px;
@@ -409,101 +275,14 @@ button {
 
 button:hover {
   background-color: #5192F5;
-  box-shadow: 0px 15px 20px #5192F5;
+  box-shadow: 0px 25px 20px #5c84c1;
   color: #fff;
   transform: translateY(-7px);
 }
 
 button:active {
   transform: translateY(-1px);
-}*/
-
-/*boton 5
-button {
- --color: #5192F5;
- cursor: pointer;
- font-family: inherit;
- display: inline-block;
- width: 8em;
- height: 2.6em;
- line-height: 2.5em;
- margin: 20px;
- position: relative;
- overflow: hidden;
- border: 2px solid var(--color);
- transition: color .5s;
- z-index: 1;
- font-size: 20px;
- border-radius: 15px;
- font-weight: 500;
- color: var(--color);
- background-color: transparent;
 }
-
-button:before {
- content: "";
- position: absolute;
- z-index: -1;
- background: var(--color);
- height: 150px;
- width: 200px;
- border-radius: 50%;
-}
-
-button:hover {
- color: #fff;
-}
-
-button:before {
- top: 100%;
- left: 100%;
- transition: all .7s;
-}
-
-button:hover:before {
- top: -30px;
- left: -30px;
-}
-
-button:active:before {
- background: #3a0ca3;
- transition: background 0s;
-}*/
-
-/*boton 6
-.btn {
-  color: #000000;
-  text-decoration: none;
-  border: 2px solid #5192F5;
-  padding: 10px 20px;
-  font-size: 20px;
-  font-weight: bold;
-  background: transparent;
-  position: relative;
-  transition: all .5s;
-  overflow: hidden;
-}
-
-.btn:hover {
-  color: white;
-}
-
-.btn::before {
-  content: '';
-  position: absolute;
-  height: 100%;
-  width: 0%;
-  top: 0;
-  left: -40px;
-  transform: skewX(45deg);
-  background-color: #5192F5;
-  z-index: -1;
-  transition: all 1s;
-}
-
-.btn:hover::before {
-  width: 160%;
-}*/
 
 /*Footer*/
 footer {
@@ -599,7 +378,7 @@ footer img {
     top: 0;
     right: -330px; /* para que el menú lateral salga de la pantalla */
     background-color: white;
-    width: 250px;
+    width: 200px;
     height: 100vh;
     padding: 40px;
   }
@@ -616,7 +395,7 @@ footer img {
 
   .cartMarket-responsive {
     position: absolute;
-    margin-left: 160px;
+    margin-left: 130px;
   }
 
   .header-icons-responsive a img:hover {transform: scale(1);}
