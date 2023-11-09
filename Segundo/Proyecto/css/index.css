@@ -141,6 +141,7 @@ nav ul li ul {
   background-color: white;
   position: absolute;
   top: 40px;
+  left: 20px;
   visibility: hidden;
   opacity: 0;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
@@ -255,7 +256,7 @@ svg {
   margin-bottom: 30px;
 }
 
-/*boton 1*/
+/*boton 1
 .show-more-btn {
   border: 2px solid #5192F5;
   background-color: transparent;
@@ -271,7 +272,7 @@ svg {
   color: white;
   transform: scale(1.05);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+}*/
 
 /*boton 2
 button {
@@ -288,7 +289,7 @@ button {
   border-radius: 25px;
   outline: none;
   overflow: hidden;
-  color: #5192F5;
+  color: #000000;
   transition: color 0.3s 0.1s ease-out;
   text-align: center;
 }
@@ -333,7 +334,7 @@ button:hover::before {
   padding: 0.1em 2em;
   border: #5192F5 solid 0.15em;
   border-radius: 0.25em;
-  color: #5192F5;
+  color: #000000;
   font-size: 1.5em;
   font-weight: 600;
   cursor: pointer;
@@ -388,7 +389,7 @@ button:hover::before {
   background: teal;
 }*/
 
-/*boton 4*/
+/*boton 4
 button {
   padding: 1.3em 3em;
   font-size: 12px;
@@ -403,6 +404,7 @@ button {
   transition: all 0.3s ease 0s;
   cursor: pointer;
   outline: none;
+  border: 2px solid #5192F5;
 }
 
 button:hover {
@@ -414,7 +416,94 @@ button:hover {
 
 button:active {
   transform: translateY(-1px);
+}*/
+
+/*boton 5
+button {
+ --color: #5192F5;
+ cursor: pointer;
+ font-family: inherit;
+ display: inline-block;
+ width: 8em;
+ height: 2.6em;
+ line-height: 2.5em;
+ margin: 20px;
+ position: relative;
+ overflow: hidden;
+ border: 2px solid var(--color);
+ transition: color .5s;
+ z-index: 1;
+ font-size: 20px;
+ border-radius: 15px;
+ font-weight: 500;
+ color: var(--color);
+ background-color: transparent;
 }
+
+button:before {
+ content: "";
+ position: absolute;
+ z-index: -1;
+ background: var(--color);
+ height: 150px;
+ width: 200px;
+ border-radius: 50%;
+}
+
+button:hover {
+ color: #fff;
+}
+
+button:before {
+ top: 100%;
+ left: 100%;
+ transition: all .7s;
+}
+
+button:hover:before {
+ top: -30px;
+ left: -30px;
+}
+
+button:active:before {
+ background: #3a0ca3;
+ transition: background 0s;
+}*/
+
+/*boton 6
+.btn {
+  color: #000000;
+  text-decoration: none;
+  border: 2px solid #5192F5;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: bold;
+  background: transparent;
+  position: relative;
+  transition: all .5s;
+  overflow: hidden;
+}
+
+.btn:hover {
+  color: white;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  top: 0;
+  left: -40px;
+  transform: skewX(45deg);
+  background-color: #5192F5;
+  z-index: -1;
+  transition: all 1s;
+}
+
+.btn:hover::before {
+  width: 160%;
+}*/
 
 /*Footer*/
 footer {
