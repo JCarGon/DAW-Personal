@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tabla de Personas</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <style>
+      .styled-table {
+        border-collapse: collapse;
+        width: 100%;
+        max-width: 800px; /* Ajusta el ancho máximo de la tabla */
+        margin: 0 auto; /* Centra la tabla en la página */
+      }
+
+      .styled-table th,
+      .styled-table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+      }
+
+      .styled-table th {
+        background-color: #3498db;
+        color: #fff;
+        cursor: pointer; /* Cursor como puntero para simular botones */
+        font-weight: bold;
+      }
+
+      .styled-table th:hover {
+        background-color: #2980b9;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="tablaPersonas" class="styled-table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Edad</th>
+          <th>DNI</th>
+          <th>Tiene/No tiene hijos</th>
+          <th>Fecha de nacimiento</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Filas de la tabla se agregarán aquí desde JavaScript -->
+      </tbody>
+    </table>
+    <script src="ejercicio5.js"></script>
+  </body>
+</html>
