@@ -189,97 +189,47 @@ nav ul li ul li a:hover{
 
 #btn_menu {display: none;}
 
-/*Main*/
+/*MAIN*/
 main {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cabecera {
+  margin-top: 70px;
+  width: 600px;
+}
+
+.product-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.product-row {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.product-image {
+  width: 40%; /* Ajusta el ancho según tus necesidades */
+  margin-bottom: 10px;
+}
+
+.product-image a {
+  display: block;
+  text-align: center;
 }
 
 svg {
   z-index: -1;
   position: relative;
-}
-
-.promo-image {
-  width: 40%;
-  display: block;
-  margin: 1% auto;
-}
-
-.product-container {
-  text-align: center;
-}
-
-.product-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin-bottom: 8%;
-}
-
-.product-image {
-  width: 400px;
-  height: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.product-image img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
-
-.product-title {
-  margin-top: 2%;
-  text-align: center;
-  max-width: 90%;
-  margin-bottom: 2%;
-}
-
-.product-price {
-  text-align: center;
-  margin-top: 1%;
-  max-width: 90%;
-  margin-bottom: 5%;
-}
-
-/*Alinear botones en el centro*/
-.button-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50%;
-  margin-bottom: 30px;
-}
-
-button {
-  padding: 1.3em 3em;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 2.5px;
-  font-weight: 500;
-  color: #000;
-  background-color: #fff;
-  border: none;
-  border-radius: 45px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease 0s;
-  cursor: pointer;
-  outline: none;
-  border: 2px solid #5192F5;
-}
-
-button:hover {
-  background-color: #5192F5;
-  box-shadow: 0px 25px 20px #5c84c1;
-  color: #fff;
-  transform: translateY(-7px);
-}
-
-button:active {
-  transform: translateY(-1px);
 }
 
 /*Footer*/
@@ -340,6 +290,8 @@ footer img {
   .op-title {width: 50%;}
 
   .n-title {width: 35%;}
+
+  .cabecera {width: 500px;}
 }
 
 @media (max-width: 910px) {
@@ -448,29 +400,10 @@ footer img {
     background: rgba(255, 255, 255, 0.4);
   }
 
-  .promo-image {
-    width: 90%;
+  /*BODY*/
+  .cabecera {
+    width: 50%;
   }
-
-  .product-row {
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-  }
-
-  .product-image {
-    max-width: 70%;
-    margin-top: 100px;
-    margin-bottom: 20px;
-  }
-
-  button {
-    margin-top: 100px;
-    background-color: #5192F5;
-    color: #ffffff;
-  }
-
   footer {
     flex-direction: column;
     align-items: center;
@@ -500,19 +433,5 @@ footer img {
   }
   .logo-principal {
     margin-left: 25px;
-  }
-  .promo-image {
-    margin-top: 0;
-  }
-  .product-image {
-    margin-top: auto;
-  }
-  .product-promo {
-    margin-top: auto;
-    width: 210px;
-    height: 290px;
-  }
-  button {
-    margin: auto;
   }
 }
