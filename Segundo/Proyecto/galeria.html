@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de imágenes</title>
+    <style>
+        .product {
+            margin-left: 2%;
+        }
+        .product-small-img img {
+            width: 100%;
+            border: 1px solid rgba(0, 0, 0, .2);
+            padding: 8px;
+            margin: 10px 10px 15px;
+            cursor: pointer;
+            object-fit: cover;
+        }
+        .product-small-img {
+            width: 40%;
+            display: flex;
+        }
+        .img-container img {
+            width: 800px;
+            height: 600px;
+            object-fit: contain;
+        }
+        .img-container {
+            padding: 10px;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="product">
+        <div class="img-container">
+            <img id="imageBox" src="DDBB-figuras/Kimetsu/figure1-1.png">
+        </div>
+        <div class="product-small-img">
+            <img src="DDBB-figuras/Kimetsu/figure1-1.png" onclick="cambiarImagen(this)">
+            <img src="DDBB-figuras/Kimetsu/figure1-2.png" onclick="cambiarImagen(this)">
+            <img src="DDBB-figuras/Kimetsu/figure1-3.png" onclick="cambiarImagen(this)">
+            <img src="DDBB-figuras/Kimetsu/figure1-4.png" onclick="cambiarImagen(this)">
+            <img src="DDBB-figuras/Kimetsu/figure1-5.png" onclick="cambiarImagen(this)">
+        </div>
+    </div>
+    <script>
+        function cambiarImagen(smallImg){
+            const fullImg = document.getElementById('imageBox');
+            fullImg.src = smallImg.src;
+        }
+    </script>
+</body>
+</html>
