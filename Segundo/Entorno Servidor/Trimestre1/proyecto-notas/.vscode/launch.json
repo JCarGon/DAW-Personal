@@ -4,11 +4,11 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Launch Index",
+      "name": "Launch API",
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}\\index.js"
+      "program": "${workspaceFolder}\\src\\index.js"
     },
     {
       "type": "node",
