@@ -16,7 +16,6 @@ export function validateMiddleware(req, res, next) {
   }
 }
 
-// eslint-disable-next-line no-unused-vars
 export function restrictiveZone(req, res, next) {
   if (req.headers.password === 'patata') {
     next();
@@ -37,7 +36,6 @@ export function authenticateJWT(req, res, next) {
 
     jwt.verify(token, process.env.accessTokenSecret, (err, user) => {
       if (err.name === 'TokenExpiredError') {
-        // Token expirado
         const errorObject = {
           code: 403,
           error: 'Forbidden',
@@ -45,7 +43,6 @@ export function authenticateJWT(req, res, next) {
         };
         res.status(403).send(errorObject);
       } else {
-        // Otro error en la verificación del token
         const errorObject = {
           code: 403,
           error: 'Forbidden',
