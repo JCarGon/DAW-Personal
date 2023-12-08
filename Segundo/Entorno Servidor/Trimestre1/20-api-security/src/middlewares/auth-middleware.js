@@ -33,23 +33,25 @@ export function authenticateJWT(req, res, next) {
   const authHeader = req.headers.authorization;
   if (authHeader) {
     const token = authHeader.split(' ')[1];
-
+    // eslint-disable-next-line consistent-return
     jwt.verify(token, process.env.accessTokenSecret, (err, user) => {
-      if (err.name === 'TokenExpiredError') {
-        const errorObject = {
-          code: 403,
-          error: 'Forbidden',
-          message: 'Expirated token',
-        };
-        res.status(403).send(errorObject);
-      } else {
+      if (err) {
+        if (err.name === 'TokenExpiredError') {
+          const errorObject = {
+            code: 403,
+            error: 'Forbidden',
+            message: 'Expired token',
+          };
+          return res.status(403).send(errorObject);
+        }
         const errorObject = {
           code: 403,
           error: 'Forbidden',
           message: 'Invalid token',
         };
-        res.status(403).send(errorObject);
+        return res.status(403).send(errorObject);
       }
+
       req.user = user;
       next();
     });

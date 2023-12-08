@@ -19,7 +19,6 @@ const userArray = [
 export function getUsers(req, res) {
   const okObject = {
     code: 200,
-    message: 'Bienvenid@, disfrute del contenido',
     userlist: userArray,
   };
   res.status(200).send(okObject);
@@ -30,7 +29,6 @@ export function getUser(req, res) {
   const user = userArray.find((u) => u.id === id);
   const okObject = {
     code: 200,
-    message: 'Bienvenid@, disfrute del contenido',
     user,
   };
   res.status(200).send(okObject);

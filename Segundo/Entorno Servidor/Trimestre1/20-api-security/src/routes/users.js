@@ -2,7 +2,7 @@ import express from 'express';
 import {
   getUsers, getUser, postUser, deleteUser, putUser, patchUser,
 } from '../controllers/user-controller.js';
-import { authenticateJWT } from '../middlewares/logs-middleware.js';
+import { authenticateJWT } from '../middlewares/auth-middleware.js';
 
 const router = express.Router();
 
