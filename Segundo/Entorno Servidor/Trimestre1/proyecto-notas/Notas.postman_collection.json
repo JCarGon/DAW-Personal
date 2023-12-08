@@ -7,6 +7,50 @@
 	},
 	"item": [
 		{
+			"name": "POST Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Capture and store token in environment variable', function () {\r",
+							"    // Extraer el token de la respuesta\r",
+							"    const responseBody = pm.response.json();\r",
+							"    const accessToken = responseBody.accessToken; // Ajusta esto según la estructura de tu respuesta\r",
+							"\r",
+							"    // Almacenar el token en la variable de entorno\r",
+							"    postman.setEnvironmentVariable('token', accessToken);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin@admin.com\",\r\n    \"password\": \"patatadeadmin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/login",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "GET Notes",
 			"event": [
 				{
@@ -45,47 +89,7 @@
 			"response": []
 		},
 		{
-			"name": "GET Note",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test('Status is 200', function() {\r",
-							"    pm.response.to.have.status(200);\r",
-							"})\r",
-							""
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "password",
-						"value": "patata",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "http://localhost:4000/notes/nota2",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "4000",
-					"path": [
-						"notes",
-						"nota2"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "POST Note",
+			"name": "Create Note",
 			"event": [
 				{
 					"listen": "test",
@@ -93,6 +97,12 @@
 						"exec": [
 							"pm.test('Status is 201', function() {\r",
 							"    pm.response.to.have.status(201);\r",
+							"})\r",
+							"\r",
+							"pm.test('Name is prueba', function() {\r",
+							"    const requestBody = JSON.parse(pm.request.body.raw);\r",
+							"    const responseBody = pm.response.json();\r",
+							"    pm.expect(responseBody.name).to.eql(requestBody.name+'.note');\r",
 							"})"
 						],
 						"type": "text/javascript"
@@ -105,6 +115,11 @@
 					{
 						"key": "password",
 						"value": "patata",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
 						"type": "text"
 					}
 				],
@@ -132,6 +147,50 @@
 			"response": []
 		},
 		{
+			"name": "GET Note",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Status is 200', function() {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"pm.test('ID is prueba', function() {\r",
+							"    const responseBody = pm.response.json();\r",
+							"    pm.expect(responseBody.noteName).to.eql('prueba.note');\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "password",
+						"value": "patata",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4000/notes/prueba",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"notes",
+						"prueba"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "PATCH Note",
 			"event": [
 				{
@@ -140,6 +199,11 @@
 						"exec": [
 							"pm.test('Status is 200', function() {\r",
 							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"pm.test('Content is Seguimos con la prueba. Esto es un patch', function() {\r",
+							"    const responseBody = pm.response.json();\r",
+							"    pm.expect(responseBody.content).to.eql('Seguimos con la prueba. Esto es un patch');\r",
 							"})"
 						],
 						"type": "text/javascript"
@@ -152,6 +216,11 @@
 					{
 						"key": "password",
 						"value": "patata",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
 						"type": "text"
 					}
 				],
@@ -181,12 +250,35 @@
 		},
 		{
 			"name": "PUT Note",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Status is 200', function() {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"pm.test('Content is prueba de put', function() {\r",
+							"    const responseBody = pm.response.json();\r",
+							"    pm.expect(responseBody.content).to.eql('prueba de put');\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "PUT",
 				"header": [
 					{
 						"key": "password",
 						"value": "patata",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
 						"type": "text"
 					}
 				],
@@ -200,7 +292,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:4000/notes/prueba",
+					"raw": "http://localhost:4000/notes/prueba?password=patata&Authorization=Bearer {{token}}",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -209,6 +301,16 @@
 					"path": [
 						"notes",
 						"prueba"
+					],
+					"query": [
+						{
+							"key": "password",
+							"value": "patata"
+						},
+						{
+							"key": "Authorization",
+							"value": "Bearer {{token}}"
+						}
 					]
 				}
 			},
@@ -223,6 +325,11 @@
 						"exec": [
 							"pm.test('Status is 200', function() {\r",
 							"    pm.response.to.have.status(200);\r",
+							"})\r",
+							"\r",
+							"pm.test('Deleted prueba.note', function() {\r",
+							"    const responseBody = pm.response.json();\r",
+							"    pm.expect(responseBody.noteName).to.eql('prueba.note');\r",
 							"})"
 						],
 						"type": "text/javascript"
@@ -236,10 +343,15 @@
 						"key": "password",
 						"value": "patata",
 						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
 					}
 				],
 				"url": {
-					"raw": "http://localhost:4000/notes/prueba",
+					"raw": "http://localhost:4000/notes/prueba?password=patata&Authorization=Bearer {{token}}",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -248,6 +360,16 @@
 					"path": [
 						"notes",
 						"prueba"
+					],
+					"query": [
+						{
+							"key": "password",
+							"value": "patata"
+						},
+						{
+							"key": "Authorization",
+							"value": "Bearer {{token}}"
+						}
 					]
 				}
 			},

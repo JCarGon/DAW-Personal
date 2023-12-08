@@ -17,7 +17,6 @@ export function getNotes(req, res) {
 
     const okObject = {
       code: 200,
-      message: 'Bienvenid@, disfrute del contenido',
       noteslist: response,
     };
     res.status(200).send(okObject);
@@ -143,6 +142,7 @@ export function patchNote(req, res) {
             code: 200,
             message: `Note ${filename} edited.`,
             noteName: filename,
+            content: req.body.content,
           };
           res.status(200).send(okObject);
         }
@@ -178,6 +178,7 @@ export function putNote(req, res) {
             code: 200,
             message: `Note ${filename} edited.`,
             noteName: filename,
+            content: req.body.content,
           };
           res.status(200).send(okObject);
         }
