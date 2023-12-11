@@ -3,21 +3,73 @@ import * as fs from 'fs';
 
 export function getNotes(req, res) {
   const notesPath = path.join(process.cwd(), 'notes');
+  const {
+    sort, page, pageSize, noteName,
+  } = req.query;
 
-  let response = '';
   fs.readdir(notesPath, (err, files) => {
     if (err) {
-      response = `Error al listar archivos: ${err}`;
-    } else {
-      response = 'Archivos en el directorio: ';
-      files.forEach((file) => {
-        response += `${file}, `;
+      const errorObject = {
+        code: 500,
+        error: `Error al listar archivos: ${err}`,
+      };
+      res.status(500).send(errorObject);
+      return;
+    }
+
+    // Aplicar filtrado por nombre de notas
+    let filteredFiles = files;
+
+    if (noteName) {
+      const searchTerm = noteName.toLowerCase();
+      filteredFiles = filteredFiles.filter((file) => {
+        const fileName = path.parse(file).name.toLowerCase();
+        return fileName.includes(searchTerm);
       });
     }
 
+    // Obtener información adicional sobre cada archivo
+    const filesWithInfo = filteredFiles.map((file) => {
+      const filePath = path.join(notesPath, file);
+      const stats = fs.statSync(filePath);
+      return {
+        name: path.parse(file).name,
+        creationDate: stats.birthtime,
+        lastModifiedDate: stats.mtime,
+        size: stats.size,
+      };
+    });
+
+    // Ordenar los resultados si se proporciona el parámetro "sort"
+    if (sort) {
+      const sortOrder = sort.startsWith('-') ? -1 : 1;
+      const sortBy = sort.replace(/^-/, '');
+
+      filesWithInfo.sort((a, b) => {
+        // Tratar el tamaño como número para ordenar correctamente
+        const valueA = sortBy === 'size' ? a[sortBy] : a[sortBy].toLowerCase();
+        const valueB = sortBy === 'size' ? b[sortBy] : b[sortBy].toLowerCase();
+
+        if (valueA < valueB) return -1 * sortOrder;
+        if (valueA > valueB) return 1 * sortOrder;
+        return 0;
+      });
+    }
+
+    // Aplicar paginación
+    const currentPage = parseInt(page, 10) || 1;
+    const itemsPerPage = parseInt(pageSize, 10) || filesWithInfo.length;
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+
+    const paginatedFiles = filesWithInfo.slice(startIndex, endIndex);
+
     const okObject = {
       code: 200,
-      noteslist: response,
+      page: currentPage,
+      pageSize: itemsPerPage,
+      totalItems: filesWithInfo.length,
+      notesList: paginatedFiles,
     };
     res.status(200).send(okObject);
   });

@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "6a5c89f5-0b2b-4676-b43e-bbc91527a615",
+		"_postman_id": "6240b960-ade8-4787-8b98-ec0aba981746",
 		"name": "Pruebas",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "31187331"
@@ -81,6 +81,56 @@
 					],
 					"path": [
 						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Users paginated",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Status is 200', function() {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "password",
+						"value": "patata",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL}}/users?page=2&pageSize=20&sort=name",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						},
+						{
+							"key": "pageSize",
+							"value": "20"
+						},
+						{
+							"key": "sort",
+							"value": "name"
+						}
 					]
 				}
 			},
