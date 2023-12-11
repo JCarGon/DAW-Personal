@@ -75,7 +75,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:4000/notes",
+					"raw": "http://localhost:4000/notes?noteName=not",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -83,6 +83,188 @@
 					"port": "4000",
 					"path": [
 						"notes"
+					],
+					"query": [
+						{
+							"key": "noteName",
+							"value": "not"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET filter Notes by names",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Status is 200', function() {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "password",
+						"value": "patata",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4000/notes?noteName=not",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"notes"
+					],
+					"query": [
+						{
+							"key": "noteName",
+							"value": "not"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Notes order by names",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Status is 200', function() {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "password",
+						"value": "patata",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4000/notes?sort=-name",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"notes"
+					],
+					"query": [
+						{
+							"key": "sort",
+							"value": "-name"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Notes order by size",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Status is 200', function() {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "password",
+						"value": "patata",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4000/notes?sort=size",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"notes"
+					],
+					"query": [
+						{
+							"key": "sort",
+							"value": "size"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Notes pagination",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Status is 200', function() {\r",
+							"    pm.response.to.have.status(200);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "password",
+						"value": "patata",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4000/notes?pageSize=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"notes"
+					],
+					"query": [
+						{
+							"key": "pageSize",
+							"value": "2"
+						}
 					]
 				}
 			},
@@ -125,7 +307,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"prueba\",\r\n    \"content\": \"Hola esto es una prueba?\"\r\n}",
+					"raw": "{\r\n    \"name\": \"notita\",\r\n    \"content\": \"jelouuuuuuuuuu\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -234,7 +416,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:4000/notes/prueba",
+					"raw": "http://localhost:4000/notes/notita",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -242,7 +424,7 @@
 					"port": "4000",
 					"path": [
 						"notes",
-						"prueba"
+						"notita"
 					]
 				}
 			},
