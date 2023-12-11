@@ -98,10 +98,15 @@ export function getNote(req, res) {
           };
           res.status(500).send(response);
         } else {
+          const filePath = path.join(notesPath);
+          const stats = fs.statSync(filePath);
           const response = {
             code: 200,
             message: 'Note found',
             noteName: filename,
+            creationDate: stats.birthtime,
+            lastModifiedDate: stats.mtime,
+            size: stats.size,
             content: data,
           };
           res.status(200).send(response);
