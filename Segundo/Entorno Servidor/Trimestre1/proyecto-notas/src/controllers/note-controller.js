@@ -46,9 +46,18 @@ export function getNotes(req, res) {
       const sortBy = sort.replace(/^-/, '');
 
       filesWithInfo.sort((a, b) => {
-        // Tratar el tamaño como número para ordenar correctamente
-        const valueA = sortBy === 'size' ? a[sortBy] : a[sortBy].toLowerCase();
-        const valueB = sortBy === 'size' ? b[sortBy] : b[sortBy].toLowerCase();
+        let valueA = a[sortBy];
+        let valueB = b[sortBy];
+
+        if (sortBy === 'creationDate' || sortBy === 'lastModifiedDate') {
+          // Convertir cadenas de fecha en objetos Date para comparar
+          valueA = Date.parse(a[sortBy]);
+          valueB = Date.parse(b[sortBy]);
+        } else if (sortBy !== 'size') {
+          // Convertir otros valores a minúsculas para ordenar
+          valueA = a[sortBy].toLowerCase();
+          valueB = b[sortBy].toLowerCase();
+        }
 
         if (valueA < valueB) return -1 * sortOrder;
         if (valueA > valueB) return 1 * sortOrder;
