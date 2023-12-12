@@ -1,0 +1,269 @@
+openapi: 3.1.0
+info:
+  version: "1.0.0"
+  title: "Notes API"
+paths:
+  /login:
+    post:
+      summary: "Iniciar sesión y obtener token"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                username:
+                  type: "string"
+                password:
+                  type: "string"
+            example:
+              username: "user@user.com"
+              password: "1234"
+      responses:
+        '200':
+          description: "Inicio de sesión exitoso"
+          content:
+            application/json:
+              schema:
+                type: "object"
+                properties:
+                  accessToken:
+                    type: "string"
+                  expiresIn:
+                    type: "integer"
+        '401':
+          description: "No autorizado"
+      security: []
+
+  /notes:
+    get:
+      summary: "Obtener notas"
+      parameters:
+        - in: "header"
+          name: "password"
+          description: "Contraseña (obligatoria)"
+          required: true
+          schema:
+            type: "string"
+        - in: "query"
+          name: "sort"
+          description: "Ordenar notas (opcional)"
+          schema:
+            type: "string"
+        - in: "query"
+          name: "page"
+          description: "Número de página (opcional)"
+          schema:
+            type: "integer"
+        - in: "query"
+          name: "pageSize"
+          description: "Tamaño de página (opcional)"
+          schema:
+            type: "integer"
+        - in: "query"
+          name: "noteName"
+          description: "Nombre de la nota (opcional)"
+          schema:
+            type: "string"
+      responses:
+        '200':
+          description: "Notas recuperadas exitosamente"
+          content:
+            application/json:
+              schema:
+                type: "object"
+                properties:
+                  code:
+                    type: "integer"
+                  page:
+                    type: "integer"
+                  pageSize:
+                    type: "integer"
+                  totalItems:
+                    type: "integer"
+                  notesList:
+                    type: "array"
+                    items:
+                      type: "object"
+                      properties:
+                        name:
+                          type: "string"
+                        creationDate:
+                          type: "string"
+                          format: "date-time"
+                        lastModifiedDate:
+                          type: "string"
+                          format: "date-time"
+                        size:
+                          type: "integer"
+        '500':
+          description: "Error al obtener notas"
+      security: []
+
+    post:
+      summary: "Crear una nueva nota"
+      parameters:
+        - in: "header"
+          name: "password"
+          description: "Contraseña (obligatoria)"
+          required: true
+          schema:
+            type: "string"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: "object"
+              properties:
+                name:
+                  type: "string"
+                content:
+                  type: "string"
+            example:
+              name: "Ejemplo de nota"
+              content: "Contenido de la nota de ejemplo"
+      responses:
+        '201':
+          description: "Nota creada correctamente"
+          content:
+            application/json:
+              schema:
+                type: "object"
+                properties:
+                  code:
+                    type: "integer"
+                  message:
+                    type: "string"
+                  name:
+                    type: "string"
+                  content:
+                    type: "string"
+        '400':
+          description: "Solicitud incorrecta"
+          content:
+            application/json:
+              schema:
+                type: "object"
+                properties:
+                  code:
+                    type: "integer"
+                  message:
+                    type: "string"
+                  body:
+                    type: "object"
+                    properties:
+                      name:
+                        type: "string"
+        '409':
+          description: "Conflicto"
+          content:
+            application/json:
+              schema:
+                type: "object"
+                properties:
+                  code:
+                    type: "integer"
+                  message:
+                    type: "string"
+                  body:
+                    type: "object"
+                    properties:
+                      name:
+                        type: "string"
+        '500':
+          description: "Error al crear la nota"
+          content:
+            application/json:
+              schema:
+                type: "object"
+                properties:
+                  code:
+                    type: "integer"
+                  message:
+                    type: "string"
+                  body:
+                    type: "object"
+                    properties:
+                      name:
+                        type: "string"
+      security:
+        - bearerAuth: []
+
+  /notes/{name}:
+    get:
+      summary: "Obtener una nota por su nombre"
+      parameters:
+        - in: "header"
+          name: "password"
+          description: "Contraseña (obligatoria)"
+          required: true
+          schema:
+            type: "string"
+        - in: "path"
+          name: "name"
+          description: "Nombre de la nota"
+          required: true
+          schema:
+            type: "string"
+      responses:
+        '200':
+          description: "Nota recuperada exitosamente"
+          content:
+            application/json:
+              schema:
+                type: "object"
+                properties:
+                  code:
+                    type: "integer"
+                  message:
+                    type: "string"
+                  noteName:
+                    type: "string"
+                  creationDate:
+                    type: "string"
+                    format: "date-time"
+                  lastModifiedDate:
+                    type: "string"
+                    format: "date-time"
+                  size:
+                    type: "integer"
+                  content:
+                    type: "string"
+        '404':
+          description: "Nota no encontrada"
+          content:
+            application/json:
+              schema:
+                type: "object"
+                properties:
+                  code:
+                    type: "integer"
+                  message:
+                    type: "string"
+                  noteName:
+                    type: "string"
+        '500':
+          description: "Error al obtener la nota"
+          content:
+            application/json:
+              schema:
+                type: "object"
+                properties:
+                  code:
+                    type: "integer"
+                  message:
+                    type: "string"
+                  noteName:
+                    type: "string"
+      security: []
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+security:
+  - bearerAuth: []
