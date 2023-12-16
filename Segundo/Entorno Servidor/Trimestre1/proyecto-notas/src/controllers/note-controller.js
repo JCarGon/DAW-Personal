@@ -17,7 +17,6 @@ export function getNotes(req, res) {
       return;
     }
 
-    // Aplicar filtrado por nombre de notas
     let filteredFiles = files;
 
     if (noteName) {
@@ -28,7 +27,6 @@ export function getNotes(req, res) {
       });
     }
 
-    // Obtener información adicional sobre cada archivo
     const filesWithInfo = filteredFiles.map((file) => {
       const filePath = path.join(notesPath, file);
       const stats = fs.statSync(filePath);
@@ -40,7 +38,6 @@ export function getNotes(req, res) {
       };
     });
 
-    // Ordenar los resultados si se proporciona el parámetro "sort"
     if (sort) {
       const sortOrder = sort.startsWith('-') ? -1 : 1;
       const sortBy = sort.replace(/^-/, '');
@@ -50,11 +47,9 @@ export function getNotes(req, res) {
         let valueB = b[sortBy];
 
         if (sortBy === 'creationDate' || sortBy === 'lastModifiedDate') {
-          // Convertir cadenas de fecha en objetos Date para comparar
           valueA = Date.parse(a[sortBy]);
           valueB = Date.parse(b[sortBy]);
         } else if (sortBy !== 'size') {
-          // Convertir otros valores a minúsculas para ordenar
           valueA = a[sortBy].toLowerCase();
           valueB = b[sortBy].toLowerCase();
         }
@@ -129,7 +124,8 @@ export function postNote(req, res) {
   if (!req.body.name) {
     const errorObject = {
       code: 400,
-      message: 'Bad Request. name property is required',
+      error: 'Bad Request',
+      message: 'Name property is required',
       body: req.body,
     };
     res.status(400).send(errorObject);
@@ -148,7 +144,7 @@ export function postNote(req, res) {
 
         if (!indexToCreate) {
           const nameNote = `${req.body.name}.note`;
-          const fileContent = req.body.content || ''; // Use req.body.content if present, otherwise an empty string
+          const fileContent = req.body.content || '';
 
           fs.writeFile(path.join(notesPath, nameNote), fileContent, (writeErr) => {
             if (writeErr) {
@@ -208,7 +204,7 @@ export function patchNote(req, res) {
             code: 200,
             message: `Note ${filename} edited.`,
             noteName: filename,
-            content: req.body.content,
+            addContent: req.body.content,
           };
           res.status(200).send(okObject);
         }

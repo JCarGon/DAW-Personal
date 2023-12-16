@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "b2b035cc-55e8-4ff3-993a-cb43c78c926d",
+		"_postman_id": "f29d56c5-609f-40cd-8e25-2ddd9d912bae",
 		"name": "Notas",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "31187331"
@@ -16,7 +16,7 @@
 							"pm.test('Capture and store token in environment variable', function () {\r",
 							"    // Extraer el token de la respuesta\r",
 							"    const responseBody = pm.response.json();\r",
-							"    const accessToken = responseBody.accessToken; // Ajusta esto según la estructura de tu respuesta\r",
+							"    const accessToken = responseBody.accessToken;\r",
 							"\r",
 							"    // Almacenar el token en la variable de entorno\r",
 							"    postman.setEnvironmentVariable('token', accessToken);\r",
@@ -75,20 +75,12 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:4000/notes?noteName=not",
-					"protocol": "http",
+					"raw": "{{baseURL}}/notes",
 					"host": [
-						"localhost"
+						"{{baseURL}}"
 					],
-					"port": "4000",
 					"path": [
 						"notes"
-					],
-					"query": [
-						{
-							"key": "noteName",
-							"value": "not"
-						}
 					]
 				}
 			},
@@ -119,19 +111,17 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:4000/notes?noteName=not",
-					"protocol": "http",
+					"raw": "{{baseURL}}/notes?noteName=prue",
 					"host": [
-						"localhost"
+						"{{baseURL}}"
 					],
-					"port": "4000",
 					"path": [
 						"notes"
 					],
 					"query": [
 						{
 							"key": "noteName",
-							"value": "not"
+							"value": "prue"
 						}
 					]
 				}
@@ -163,12 +153,10 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:4000/notes?sort=-name",
-					"protocol": "http",
+					"raw": "{{baseURL}}/notes?sort=-name",
 					"host": [
-						"localhost"
+						"{{baseURL}}"
 					],
-					"port": "4000",
 					"path": [
 						"notes"
 					],
@@ -207,12 +195,10 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:4000/notes?sort=size",
-					"protocol": "http",
+					"raw": "{{baseURL}}/notes?sort=size",
 					"host": [
-						"localhost"
+						"{{baseURL}}"
 					],
-					"port": "4000",
 					"path": [
 						"notes"
 					],
@@ -251,18 +237,20 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:4000/notes?pageSize=2",
-					"protocol": "http",
+					"raw": "{{baseURL}}/notes?pageSize=4&page=2",
 					"host": [
-						"localhost"
+						"{{baseURL}}"
 					],
-					"port": "4000",
 					"path": [
 						"notes"
 					],
 					"query": [
 						{
 							"key": "pageSize",
+							"value": "4"
+						},
+						{
+							"key": "page",
 							"value": "2"
 						}
 					]
@@ -281,7 +269,7 @@
 							"    pm.response.to.have.status(201);\r",
 							"})\r",
 							"\r",
-							"pm.test('Name is prueba', function() {\r",
+							"pm.test('Name is pruebecita', function() {\r",
 							"    const requestBody = JSON.parse(pm.request.body.raw);\r",
 							"    const responseBody = pm.response.json();\r",
 							"    pm.expect(responseBody.name).to.eql(requestBody.name+'.note');\r",
@@ -307,7 +295,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"notita\",\r\n    \"content\": \"jelouuuuuuuuuu\"\r\n}",
+					"raw": "{\r\n    \"name\": \"pruebecita\",\r\n    \"content\": \"Vamos a crear una nota que se llama pruebecita\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -315,12 +303,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:4000/notes",
-					"protocol": "http",
+					"raw": "{{baseURL}}/notes",
 					"host": [
-						"localhost"
+						"{{baseURL}}"
 					],
-					"port": "4000",
 					"path": [
 						"notes"
 					]
@@ -339,9 +325,9 @@
 							"    pm.response.to.have.status(200);\r",
 							"})\r",
 							"\r",
-							"pm.test('ID is prueba', function() {\r",
+							"pm.test('ID is pruebecita', function() {\r",
 							"    const responseBody = pm.response.json();\r",
-							"    pm.expect(responseBody.noteName).to.eql('prueba.note');\r",
+							"    pm.expect(responseBody.noteName).to.eql('pruebecita.note');\r",
 							"})"
 						],
 						"type": "text/javascript"
@@ -358,15 +344,13 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:4000/notes/prueba",
-					"protocol": "http",
+					"raw": "{{baseURL}}/notes/pruebecita",
 					"host": [
-						"localhost"
+						"{{baseURL}}"
 					],
-					"port": "4000",
 					"path": [
 						"notes",
-						"prueba"
+						"pruebecita"
 					]
 				}
 			},
@@ -416,15 +400,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:4000/notes/notita",
-					"protocol": "http",
+					"raw": "{{baseURL}}/notes/pruebecita",
 					"host": [
-						"localhost"
+						"{{baseURL}}"
 					],
-					"port": "4000",
 					"path": [
 						"notes",
-						"notita"
+						"pruebecita"
 					]
 				}
 			},
@@ -474,15 +456,13 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:4000/notes/prueba?password=patata&Authorization=Bearer {{token}}",
-					"protocol": "http",
+					"raw": "{{baseURL}}/notes/pruebecita?password=patata&Authorization=Bearer {{token}}",
 					"host": [
-						"localhost"
+						"{{baseURL}}"
 					],
-					"port": "4000",
 					"path": [
 						"notes",
-						"prueba"
+						"pruebecita"
 					],
 					"query": [
 						{
@@ -533,15 +513,13 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:4000/notes/prueba?password=patata&Authorization=Bearer {{token}}",
-					"protocol": "http",
+					"raw": "{{baseURL}}/notes/pruebecita?password=patata&Authorization=Bearer {{token}}",
 					"host": [
-						"localhost"
+						"{{baseURL}}"
 					],
-					"port": "4000",
 					"path": [
 						"notes",
-						"prueba"
+						"pruebecita"
 					],
 					"query": [
 						{

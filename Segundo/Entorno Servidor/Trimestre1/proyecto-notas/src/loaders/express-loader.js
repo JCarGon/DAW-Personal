@@ -20,7 +20,7 @@ export default function expressLoader(server) {
   server.use(express.json());
   server.use(express.urlencoded());
   /* Swagger */
-  server.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+  server.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
   server.use(printDateMiddleware);
 

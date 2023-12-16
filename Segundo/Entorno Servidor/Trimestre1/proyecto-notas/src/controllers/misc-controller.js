@@ -34,7 +34,8 @@ export default function login(req, res) {
   } else {
     const errorObject = {
       code: 401,
-      messsage: 'Unauthorized',
+      error: 'Unauthorized',
+      messsage: 'User not found in the application',
     };
     res.status(401).send(errorObject);
   }

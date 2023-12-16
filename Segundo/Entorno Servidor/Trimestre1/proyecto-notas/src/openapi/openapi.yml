@@ -36,6 +36,33 @@ paths:
                     example: 300
         '401':
           description: "Unauthorized"
+          content:
+            application/json:
+              schema:
+                type: "object"
+                properties:
+                  code:
+                    type: "integer"
+                    example: 401
+                  error:
+                    type: "string"
+                    example: "Unauthorized"
+                  message:
+                    type: "string"
+                    example: "User not found in the application"
+        '500':
+          description: "Internal server error"
+          content:
+            application/json:
+              schema:
+                type: "object"
+                properties:
+                  code:
+                    type: "integer"
+                    example: 500
+                  error:
+                    type: "string"
+                    example: "Internal server error"
       security: []
 
   /notes:
@@ -175,14 +202,21 @@ paths:
                   code:
                     type: "integer"
                     example: 400
-                  message:
+                  error:
                     type: "string"
                     example: "Bad request"
+                  message:
+                    type: "string"
+                    example: "Name property is required"
                   body:
                     type: "object"
                     properties:
                       name:
                         type: "string"
+                        example: ""
+                      content:
+                        type: "string"
+                        example: "noteContent"
         '403':
           description: "Forbidden"
           content:
@@ -209,15 +243,21 @@ paths:
                   code:
                     type: "integer"
                     example: 409
-                  message:
+                  error:
                     type: "string"
                     example: "Conflict"
+                  message:
+                    type: "string"
+                    example: "This noteName already exists"
                   body:
                     type: "object"
                     properties:
                       name:
                         type: "string"
-                        example: "This noteName already exists"
+                        example: "noteName"
+                      content:
+                        type: "string"
+                        example: "noteContent"
         '500':
           description: "Internal server error"
           content:
@@ -357,7 +397,7 @@ paths:
                   noteName:
                     type: "string"
                     example: "noteName"
-                  content:
+                  addContent:
                     type: "string"
                     example: "NoteContent"
         '403':
