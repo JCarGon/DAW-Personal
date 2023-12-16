@@ -1,4 +1,4 @@
-# Explicación API Notes
+# Proyecto API Notes
 
 Esta API está diseñada para consultar, crear, modificar y/o eliminar notas (archivo.note) mediante peticiones en un servidor creado con express. Dichas notas se crearán en el fichero './notes'.
 
