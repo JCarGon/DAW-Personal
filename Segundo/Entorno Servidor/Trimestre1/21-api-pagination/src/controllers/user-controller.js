@@ -29,35 +29,35 @@ const userArray = [
   {
     id: 'user10', name: 'Ryan Burns', age: 21, city: 'New York',
   },
-  { 
-    id: 'user11', name: 'Diana Prince', age: 28, city: 'Themyscira' 
+  {
+    id: 'user11', name: 'Diana Prince', age: 28, city: 'Themyscira',
   },
-  { 
-    id: 'user12', name: 'Natasha Romanoff', age: 35, city: 'Moscow' 
+  {
+    id: 'user12', name: 'Natasha Romanoff', age: 35, city: 'Moscow',
   },
-  { 
-    id: 'user13', name: 'Tony Stark', age: 40, city: 'Los Angeles' 
+  {
+    id: 'user13', name: 'Tony Stark', age: 40, city: 'Los Angeles',
   },
-  { 
-    id: 'user14', name: 'Peter Parker', age: 23, city: 'New York' 
+  {
+    id: 'user14', name: 'Peter Parker', age: 23, city: 'New York',
   },
-  { 
-    id: 'user15', name: 'Wade Wilson', age: 32, city: 'New York' 
+  {
+    id: 'user15', name: 'Wade Wilson', age: 32, city: 'New York',
   },
-  { 
-    id: 'user16', name: 'Selina Kyle', age: 29, city: 'Gotham' 
+  {
+    id: 'user16', name: 'Selina Kyle', age: 29, city: 'Gotham',
   },
-  { 
-    id: 'user17', name: 'Barry Allen', age: 26, city: 'Central City' 
+  {
+    id: 'user17', name: 'Barry Allen', age: 26, city: 'Central City',
   },
-  { 
-    id: 'user18', name: 'Hal Jordan', age: 30, city: 'Coast City' 
+  {
+    id: 'user18', name: 'Hal Jordan', age: 30, city: 'Coast City',
   },
-  { 
-    id: 'user19', name: 'Arthur Curry', age: 35, city: 'Atlantis' 
+  {
+    id: 'user19', name: 'Arthur Curry', age: 35, city: 'Atlantis',
   },
-  { 
-    id: 'user20', name: 'Kara Zor-El', age: 24, city: 'National City' 
+  {
+    id: 'user20', name: 'Kara Zor-El', age: 24, city: 'National City',
   },
   {
     id: 'user21', name: 'Elena Rodriguez', age: 27, city: 'Barcelona',
@@ -182,20 +182,23 @@ const userArray = [
 ];
 
 export function getUsers(req, res) {
-  const { sort, page, pageSize, ...filters } = req.query;
+  const {
+    sort, page, pageSize, ...filters
+  } = req.query;
 
   // Aplicar paginación
-  const currentPage = parseInt(page) || 1;
-  const itemsPerPage = parseInt(pageSize) || 10;
+  const currentPage = parseInt(page, 10) || 1;
+  const itemsPerPage = parseInt(pageSize, 10) || 10;
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
 
   // Filtrar usuarios según los criterios
   let filteredUsers = userArray.filter((user) => {
     let isValid = true;
-    for (const key in filters) {
+    Object.keys(filters).forEach((key) => {
+      // eslint-disable-next-line eqeqeq
       isValid = isValid && user[key] == filters[key];
-    }
+    });
     return isValid;
   });
 
