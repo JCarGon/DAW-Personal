@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de favoritos</title>
+    <link rel="stylesheet" href="ejercicio5.css">
+</head>
+<body>
+    <header>
+        <h1>Buscador de Películas</h1>
+        <div>
+            <input type="text" id="searchInput" placeholder="Buscar...">
+            <select id="genreDropdown">
+                <option value="" selected>Seleccionar un género</option>
+            </select>
+            <button onclick="performSearch()">Buscar</button>
+        </div>
+        <button onclick="showFavorites()">Mostrar lista de favoritos</button>
+    </header>
+    <div id="moviesAndPagination">
+        <div id="moviesContainer"></div>
+        <div id="paginationContainer">
+            <button onclick="prevPage()">Anterior</button>
+            <span id="currentPage"></span>
+            <button onclick="nextPage()">Siguiente</button>
+        </div>
+    </div>
+    <script src="ejercicio5.js"></script>
+</body>
+</html>

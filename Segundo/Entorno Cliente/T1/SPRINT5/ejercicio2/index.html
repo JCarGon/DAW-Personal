@@ -1,0 +1,48 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmar Datos</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    input {
+      padding: 10px;
+      margin: 5px 0;
+      border: 2px solid #000;
+      border-radius: 5px;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      background-color: #3498db;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" id="nombreInput" placeholder="Nombre">
+  <br>
+  <input type="number" id="edadInput" placeholder="Edad">
+  <br>
+  <button onclick="confirmarDatos()">Confirmar datos</button>
+
+  <script src="../dist/ejercicio2/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokédex</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f0f0;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    #pokemonInfo {
+      margin-top: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 5%;
+      margin-bottom: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input {
+      padding: 8px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #pokemonImage {
+      width: 150px;
+      height: 150px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin: 5px 0;
+      font-size: 16px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <label for="pokemonInput">Nombre del Pokémon:</label>
+  <input type="text" id="pokemonInput">
+  <button onclick="buscarPokemon()">Buscar</button>
+
+  <div id="pokemonInfo" style="display: none;">
+    <img id="pokemonImage" src="" alt="Imagen de Pokémon">
+    <p id="pokemonNumber"></p>
+    <p id="pokemonName"></p>
+    <p id="pokemonTypes"></p>
+  </div>
+
+  <script src="./ejercicio1.js"></script>
+</body>
+</html>
