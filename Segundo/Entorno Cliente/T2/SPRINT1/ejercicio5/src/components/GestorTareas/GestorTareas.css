@@ -1,0 +1,59 @@
+label {
+  font-weight: bold;
+}
+
+.gestor-tareas {
+  text-align: center;
+}
+
+.crear-tarea,
+.filtrar-tareas {
+  margin-bottom: 20px;
+}
+
+.crear-tarea label,
+.filtrar-tareas label {
+  margin-right: 10px;
+}
+
+.crear-tarea input[type="text"],
+.filtrar-tareas select {
+  margin-right: 10px;
+}
+
+button {
+  border-radius: 10px;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  color: white;
+  margin-left: 10px;
+}
+
+button.crear {
+  background-color: #90ee90;
+}
+
+button.editar {
+  background-color: #add8e6;
+}
+
+button.eliminar {
+  background-color: #ff4d4d;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+li.completada {
+  text-decoration: line-through;
+}
