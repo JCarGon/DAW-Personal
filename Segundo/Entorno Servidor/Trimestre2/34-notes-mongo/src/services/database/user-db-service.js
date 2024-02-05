@@ -16,7 +16,7 @@ export async function getUsers(filters){
   const cleanedQuery = Object.fromEntries(
     Object.entries(query).filter(([_, a]) => a !== undefined)
   );
-  const users = await User.find(cleanedQuery);
+  const users = await User.find(cleanedQuery).select('-password -__v');
 
   return users;
 }
@@ -34,15 +34,7 @@ export async function deleteUser(params){
   return deleteUser;
 }
 
-export async function updateAnimal(req, res, next) {
-  try {
-    const { id } = req.params;
-    const animal = await Animal.findById(id);
-    if(!animal) throw HttpStatusError(404, `Animal not found`);
-    Object.assign(animal, req.body);
-    const updateAnimal = await animal.save();
-    return res.status(200).send(updateAnimal);
-  } catch(err) {
-    next(err);
-  }
+export async function updateUser(params){
+  //TO DO
+  await User.findByIdAndUpdate(params.id);
 }
