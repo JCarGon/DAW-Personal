@@ -27,9 +27,21 @@ export async function createNote(note) {
   return createdNote;
 }
 
-export async function updateNote(params){
-  //TO DO
-  Note.findByIdAndUpdate(params.id);
+// export async function updateNote(id, body){
+//   const patchNote = await Note.findByIdAndUpdate(id, body);
+//   return patchNote;
+// }
+
+export async function updateNote(id, body) {
+  const note = await Note.findOne({ _id: id });
+  if (!note) throw HttpStatusError(404, `Note not found`);
+  for (const key in body) {
+    if (body.hasOwnProperty(key)) {
+      note[key] = body[key];
+    }
+  }
+  const updatedNote = await note.save();
+  return updatedNote;
 }
 
 export async function deleteNote(params){

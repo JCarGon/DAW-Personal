@@ -4,7 +4,7 @@ import { createNote, getNotes, getNote, updateNote, deleteNote } from "../servic
 export async function getAllNotesController(req, res, next) {
   try {
     const users = await getNotes(req.query);
-    res.send(users);
+    res.status(200).send(users);
   } catch (error){
     next(error);
   }
@@ -13,7 +13,7 @@ export async function getAllNotesController(req, res, next) {
 export async function getNoteController(req, res, next) {
   try {
     const note = await getNote(req.params);
-    res.send(note);
+    res.status(200).send(note);
   } catch (error) {
     next(error);
   }
@@ -37,7 +37,10 @@ export async function createNoteController(req, res, next) {
 
 export async function updateNoteController(req, res, next) {
   try {
-    //TO DO
+    const { id } = req.params;
+    const body = req.body;
+    const patchNote = await updateNote(id, body);
+    res.status(200).send(patchNote);
   } catch (error) {
     next(error);
   }
