@@ -1,11 +1,9 @@
 import express from 'express';
-import loaders from './loaders/index.js';
+import { init } from './loaders/index.js';
+import config from './config.js';
 
-const server = express();
+const app = express();
 
-loaders(server);
+init(app, config);
 
-export default server;
-
-// eslint-disable-next-line no-unused-vars
-const userRouter = express.Router();
+export default app;

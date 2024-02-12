@@ -1,12 +1,8 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-import dotenv from 'dotenv';
 import app from './app.js';
-import logger from './utils/logger.js';
+import config from './config.js';
 
-dotenv.config();
-const port = process.env.PORT || 3000;
+const { port } = config;
 
 app.listen(port, () => {
-  // eslint-disable-next-line no-console
-  logger.info(`Server ready at port: ${port}`);
+  console.log(`Server listening on port ${port}`);
 });

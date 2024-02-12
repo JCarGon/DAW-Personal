@@ -1,8 +1,11 @@
 import express from 'express';
-import pingController from '../controllers/ping-controller.js';
+import { login } from '../controllers/login-controller.js';
+import miscRouter from './misc-router.js';
 
 const router = express.Router();
 
-router.get('/ping', pingController);
+router.post('/login', login);
+
+router.use(miscRouter);
 
 export default router;
