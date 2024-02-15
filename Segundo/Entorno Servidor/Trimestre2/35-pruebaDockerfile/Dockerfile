@@ -2,7 +2,7 @@ FROM node:20.7.0
 WORKDIR /usr/src/app
 
 COPY . .
-RUN npm install
+RUN npm ci --production
 
 USER 1000
 EXPOSE 3000

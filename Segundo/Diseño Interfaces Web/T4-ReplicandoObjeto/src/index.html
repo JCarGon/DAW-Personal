@@ -7,8 +7,8 @@
   <title>T4 - Replicando Objeto con Tailwind</title>
 </head>
 <body>
-  <div class="flex justify-center mt-52">
-    <div class="border-2 bg-gradient-to-b from-blue-600 to-blue-800 w-[280px] h-[380px] rounded-3xl z-10 border-transparent">
+  <div class="flex-col sm:flex sm:flex-row sm:justify-center sm:mt-52 font-HankenGrotesk">
+    <div class="max-w-[375px] rounded-b-3xl border-2 w-full sm:w-[280px] bg-gradient-to-b from-blue-600 to-blue-800 h-[380px] sm:rounded-3xl z-10 border-transparent">
       <div class="mt-6 flex justify-center font-bold text-gray-200">
         Your Result
       </div>
@@ -31,35 +31,47 @@
         </div>
       </div>
     </div>
-    <div class="bg-white -ml-10 pl-16 pr-6 rounded-3xl shadow-lg">
+    <div class="pb-5 sm:pb-0 bg-white -ml-10 pl-16 pr-6 rounded-3xl shadow-lg">
       <div class="mt-6 font-semibold text-lg">
         Summary
       </div>
-      <div class="flex mt-5 p-1.5 bg-red-50 rounded-md place-content-between w-[220px]">
-        <div class="ml-4 text-red-600 text-base font-semibold">Reaction</div>
-        <div class="mr-4 text-base font-semibold">
+      <div class="w-auto h-14 rounded-lg flex mt-5 p-1.5 bg-red-50 sm:rounded-md items-center place-content-between sm:w-[260px] sm:h-11">
+        <div class="flex ml-4 text-red-600 text-sm font-bold">
+          <img src="./resources/icon-reaction.svg" class="mr-4">
+          Reaction
+        </div>
+        <div class="mr-4 text-sm font-bold">
           80 <span class="text-gray-400">/ 100</span>
         </div>
       </div>
-      <div class="flex mt-3 p-1.5 bg-orange-50 rounded-md place-content-between w-[220px]">
-        <div class="ml-4 text-yellow-500 text-base font-semibold">Memory</div>
-        <div class="mr-4 text-base font-semibold">
+      <div class="w-auto h-14 rounded-lg flex mt-3 p-1.5 bg-orange-50 sm:rounded-md items-center place-content-between sm:w-[260px] sm:h-11">
+        <div class="flex ml-4 text-yellow-500 text-sm font-bold">
+          <img src="./resources/icon-memory.svg" class="mr-4">
+          Memory
+        </div>
+        <div class="mr-4 text-sm font-bold">
           92 <span class="text-gray-400">/ 100</span>
         </div>
       </div>
-      <div class="flex mt-3 p-1.5 bg-teal-50 rounded-md place-content-between w-[220px]">
-        <div class="ml-4 text-teal-500 text-base font-semibold">Verbal</div>
-        <div class="mr-4 text-base font-semibold">
+      <div class="w-auto h-14 rounded-lg flex mt-3 p-1.5 bg-teal-50 sm:rounded-md items-center place-content-between sm:w-[260px] sm:h-11">
+        <div class="flex ml-4 text-teal-500 text-sm font-bold">
+          <img src="./resources/icon-verbal.svg" class="mr-4">
+          Verbal
+        </div>
+        <div class="mr-4 text-sm font-bold">
           61 <span class="text-gray-400">/ 100</span>
         </div>
       </div>
-      <div class="flex mt-3 p-1.5 bg-purple-50 rounded-md place-content-between w-[220px]">
-        <div class="ml-4 text-purple-500 text-base font-semibold">Visual</div>
-        <div class="mr-4 text-base font-semibold">
+      <div class="w-auto h-14 rounded-lg flex mt-3 p-1.5 bg-purple-50 sm:rounded-md items-center place-content-between sm:w-[260px] sm:h-11">
+        <div class="flex ml-4 text-purple-500 text-sm font-bold">
+          <img src="./resources/icon-visual.svg" class="mr-4">
+          Visual
+        </div>
+        <div class="mr-4 text-sm font-bold">
           72 <span class="text-gray-400">/ 100</span>
         </div>
       </div>
-      <div class="mt-10 bg-purple-950 text-white text-center text-sm font-bold p-3 rounded-3xl hover:bg-blue-800 cursor-pointer">
+      <div class="p-3.5 mt-10 bg-purple-950 text-white text-center text-lg font-bold sm:font-semibold sm:text-base sm:p-2 sm:mt-7 rounded-3xl hover:bg-blue-800 cursor-pointer">
         Continue
       </div>
     </div>
